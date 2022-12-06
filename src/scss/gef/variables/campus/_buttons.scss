@@ -1,0 +1,52 @@
+//Default button
+$btn-padding-y: 				$spacer-y/2;
+$btn-padding-x: 				$spacer-x;
+$btn-border-radius: 		$border-radius;
+$btn-border: 						1px solid rgba(0,0,0,.1);
+$btn-box-shadow: 				1px 1px 3px rgba(0, 0, 0, 0.2);
+
+
+//Colors ------------
+
+//Button primary
+$btn-primary-color: 		$white; 
+$btn-primary-bg: 				$blue; 
+
+//Button secondary
+$btn-secondary-color: 	$white; 
+$btn-secondary-bg: 			$brand-primary; 
+
+//Button muted
+$btn-muted-color: 			$body-color; 
+$btn-muted-bg: 					$grey; 
+
+//Button highlight
+$btn-highlight-color: 	$body-color; 
+$btn-highlight-bg: 			$brand-secondary; 
+
+//Button inverse
+$btn-inverse-color: 		$body-color; 
+$btn-inverse-bg: 				$white; 
+
+//Button link
+$btn-link-color: 						$brand-primary; 
+$btn-link-weight: 					bold;
+$btn-link-decoration: 			none;
+$btn-link-color-hover: 			$btn-link-color;
+$btn-link-decoration-hover: underline;
+
+
+//Sizes ------------
+
+//Button large
+$btn-large-padding-y: $spacer-y;
+$btn-large-padding-x: $spacer-x*2;
+$btn-large-font-size: $font-size-lg;
+$btn-large-line-height: 1;
+
+//Button Small
+$btn-small-padding-y: $spacer-y/3;
+$btn-small-padding-x: $spacer-x/2;
+$btn-small-font-size: $font-size-xs;
+$btn-small-line-height: 1;
+

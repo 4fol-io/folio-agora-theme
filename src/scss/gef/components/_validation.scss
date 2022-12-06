@@ -1,0 +1,54 @@
+//Validation
+
+.is-form-error{
+	color: $form-error-color;
+	position: relative;
+	.form-item,
+	&.form-item{
+		color: $form-error-color;
+		background-color: $form-error-bg-color;
+	}
+	input[type="text"],
+	input[type="email"],
+	input[type="number"] {
+		& + .icon{
+		    position: absolute;
+		    right: -4px;
+		    bottom: 6px;
+		    top: auto;
+		    font-size: $modal-error-icon-size;
+		}
+	}
+}
+
+.alert-container {
+    background: $modal-error-bg;
+    border-color: $modal-error-border-color;
+	position: relative;
+	overflow: hidden;
+
+	.alert-container__header .icon {
+	    position: absolute;
+	    top: 10px;
+	    right: -4px;
+	    bottom: auto;
+	    font-size: $modal-error-icon-size;
+	}
+
+	.alert-container__header,
+	.alert-container__body {
+		padding: $modal-error-content-padding;
+	    color: $modal-error-text;
+	}
+
+	.alert-container__header {
+	    border: none;
+	    padding-right: $modal-error-padding-text;
+	}
+
+	.btn {
+	    border: none;
+	    padding-right: 0;
+	    margin-top: $modal-error-margin-btn;
+	}
+}

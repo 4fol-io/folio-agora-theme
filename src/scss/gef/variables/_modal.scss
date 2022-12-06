@@ -1,0 +1,35 @@
+// Modal background
+$modal-bg: 						rgba(black, 0.8);
+$modal-padding-x: 				1rem;
+$modal-padding-y: 				2rem;
+
+// Modal dialog
+$modal-dialog-bg: 				$white;
+$modal-radius: 					0;
+$modal-dialog-border: 			1px solid $grey;
+$modal-dialog-maxwidth: 		60em;
+
+//Modal header
+$modal-header-border: 			1px solid $grey;
+$modal-header-padding-x: 		$spacer-x;
+$modal-header-padding-y: 		$spacer-y;
+
+// Modal content
+$modal-body-padding-x: 			$spacer-x;
+$modal-body-padding-y: 			$spacer-y;
+$modal-content-background: 		$white;
+
+// Modal close button
+$modal-close-color: 			$grey;
+$modal-close-padding: 			0.5rem;
+$modal-close-right: 			0;
+$modal-close-top: 				-0.1rem;
+
+// Modal error
+$modal-error-bg: 				$error-light;
+$modal-error-border-color: 		$error-light;
+$modal-error-content-padding: 	$spacer;
+$modal-error-text: 				$error;
+$modal-error-icon-size: 		33px;
+$modal-error-padding-text: 		$modal-error-icon-size + 20px;
+$modal-error-margin-btn: 		$spacer * 8;

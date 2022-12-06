@@ -1,0 +1,150 @@
+.secondary-nav{
+	@extend .list-group;
+	border-color: $secondary-nav-border-color;
+	border-style: solid;
+	border-width: 0 0 $secondary-nav-border 0;
+
+	li{
+		border-bottom: $secondary-nav-border-thin solid $secondary-nav-border;
+		font-weight: normal;
+		margin: 0;
+		&:before{
+			margin: 0;
+			content: "";
+		}
+	}
+	&>li{
+		margin: 0 !important;
+		border-color: $secondary-nav-border-color;
+		border-style: solid;
+		border-width: $secondary-nav-border 0 0 0;
+		font-weight: $secondary-nav-weight;
+		
+		&.is-active{
+			&>a{
+				color: $secondary-nav-active-color;
+				
+				.icon {
+					color: $secondary-nav-linkcolor;
+				}
+			}
+		}
+	}
+	
+	a{
+		cursor: pointer;
+		position: relative;
+		padding-top: $secondary-nav-padding-y;
+		padding-bottom: $secondary-nav-padding-bottom;
+		display: block;
+		text-decoration: none;
+		color: $secondary-nav-linkcolor;
+		
+		.no-touchevents &:hover{
+			color: $secondary-nav-linkcolor-hover;
+		}
+	}
+	
+	.is-active > a:after{
+		width: 100%;
+	}
+	
+	.icon{
+		font-size: 75%;
+	}
+	.icon--arrow-down,
+	.icon--arrow-up{
+		font-size: 75%;
+		margin-right: $secondary-nav-active-icon-margin;
+	}
+	.icon--external-link{
+		font-size: 70%;
+		margin-right: $secondary-nav-active-icon-margin;
+		margin-left: 2px;
+		position:relative;
+		left:2px;
+	}
+	.icon--before{
+		margin-right: .3rem;
+		min-width: 1em;
+	}
+}
+
+.secondary-nav > .is-active > a > .icon{
+	color: $secondary-nav-active-icon-color;
+}
+
+.secondary-nav__level2{
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+	
+	li{
+		border-top: $secondary-nav-border-thin solid $secondary-nav-border-color;
+	}
+	a{
+		padding-left: $secondary-nav-level2-padding-left;
+		&:after{
+			//height: 0;
+		}
+	}
+	.icon--before{
+		font-size: 6px;
+	}
+}
+
+.secondary-nav__level3{
+	list-style: none;
+	padding-left: 0;
+		a{
+			padding-left: $secondary-nav-level3-padding-left;
+			font-size: #{$secondary-nav-level3-font-size}px;
+			&:hover{
+				color: $secondary-nav-level3-hover;
+			}
+			&:hover:after{
+				display: none;
+			}
+		}
+}
+
+
+// Secondary nav trigger for small devices
+
+.secondary-nav-trigger{
+	background-color: $secondary-nav-trigger-bg;
+	border-bottom: $secondary-nav-trigger-border;
+	margin-top: -$main-header-margin-bottom;
+	margin-bottom: $main-header-margin-bottom;
+	padding-top: $spacer-y/2;
+	padding-bottom: $spacer-y/2;
+	
+	@include media-up(md){
+		display: none;
+	}
+}
+
+.secondary-nav-alt-container{
+	@include media-up(md){
+		display: none;
+	}
+	.secondary-nav{
+		margin-top: $spacer-y/2;
+	}
+}
+
+.fw-is-js{
+	.secondary-nav-main-container{
+		display: none;
+		@include media-up(md){
+			display: block;
+		}
+	}
+	
+}
+.secondary-nav-trigger__link{
+	color: $brand-primary;
+	text-decoration: none;
+	font-weight: bold;
+	display: block;
+}

@@ -1,0 +1,119 @@
+// Spacings mixin
+@mixin spacings($baseSpace) {	
+	@for $i from 0 through 10 {
+		$index: $i;
+		@if $i == 1 {
+			$index: '';
+		}
+
+		// Axis margin/padding multiplier
+		.m-#{$index}x { margin-right: 	rem-calc($i*$baseSpace); margin-left: rem-calc($i*$baseSpace); }
+		.p-#{$index}x { padding-right: 	rem-calc($i*$baseSpace); padding-left: rem-calc($i*$baseSpace); }
+		.m-#{$index}y { margin-top: 	rem-calc($i*$baseSpace); margin-bottom: rem-calc($i*$baseSpace); }
+		.p-#{$index}y { padding-top: 	rem-calc($i*$baseSpace); padding-bottom: rem-calc($i*$baseSpace); }
+
+		// Coordinate margin/padding multiplier
+		.m-top-#{$index}y { 	margin-top: 	rem-calc($i*$baseSpace); }
+		.m-bottom-#{$index}y { 	margin-bottom: 	rem-calc($i*$baseSpace); }
+		.m-left-#{$index}x { 	margin-left: 	rem-calc($i*$baseSpace); }
+		.m-right-#{$index}x { 	margin-right: 	rem-calc($i*$baseSpace); }
+		.p-top-#{$index}y { 	padding-top: 	rem-calc($i*$baseSpace); }
+		.p-bottom-#{$index}y { 	padding-bottom: rem-calc($i*$baseSpace); }
+		.p-left-#{$index}x { 	padding-left: 	rem-calc($i*$baseSpace); }
+		.p-right-#{$index}x { 	padding-right:  rem-calc($i*$baseSpace); }
+
+		// Mobile margin/padding multiplier
+		@include media-down(sm) {
+			// Mobile axis margin/padding multiplier
+			.m-#{$index}x-mobile { 		margin-right: 	rem-calc($baseSpace*$i); margin-left: rem-calc($baseSpace*$i); }
+			.p-#{$index}x-mobile { 		padding-right: 	rem-calc($baseSpace*$i); padding-left: rem-calc($baseSpace*$i); }
+			.m-#{$index}y-mobile { 		margin-top: 	rem-calc($baseSpace*$i); margin-bottom: rem-calc($baseSpace*$i); }
+			.p-#{$index}y-mobile { 		padding-top: 	rem-calc($baseSpace*$i); padding-bottom: rem-calc($baseSpace*$i); }
+
+			// Mobile coordinate margin/padding multiplier
+			.m-top-#{$index}y-mobile { margin-top: rem-calc($i*$baseSpace); }
+		  	.m-bottom-#{$index}y-mobile { margin-bottom: rem-calc($i*$baseSpace); }
+		  	.m-left-#{$index}x-mobile { margin-left: rem-calc($i*$baseSpace); }
+		  	.m-right-#{$index}x-mobile { margin-right: rem-calc($i*$baseSpace); }
+		  	.p-top-#{$index}y-mobile { padding-top: rem-calc($i*$baseSpace); }
+		  	.p-bottom-#{$index}y-mobile { padding-bottom: rem-calc($i*$baseSpace); }
+		  	.p-left-#{$index}x-mobile { padding-left: rem-calc($i*$baseSpace); }
+		  	.p-right-#{$index}x-mobile { padding-right: rem-calc($i*$baseSpace); }
+
+			// Mobile coordinate negative margin/padding multiplier
+			.m-top-#{$index}y-negative-mobile { margin-top: -(rem-calc($i*$baseSpace)); }
+		  	.m-bottom-#{$index}y-negative-mobile { margin-bottom: -(rem-calc($i*$baseSpace)); }
+		  	.m-left-#{$index}x-negative-mobile { margin-left: -(rem-calc($i*$baseSpace)); }
+		  	.m-right-#{$index}x-negative-mobile { margin-right: -(rem-calc($i*$baseSpace)); }
+		  	.p-top-#{$index}y-negative-mobile { padding-top: -(rem-calc($i*$baseSpace)); }
+		  	.p-bottom-#{$index}y-negative-mobile { padding-bottom: -(rem-calc($i*$baseSpace)); }
+		  	.p-left-#{$index}x-negative-mobile { padding-left: -(rem-calc($i*$baseSpace)); }
+		  	.p-right-#{$index}x-negative-mobile { padding-right: -(rem-calc($i*$baseSpace)); }
+		}
+
+		// Tablet margin/padding multiplier
+		@include media-only(md) {
+			// Tablet axis margin/padding multiplier
+			.m-#{$index}x-tablet { 		margin-right: 	rem-calc($baseSpace*$i); margin-left: rem-calc($baseSpace*$i); }
+			.p-#{$index}x-tablet { 		padding-right: 	rem-calc($baseSpace*$i); padding-left: rem-calc($baseSpace*$i); }
+			.m-#{$index}y-tablet { 		margin-top: 	rem-calc($baseSpace*$i); margin-bottom: rem-calc($baseSpace*$i); }
+			.p-#{$index}y-tablet { 		padding-top: 	rem-calc($baseSpace*$i); padding-bottom: rem-calc($baseSpace*$i); }
+
+			// Tablet coordinate margin/padding multiplier
+		  	.m-top-#{$index}y-tablet { margin-top: rem-calc($i*$baseSpace); }
+		  	.m-bottom-#{$index}y-tablet { margin-bottom: rem-calc($i*$baseSpace); }
+		  	.m-left-#{$index}x-tablet { margin-left: rem-calc($i*$baseSpace); }
+		  	.m-right-#{$index}x-tablet { margin-right: rem-calc($i*$baseSpace); }
+		  	.p-top-#{$index}y-tablet { padding-top: rem-calc($i*$baseSpace); }
+		  	.p-bottom-#{$index}y-tablet { padding-bottom: rem-calc($i*$baseSpace); }
+		  	.p-left-#{$index}x-tablet { padding-left: rem-calc($i*$baseSpace); }
+		  	.p-right-#{$index}x-tablet { padding-right: rem-calc($i*$baseSpace); }
+			
+			// Tablet coordinate negative margin/padding multiplier
+		  	.m-top-#{$index}y-negative-tablet { margin-top: -(rem-calc($i*$baseSpace)); }
+		  	.m-bottom-#{$index}y-negative-tablet { margin-bottom: -(rem-calc($i*$baseSpace)); }
+		  	.m-left-#{$index}x-negative-tablet { margin-left: -(rem-calc($i*$baseSpace)); }
+		  	.m-right-#{$index}x-negative-tablet { margin-right: -(rem-calc($i*$baseSpace)); }
+		  	.p-top-#{$index}y-negative-tablet { padding-top: -(rem-calc($i*$baseSpace)); }
+		  	.p-bottom-#{$index}y-negative-tablet { padding-bottom: -(rem-calc($i*$baseSpace)); }
+		  	.p-left-#{$index}x-negative-tablet { padding-left: -(rem-calc($i*$baseSpace)); }
+		  	.p-right-#{$index}x-negative-tablet { padding-right: -(rem-calc($i*$baseSpace)); }
+		}
+
+		@if $i > 1 {
+			// Axis margin/padding divider
+			.m-x#{$index} { 		margin-right: 	rem-calc($baseSpace/$i); margin-left: rem-calc($baseSpace/$i); }
+			.p-x#{$index} { 		padding-right: 	rem-calc($baseSpace/$i); padding-left: rem-calc($baseSpace/$i); }
+			.m-y#{$index} { 		margin-top: 	rem-calc($baseSpace/$i); margin-bottom: rem-calc($baseSpace/$i); }
+			.p-y#{$index} { 		padding-top: 	rem-calc($baseSpace/$i); padding-bottom: rem-calc($baseSpace/$i); }
+
+			// Coordinate margin/padding divider
+			.m-top-y#{$index} { 	margin-top: rem-calc($baseSpace/$i); }
+			.m-bottom-y#{$index} { 	margin-bottom: rem-calc($baseSpace/$i); }
+			.m-left-x#{$index} { 	margin-left: rem-calc($baseSpace/$i); }
+			.m-right-x#{$index} { 	margin-right: rem-calc($baseSpace/$i); }
+			.p-top-y#{$index} { 	padding-top: rem-calc($baseSpace/$i); }
+			.p-bottom-y#{$index} { 	padding-bottom: rem-calc($baseSpace/$i); }
+			.p-left-x#{$index} { 	padding-left: rem-calc($baseSpace/$i); }
+			.p-right-x#{$index} { 	padding-right: rem-calc($baseSpace/$i); }
+
+			// Mobile margin/padding divider
+			@include media-down(sm) {
+				// Mobile axis margin/padding divider
+				.m-x#{$index}-mobile { 		margin-right: 	rem-calc($baseSpace/$i); margin-left: rem-calc($baseSpace/$i); }
+				.p-x#{$index}-mobile { 		padding-right: 	rem-calc($baseSpace/$i); padding-left: rem-calc($baseSpace/$i); }
+				.m-y#{$index}-mobile { 		margin-top: 	rem-calc($baseSpace/$i); margin-bottom: rem-calc($baseSpace/$i); }
+				.p-y#{$index}-mobile { 		padding-top: 	rem-calc($baseSpace/$i); padding-bottom: rem-calc($baseSpace/$i); }
+			}
+
+			// Tablet margin/padding divider
+			@include media-only(md) {
+				// Tablet axis margin/padding divider
+				.m-x#{$index}-tablet { 		margin-right: 	rem-calc($baseSpace/$i); margin-left: rem-calc($baseSpace/$i); }
+				.p-x#{$index}-tablet { 		padding-right: 	rem-calc($baseSpace/$i); padding-left: rem-calc($baseSpace/$i); }
+				.m-y#{$index}-tablet { 		margin-top: 	rem-calc($baseSpace/$i); margin-bottom: rem-calc($baseSpace/$i); }
+				.p-y#{$index}-tablet { 		padding-top: 	rem-calc($baseSpace/$i); padding-bottom: rem-calc($baseSpace/$i); }
+			}
+		}
+	}
+}

@@ -1,0 +1,250 @@
+/* Buttons */
+
+/*.btn {
+    @include font-size($btn-normal-font-size);
+}
+
+.btn--large {
+    @include font-size($btn-large-font-size);
+}
+
+.btn--small {
+    @include font-size($btn-small-font-size);
+}
+
+.btn--large {
+    padding: .5rem 1rem;
+
+    .icon {
+        position: relative;
+        top: -1px;
+        font-size: $icon-normal-size;
+    }
+}
+
+.btn--large,
+a.btn--large {
+    line-height: 1.6;
+}
+
+.btn {
+    .icon, .bicon {
+        text-decoration: none;
+    }
+
+    &:hover, &:focus {
+        .icon, .bicon {
+            text-decoration: none;
+        }
+    }
+}*/
+
+.btn{
+    .icon{
+        position: relative;
+        top: 2px;
+        @include font-size(20);
+        line-height: 1.35;
+        &.icon--xsmall{
+            font-size: 1rem;
+        }
+    }
+
+}
+
+button.close,
+.btn--unstyled {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    &.disabled, &[disabled] {
+        color: $grey;
+    }
+}
+
+.btn--secondary-alt{
+    color: $brand-primary;
+    background-color: $brand-secondary;
+    text-decoration: none;
+    font-weight: normal;
+    &:hover, &:focus{
+        color: $brand-primary;
+    }
+}
+
+.btn--white{
+    color: $brand-primary;
+    background-color: $white;
+    text-decoration: none;
+    font-weight: normal;
+    &:hover, &:focus{
+        color: $brand-primary;
+    }
+}
+
+.btn.disabled, .btn[disabled] {
+    &:hover, &:focus, &.focus {
+        background-color: $grey !important;
+        color: $grey-dark !important;
+    }
+
+    &.btn--large {
+        @include font-size($btn-large-font-size);
+    }
+}
+
+.btn--lower,
+a.btn--lower{
+    font-weight: $font-weight-bold;
+    padding: 0 .6rem;
+    min-height: 1.875rem;
+    line-height: 1.8;
+    .icon{
+        line-height: 1.35;
+    }
+    .icon-svg{
+        top: 4px;
+    }
+    &.disabled, &[disabled] {
+        min-height: 1.875rem;
+    }
+    &.btn--debate{
+        .icon-svg{
+            top: 5px;
+        }
+    }
+}
+
+
+.btn--evaluate,
+.btn--evaluable{
+    margin-left: auto;
+    .icon--before{
+        margin-right: .2rem;
+    }
+    .icon--after{
+        margin-left: .2rem;
+    }
+}
+
+.btn--contact,
+.btn--folio{
+    .icon{
+        position: relative;
+        top: 1px;
+    }
+}
+
+@include media-down(sm){
+    .btn--debate{
+        .icon--after{
+            margin-left: 0;
+        }
+    }
+    .btn--evaluable{
+        .icon--after{
+            margin-left: 0;
+        }
+    }
+    span.btn--evaluable{
+        .icon--before{
+            margin-right: 0;
+        }
+    }
+}
+    
+
+.btn--collapse {
+    .icon--collapse{
+        @extend .icon--arrow-up;
+    }
+    &.collapsed{
+        .icon--collapse{
+            @extend .icon--arrow-down;
+        }
+    }
+}
+  
+
+.btnlink--regular {
+    font-weight: $font-weight-base;
+    &:hover,
+    &:focus {
+        color: $grey-dark;
+        text-decoration: none;
+    }
+
+    &.disabled, &[disabled] {
+        color: $grey;
+    }
+
+    .icon--before{
+        margin-right: .25rem;
+    }
+    .icon--after{
+        margin-left: .25rem;
+    }
+}
+
+.btnlink--underline {
+    text-decoration: underline;
+}
+
+button.search-submit {
+    position: relative;
+    min-width: 44px;
+
+    .icon {
+        position: absolute;
+        bottom: -2px;
+        right: -1px;
+        font-size: 2.35rem;
+    }
+}
+
+
+.form-submit .btn {
+    min-width: 140px;
+}
+
+
+.btnlink{
+    .icon{
+        &.icon--xsmall{
+            font-size: 1rem;
+        }
+    }
+}
+
+.btn--infotip{
+    vertical-align: middle;
+}
+
+button.btn-load-more,
+a.btn-load-more{
+    display: inline-block;
+    line-height: 1.25;
+    min-height: initial;
+    -webkit-text-underline-position: under;
+    -ms-text-underline-position: below;
+    text-underline-position: under;
+    margin-top: .05rem;
+    &.disabled{
+        color: $grey-dark;
+        cursor: default;
+        text-decoration: none;
+    }
+    .loading{
+        min-height: 17px;
+        min-width: 17px;
+        padding-left: 22px;
+        top: 3px;
+
+        &:before{
+            width: 17px;
+            height: 17px;
+            border-width: 1px;
+        }
+    }
+}

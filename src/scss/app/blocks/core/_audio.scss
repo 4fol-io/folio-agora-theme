@@ -1,0 +1,55 @@
+// Audio block.
+
+.wp-block-audio {
+	figcaption{
+		text-align: center;
+	}
+	audio {
+		min-width: initial;
+		width: 100%;
+		max-width: 100%;
+	}
+
+	&.alignleft,
+	&.aligncenter,
+	&.alignright {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	@include media-breakpoint-up(sm) {
+		&.alignleft,
+		&.aligncenter,
+		&.alignright {
+			width: $alignment-width-sm;
+			max-width: $alignment-width-sm;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		&.alignleft,
+		&.aligncenter,
+		&.alignright {
+			width: $alignment-width-md;
+			max-width: $alignment-width-md;
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		&.alignleft,
+		&.aligncenter,
+		&.alignright {
+			width: $alignment-width-lg;
+			max-width: $alignment-width-lg;
+		}
+	}
+
+	@include media-breakpoint-up(xl) {
+		&.alignleft,
+		&.aligncenter,
+		&.alignright {
+			width: $alignment-width-xl;
+			max-width: $alignment-width-xl;
+		}
+	}
+}

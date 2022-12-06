@@ -1,0 +1,61 @@
+// Embed block.
+
+.wp-block-embed {
+
+	// Image embeds.
+	&.is-type-image {}
+
+	// Audio embeds.
+	&.is-type-audio {}
+
+	// Rich text embeds (text, Twitter, etc.)
+	&.is-type-rich {}
+
+	// Video embeds.
+	&.is-type-video {}
+
+	// Directly target iframes.
+	iframe {}
+
+	figcaption{
+		text-align: center;
+		font-size: $font-size-sm;
+	}
+}
+
+.wp-block-video {
+	video{
+		width: 100%;
+	}
+}
+
+
+.wp-block-embed,
+.wp-block-video {
+
+	&.alignleft,
+	&.aligncenter,
+	&.alignright {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	@include media-breakpoint-up(lg) {
+		&.alignleft,
+		&.aligncenter,
+		&.alignright {
+			width: $alignment-width-lg;
+			max-width: $alignment-width-lg;
+		}
+	}
+
+	@include media-breakpoint-up(xl) {
+		&.alignleft,
+		&.aligncenter,
+		&.alignright {
+			width: $alignment-width-xl;
+			max-width: $alignment-width-xl;
+		}
+	}
+
+}

@@ -1,0 +1,374 @@
+ 
+.site-menu{
+
+    .navbar{
+        padding-top: 1.25rem;
+        padding-bottom: .25rem;
+        border-bottom: 3px solid $brand-primary;
+    }
+
+    ul.nav {
+        margin: 0;
+        padding: 0;
+        list-style-type: none; 
+
+        li{
+            padding: 0;
+            &:before{
+                display: none;
+            }
+        }
+
+        > li.menu-item {
+            position: relative;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.dropdown-menu{
+            margin-top: -4px;
+            width: 100.01%;
+            padding: 0;
+            padding-bottom: 1rem;
+            background-color: $white;
+            border: 0;
+            box-shadow: none;
+            @include font-size($font-size-h5);
+        }
+
+        a.nav-link{
+            border-top: 3px solid $grey;
+            color: $brand-primary;
+            text-decoration: none;
+            display: block;
+            padding: .25rem .25rem 1rem .25rem;
+            @include font-size($font-size-h5);
+            font-weight: $font-weight-bold;
+            width: 100%;
+            outline: none;
+            &:hover, &:focus{
+                border-color: $brand-primary;
+            }
+        }
+
+        a.dropdown-toggle{
+            &:after{
+                content: "";
+                border: 0;
+                display: inline-block;
+                position: absolute;
+                top: .5rem;
+                right: .25rem;
+                width: 1.25rem;
+                height: 1.25rem;
+                margin-left: .25rem;
+                //vertical-align: -.05rem;
+                background: no-repeat center center;
+                background-size: 100% 100%;
+                background-image: $icon-svg-arrow-primary; 
+            }
+            &[aria-expanded=true]{
+                &:after{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        a.dropdown-item {
+            border-top: 1px solid $grey;
+            padding-bottom: ($dropdown-item-padding-y * 2.5); 
+        }
+
+        a[target=_blank] {
+            position: relative;
+            padding-right: 1.5rem;
+            .icon--external-link {
+                position: absolute;
+                top: $dropdown-item-padding-y;
+                right: 0;
+            }
+        }
+    }
+}
+
+
+.btn-menu-toggle{
+    height: $header-height-mobile;
+    width: $toggle-width;
+    background: $grey;
+    position: absolute;
+    right: 4px;
+    top: 0;
+    padding: 0;
+    outline: none;
+    .icon-menu-toggle{
+        @extend .icon--close;
+        @include font-size(32);
+    }
+    &.collapsed{
+        .icon-menu-toggle{
+            @extend .icon--zhamburguer;
+        }
+    }
+}
+
+.btn-menu-close{
+    height: 32px;
+    width: 340px;
+    max-width: 90%;
+    background: $white;
+    position: fixed;
+    padding: .25rem .5rem;
+    outline: none;
+    z-index: 10000000000;
+    pointer-events: none;
+    opactiy: 0;
+    transition: all .5s ease;
+    top: 0;
+    left: auto;
+    right: -400px;
+    text-align: right;
+    .icon{
+        @include font-size(24);
+    }
+    &.open{
+        pointer-events: all;
+        opactiy: 1;
+        right: 0;
+    }
+    &.slide-right{
+        left: -400px;
+        right: auto;
+        text-align: left;
+        &.open{
+            left: 0;
+        }
+    }
+}
+
+
+@include media-down(sm) {
+    .site-menu{
+        ul.nav{
+            ul.dropdown-menu {
+                position: static;
+                float: none;
+            }
+        }
+    }
+}
+
+
+@include media-up(md) {
+
+    .btn-menu-close{
+        display: none;
+    }
+
+    .site-menu{
+        display: block!important;
+
+        .navbar{
+            padding-top: 0;
+            padding-bottom: 0;
+            border-bottom: 0;
+        }
+        ul.nav {
+            @include flexbox;
+            @include flex-wrap(nowrap);
+            @include justify-content(space-between);
+            margin-left: -($grid-gutter-width / 2);
+            margin-right: -($grid-gutter-width / 2);
+            > li.menu-item {
+                position: relative;
+                -ms-flex-preferred-size: 0;
+                flex-basis: 0;
+                -ms-flex-positive: 1;
+                flex-grow: 1;
+                max-width: 100%;
+                padding: 0;
+                margin: 0 ($grid-gutter-width / 2);
+            }
+
+            ul.dropdown-menu{
+                padding: $dropdown-padding-y $dropdown-padding-x;
+                padding-bottom: ($dropdown-padding-y * .75);
+                background-color: $dropdown-bg;
+                border-top: 4px solid $dropdown-border-color;
+                border-bottom: 4px solid $dropdown-border-color;
+                box-shadow: $dropdown-box-shadow;
+                @include font-size($dropdown-font-size);
+
+                &::before,
+                &::after {
+                    content: "";
+                    box-sizing: content-box;
+                    position: absolute;
+                    z-index: -1;
+                    border: $dropdown-triangle-size solid transparent;
+                    height: 0;
+                    width: 1px;
+                    left: 50%;
+                    top: 0;
+                }
+                
+                &::before {
+                    border-width: $dropdown-triangle-size;
+                    border-bottom-color: $brand-primary;
+                    margin-left: - $dropdown-triangle-size;
+                    margin-top: - ($dropdown-triangle-size * 2);
+                }
+
+                &:after{
+                    border-width: $dropdown-triangle-size - 4px;
+                    border-top: none;
+                    border-bottom-color: $dropdown-bg;
+                    margin-left: - ($dropdown-triangle-size - 4px);
+                    margin-top: -($dropdown-triangle-size - 4px);
+                }
+            }
+
+            a.dropdown-toggle{
+                &:after{
+                    display: none;
+                }
+            }
+
+            a.nav-link{
+                border-top: 4px solid $grey;
+                border-bottom: 4px solid $grey;
+                height: $menu-height;
+                font-weight: normal;
+                @include font-size($agora-font-size-base);
+                padding: .25rem;
+                overflow: hidden;
+            }
+        }
+    }
+    .site-header .btn-menu-toggle{
+        display: none;
+    }
+}
+
+
+// Nav actions bar (sort, view filters)
+
+.nav-actions{
+    padding-top: .625rem;
+}
+
+.nav-breadcrumb,
+.nav-actions{
+    .btn-collapse-search{
+        color: $brand-secondary;
+        &.collapsed{
+            color: $brand-primary;
+        }
+    }
+}
+
+.nav-actions-mobile{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: $zindex-sticky;
+    background: $white;
+    height: 50px;
+    drop-shadow: 0 -5px 16px rgba(0,0,0,.1);
+    .nav-actions{
+        padding: 0;
+        > ul{
+            > li{
+                @include flex(1);
+            }
+        }
+        .sticky-scroll{
+            &.off{
+                color: $text-muted;
+                pointer-events: none;
+            }
+        }
+        a,button{
+            height: 50px;
+            line-height: 40px;
+        }
+        a.active,
+        button.active{
+            background-color: $grey;
+        }
+    }
+}
+
+// Tree view menu
+
+.agora-view-menu {
+    .dropdown-menu{
+        width: 100%;
+    }
+    .btnlink{
+        font-weight: $font-weight-base;
+        &.active{
+            background-color: $grey-lighter;
+            font-weight: $font-weight-bold;
+        }
+    }
+}
+
+@include media-up(lg){
+    .agora-view-menu{
+        position: sticky; 
+        top: $header-height + $header-padding-y + $menu-height - 4;
+    }
+
+    body.admin-bar{
+        .agora-view-menu{
+            top: $header-height + $header-padding-y + $menu-height + $admin-bar-height - 4;
+        }
+    }
+}
+
+
+
+// Comments and post navigation
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+    overflow: hidden;
+
+    .navigation-desktop & {
+        margin: 1.5rem 0;
+
+    }
+    .navigation-mobile & {
+        margin: 0 0 .75rem;
+    }
+
+    .nav-links {
+        a{
+            text-decoration: none;
+            &:hover, &:focus{
+                > *{
+                    text-decoration: none;
+                    color: $link-hover-color;
+                }
+            }
+        }
+        .icon{
+            position: relative;
+            top: 1px;
+        }
+    }
+
+    .nav-previous {
+        float: left;
+        width: 50%;
+    }
+
+    .nav-next {
+        float: right;
+        text-align: right;
+        width: 50%;
+    }
+}

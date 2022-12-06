@@ -1,0 +1,43 @@
+// Responsive card heights
+@mixin card-height-responsive($baseHeight) {   
+    @for $i from 0 through 8 {
+        $index: $i;
+        @if $i == 1 {
+            $index: '';
+        }
+
+        @if $i > 1 {
+            @include media-down(sm) {
+                .card--y#{$index}-mobile { min-height: $baseHeight/$i; }
+            }
+            @include media-only(md) {
+                .card--y#{$index}-tablet { min-height: $baseHeight/$i; }
+            }
+            @include media-up(lg) {
+                .card--y#{$index} { min-height: $baseHeight/$i; }
+            }
+        }
+        @include media-down(sm) {
+            .card--#{$index}y-mobile { min-height: $i*$baseHeight; }
+        }
+        @include media-only(md) {
+            .card--#{$index}y-tablet { min-height: $i*$baseHeight; }
+        }
+        @include media-up(lg) {
+            .card--#{$index}y { min-height: $i*$baseHeight; }
+        }
+    }
+}
+
+// Responsive flexbox
+@mixin flexbox-responsive() {
+    @include media-down(sm) {
+        .flexbox-layout-mobile { @include flexbox(); }
+    }
+    @include media-only(md) {
+        .flexbox-layout-tablet { @include flexbox(); }
+    }
+    @include media-up(lg) {
+        .flexbox-layout { @include flexbox(); }
+    }
+}

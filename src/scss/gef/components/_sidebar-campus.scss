@@ -1,0 +1,27 @@
+.sidebar-wrap{
+	background: $grey-light;
+	
+	margin-left: -$grid-container-padding-xs;
+	margin-right: -$grid-container-padding-xs;
+	
+	@include media-up(lg){
+		margin-left: -$grid-container-padding-lg;
+		margin-right: -$grid-container-padding-lg;
+	}
+}
+
+.campus-sidebar{
+	padding-right: 0;
+	padding-top: $spacer-y*2;
+}
+
+//To do: change class main to id or aria role. Check use of vh.
+.campus-main{
+	background-color: $white;
+	padding-right: $grid-container-padding-md;
+	padding-top: $spacer-y*2;
+	padding-bottom: $spacer-y*2;
+	min-height: 100vh;
+}
+
+

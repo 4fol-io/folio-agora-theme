@@ -1,0 +1,78 @@
+.fade {
+  transition: $transition-fade;
+
+  &:not(.show) {
+    opacity: 0;
+  }
+}
+
+.collapse {
+  &:not(.show) {
+    display: none;
+  }
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: $transition-collapse;
+}
+
+
+/*
+   Animations for spinners
+*/
+
+.syncing {
+  transform: trasnslate3d(0, 0, 0);
+  -moz-animation: spin-sync 1s infinite ease;
+  -o-animation: spin-sync 1s infinite ease;
+  -webkit-animation: spin-sync 1s infinite ease;
+  animation: spin-sync 1s infinite ease;
+  display: inline-block;
+  @include transform-origin(50% 50%);
+}
+
+@keyframes spin-sync {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -moz-transform: rotate(-359deg);
+    -o-transform: rotate(-359deg);
+    -webkit-transform: rotate(-359deg);
+    transform: rotate(-359deg);
+  }
+}
+
+
+.spin-clock {
+    transform: trasnslate3d(0, 0, 0);
+    -moz-animation: spin-clock 60s infinite linear;
+    -o-animation: spin-clock 60s infinite linear;
+    -webkit-animation: spin-clock 60s infinite linear;
+    animation: spin-clock 60s infinite linear;
+    display: inline-block;
+    @include transform-origin(50% 50%);
+}
+
+@keyframes spin-clock {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}

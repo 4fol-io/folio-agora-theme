@@ -1,0 +1,23 @@
+// Dropdown
+$dropdown-bg: $white;
+$dropdown-border: 1px solid $grey;
+$dropdown-border-radius: $border-radius;
+$dropdown-margin-x: $spacer-x;
+$dropdown-margin-y: 3px;
+$dropdown-padding-x-half: $spacer-x / 2;
+$dropdown-padding-y-half: 3px;
+$dropdown-padding-x: $spacer-x;
+$dropdown-padding-y: $spacer-y;
+$dropdown-padding-y-one-half: $spacer-y * 1.5;
+$dropdown-padding-x-double: $spacer-x * 2;
+$dropdown-padding-y-quad: $spacer-y * 4;
+$dropdown-min-width: 10em;
+$dropdown-line-height-small: $line-height-h1;
+$dropdown-line-height-big: $line-height;
+
+// Dropdown item
+$dropdown-item-bg-hover: $grey-light;
+
+// Inner secondary dropdown
+$dropdown-menu-arrow-size: 27;
+$dropdown-submenu-arrow-size: 14;

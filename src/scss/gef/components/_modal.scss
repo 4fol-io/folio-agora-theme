@@ -1,0 +1,228 @@
+// Block background scrolling
+.is-blocked-scroll {
+    overflow: hidden;
+}
+
+// Modal background
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: $level6;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: $modal-bg;
+    display: none;
+
+    img{
+        object-fit: cover;
+        width: auto;
+        height: auto;
+    }
+
+    .embedded-video {
+        margin: 0;
+        min-width: 100%;
+    }
+}
+
+.modal.is-modal-open,
+body:not(.fw-is-js) .modal:target {
+    display: block;
+    text-align: center;
+
+    &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+    }
+
+    .modal__dialog {
+      display: block;
+      text-align: left;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      position: absolute;
+    }
+}
+
+.is-modal-open.is-modal-big{
+  .modal__dialog{
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    top: 0;
+    left: 50%;
+  }
+}
+
+.modal__title{
+    margin-right: 40px;
+}
+
+
+// Modal dialog
+.modal__dialog {
+    position: relative;
+    max-width: $modal-dialog-maxwidth;
+    margin: auto;
+    background-color: $modal-dialog-bg;
+    border: $modal-dialog-border;
+    border-radius: $modal-radius;    
+}
+
+// Modal header
+.modal__header {
+    padding: $modal-header-padding-y 0;
+    margin: 0 $modal-header-padding-x;
+
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+        margin-bottom: 0;
+    }
+}
+
+// Modal content
+.modal__content {
+    background: $modal-content-background;
+}
+
+.modal__body {
+    padding: $modal-body-padding-y $modal-body-padding-x;
+}
+
+// Modal close button
+.modal__close {
+    background: none;
+    border: none;
+    position: absolute;
+    padding: $modal-close-padding;
+    right: $modal-close-right;
+    top: $modal-close-top;
+    z-index: 1;
+    &:hover{
+        color: $grey;
+    }
+}
+
+// Modal video
+.modal--video {
+	.modal__dialog {
+	    background: none;
+	    border: none;
+	}
+
+	.modal__body {
+	    max-width: none;
+	    max-height: none;
+	    width: 95vw;
+	    height: auto;
+	    padding: 0;
+
+	    @include media-up(lg){
+			max-width: $embedded-video-max-width;
+		    max-height: $embedded-video-max-height;
+		    width: $embedded-video-width;
+		    height: $embedded-video-height;
+		}
+	}
+}
+
+// Modal error
+.modal--error {
+	.modal__dialog {
+	    border: none
+    }
+
+	.modal__header,
+	.modal__body {
+	    padding: 0;
+	}
+}
+
+.modal--filter{
+  &.is-modal-open:before, body:not(.fw-is-js) &:target:before{
+    display: block;
+  }
+
+  .modal__header{
+    font-weight: bold;
+    font-size: #{$font-size-base+'px'};
+    padding: 12px 0;
+    margin: 0 #{$modal-filter-gutter}
+  }
+
+  .btn-group{
+    width: 100%;
+  }
+
+  .btn--order{
+    display: block;
+    padding: 16px #{$modal-filter-gutter};
+  }
+
+  .modal__body{
+    padding: 0;
+    max-height: 280px;
+    overflow-y: auto;
+  }
+
+  .modal__header{
+    .btn{
+      min-height: 0;
+      float: right;
+    }
+  }
+
+  .modal__footer{
+    padding: #{$modal-filter-gutter};
+  }
+
+  @include media-down(sm){
+    .modal__body{
+      max-height: calc(100vh - 210px);
+    }
+
+    .modal__dialog {
+      width: 100vw;
+      //height: 100vh;
+      height: auto;
+    }
+  }
+
+  @include media-up(md){
+    background-color: transparent;
+    overflow: initial;
+    position: absolute;
+    top: 37%;
+    left: 53%;
+    bottom: auto;
+    right: auto;
+    max-width: 320px;
+    width: 100%;
+
+    .modal__dialog{
+      box-shadow: 4px 4px 16px lightgrey, -4px -4px 16px lightgrey;
+      border: none;
+      max-width: none;
+    }
+
+    &.is-modal-open{
+      .modal__dialog{
+        position: relative;
+        transform: none;
+        top: auto;
+        left: auto;
+      }
+    }
+  }
+}

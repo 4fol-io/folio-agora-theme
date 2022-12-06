@@ -1,0 +1,18 @@
+// Pagination list
+$pagination-padding: 				0;
+$pagination-bg: 					$white;
+$pagination-margin:					$spacer;
+$pagination-border-color:			$grey;
+$pagination-border-color-active:	$brand-primary;
+$pagination-border-width: 			$spacer/2 0 0 0;
+
+// Pagination item
+$pagination-item-padding: 			$spacer/2;
+$pagination-item-margin-top:		$spacer*2;
+$pagination-item-width:				20%;
+
+// Pagination link
+$pagination-link-lineheight:		.8;
+$pagination-link-color: 			$grey-medium;
+$pagination-link-hover-color: 		$brand-secondary;
+$pagination-link-hover-bg: 			$white;

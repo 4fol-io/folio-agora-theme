@@ -1,0 +1,30 @@
+// Default alert
+.alert{
+	padding: $alert-padding;
+//	border-left: $alert-border-width $alert-border-style;
+//	border-right: $alert-border-width $alert-border-style;
+	margin-bottom: $spacer-y;
+	@include alert-variant($alert-default, $alert-default-bg, $alert-default-text);
+}
+
+// Error alert
+.alert--error{
+	@include alert-variant($alert-error, $alert-error-bg, $alert-error-text);
+}
+
+.alert--info-alternative{
+	@include alert-variant($brand-primary, $message-info, $brand-primary);
+}
+
+.alert--success-alternative{
+	@include alert-variant($brand-primary, $message-success, $brand-primary);
+}
+
+.alert--warning-alternative{
+	@include alert-variant($brand-primary, $message-warning, $brand-primary);
+}
+
+
+.alert--error-alternative{
+	@include alert-variant($brand-primary, $message-error, $brand-primary);
+}

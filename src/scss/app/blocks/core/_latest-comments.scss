@@ -1,0 +1,31 @@
+// latest comments
+.wp-block-latest-comments {
+
+	list-style: none;
+	padding: 0;
+
+	&__comment {
+
+		font-size: $font-size-base;
+
+		&-meta{
+			font-size: $h5-font-size;
+		}
+
+		&-excerpt {
+			p {
+				line-height: inherit;
+				margin: .5rem 0 1.5rem;
+				font-size: $font-size-base;
+			}
+		}
+
+		&-date {
+			display: block;
+			font-size: $font-size-sm;
+			color: $gray-500;
+		}
+
+	}
+
+}

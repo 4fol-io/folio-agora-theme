@@ -1,0 +1,30 @@
+// Responsive fullwidth height mixin
+@mixin fullwidth-height-responsive($baseHeight) {
+    @for $i from 0 through 8 {
+        $index: $i;
+        @if $i == 1 {
+            $index: '';
+        }
+
+        @if $i > 1 {
+            @include media-down(sm) {
+                .fullwidth--y#{$index}-mobile { min-height: $baseHeight/$i; }
+            }
+            @include media-only(md) {
+                .fullwidth--y#{$index}-tablet { min-height: $baseHeight/$i; }
+            }
+            @include media-up(lg) {
+                .fullwidth--y#{$index} { min-height: $baseHeight/$i; }
+            }
+        }
+        @include media-down(sm) {
+            .fullwidth--#{$index}y-mobile { min-height: $i*$baseHeight; }
+        }
+        @include media-only(md) {
+            .fullwidth--#{$index}y-tablet { min-height: $i*$baseHeight; }
+        }
+        @include media-up(lg) {
+            .fullwidth--#{$index}y { min-height: $i*$baseHeight; }
+        }
+    }
+}

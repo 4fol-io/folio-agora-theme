@@ -1,0 +1,25 @@
+
+// RSS block.
+
+.wp-block-rss {
+	list-style: none;
+	padding: 0;
+	margin-bottom: 1.5rem;
+	&__item-title{
+		font-size: $h5-font-size;
+	}
+	&__item-author,
+	&__item-publish-date {
+		display: block;
+		font-size: $font-size-sm;
+		color: $gray-500;
+	}
+	&__item-author{
+		color: $gray-500;
+	}
+	&__item-excerpt{
+		line-height: inherit;
+		margin-top: .5rem;
+		font-size: $font-size-base;
+	}
+}

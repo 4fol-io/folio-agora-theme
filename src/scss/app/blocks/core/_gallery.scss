@@ -1,0 +1,30 @@
+// Gallery block
+
+.wp-block-gallery {
+
+    &.alignleft,
+	&.aligncenter,
+	&.alignright {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	@include media-up(lg) {
+		&.alignleft,
+		&.aligncenter,
+		&.alignright {
+			width: $alignment-width-lg;
+			max-width: $alignment-width-lg;
+		}
+	}
+
+	@include media-up(xl) {
+		&.alignleft,
+		&.aligncenter,
+		&.alignright {
+			width: $alignment-width-xl;
+			max-width: $alignment-width-xl;
+		}
+	}
+
+}

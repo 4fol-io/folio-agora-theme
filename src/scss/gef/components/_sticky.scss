@@ -1,0 +1,41 @@
+// Sticky button
+.sticky {
+	position: relative;
+	top: 0;
+
+	&.sticky--stuck {
+		position: fixed;
+		z-index: $sticky-z-index;
+		@include rem('top', $sticky-position-top);
+	}
+
+	&.btn {
+		max-width: $sticky-max-width;
+		width: $sticky-width;
+		overflow: hidden;
+	}
+
+	.icon {
+		height: $icon-info-small-size;
+	    position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    margin: auto;
+		right: -8px;
+		font-size: $icon-info-small-size;
+	}
+}
+
+.sticky__text {
+	display: inline-block;
+	vertical-align: top;
+	white-space: normal;
+    word-break: break-all;
+    line-height: 1;
+	max-width: calc(100% - #{$sticky-icon-width});
+}
+
+.sticky--icon {
+	min-height: $sticky-icon-min-height;
+	padding: 0 0 $sticky-icon-padding $sticky-icon-padding;
+}

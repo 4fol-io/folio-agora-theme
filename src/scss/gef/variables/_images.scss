@@ -1,0 +1,35 @@
+// Thumbnails
+$thumbnail-border-width:			3px;
+$thumbnail-border-radius:			$border-radius;
+$thumbnail-shadow: 					0 0 2px rgba(black,.2);
+$thumbnail-border-color:			$white;
+$thumbnail-hover-border-color:		$brand-secondary;
+$thumbnail-hover-opacity:			.85;
+$thumbnail-transition:				all .3s;
+
+// Image
+$img-height:						$height-1y;
+$img-ratio:							77.288%;
+$img-background-padding:			$spacer;
+$img-primary:					    $brand-primary;
+$img-secondary:				        $brand-secondary;
+$img-secondary-light:			    $brand-secondary-light;
+$img-opacity-img:					.6;
+$img-contents-z-index:				8;
+
+// Figure/Figcaption
+$figure-padding:					$spacer;
+$figcaption-padding:	 			$spacer-y;
+
+// Image header
+$img-header-padding:				$spacer-x/2;
+$img-header-bg:						rgba($grey-dark, .8);
+$img-header-color:					$white;
+
+// Image background pattern
+$img-tint:							rgba(0, 0, 120, $img-opacity-img);
+$img-tint-z-index:					7;
+
+// Old browser compatibility
+$no-objectfit-top:					50%;
+$no-objectfit-left:					50%;

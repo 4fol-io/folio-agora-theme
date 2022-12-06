@@ -1,0 +1,37 @@
+// Quotes
+blockquote.pullquote, .pullquote{
+	margin: 0;
+	@include font-size($pullquote-font-size);
+	font-family: $pullquote-font-family;
+	font-style: $pullquote-font-style;
+}
+
+blockquote.blockquote, .blockquote{
+	@include not-empty{
+		background-color: $grey-light;
+		border-left: solid 4px $brand-primary;
+		border-right: solid 4px $brand-primary;
+		margin: 0 0 20px;
+		font-family: $font-family-base;
+		padding: 4px 8px;
+
+		&.blockquote--right{
+			@include blockquote(right);
+		}
+
+		&.blockquote--left{
+			@include blockquote(left);
+		}
+	}
+}
+
+q:not(.quote), .quote{
+	@include not-empty{
+		&:before{ content: "\201C"; }
+		&:after{ content: "\201D"; }
+	}
+}
+
+cite{
+	font-style: italic;
+}

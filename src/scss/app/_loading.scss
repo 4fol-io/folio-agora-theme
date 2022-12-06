@@ -1,0 +1,32 @@
+.loading {
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: normal;
+    text-transform: none;
+    min-height: 22px;
+    min-width: 22px;
+    padding-left: 30px;
+    line-height: 22px;
+    &:before {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 22px;
+        height: 22px;
+        /*margin-top: -16px;
+        margin-left: -16px;*/
+        border-radius: 50%;
+        border: 2px solid $grey;
+        border-top-color: $brand-primary;
+        animation: spin .5s linear infinite;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

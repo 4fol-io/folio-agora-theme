@@ -1,0 +1,23 @@
+// Default block lists
+$list-group-border-color: 					$grey;
+$list-group-border-width: 					$ruler-width;
+$list-group-border-width-thin: 				$ruler-width-thin;
+$list-group-nested-border-width: 			$ruler-width-thin;
+$list-group-padding-x: 						0;
+$list-group-padding-y: 						0;
+
+// Default block lists item
+$list-group-item-padding-top: 				$spacer/2;
+$list-group-item-padding-bottom: 			$spacer*2;
+$list-group-item-margin-top: 				$spacer/2;
+$list-group-item-margin-bottom: 			$spacer*2;
+
+// Default nested block lists
+$list-group-secondary-item-margin-left: 	$spacer*2;
+$list-group-secondary-item-padding-left: 	$spacer*2;
+$list-group-secondary-item-margin-top: 		$spacer*2;
+$list-group-padding-bottom: 				.7em;
+$list-group-line-height: 					1;
+
+// Default block lists with link
+$list-group-linkblock-bg: 					$grey-light;

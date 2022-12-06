@@ -1,0 +1,106 @@
+// Boostrap functions
+@import "~bootstrap/scss/functions";
+
+// Default global variables & mixins
+@import "gef/variables";
+@import "app/variables";
+@import "gef/mixins";
+@import "app/mixins";
+
+// Core CSS
+@import "gef/core/normalize";
+@import "gef/core/reset";
+
+// Basic components
+//@import "gef/components/icons";
+//@import "gef/components/iconimages";
+@import "gef/generated/icons";
+@import "app/icons";
+@import "gef/components/buttons";
+@import "gef/components/alerts";
+@import "gef/components/lists";
+//@import "gef/components/list-groups";
+@import "gef/components/ruler";
+//@import "gef/components/cards";
+//@import "gef/components/media-object";
+@import "gef/components/forms";
+//@import "gef/components/tips";
+@import "gef/components/select-custom";
+//@import "gef/components/validation";
+@import "gef/components/table";
+//@import "gef/components/media";
+//@import "gef/components/badges";
+//@import "gef/components/pagination";
+//@import "gef/components/alpha-list";
+//@import "gef/components/calendar";
+//@import "gef/components/progress";
+//@import "gef/components/spinner";
+@import "gef/components/quotes";
+//@import "gef/components/open-registration";
+@import "gef/components/typography";
+//@import "gef/components/header";
+@import "gef/components/breadcrumb";
+
+// JS components
+//@import "gef/components/dropdown";
+//@import "gef/components/collapse";
+//@import "gef/components/modal";
+//@import "gef/components/tabs";
+//@import "gef/components/icon-switcher";
+//@import "gef/components/carousel";
+//@import "gef/components/sticky";
+//@import "gef/components/sticky-scroll";
+//@import "gef/components/full-width";
+//@import "gef/components/video";
+
+//Template components
+//@import "gef/components/topbar";
+//@import "gef/components/off-canvas";
+//@import "gef/components/main-header";
+//@import "gef/components/secondary-nav";
+//@import "gef/components/footer";
+@import "gef/components/rwd-helpers";
+@import "gef/components/spacers";
+
+// Core CSS
+@import "gef/core/grid";
+//@import "gef/core/card-structure";
+@import "gef/core/helpers";
+
+//@import "gef/components/images";
+//@import "gef/icons/fontello";
+//@import "gef/icons/animation";
+
+
+// App
+@import "app/fonts";
+@import "app/utils";
+@import "app/main";
+@import "app/typo";
+@import "app/layout";
+@import "app/buttons";
+@import "app/header";
+@import "app/nav";
+@import "app/breadcrumb";
+@import "app/pagination";
+@import "app/media";
+@import "app/content";
+@import "app/footer";
+@import "app/forms";
+@import "app/evaluation";
+@import "app/modal";
+@import "app/tooltip";
+@import "app/dropdown";
+@import "app/tree";
+//@import "app/popover";
+@import "app/widgets";
+@import "app/comments";
+@import "app/alerts";
+@import "app/helpers";
+@import "app/gallery";
+@import "app/plugins";
+@import "app/blocks";
+@import "app/alignment";
+@import "app/colors";
+@import "app/loading";
+@import "app/transitions";

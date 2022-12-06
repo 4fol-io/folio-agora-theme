@@ -1,0 +1,105 @@
+// File block.
+
+.wp-block-file {
+	padding: .5rem 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: start;
+	align-items: center;
+	margin-bottom: 0;
+	a{
+		text-decoration: none;
+		font-size: $h4-font-size;
+		color: $link-color;
+		margin: .5rem 1rem .5rem 0;
+
+		&:first-child::before {
+			content: '';
+			display: inline-block;
+			margin-right: .75rem; 
+			margin-top: -4px;
+			line-height: 1;
+			vertical-align: middle;
+			background-image: $icon-svg-download-primary;
+			background-repeat: no-repeat;
+			background-position: 50%;
+			background-size: 24px; 
+			width: 24px;
+			height: 24px;
+		}
+
+		@include hover() {
+			text-decoration: none;
+			color: $link-hover-color;
+		}
+
+		@include media-breakpoint-down(md) {
+			font-size: $h4-font-size-md;
+		}
+	
+		@include media-breakpoint-down(sm) {
+			font-size: $h4-font-size-sm;
+		}
+	}
+
+	& a#{&}__button {
+		@extend .btn;
+		@extend .btn-sm;
+		@extend .btn-outline-primary;
+		margin-left: 0;
+		&:visited, &:active, &:focus{
+			color: $primary;
+			opacity: 1;
+		}
+		 &:hover{
+			color: color-yiq($primary);
+			opacity: 1;
+		}
+	}
+
+	&.aligncenter{
+		display:block;
+		.wp-block-file__button{
+			margin-left: 1rem;
+		}
+	}
+
+	&.alignleft,
+	&.alignright {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	@include media-breakpoint-up(sm) {
+		&.alignleft,
+		&.alignright {
+			width: $alignment-width-sm;
+			max-width: $alignment-width-sm;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		&.alignleft,
+		&.alignright {
+			width: $alignment-width-md;
+			max-width: $alignment-width-md;
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		&.alignleft,
+		&.alignright {
+			width: $alignment-width-lg;
+			max-width: $alignment-width-lg;
+		}
+	}
+
+	@include media-breakpoint-up(xl) {
+		&.alignleft,
+		&.alignright {
+			width: $alignment-width-xl;
+			max-width: $alignment-width-xl;
+		}
+	}
+
+}

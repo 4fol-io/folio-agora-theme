@@ -1,0 +1,54 @@
+.media {
+	display: table;
+  display: flex;
+  //margin-bottom: $spacer;
+}
+
+.media__left,
+.media__right{
+	display: table-cell;
+	vertical-align: top;
+	img{
+		max-width: initial;
+	}
+}
+
+.media__body {
+	display: table-cell;
+	vertical-align: top;
+	flex: 1;
+}
+
+
+
+// Images/elements as the media anchor
+
+.media__object {
+  display: block;
+
+  // Fix collapse in webkit from max-width: 100% and display: table-cell.
+  &.img-thumbnail {
+    max-width: none;
+  }
+}
+
+
+// Alignment
+
+.media__right {
+  padding-left: 10px;
+}
+
+.media__left {
+  padding-right: 10px;
+}
+
+.media--middle{
+	vertical-align: middle;
+	align-self: center;
+}
+
+.media--bottom{
+	vertical-align: bottom;
+	align-self: flex-end;
+}

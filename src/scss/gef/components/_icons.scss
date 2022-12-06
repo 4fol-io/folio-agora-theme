@@ -1,0 +1,399 @@
+@import "../generated/icons";
+@import "../not-gef/icons";
+
+.icon{
+	text-decoration: none;
+	font-size: $icon-normal-font-size;
+}
+
+
+h1, h2, h3, h4, h5, h6{
+	& .icon{
+		font-size: 100%;
+	}
+}
+
+
+.icon--before{
+	margin-right: .5rem;
+}
+.icon--after{
+	margin-left: .5rem;
+}
+
+[class^="icon--social"], [class*=" icon--social"] {
+	font-size: $icon-social-font-size;
+	&:not(:last-child){
+		margin-right: $icon-social-margin;
+	}
+}
+
+.icon--social{
+	font-size: $icon-social-font-size;
+	&:not(:last-child){
+		margin-right: $icon-social-margin;
+	}
+}
+
+// Default size icons
+.icon--big{
+	font-size: $icon-big-size;
+}
+.icon--small{
+	font-size: $icon-small-size;
+}
+.icon--xsmall{
+	font-size: $icon-xsmall-size;
+}
+// Size default icons
+.icon--big-default{
+	font-size: $icon-big-default-size;
+}
+.icon--normal-default{
+	font-size: $icon-normal-default-size;
+}
+.icon--small-default{
+	font-size: $icon-small-default-size;
+}
+// Size/Weight arrow icons
+.icon--normal-arrows{
+	font-size: $icon-normal-arrows-size;
+	font-weight: $icon-normal-arrows-weight;
+}
+.icon--big-arrows{
+	font-size: $icon-big-arrows-size;
+	font-weight: $icon-big-arrows-weight;
+}
+.icon--small-arrows{
+	font-size: $icon-small-arrows-size;
+	font-weight: $icon-small-arrows-weight;
+}
+// Size button icons
+/*.icon--big-button{
+	font-size: $icon-big-button-size;
+	width: 14px;
+  height: 14px;
+  line-height: 15px;
+  text-indent: -5px;
+}
+.icon--normal-button{
+	font-size: $icon-normal-button-size;
+	width: 14px;
+  height: 14px;
+  line-height: 15px;
+  text-indent: -5px;
+}
+.icon--small-button{
+	font-size: $icon-small-button-size;
+	width: 14px;
+  height: 14px;
+  line-height: 15px;
+  text-indent: -5px;
+}*/
+// Size link icons
+/*.icon--big-link{
+	font-size: $icon-big-link-size;
+	width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-indent: -5px;
+}
+.icon--normal-link{
+	font-size: $icon-normal-link-size;
+	width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-indent: -5px;
+}
+.icon--small-link{
+	font-size: $icon-small-link-size;
+	width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-indent: -5px;
+}*/
+// Size specific icons
+/*.icon--rss-normal{
+	font-size: $icon-normal-link-size;
+	width: 20px;
+    height: 20px;
+    line-height: 16px;
+    text-indent: 4px;
+}
+.icon--share-small {
+	font-size: $icon-side-size-1;
+	width: 27px;
+    height: 24px;
+    text-indent: -13px;
+    line-height: 0;
+    right: 0 !important;
+    top: auto !important;
+    vertical-align: bottom;
+}
+.icon--book-small {
+	font-size: $icon-side-size-1;
+	width: 27px;
+    height: 24px;
+    text-indent: -13px;
+    line-height: 20px;
+    right: 0 !important;
+    top: auto !important;
+    vertical-align: bottom;
+}
+.icon--user-small {
+	font-size: $icon-side-size-2;
+	top: auto !important;
+	vertical-align: bottom;
+	bottom: 2px;
+    position: relative;
+}*/
+.icon--play{
+	&-big, &-center{
+			font-size: $icon-play-big-size;
+			width: 100%;
+			height: 100%;
+	    /*width: 93px;
+	    height: 109px;
+	    line-height: 109px;
+	    text-indent: -44px;*/
+	}
+}
+.icon--search{
+	&-small{
+		font-size: $icon-search-small-size;
+	    /*width: 17px;
+	    height: 19px;
+	    line-height: 3px;
+	    text-indent: 0;*/
+	}
+	&-big{
+		font-size: $icon-search-big-size !important;
+			/*width: 55px;
+	    height: 61px;
+	    line-height: 9px;
+	    text-indent: 0;*/
+	}
+	&-normal{
+		font-size: $icon-search-normal-size;
+	    /*width: 17px;
+	    height: 19px;
+	    line-height: 3px;
+	    text-indent: 0;*/
+	}
+}
+.icon--campus {
+	&-small{
+		font-size: $icon-campus-small-size;
+	    /*width: 38px;
+	    height: 44px;
+	    line-height: 16px;
+	    text-indent: -16px;*/
+	}
+	&-big{
+		font-size: $icon-campus-big-size;
+			/*width: 38px;
+	    height: 44px;
+	    line-height: 16px;
+	    text-indent: -16px;*/
+	}
+	&-normal{
+		font-size: $icon-campus-normal-size;
+	   /* width: 38px;
+	    height: 44px;
+	    line-height: 16px;
+	    text-indent: -16px;*/
+	}
+}
+.icon--header--bottom{
+	position: relative;
+	font-size: $icon-header-font-size;
+    /*line-height: 25px;
+    width: 64px;
+    height: 64px;
+    text-indent: -8px;*/
+}
+.icon--header--top{
+	position: relative;
+	font-size: $icon-header-font-size;
+    /*line-height: 25px;
+    width: 64px;
+    height: 64px;
+    text-indent: -8px;*/
+}
+.icon--header--left{
+	position: relative;
+	font-size: $icon-header-font-size;
+    /*line-height: 25px;
+    width: 64px;
+    height: 64px;
+    text-indent: -8px;*/
+}
+.icon--header--right{
+	position: relative;
+	font-size: $icon-header-font-size;
+		/*line-height: 62px;
+    width: 64px;
+    height: 64px;
+    text-indent: -20px;*/
+}
+.icon--info{
+	&--small{
+		font-size: $icon-info-small-size;
+	    /*width: 42px;
+	    height: 50px;
+	    line-height: 51px;
+	    text-indent: -38px;*/
+ 	}
+ 	&--big{
+ 		font-size: $icon-info-big-size;
+	    /*width: 50px;
+	    height: 58px;
+	    line-height: 58px;
+	    text-indent: -44px;*/
+ 	}
+ 	&--normal{
+ 		font-size: $icon-info-big-size;
+	   /* width: 50px;
+	    height: 58px;
+	    line-height: 58px;
+	    text-indent: -44px;*/
+ 	}
+}
+.icon--alert{
+	&--small{
+		font-size: $icon-alert-small-size;
+      /*width: 24px;
+	    height: 31px;
+	    line-height: 36px;
+	    text-indent: -22px;*/
+ 	}
+ 	&--big{
+ 		font-size: $icon-alert-big-size;
+	    /*width: 44px;
+	    height: 51px;
+	    line-height: 53px;
+	    text-indent: -40px;*/
+ 	}
+ 	&--normal{
+ 		font-size: $icon-alert-big-size;
+	    /*width: 44px;
+	    height: 51px;
+	    line-height: 53px;
+	    text-indent: -40px;*/
+ 	}
+}
+.icon--book--open-registration{
+	&--small{
+		font-size: $icon-book-small-size;
+		line-height: 46px;
+		text-indent: -5px;
+		/*width: 54px;
+	  height: 48px;
+	  line-height: 49px;
+	  text-indent: -28px;*/
+	}
+	&--big{
+		font-size: $icon-book-big-size;
+		line-height: 71px;
+		text-indent: -5px;
+	  /*width: 79px;
+	  height: 72px;
+	  text-indent: -42px;*/
+	}
+	&--normal{
+		font-size: $icon-book-big-size;
+		line-height: 71px;
+		text-indent: -5px;
+	  /*width: 79px;
+	  height: 72px;
+	  line-height: 71px;
+	  text-indent: -42px;*/
+	}
+}/*
+.icon--zhamburguer {
+	font-size: $icon-hamburguer-size;
+    width: 28px;
+    height: 30px;
+    line-height: 20px;
+    text-indent: -22px;
+}*/
+// Icons positions
+.icon--pleft {
+    position: relative;
+    float: left;
+    left: -10px;
+    margin: auto;
+}
+.icon--pcenter {
+    position: relative;
+    left: 0;
+    margin: auto;
+}
+.icon--pright {
+    position: relative;
+    float: right;
+    right: -10px;
+    margin: auto;
+}
+/*
+.icon--exit {
+	font-size: $icon-normal-font-size;
+	width: 26px;
+	height: 30px;
+	line-height: 22px;
+	text-indent: -22px;
+}
+
+
+$icon-space-2-move: -12px;
+.icon-header--bottom-2-center{
+	position: relative;
+	top: $icon-space-2-move;
+	right: $icon-space-2-move;
+}
+
+.icon-header--top-2-center{
+	position: relative;
+	bottom: $icon-space-2-move;
+	right: $icon-space-2-move;
+}
+
+.icon--header{
+	margin-top: -(($spacer)/2);
+	&.icon--calendar{
+		@extend .icon-header--bottom-2-center;
+	}
+	&.icon--lab{
+		@extend .icon-header--top-2-center;
+	}
+	&.icon--training-offer{
+		@extend .icon-header--bottom-2-center;
+	}
+	&.icon--pdf{
+		@extend .icon-header--bottom-2-center;
+		top: -7px;
+		right: -5px;
+	}
+}
+
+.icon--center{
+	&.icon--share {
+		@extend .icon-header--bottom-2-center;
+		top: -7px;
+		right: 2px;
+	}
+	&.icon--book {
+		position: relative;
+		right: $spacer;
+	}
+}*/
+
+.icon-card-right-top{
+	position: absolute;
+	top: -10px;
+	right: -7px;
+}
+
+.icon--play-center:before{
+	@extend .icon--play:before;
+}

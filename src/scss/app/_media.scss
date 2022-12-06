@@ -1,0 +1,224 @@
+/*  Media Elements */
+
+figure{
+    margin: 0 0 1.5rem;
+}
+
+.visibility{
+    img.visibility-icon {
+        width: 18px;
+        height: auto;
+        position: relative;
+        top: 3px;
+        margin-left: .15rem;
+        border-radius: 50%;
+        -webkit-backface-visibility: hidden;
+        -ms-transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        image-rendering: -webkit-optimize-contrast;
+        /*image-rendering: -moz-crisp-edges;
+        image-rendering: -o-crisp-edges;
+        image-rendering: crisp-edges;
+        -ms-interpolation-mode: nearest-neighbor;*/
+    }
+}
+
+
+.entry-media{
+    display: block;
+    position: relative;
+    align-items: flex-start;
+    width: $media-width-grid;
+    height: $media-height-grid;
+    transition: width $view-transition-duration $view-transition-easing, height $view-transition-duration $view-transition-easing;
+}
+
+
+// Cover image
+
+.cover-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .img-cover{
+        position: absolute;
+        height: 100%;
+        min-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        font-family: 'object-fit: cover;'; // to IE11 polyfill
+        vertical-align: middle;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -o-crisp-edges;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+        &.contain{
+            object-fit: contain;
+            font-family: 'object-fit: contain;'; // to IE11 polyfill
+        }
+    }
+}
+
+
+// Smiley
+
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+    border: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+    max-width: 100%;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+    display: inline-block;
+}
+
+.wp-caption {
+    margin-bottom: 1.5em;
+    max-width: 100%;
+
+    img[class*="wp-image-"] {
+        @include center-block;
+    }
+
+    .wp-caption-text {
+        margin: 0.8075em 0;
+    }
+}
+
+.wp-caption-text {
+    text-align: center;
+}
+
+.gallery {
+    margin-bottom: 1.5em;
+}
+
+.gallery-item {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    //width: 100%;
+}
+
+.gallery-caption {
+    display: block;
+}
+
+
+// GEF Media Object
+
+
+.media {
+    display: flex;
+    align-items: flex-start;
+    a{
+        text-decoration: none;
+        display: inline-block;
+    }
+}
+
+.media__left{
+    margin-right: .75rem;
+}
+
+.media__right{
+    margin-left: .75rem;
+}
+
+.media__body {
+    flex: 1;
+    overflow: hidden;
+
+    .user_folio_widget{
+        display: block;
+        font-weight: $font-weight-bold;
+        @include font-size(18);
+        line-height: 1.1;
+        margin-bottom: .1rem;
+    }
+
+    .user_folio_actions a{
+        margin-right: .35rem;
+        .icon--pencil{
+            position: relative;
+            top: 1px;
+        }
+    }
+
+    .user_folio_actions a.lnk-contact{
+        margin-right: .5rem;
+    }
+
+
+    .lnk-contact {
+        margin-right: .5rem;
+        .lbl {
+            display: none;
+        }
+        .icon{
+            font-size: 1.225rem;
+        }
+
+        .icon-svg--folio{
+            width: 15px;
+            height: 19px;
+        }
+        
+        .icon--user{
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: center bottom;   
+            background-image: $icon-svg-folio-primary;
+            width: 14px;
+            height: 18px;
+            &:before{
+                display: none;
+            }
+        }
+        &:hover, &:focus{
+            .icon--user,
+            .icon-svg--folio{
+                background-image: $icon-svg-folio-grey;
+            }
+        }
+    }
+}
+
+.media__thumb{
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: $grey-lighter;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;   
+    background-image: $icon-svg-user-primary-light;
+    float: left;
+}
+
+@include media-up(md){
+    .media__thumb{
+        width: 40px;
+        height: 40px;
+    }
+}

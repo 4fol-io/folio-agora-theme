@@ -1,0 +1,473 @@
+// Card
+.card{
+    display: block;
+    background: $card-default-bg;
+    position:relative;
+    overflow: hidden;
+    margin-bottom: $card-margin-bottom;
+    min-height: $card-height;   
+
+    &.ruler {
+        //min-height: $card-height - $ruler-width;
+
+        .card__contents {
+            min-height: inherit;
+        }
+    }
+
+    .img-wpr {
+        padding: 0;
+        height: auto;
+    }
+}
+
+.card--image-small {
+    .card__image {
+        min-height: inherit !important;
+
+        img {
+            max-width: $card-image-small-max-width;
+            max-height: $card-image-small-max-height;
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+    }
+
+    .card__contents {
+        @extend .flexbox-layout;
+    }
+
+    .card__footer {
+        width: 100%;
+    }
+}
+
+// Card header
+.card__header {
+    margin: 0;
+    background: $card-header-bg;
+    padding-bottom: $card-header-padding;
+    position: relative;
+
+    .icon {
+        font-size: $card-header-icon-font-size;
+        position: relative;
+        top: $card-header-icon-top;
+        right: $card-header-icon-right;
+    }
+
+    .card__header__link {
+        text-align: right;
+        right: $card-header-text-right;
+	      top: $card-header-text-top;
+        position: absolute;
+        padding: $card-header-text-padding;
+        text-decoration: underline;
+        font-size: $card-header-link-font-size;
+        font-weight: $card-font-weight-normal;
+    }
+}
+
+.card--no-margin {
+    margin-bottom: 0;
+}
+
+// Card hover
+.card--hover {
+    cursor: pointer;
+    text-decoration: none;
+    &:hover,&:active {
+        color: $card-primary;
+        .card__contents:after,
+        .card__image:after {
+            height: 100%;
+            text-decoration: none;
+            content: "";
+            display: block;
+            width: 100%;
+            background: $card-hover-color;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: $card-hover-z-index;
+        }
+    }
+}
+
+// Card image
+.card__image{
+    padding: 0;
+    position: relative;
+    min-height: $card-height !important;
+    overflow: hidden;
+    img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+}
+
+.card--image-vertical.card--with-footer {
+    @include flexbox;
+    @include flex-direction(column);
+    @include flex(1);
+}
+
+.card--image-horizontal.card--with-footer {
+    @include flexbox;
+    @include flex-direction(row);
+    @include flex(1);
+}
+
+@include media-up(md) {
+    .card--image-vertical {
+        @include flexbox;
+        @include flex-direction(column);
+    }
+
+    .card--image-horizontal {
+        @include flexbox;
+        @include flex-direction(row);
+    }
+}
+
+// Card content
+.card__contents{
+    padding: $card-content-padding;
+    position: relative;
+    @include media-up(md) {
+        min-height: inherit;
+    }
+}
+
+.card > a,
+.card__contents > a {
+    text-decoration: none;
+    @include flexbox;
+    @include flex-direction(column);
+    @include flex(1);
+    height: auto;
+    z-index: $card-link-z-index;
+    position: relative;
+
+    // Card link
+    &.card__absolute-link {
+        top: 0;
+        left: 0;
+        height: 100%;
+        position: absolute;
+        z-index: $card-absolute-link-z-index;
+        width: 100%;
+        display: block;
+        &:hover {
+            background: $card-hover-color;
+            & ~ .card .card__contents .card__footer,
+            & ~ .card__contents .card__footer,
+            & ~ .card__footer {
+                z-index: $card-absolute-link-footer-z-index;
+                pointer-events: none;
+
+                a {
+                    color: $card-white;
+                }
+            }
+        }
+        &:before{
+            content: " ";
+        }
+    }
+}
+
+.card__sub-brand-title {
+    font-family: $font-family-base;
+    strong, b {
+        color: $card-white;
+        font-weight: $card-font-weight-normal;
+        display: block;
+	font-size: $card-title-font-size;	
+    }
+}
+
+// Card footer
+.card--with-footer {
+    .card__contents {
+        min-height: inherit;
+        @include flexbox;
+        @include flex-direction(column);
+        width: 100%;
+    }
+}
+
+.card__footer{
+    margin-top:auto;
+    @include clearfix;
+    position: relative;
+    z-index: $card-footer-z-index;
+}
+
+// Responsive card heights
+@include card-height-responsive($card-height);
+
+// Responsive flexbox
+@include flexbox-responsive();
+
+// Card diary
+.card__agenda {
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+
+    .card {
+        min-height: inherit;
+    }
+
+    .card__contents {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+.card__agenda__month {
+    font-size: $card-month-font-size;
+    font-weight: bold;
+    font-family: $font-family-base;
+    line-height: $card-month-line-height;
+    color: $card-primary;
+}
+.card__agenda__year {
+    color: $white;
+    display: block;
+}
+.card__agenda__date {
+    font-size: $card-date-font-size;
+    font-weight: bold;
+    font-family: $font-family-base;
+    line-height: $card-date-line-height;
+    color: $card-primary;
+    position: absolute;
+    bottom: $card-agenda-date-bottom;
+    right: $card-agenda-date-right;
+    margin: 0;
+}
+.card__agenda__date--smaller{
+    font-size: $card-date-smaller-font-size;
+    font-family: $font-family-base;
+    line-height: $card-date-line-height;
+}
+
+// Card colors
+.card--brand{
+    &-default{
+        background: $card-default-bg;
+        &.card--hover{
+            &:hover, &:focus {
+                background: $card-default-bg !important;
+            }
+        }
+    }
+    &-corporate{
+        background: $card-corporate;
+    }
+    &-corporate-light{
+        background: $card-corporate-light;
+    }
+    &-alumni{
+        background: $card-alumni;
+    }
+    &-alumni-light{
+        background: $card-alumni-light;
+    }
+    &-x{
+        background: $card-x;
+    }
+    &-x-light{
+        background: $card-x-light;
+    }
+    &-media{
+        background: $card-media;
+    }
+    &-media-light{
+        background: $card-media-light;
+    }
+    &-ri{
+        background: $card-ri;
+    }
+    &-ri-light{
+        background: $card-ri-light;
+    }
+}
+
+// Card video
+.card__contents a.card__video-icon{
+    position: absolute;
+    cursor: pointer;
+    z-index: $card-video-time-z-index;
+    color: $white;
+    height: auto;
+    &.icon--play{
+        right: $card-icon-play-right;
+        bottom: $card-icon-play-bottom;
+    }
+    &.icon--play-center{
+        right: $card-icon-play-center-right;
+        bottom: $card-icon-play-center-bottom;
+        @include transform(translate($card-icon-play-center-right, $card-icon-play-center-bottom));
+    }
+    &:hover,
+    &:active{
+        text-decoration: none;
+        color: $card-primary;
+    }
+}
+
+.card__video-time{
+    color: $white;
+    text-decoration: none;
+    position: relative;
+    left: $card-padding-x;
+    bottom: $card-padding-y;
+    z-index: $card-video-time-z-index;
+}
+
+@include media-up(md){
+    .card--with-collapse {
+        overflow: visible;
+        [data-collapse-trigger] {
+            margin: 0;
+            position: absolute;
+
+            &.is-trigger-active {
+                -ms-transform: rotate(45deg); /* IE 9 */
+                -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+                transform: rotate(45deg);
+
+                & + .collapse__content{
+                    margin-top: 32px ;
+                    margin-bottom: 80px;
+                }
+            }
+        }
+        .card__footer{
+            position: absolute;
+            top: calc(100% - 26px);
+            z-index: 1;
+            left: 0;
+            background: #eee;
+            &.doble--line{
+                top: calc(100% - 44px);
+            }
+        }
+
+        .card__contents{
+            overflow: visible;
+        }
+    }
+    .card__contents__blocks {
+        @include flexbox;
+        @include flex-direction(column);
+        height: calc(100% - 54px);
+    }
+}
+
+@include media-down(md){
+    .card--with-collapse {
+        .btn--secondary{
+            top:-44px;
+        }
+
+        .card__footer{
+            top: calc(100% - 26px);
+            z-index: 1;
+        }
+    }
+    .card__contents__blocks {
+        height: calc(100% - 42px);
+    }
+}
+
+.card{
+    .card-title{
+        a{
+            text-decoration: none;
+        }
+    }
+
+    .card-title-link{
+        font-size: 40px;
+        line-height: .95;
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: 4px;
+        text-decoration: none;
+        &:hover{
+            color: $brand-primary;
+            text-decoration: none;
+        }
+    }
+
+    .absolute-link{
+        bottom: 0;
+        display: block;
+        height: 100%;
+        left: 0;
+        right: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: $card-absolute-link-z-index;
+
+        &:hover {
+            background: $card-hover-color;
+            & ~ .card .card__contents .card__footer,
+            & ~ .card__contents .card__footer,
+            & ~ .card__footer {
+                z-index: $card-absolute-link-footer-z-index;
+                pointer-events: none;
+
+                a {
+                    color: $card-white;
+                }
+            }
+        }
+    }
+}
+.card--image-horizontal.card--with-footer.inverse_order{
+    display: flex;
+    //flex-direction: row-reverse;
+
+    .inverseimage{
+        order:1;
+    }
+    .inverseheader{
+        order:2;
+    }
+}
+
+.card--column-order {
+    display: flex;
+    flex-direction: column;
+
+    .img-wpr {
+        padding: 0;
+        order: 1;
+    }
+
+    .card__contents {
+        padding: 8px 8px;
+        position: relative;
+
+        @media (min-width: 768px) {
+            min-height: inherit;
+            order: 2;
+        }
+    }
+}
+.card-list{
+    .card-list-item{
+        margin-bottom: 0;
+        &:before{
+            content: none;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+/* Flexbox */
+@mixin flexbox($options: '') {
+    display: -webkit-box unquote($options);
+    display: -moz-box unquote($options);
+    display: -ms-flexbox unquote($options);
+    display: -webkit-flex unquote($options);
+    display: flex unquote($options);
+}
+
+@mixin flex($value: 1, $options: '') {
+    -moz-flex: $value unquote($options);
+    -webkit-flex: $value unquote($options);
+    -ms-flex: $value unquote($options);
+    flex: $value unquote($options);
+}
+
+@mixin flex-direction($value: row, $options: '') {
+    -moz-flex-direction: $value unquote($options);
+    -webkit-flex-direction: $value unquote($options);
+    -ms-flex-direction: $value unquote($options);
+    flex-direction: $value unquote($options);
+}
+
+@mixin flex-wrap($value: wrap, $options: '') {
+    -moz-flex-wrap: $value unquote($options);
+    -webkit-flex-wrap: $value unquote($options);
+    -ms-flex-wrap: str-replace($value, 'nowrap', 'none') unquote($options);
+    flex-wrap: $value unquote($options);
+}
+
+@mixin align-items($value: center, $options: '') {
+    -webkit-align-items: $value unquote($options);
+    -ms-flex-align: str-replace($value, 'flex-')  unquote($options);
+    align-items: $value unquote($options);
+}
+
+@mixin justify-content($value, $options: '') {
+    -moz-justify-content: $value unquote($options);
+    -webkit-justify-content: $value unquote($options);
+    -ms-flex-pack: str-replace($value, 'flex-')  unquote($options);
+    justify-content: $value unquote($options);
+}
+
+@mixin order($value: 0, $options: '') {
+    -moz-order: $value unquote($options);
+    -webkit-order: $value unquote($options);
+    -ms-flex-order: $value unquote($options);
+    order: $value unquote($options);
+}

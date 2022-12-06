@@ -1,0 +1,25 @@
+
+.nav-breadcrumb{
+    overflow: hidden;
+}
+
+.breadcrumb {
+    display: block;
+    padding: .5rem 0;
+    margin: 0;
+    font-weight: normal;
+    @include text-overflow;
+
+    .breadcrumb-item:not(:last-child):after{
+        margin: 0 0.5rem 0 .3rem;
+    }
+
+    .breadcrumb-item:last-child{
+        font-weight: bold;
+    }
+    
+    .icon-svg--folio{
+        top: 4px;
+    }
+}
+

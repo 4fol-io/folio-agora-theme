@@ -1,0 +1,63 @@
+// Default block lists
+.list-group{
+	padding: 0;
+	margin: 0;
+	.list-group__item:not(:last-child){
+		border-bottom: $list-group-border-width solid $list-group-border-color;
+	}
+	&--thin{
+		.list-group__item:not(:last-child){
+			border-bottom: $list-group-border-width-thin solid $list-group-border-color;
+		}
+	}
+}
+
+// Default nested block lists
+.list-group__second-level{
+	border-top: $list-group-border-width solid $list-group-border-color;
+	margin-bottom: -$list-group-item-padding-bottom;
+	margin-top: $list-group-secondary-item-margin-top;
+	.list-group__item{
+		padding-left: $list-group-secondary-item-padding-left;
+		margin-left: -$list-group-secondary-item-margin-left;
+
+		&:not(:last-child){
+			border-bottom: $list-group-nested-border-width solid $list-group-border-color;
+		}
+	}
+}
+
+// Default block lists with borders
+.list-group--wrapped{
+	border-top: $list-group-border-width solid $list-group-border-color;
+	border-bottom: $list-group-border-width solid $list-group-border-color;	
+	&--thin{
+		border-top: $list-group-border-width-thin solid $list-group-border-color;
+		border-bottom: $list-group-border-width-thin solid $list-group-border-color;	
+	}
+}
+
+// Default block lists item
+.list-group__item{
+	margin: 0 !important;
+	display: block;
+	padding-top: $list-group-item-padding-top; 
+	padding-bottom: $list-group-item-padding-bottom;
+	&:before{
+		content: "";
+		margin: 0;
+	}
+}
+
+// Default block lists with link
+.list-group__item__linkblock{
+	display: block;
+	padding-top: $list-group-item-padding-top; 
+	padding-bottom: $list-group-item-padding-bottom;
+	margin-top: -$list-group-item-margin-top; 
+	margin-bottom: -$list-group-item-margin-bottom;
+	color: inherit;
+//	&:hover{
+//		text-decoration: none;
+//	}
+}

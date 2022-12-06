@@ -1,0 +1,26 @@
+/* Editor Stylesheet */
+@import "~bootstrap/scss/functions";
+@import "gef/variables";
+@import "app/variables";
+@import "gef/mixins";
+@import "app/mixins";
+
+
+// GEF
+@import "gef/core/normalize";
+@import "gef/core/reset";
+@import "gef/components/lists";
+@import "gef/components/table";
+@import "gef/components/alpha-list";
+@import "gef/components/quotes";
+@import "gef/components/typography";
+
+// App
+@import "app/fonts";
+@import "app/typo";
+
+body.mce-content-body {
+    margin: 1rem !important;
+    font-size: 1.1rem;
+    line-height: 1.2;
+}

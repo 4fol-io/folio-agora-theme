@@ -1,0 +1,30 @@
+//Form Tips
+.form-tip{
+	position: relative;
+	&:hover{
+		.form-tip__contents{
+			display: block;
+		}
+	}
+
+	.form-item:focus + .form-tip__contents {
+		display: block;
+	}
+}
+
+.form-tip__contents{
+	display: none;
+	color: $form-tip-primary-color;
+	position: absolute;
+	//bottom: $form-tip-bottom;
+	border: $form-tip-border;
+	background-color: $form-tip-background;
+	padding: $form-tip-padding;
+	width: auto;
+	z-index: $form-tip-contents-z-index;
+}
+
+.form-tips__contents__secondary {
+	display: block;
+	color: $form-tip-secondary-color;
+}

@@ -1,0 +1,245 @@
+//Custom Select
+.select--custom{
+    position: relative;
+    display: block; 
+
+    &:before{
+      @extend .icon;
+      @extend .icon--arrow-down;
+      font-size: $custom-select-icon-size;
+      height: $custom-select-icon-size;
+      color: $custom-select-icon-color;
+      position: absolute;
+      right: $custom-select-icon-spacing;
+      bottom: $custom-select-icon-spacing;
+      pointer-events: none; 
+    }
+
+    select{
+      @include prefix((appearance: none), webkit moz);
+    }
+
+    .option--custom {
+      border-bottom: $custom-select-option-border-width-thin solid $custom-select-option-border-color;
+      padding: 0  0 0 $custom-select-option-padding-x;
+
+      &:first-child{
+        border-top: $custom-select-option-border-width solid $custom-select-option-border-edge-color;
+      }
+
+      &:last-child{
+        border-bottom: $custom-select-option-border-width solid $custom-select-option-border-edge-color;
+      }
+
+      &:focus,
+      &:hover{
+        background: $grey;
+      }
+    }
+}
+
+
+
+select.form-item{
+  option[disabled]{
+    opacity: $input-opacity-disable;
+  }
+}
+
+// Removed for avoiding w3c errors and unnecessary styles applied
+//// targets Firefox only
+//@-moz-document url-prefix() {
+//  select.form-item{
+//    padding: $input-padding-moz;
+//  }
+//
+//  button::-moz-focus-inner,
+//  select::-moz-focus-inner {
+//      //border: 0;
+//      //padding: 0;
+//  }
+//}
+
+.select--custom--dropdown {
+  position: relative;
+  width: 100%;
+
+  select {
+    position: absolute;
+    left: -999999px;
+    z-index: 1;
+
+    &:focus + div {
+      outline: auto $form-item-outline-width -webkit-focus-ring-color;
+    }
+  }
+
+    .select--custom--dropdown__content:before {
+      @extend .icon;
+      @extend .icon--arrow-down;
+      font-size: $custom-select-icon-size;
+      height: $custom-select-icon-size;
+      color: $custom-select-icon-color;
+      position: absolute;
+      right: $custom-select-icon-spacing;
+      bottom: $custom-select-icon-spacing;
+      pointer-events: none; 
+    }
+
+  .select--custom--dropdown__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .select--custom--dropdown__selected-value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: calc(100% - 32px);
+  }
+
+  .select--custom--dropdown__values {
+    position: absolute;
+    top: 36px;
+    width: 100%;
+    background: $grey-light;
+      border: none;
+      max-height: 0;
+      z-index: 14;
+    overflow: hidden;
+
+    @include transition(all);
+
+    .select--custom--dropdown__item:first-of-type {
+      color: $input-color-placeholder;
+    }
+
+    .select--custom--dropdown__item[data-select-list-item=""] {
+      color: $input-color-placeholder;
+    }
+  }
+
+  .select--custom--dropdown__item {
+      list-style-type: none;
+      display: block;
+      padding: 0 4px 16px;
+      border-top: 1px solid #d0d0d0;
+
+      &.selected {
+        background: $custom-select-item-selected-bg;
+        color: $custom-select-item-selected-color !important;
+      }
+  }
+
+  &.is-select-open {
+    .select--custom--dropdown__values {
+      max-height: $custom-select-list-max-height;
+      border-bottom: 4px solid $brand-primary;
+        border-top: 4px solid $brand-primary;
+        overflow: auto;
+        overflow-x: hidden;
+      }
+
+      .select--custom--dropdown__content {
+        outline: auto $form-item-outline-width -webkit-focus-ring-color;
+      }
+  }
+
+  &.hint .select--custom--dropdown__selected-value {
+    color: $input-color-placeholder;
+  }
+}
+
+
+//Custom select styles based on https://github.com/filamentgroup/select-css
+
+// Container used for styling the custom select, the buttom class below adds the bg gradient, corners, etc.
+.custom-select {
+  position: relative;
+  display:block;
+  margin-top:0.5em;
+  padding:0;
+	border: $select-custom-border;
+	border-radius: $select-custom-border-radius;
+}
+
+
+// This is the native select, we're making everything but the text invisible so we can see the button styles in the wrapper
+.custom-select select {
+  width:100%;
+  margin:0;
+  background:none;
+  border: 1px solid transparent;
+  outline: none;
+  /* Remove select styling */
+  @include prefix((appearance: none), webkit moz);
+  /* General select styles: change as needed */
+  padding: $select-custom-padding-x $select-custom-padding-y;
+  line-height: $line-height;
+}
+
+
+// Custom arrow sits on top of the select - could be an image, SVG, icon font, etc. or the arrow could just baked into the bg image on the select. Note this si a 2x image so it will look bad in browsers that don't support background-size. In production, you'd handle this resolution switch via media query but this is a demo.
+    
+.custom-select::after {
+  //content: "";
+  position: absolute;
+	@extend .icon;
+	//@extend #{$select-custom-icon}:before;
+	color: $select-custom-icon-color;
+	text-align: center;
+	width: 2.4em;
+  height: 100%;
+	padding-top: .9em;
+  top: 0;
+  right: 0;
+  z-index: 2;
+	border-left: $select-custom-border;
+	//background-color: $select-custom-bg;
+	border-radius: 0 $select-custom-border-radius $select-custom-border-radius 0;
+  //This hack make the select behind the arrow clickable in some browsers
+  pointer-events:none;
+}
+
+//Focus style
+.custom-select select:focus {
+  outline:none;
+  background-color:transparent;
+  //border-color: $select-custom-focus-border;
+	//box-shadow: 0 0 1px 1px $brand-secondary;
+}
+
+// Set options to normal weight
+.custom-select option {
+  font-weight:normal;
+}
+
+
+
+
+
+//START OF UGLY BROWSER-SPECIFIC HACKS 
+
+// OPERA - Pre-Blink nix the custom arrow, go with a native select button to keep it simple. Targeted via this hack http://browserhacks.com/#hack-a3f166304aafed524566bc6814e1d5c7
+x:-o-prefocus, .select--custom::after {
+  display:none;
+}
+
+// IE 10/11+ - This hides native dropdown button arrow so it will have the custom appearance, IE 9 and earlier get a native select - targeting media query hack via http://browserhacks.com/#hack-28f493d247a12ab654f6c3637f6978d5 - looking for better ways to achieve this targeting
+// The second rule removes the odd blue bg color behind the text in the select button in IE 10/11 and sets the text color to match the focus style's - fix via http://stackoverflow.com/questions/17553300/change-ie-background-color-on-unopened-focused-select-box
+@media screen {
+  .select--custom select::-ms-expand {
+    display: none;
+  }
+  .select--custom select:focus::-ms-value {
+    background: transparent;
+    color: #222;
+  }
+}  
+
+
+// Firefox focus has odd artifacts around the text, this kills that. See https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-focusring
+.custom-select select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}

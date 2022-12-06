@@ -1,0 +1,77 @@
+// Default lists
+ul, ol{
+	padding-left: 0;
+	ul, ol{
+		margin-top: $list-margin-bottom;
+		padding-left: $list-nested-padding;
+	}
+	li{
+		margin-bottom: $list-margin-bottom;
+	}	
+}
+
+ul{
+	li{
+		list-style: none;
+		padding-left: $list-margin-right*3;
+
+		&:before{
+			content: "\2022";
+			position: absolute;
+			display: inline-block;
+			font-size: 100%;
+			margin-left: -#{$list-margin-left*3};
+		}
+	}	
+}
+
+ol li{list-style-position: inside;}
+
+// Unstyled lists
+.list--unstyled{
+	li{
+		padding-left: 0;
+		&:before{
+			margin-right: 0;
+			content: "";
+		}
+	}
+}
+
+// Inline lists
+.list--inline{
+	list-style: none;
+	padding-left: 0;
+	> li{
+		display: inline-block;
+		padding: 0 $list-inline-padding;
+		margin: 0;
+		&:before{
+			content: "";
+		}
+		&:first-child{
+			padding-left: 0;
+		}
+		&:last-child{
+			padding-right: 0;
+		}
+	}
+}
+
+.list--inline--separators{
+	> li{
+		&:after{
+			content: "-";
+			display: inline;
+			padding-left: $list-inline-separator-padding;
+		}
+		&:last-child:after{
+			content: "";
+		}
+	}
+}
+
+// Compact lists
+.list--compact > li {
+	margin: 0;
+}

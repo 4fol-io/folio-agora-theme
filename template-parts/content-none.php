@@ -1,0 +1,68 @@
+<?php
+/**
+ * Template part for displaying a message that posts cannot be found
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package AgoraFolio
+ */
+
+?>
+
+<section class="no-results not-found">
+
+	<header class="page-header">
+		<h1 class="page-title h2"><?php esc_html_e( 'Nothing Found', 'agora-folio' ); ?></h1>
+	</header><!-- .page-header -->
+
+	<div class="page-content">
+		<?php
+		if ( is_home() && current_user_can( 'publish_posts' ) ) :
+
+			printf(
+				'<p class="lead">' . wp_kses(
+					/* translators: 1: link to WP admin new post page. */
+					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'agora-folio' ),
+					array(
+						'a' => array(
+							'href' => array(),
+						),
+					)
+				) . '</p>',
+				esc_url( admin_url( 'post-new.php' ) )
+			);
+
+		elseif ( is_search() ) :
+			?>
+
+			<p class="lead"><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'agora-folio' ); ?></p>
+			
+			<div class="row">
+				<div class="col-md-6">
+				<?php
+				get_search_form();
+				?>
+				</div>
+			</div>
+
+			<?php
+
+		else :
+			?>
+
+			<p class="lead"><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'agora-folio' ); ?></p>
+
+			<div class="row">
+				<div class="col-md-6">
+				<?php
+				get_search_form();
+				?>
+				</div>
+			</div>
+
+			<?php
+
+		endif;
+		?>
+	</div><!-- .page-content -->
+</section><!-- .no-results -->

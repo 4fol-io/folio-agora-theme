@@ -1,0 +1,62 @@
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:     "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base:           $font-family-sans-serif !default;
+
+// Pixel value used to responsively scale all typography. Applied to the `<html>` element.
+
+$font-size-base:             (14/16)+rem;
+$font-size-lg:               (16/16)+rem;
+$font-size-xs:               (12/16)+rem;
+
+$font-size-h1:               (30/16)+rem;
+$line-height-h1:			       1.1;
+$font-weight-h1:			       400;
+
+$font-size-h2:               (24/16)+rem;
+$line-height-h2:			       1.1;
+$font-weight-h2:			       400;
+
+$font-size-h3:               (20/16)+rem;
+$line-height-h3:			       1.1;
+$font-weight-h3:			       400;
+
+$font-size-h4:               (18/16)+rem;
+$line-height-h4:			       1.1;
+$font-weight-h4:			       400;
+
+$font-size-h5:               (14/16)+rem;
+$line-height-h5:			       1.1;
+$font-weight-h5:			       500;
+
+$font-size-h6:               (14/16)+rem;
+$line-height-h6:			       1.1;
+$font-weight-h6:			       600;
+
+$line-height:                1.5;
+
+$headings-margin-bottom:     ($spacer / 2) !default;
+$headings-font-family:       inherit !default;
+$headings-color:             inherit !default;
+
+$text-muted:                  $grey-medium !default;
+
+//$abbr-border-color:           $gray-light !default;
+
+//$blockquote-small-color:      $gray-light !default;
+//$blockquote-font-size:        ($font-size-base * 1.25) !default;
+//$blockquote-border-color:     $gray-lighter !default;
+
+
+$link-color:									$blue !default;
+$link-decoration:							underline !default;
+$link-hover-color:						lighten($link-color, 10) !default;
+$link-hover-decoration:				underline;
+
+$link-color-inverse:					$body-color-inverse;
+$link-hover-color-inverse:		lighten($link-color-inverse, 10) !default;

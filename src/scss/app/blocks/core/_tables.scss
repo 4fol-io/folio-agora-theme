@@ -1,0 +1,113 @@
+
+// Table block.
+
+.wp-block-table {
+
+	&.has-fixed-layout {}
+
+	&.is-style-stripes{
+		border: 0;
+		margin: 0;
+		table{
+			@extend .table;
+			@extend .table-striped;
+
+			td, th{
+				border-color: $table-border-color;
+			}
+		}
+	}
+
+	&.alignleft,
+	&.aligncenter,
+	&.alignright {
+		width: 100%;
+		max-width: 100%;
+		table{
+			margin-bottom: 0;
+		}
+	}
+
+	@include media-breakpoint-up(sm) {
+		&.alignleft,
+		&.aligncenter,
+		&.alignright {
+			width: $alignment-width-sm;
+			max-width: $alignment-width-sm;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		&.alignleft,
+		&.aligncenter,
+		&.alignright {
+			width: $alignment-width-md;
+			max-width: $alignment-width-md;
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		&.alignleft,
+		&.aligncenter,
+		&.alignright {
+			width: $alignment-width-lg;
+			max-width: $alignment-width-lg;
+		}
+	}
+
+	@include media-breakpoint-up(xl) {
+		&.alignleft,
+		&.aligncenter,
+		&.alignright {
+			width: $alignment-width-xl;
+			max-width: $alignment-width-xl;
+		}
+	}
+
+}
+
+
+.wp-block-calendar{
+	table{
+		@extend .table;
+		font-family: inherit;
+		caption{
+			caption-side: top;
+			text-transform: capitalize;
+			color: $table-caption-color;
+		}
+		th{
+			font-weight: $font-weight-bold;
+			background: transparent;
+		}
+
+		th, td{
+			border-color: $table-border-color;
+			border-left: 0;
+			border-right: 0;
+		}
+
+		td{
+			border-bottom: 0;
+		}
+
+		a{
+			color: $link-color;
+			text-decoration: none;
+			&:hover, &:focus{
+				text-decoration: underline;
+				color: $link-hover-color;
+			}
+		}
+	}
+
+	tfoot {
+		td:first-child{
+			text-align: left;
+		}
+		td:last-child{
+			text-align: right;
+		}
+	}
+	
+}

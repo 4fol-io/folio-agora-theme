@@ -1,0 +1,211 @@
+// Fullwidth
+.fullwidth {
+    width: 100%;
+    position: relative;
+    padding-top: $fullwidth-padding-top-small;
+    overflow: hidden;
+    min-height: $height-1y;
+    height: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.fullwidth__wrapper {
+    min-height: inherit;
+    max-width: $fullwidth-wrapper-width;
+    margin: 0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+// Fullwidth image
+.fullwidth--img-left {
+    background-position: bottom left;
+}
+
+.fullwidth--img-right {
+    background-position: bottom right;
+}
+
+@include media-up(md) {
+    .fullwidth--img-left {
+        background-position: center left;
+    }
+
+    .fullwidth--img-right {
+        background-position: center right;
+    }
+}
+
+// Fullwidth icons
+.fullwidth--icon-center {
+    display: block;
+    position: absolute;
+    z-index: $fullwidth-z-index-content-center-icon;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    margin: auto;
+    font-size: $fullwidth-play-size;
+    text-align: center;
+    color: $white;
+    background: none;
+    border: 0;
+
+    &:hover {
+        text-decoration: none;
+        color: $fullwidth-hover-color;
+    }
+}
+
+.fullwidth__icon-bottom {
+    position: absolute;
+    z-index: $fullwidth-z-index-content-center-icon;
+    left: 0;
+    right: 0;
+    bottom: $fullwidth-bottom-icon-bottom;
+    margin: auto;
+    color: $white;
+    text-align: center;
+
+    @include media-down(md) {
+        position: relative;
+        bottom: 0;
+        margin: $fullwidth-bottom-icon-margin-mobile;
+        display: block;
+    }
+
+    &:hover {
+        text-decoration: none;
+        color: $fullwidth-hover-color;
+    }
+}
+
+// Fullwidth height
+@include fullwidth-height-responsive($fullwidth-height);
+
+// Banner
+.banner-full{
+    position: relative;
+    margin-bottom: $page-unit*4;
+    max-height: $banner-max-height-desktop;
+    min-height: $banner-max-height-desktop;
+
+    @include media-down(md) {
+        min-height: $banner-max-height-mobile;
+        max-height: $banner-max-height-mobile;
+    }
+    
+    // Banner img
+    >img{
+        @include media-up(lg) {
+            min-width: calc(100% + #{$banner-outer-width});
+        }
+
+        position: relative;
+        display: block;
+        z-index: $banner-img-z-index;
+        max-height: $banner-max-height-desktop;
+    
+        margin-left: -$banner-outer-margin;
+        margin-right: -$banner-outer-margin;
+        max-width: 100%;
+        min-height: $banner-max-height-desktop;
+        min-width: calc(100% + #{($banner-outer-margin+$banner-inner-margin)});
+
+        @include media-down(md) {
+            min-height: $banner-max-height-mobile;
+            max-height: $page-module*8; 
+        }
+    }
+    // Banner content over image
+    .banner-full__content{
+        position: absolute;
+        top: 0;
+        z-index: $banner-content-z-index;
+        padding-top: $page-unit*8;
+
+        .banner-full__title{
+            width: 100%;
+            display: inline-block;
+            padding-bottom: $page-unit*2;
+            line-height: $banner-title-line-height;
+            font-weight: $banner-title-font-weight;           
+            font-size: $banner-title-font-size-desktop;
+            
+            @include media-only(md) {
+                font-size: $banner-title-font-size-mobile;
+            }
+        }
+        .banner-full__description{
+            margin-bottom: $page-unit*3;
+            padding-bottom: 0;
+        
+            font-family: $font-family-serif;
+            font-weight: $banner-description-font-weight;
+            font-size: $banner-description-font-size-desktop;
+            @include media-only(md) {
+                font-size: $banner-description-font-size-mobile;
+            }
+        }
+    }
+    // Banner icon over image
+    .icon--arrow-down{
+        width: $page-unit*8;
+        position: absolute;
+        bottom: $page-unit*8;
+        left: 0;
+        right: 0;
+        z-index: $banner-icon-arrow-z-index;
+            
+        margin: auto;
+
+        color: $white;
+        font-weight: normal;
+        font-size: $banner-icon-arrow-font-size;
+        
+        &:hover{
+            color: $brand-primary;
+            text-decoration: none;
+        }
+    }
+    .icon--play, .icon--play-center {
+        &:hover{
+            color: $brand-primary;
+        }
+    }
+}
+// Banner variant
+.banner-full--inverse{
+    color: $white;
+}
+// Banner background pattern
+.banner-full__tint {
+    background: $brand-primary;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include opacity($banner-full-tint-opacity);
+    z-index: $banner-full-tint-z-index;
+
+    @include media-up(lg) {
+        min-width: calc(100% + #{$banner-outer-width});
+    }
+
+    @include media-up(lg) {
+        margin-left: -$banner-outer-margin;
+        margin-right: -$banner-outer-margin;
+        max-width: $page-width;
+    }
+    @include media-down(lg) {
+        width: calc(100% + #{$banner-inner-margin});
+        left: -($banner-outer-margin/2);
+        right: -($banner-outer-margin/2);
+    }
+}

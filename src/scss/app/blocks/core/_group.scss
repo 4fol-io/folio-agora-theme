@@ -1,0 +1,18 @@
+// Group
+
+.wp-block-group {
+
+	&.alignwide.has-background, 
+	&.alignfull.has-background{
+		padding-top: $block-margin-y;
+		padding-bottom: $block-margin-y;
+		.wp-block-columns{
+			margin-bottom: 0;
+		}
+	}
+
+	&__inner-container {
+		@extend .container;
+	}
+
+}

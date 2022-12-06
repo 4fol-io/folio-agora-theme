@@ -1,0 +1,14 @@
+/* Sticky scroll top */
+
+.sticky-scroll-foot{
+    .sticky-scroll {
+        position: fixed;
+        right: 0;
+        bottom: 50px;
+        z-index: 9;
+        transform: translate(0, -50%);
+        &.off{
+            display: none;
+        }
+    }
+}

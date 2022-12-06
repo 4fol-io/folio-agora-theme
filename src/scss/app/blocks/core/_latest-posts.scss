@@ -1,0 +1,56 @@
+
+// Latest posts block.
+
+.wp-block-latest-posts {
+
+	&__list {
+		list-style: none;
+		padding: 0;
+		li{
+			> a{
+				font-size: $h5-font-size;
+			}
+		}
+	}
+
+	&.aligncenter{
+		text-align: center;
+	}
+
+	&.is-grid {
+		display:    flex;
+		flex-wrap:  wrap;
+		padding:    0;
+		list-style: none;
+		margin-right: -30px;
+
+		li {
+			border-top: 1px solid $gray-100;
+			padding-top: .5rem;
+			margin: 0 30px 30px 0;
+			width:  100%;
+		}
+
+		&.alignfull{
+			padding-left: $grid-gutter-width / 2;
+			padding-right: $grid-gutter-width / 2;
+			position: relative;
+			right: -15px;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		@for $i from 2 through 6 {
+			&.columns-#{ $i } li {
+				width: calc( ( 100% / #{ $i } ) - 30px );
+			}
+		}
+	}
+
+	&__post-date {
+		display: block;
+		font-size: $font-size-sm;
+		color: $gray-500;
+	}
+
+}

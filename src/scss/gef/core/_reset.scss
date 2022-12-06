@@ -1,0 +1,90 @@
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+p{
+	margin-top: 0;
+}
+
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+
+ &:hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: $spacer-y;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+ol ol {
+	list-style-type: upper-roman;
+}
+
+
+//Forms
+
+label {
+  display: inline-block;
+  margin-bottom: .2rem;
+}
+
+input,
+button,
+select,
+textarea {
+  margin: 0;
+  line-height: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: .2rem;
+  font-size: 1.5rem;
+  line-height: inherit;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+//Images
+
+img{
+	max-width: 100%;
+	height: auto;
+}

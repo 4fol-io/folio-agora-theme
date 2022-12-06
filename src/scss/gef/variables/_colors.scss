@@ -1,0 +1,48 @@
+// Brand main colors
+$brand-primary: 				#000078;
+$brand-secondary: 				#73EDFF;
+$brand-secondary-light: 		#D5FAFF;
+
+// Sub-brand colors
+$brand-alumni:					#BD9EFF;
+$brand-alumni-light:			#EBE2FF;
+$brand-x:						#FFE000;
+$brand-x-light:					#FFF6B2;
+$brand-media:					#FF87FF;
+$brand-media-light:				#FFDBFF;
+$brand-ri:						#38ff90;
+$brand-ri-light:				#C3FFDE;
+$brand-corporate:				#FF7D87;
+$brand-corporate-light:			#FFD8DB;
+
+// Other general colors
+$grey-dark: 					#706F6F;
+$grey-medium:					#878787;
+$grey: 							#D0D0D0;
+$grey-light: 					#F0F0F0;
+$grey-lighter: 					#F8F8F8;
+$white: 						#FFFFFF; 
+
+$blue: 							#4078c0;
+$green:							#568C2F;
+$orange:						#fec13d;
+$red:							#FF0000;
+
+// Background lighten colors
+$bg-primary:					rgba($brand-primary,.6);
+$bg-primary-light:				rgba($brand-primary,.3);
+
+// Interface colors
+$body-bg: 						$white !default;
+$body-titles: 					$brand-primary !default;
+$body-color: 					$brand-primary !default;
+$body-color-inverse:			$white !default;
+
+// Error colors
+$error:							$red !default;
+$error-light:					#FFD4D4;
+
+$message-info:                  #d6faff;
+$message-success:               #d8ffea;
+$message-warning:               #fbe5a2;
+$message-error:                 #ffd9dc;

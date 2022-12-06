@@ -1,0 +1,125 @@
+// Collapse content (js enabled)
+.collapse__content {
+    max-height: 0;
+    overflow: hidden;
+    @include transition(max-height);
+}
+
+body.noscript .collapse__content{
+    max-height: 0;
+}
+
+.uncollapsed > .collapse__content {
+    /* Added for avoid hiding elements when collapse elements are already shown */
+    -webkit-animation: delay-overflow 0s 200ms;
+    -moz-animation:    delay-overflow 0s 200ms;
+    -o-animation:      delay-overflow 0s 200ms;
+    animation:         delay-overflow 0s 200ms;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode:    forwards;
+    -o-animation-fill-mode:      forwards;
+    animation-fill-mode:         forwards;
+}
+
+@include media-up(md) {
+    .collapse__content.collapse__content--mobile-only {
+        max-height: 100% !important;
+    }
+}
+
+// Collapse
+.collapse {
+    .icon--plus--rotate {
+        @include transform(rotate($collapse-icon-rotate));
+    }
+    > a:hover,
+    [data-collapse-trigger]:hover {
+        text-decoration: none;
+    }
+}
+
+.collapse__content {
+    position: relative;
+}
+
+// Collapse show more
+.collapse--show-more {
+    font-family: $font-family-sans;
+    position: relative;
+    padding-bottom: $collapse-show-more-padding-bottom;
+
+    a {
+        outline: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: $spacer-y 0;
+        width: 100%;
+        text-decoration: none;
+        border-top: $ruler-width-thin solid $grey-light;
+    }
+
+    .icon {
+        position: relative;
+    }
+}
+
+.collapse__wrapper {
+    padding: 0 0 $accordion-padding-bottom;
+}
+
+// Collapse button
+.collapse__trigger,
+.collapse__trigger:hover {
+    text-decoration: none;
+}
+
+.collapse__trigger {
+    display: block;
+    position: relative;
+    border-top: $accordion-border-size solid $accordion-border-color;
+
+    &.is-trigger-active + .collapse__content {
+        margin-top: $collapse-margin-top;
+    }
+}
+.collapse__trigger {
+    .collapse__title{
+        margin-right: 40px; 
+    }
+}
+.collapse__trigger .icon {
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    @include font-size($accordion-icon-size);
+    font-weight: $accordion-icon-weight;
+}
+
+// Collapse flip flap effect
+.collapse-flipflap__content {
+    > a:hover,
+    [data-collapse-trigger]:hover {
+        text-decoration: none;
+    }
+}
+.collapse-flip,
+.collapse-flap {
+    display: none;
+}
+.collapse-flip {
+    display: block;
+}
+.is-flap-active .collapse-flip {
+    display: none;
+}
+.is-flap-active .collapse-flap {
+    display: block;
+}
+[data-collapse-inner]{
+    @at-root _:-ms-fullscreen, :root & {
+        display: block;
+    }
+    display: table;
+    width: 100%;
+}

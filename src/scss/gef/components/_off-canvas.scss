@@ -1,0 +1,53 @@
+html {
+	font-size: #{$pixelBase}px;
+}
+
+body{
+	background-color: $off-canvas-body-bg;
+	overflow-x: hidden;
+	max-width: 100%;
+	@include font-size($font-size-base);
+}
+.off-canvas-wrap{
+	background-color: $off-canvas-wrap-bg;
+	min-height: 100vh;
+	@include clearfix();
+	position: relative;
+	right: 0;
+	transition: right $off-canvas-animation;
+}
+.off-canvas-wrap:target{
+	right: $off-canvas-size;
+}
+
+.fw-is-js .off-canvas-wrap:target{
+	right: 0;
+}
+
+.fw-is-js .off-canvas-wrap.is-nav-open,
+.fw-is-js .off-canvas-wrap.is-nav-open:target{
+	right: $off-canvas-size;
+}
+
+.off-canvas{
+	position: absolute;
+	top: 0;
+	right: -$off-canvas-size;
+	width: $off-canvas-size;
+		@include media-up(md) {
+  		position: static;
+			width: auto;
+  	}
+}
+
+//Prevents weird scrolling on iOS
+.fw-is-js .off-canvas{
+	display: none;
+	@include media-up(md){
+		display: block;
+	}
+}
+.fw-is-js .is-nav-open .off-canvas{
+	display: block;
+}
+

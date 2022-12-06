@@ -1,0 +1,53 @@
+.main-footer{
+	p{
+		font-family: $font-family-serif;
+		font-size: 0.8rem;
+		padding:10px 0;
+	}
+	.nav-brands{
+		list-style: none;
+		padding:10px 0;
+		li{
+			width: 11.1%;
+			padding: 0 0 0 5.6px;
+			@include media-down(md){
+				width: 50%;
+			}
+			@include media-down(sm){
+				width: 100%;
+			}
+			&:before{
+				content: "";
+				margin: 0;
+				font-size: 0;
+			}	
+			a{
+				display: block;
+				width: 100%;
+				text-decoration: none;
+				font-family: $font-family-serif;
+				cursor: pointer;
+				&:hover{
+					text-decoration: none;
+					color: #000078;
+					span{
+						border-color: #d0d0d0;
+					}
+				}
+				span{
+					display: block;
+					font-size: 0.8rem;
+					@include media-down(lg){
+						font-size: 0.6rem;
+					}
+					@include media-down(md){
+						font-size: 0.8rem;
+					}
+					&:hover{
+						border-color: #d0d0d0;
+					}
+				}
+			}
+		}
+	}
+}

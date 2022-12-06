@@ -1,0 +1,30 @@
+
+// Latest posts block.
+
+.wp-block-latest-posts {
+
+	&__list {
+		list-style: none;
+		padding: 0;
+		li{
+			> a{
+
+			}
+		}
+	}
+
+	&.is-grid {
+		padding:    0;
+		list-style: none;
+
+		li {
+			border-top: 1px solid $grey-lighter;
+			padding-top: .5rem;
+		}
+	}
+
+	&__post-date {
+		display: block;
+	}
+
+}

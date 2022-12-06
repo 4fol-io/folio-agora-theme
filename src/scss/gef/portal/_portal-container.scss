@@ -1,0 +1,76 @@
+div.xx-portal-hero-container{
+	padding: 4rem 1rem;
+	h2{
+		&.h1{
+			font-size: 2.25rem;
+			line-height: 1.1;
+			font-weight: 500;
+		}
+	}
+	a.btn{
+		margin-top: 2rem;
+	}
+}
+
+.xx-portal-section-text{
+	//font-size: 1rem;
+	> h1, > .h1{
+		font-size: 2.5rem;
+		line-height: 1.1;
+		font-weight: 500;
+	}
+	> h2, > .h2{
+		font-size: 2rem;
+		line-height: 1.1;
+		font-weight: 500;
+	}
+	> p{
+		//font-size: 1rem;
+		//line-height: 1.5;
+	}
+	code{
+		font-size: 0.75rem;
+	}
+	.xx-code-highlight pre .hljs{
+		padding: 1rem 1rem;
+		line-height: 1.5;
+	}
+	> h6, > .h6{
+		font-weight: 500;
+		text-transform: uppercase;
+		font-size: 83%;
+		letter-spacing: 0.075em;
+	}
+	> h3, > .h3{
+		font-weight: 500;
+		font-size: 1.5rem;
+		line-height: 1.1;
+	}
+	> h5, > .h5{
+		font-size: 1rem;
+		line-height: 1.1;
+		font-weight: 500;
+	}
+	> h4, > .h4 {
+	    font-size: 1.25rem;
+	    line-height: 1.1;
+	    font-weight: 500;
+	}
+	> ul {
+		li {
+			//font-size: 1rem;
+		}
+	}
+	> .alert {
+		background: #fafafa;
+		font-size: 1rem;
+
+		> * {
+			color: inherit;
+		}
+
+		code {
+			color: #568C2F;
+		}
+	}
+}

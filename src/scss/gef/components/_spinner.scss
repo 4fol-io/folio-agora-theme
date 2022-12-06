@@ -1,0 +1,19 @@
+// Spinner animation
+@keyframes spinner {
+  	0% {
+    	transform: rotate($spinner-animation-degree-origin);
+  	}
+  	100% {
+    	transform: rotate($spinner-animation-degree-destination);
+	}
+}
+
+// Spinner
+.spinner{
+	display: inline;
+	animation: spinner $spinner-animation-time linear infinite;
+	width: $spinner-animation-width;
+	.icon{
+		display: block;
+	}
+}

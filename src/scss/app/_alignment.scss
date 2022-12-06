@@ -1,0 +1,114 @@
+// Alignment Core classes
+
+
+.alignnone {
+	margin-left: 0;
+	margin-right: 0;
+	max-width: 100%;
+}
+
+.alignleft, .alignright, .aligncenter{
+	margin-bottom: $paragraph-margin-bottom;
+}
+
+.aligncenter{
+	//display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignwide, .alignfull {
+	margin-bottom: 1.5rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+@include media-up(sm) {
+	.alignleft {
+	  float: left;
+	  margin-right: 1.5rem;
+	}
+	.alignright {
+	  float: right;
+	  margin-left: 1.5rem;
+	}
+}
+
+// Alignment Gutenberg classes
+
+
+.single, 
+.page {
+
+	.alignfull {
+		width: 100vw;
+		max-width: 100vw;
+		margin-left: calc(50% - 50vw);
+	}
+
+	@include media-up(sm) {
+		.alignwide {
+			width: auto;
+			margin-left: calc(20% - 20vw);
+			margin-right: calc(20% - 20vw);
+		}
+	}
+
+	@include media-up(xl) {
+		.alignwide {
+			margin-left: calc(15% - 15vw);
+			margin-right: calc(15% - 15vw);
+		}
+	}
+
+	.align-wrap {
+		width: 100vw;
+		max-width: 100vw;
+		margin-left: calc(50% - 50vw);
+	}
+
+}
+
+
+.align-wrap .alignfull {
+	width: 100%;
+	max-width: 100%;
+}
+
+
+.align-wrap .alignwide {
+	//display: block;
+	padding-right: $grid-gutter-width / 2;
+	padding-left: $grid-gutter-width / 2;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 100%;
+	@each $breakpoint, $max-width in $wide-max-widths {
+		@include media-up($breakpoint, $grid-breakpoints) {
+		  max-width: $max-width;
+		}
+	}
+	.alignwide{
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.alignwide,
+.alignfull {
+	pointer-events: auto;
+
+	&.wp-block-columns,
+	&.has-no-margin,
+	&.has-no-margin-vertical,
+	&.has-no-margin-bottom {
+		margin-bottom: 0;
+	}
+
+	&.has-no-margin {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+}

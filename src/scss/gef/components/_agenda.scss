@@ -1,0 +1,48 @@
+.agenda{
+	table-layout: fixed;
+	
+	th,
+	td{
+		border-color: $agenda-border-color;
+	}
+	thead th{
+		border-width: 1px;
+		border-color: $agenda-border-color;
+	}
+	td{
+		padding: 0;
+	}
+}
+
+@include media-down(sm){  
+	.agenda{
+		tr, thead, tbody, th, td, &{display: block;}
+		td{
+			border-top: 0;
+		}
+	}
+}
+
+.agenda__day{
+	display: block;
+	background: $agenda-day-bg;
+	padding: $agenda-day-padding;
+	&.inactive{
+		color: $agenda-day-inactive-color;
+	}
+}
+
+.agenda__events{
+	padding: $agenda-cell-padding;
+	min-height: $agenda-events-height;
+}
+
+.event-detail{
+	display: block;
+	font-size: $agenda-events-font-size;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	max-width: 100%;
+	overflow-x: hidden;
+
+}

@@ -1,0 +1,12 @@
+.is-active-visible{
+	display: none;
+}
+
+.is-trigger-active{
+	.is-active-hidden{
+		display: none;
+	}
+	.is-active-visible{
+		display: inline-block;
+	}
+}

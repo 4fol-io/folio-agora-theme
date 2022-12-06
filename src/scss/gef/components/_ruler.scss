@@ -1,0 +1,38 @@
+// Ruler and variants
+.ruler{
+	border: 0 solid $ruler-color-base;
+	border-top-width: $ruler-width;
+}
+.ruler--thin{
+	border-top-width: $ruler-width-thin;
+}
+.ruler--double{
+	border-bottom-width: $ruler-width;
+
+	&.ruler--thin {
+		border-bottom-width: $ruler-width-thin;
+	}
+}
+
+// Ruler colors
+.ruler--primary{
+	border-color: $ruler-color-primary;
+}
+.ruler--secondary{
+	border-color: $ruler-color-secondary;
+}
+.ruler--alumni{
+	border-color: $ruler-color-alumni;
+}
+.ruler--x{
+	border-color: $ruler-color-x;
+}
+.ruler--ri{
+	border-color: $ruler-color-ri;
+}
+.ruler--corporate{
+	border-color: $ruler-color-corporate;
+}
+.ruler--media{
+	border-color: $ruler-color-media;
+}

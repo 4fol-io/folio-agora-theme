@@ -1,0 +1,30 @@
+// Spacing
+//
+// Control the default styling of most elements by modifying these
+// variables. Mostly focused on spacing.
+
+$spacer:                	8px !default;
+$spacer-double:             $spacer * 2 !default;
+$spacer-x:              	$spacer !default;
+$spacer-y:              	$spacer !default;
+$border-width:          	1px !default;
+$border-width-bold:        	$border-width * 4 !default;
+$border-radius:				0 !default;
+
+// Block heights
+$height-default: 			228px;
+$height-y4:					$height-default/4;
+$height-y3:					$height-default/3;
+$height-y2: 				$height-default/2;
+$height-1y: 				$height-default;
+$height-2y: 				($height-default*2)+$spacer-y;
+$height-3y: 				($height-default*3)+($spacer-y*2);
+$height-4y: 				($height-default*4)+($spacer-y*3);
+
+
+// Block widths
+$width-default: 			295px;
+$width-1x: 					$width-default;
+$width-2x: 					($width-default*2)+$spacer-x;
+$width-3x: 					($width-default*3)+($spacer-x*2);
+$width-4x: 					($width-default*4)+($spacer-x*3);

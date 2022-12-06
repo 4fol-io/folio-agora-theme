@@ -1,0 +1,36 @@
+$image-route: '../iconimages/';
+
+@mixin icon-svg($image-path, $image-size: 32px){
+  &:before{
+    background: url('#{$image-route}#{$image-path}') no-repeat center center;
+    background-size: $image-size;
+    content: '';
+    display: table;
+    height: $image-size;
+    margin: 0 auto;
+    width: $image-size;
+  }
+  &.icon--small:before{
+    background-size: ($image-size - 8px);
+    height: ($image-size - 8px);
+    width: ($image-size - 8px);
+  }
+}
+
+.icon.icon--filter-list-off{
+  @include icon-svg('filter-list-off.svg');
+}
+
+.icon.icon--filter-list-on{
+  @include icon-svg('filter-list-on.svg');
+}
+
+/*
+.icon.icon--arrow-drop-down{
+  @include icon-svg('arrow-drop-down.svg', 24px);
+}
+
+.icon.icon--arrow-drop-up{
+  @include icon-svg('arrow-drop-up.svg', 24px);
+}
+*/

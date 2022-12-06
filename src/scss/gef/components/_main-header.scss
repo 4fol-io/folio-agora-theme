@@ -1,0 +1,143 @@
+.main-header{
+	padding: $main-header-padding-y 0;
+	margin-bottom: $main-header-margin-bottom;
+	border-bottom: $main-header-border-bottom;
+	@include media-up(md){
+		position: relative;
+		margin-bottom: $main-nav-height*2;
+	}
+}
+
+.main-header__logo{
+	img{
+		display: block;
+	}
+}
+
+.main-header__nav{ 
+	ul{
+		@extend .list--unstyled;
+		margin-bottom: 0;
+	}
+}
+
+@include media-down(sm){
+	.main-header__nav{ 
+		a{
+			display: block;
+			padding: $small-nav-padding-y $small-nav-padding-x;
+			border-bottom: $small-nav-border-bottom;
+			border-left: $small-nav-link-hover-border-left;
+			color: $small-nav-link-color;
+			text-decoration: none;
+				&:hover,
+				&:active,
+				&.is-active{
+					border-left: $small-nav-link-hover-border-left-active;
+				}
+			
+				&:active,
+				&.is-active{
+					font-weight: $small-nav-link-hover-weight;
+			}
+		}
+	}
+}
+
+.nav-close{
+	@include media-up(md){
+		display: none;
+	}
+}
+
+
+//Styles for main navigation
+.main-nav{
+	@include media-down(sm){
+		.container{
+			padding: 0;
+		}
+	}
+	@include media-up(md) {
+  		position: absolute;
+			left: 0;
+			bottom: -$main-nav-height;
+			width: 100%;
+			height: $main-nav-height;
+			margin-bottom: -$main-nav-border-width;
+			background: $main-nav-bg;
+			text-align: center;
+			border-bottom: $main-nav-border-bottom;
+		
+			ul{
+				display: flex;
+			}
+			li{
+				display: inline-block;
+				margin-top: -$main-nav-border-width;
+				flex-grow: 1;	
+				@include media-up(lg){
+					flex-basis: 20%;
+				}
+			}
+			a{
+				display: block;
+				color: $main-nav-color;
+				font-weight: $main-nav-weight;
+				text-decoration: none;
+				padding: .65rem .5rem;
+				border-top: $main-nav-border-width solid transparent;
+				transition: $main-nav-transition;
+
+				&:hover{
+					border-top-color: $main-nav-hover-border-color;
+				}
+				@include media-up(lg){
+					font-size: #{$main-nav-font-size}px;
+				}
+			}
+  	}
+}
+
+//Styles for profiles navigation + header
+.nav-profiles{
+	font-size: #{$nav-profiles-font-size}px;
+}
+@include media-up(md){
+	.main-header__brand{
+		float: left;
+		width: 45%;
+		padding-top: .5rem;
+	}
+	.nav-profiles{
+		float: right;
+		width: 45%;
+		@include media-up(lg){
+			width: 33%;
+		}
+		li{
+			float: left;
+			width: 50%;
+			text-align: right;
+		}
+		a{
+			color: $nav-profiles-color;
+			text-decoration: none;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+	.nav-profiles__title{
+		display: none;
+	}
+}
+
+//To do: pasar a vars generales
+.nav-profiles__title{
+	padding: $small-nav-padding-y/2 $small-nav-padding-x;
+	font-size: #{$nav-profiles-font-size}px;
+	background-color: $grey;
+	border-left: $small-nav-link-hover-border-left;
+	//color: $white;
+}

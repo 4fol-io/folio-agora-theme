@@ -1,0 +1,38 @@
+// Open registration banner
+.open-registration,
+.open-registration--mini{
+    position: relative;
+    background: $open-registration-bg-color;
+    padding: 0;
+    overflow: hidden;
+    display: table;
+
+    .icon {
+        position: relative;
+        display: table-cell;
+        //right: $open-registration-position;
+        right: -6px;
+        bottom: $open-registration-position;
+        vertical-align: bottom;
+        padding: $open-registration-padding-y*2 0 0 $open-registration-padding-x;
+    }
+}
+
+.open-registration{
+    min-height: $open-registration-min-height;
+}
+
+.open-registration__text{
+    display: inline-block;
+    line-height: $open-registration-line-height;
+    margin: 0;
+    padding: $open-registration-padding-y $open-registration-padding-x;
+    float: left;
+}
+
+// Open registration banner mini
+.open-registration--mini{
+    .open-registration__text{
+        line-height: $open-registration-mini-line-height;
+    }
+}

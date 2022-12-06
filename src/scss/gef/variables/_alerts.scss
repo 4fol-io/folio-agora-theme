@@ -1,0 +1,14 @@
+// Alerts
+$alert-padding:					$spacer;
+$alert-border-width:			4px;
+$alert-border-style:			solid;
+
+// Default alert
+$alert-default:					$brand-primary;
+$alert-default-text:			$brand-primary;
+$alert-default-bg:				$brand-secondary;
+
+// Error alert
+$alert-error:					$red;
+$alert-error-text:				$red;
+$alert-error-bg:				$error-light;

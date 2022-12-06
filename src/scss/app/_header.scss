@@ -1,0 +1,165 @@
+
+// Brand header light (Campus)
+
+
+.top-featured{
+    position: relative;
+    min-height: $header-height-mobile;
+    .top-featured-img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 100% 25%;
+        &.logged-in{
+            opacity: .4;
+        }
+    }
+    .cta-folio{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 1.7rem;
+        text-decoration: none;
+        font-weight: 600;
+        padding: .55rem .5rem;
+        transition: all .25s ease;
+        &:hover, &:focus{
+            color: inherit;
+            background-color: rgba(255,255,255,0.25);
+        }
+    }
+}
+
+.brand-header-light {
+    margin-top: $header-padding-y-mobile;
+    height: auto;
+    line-height: 1.1;
+
+    .header-container {
+        max-width: $grid-max-width;
+        margin: 0 auto;
+    }
+
+    .top-logo {
+        display: inline-block;
+        width: 100px;
+        position: absolute;
+        left: 4px;
+        top: 0;
+        height: $header-height-mobile;
+        width: $logo-width-mobile;
+        //background-color: $brand-secondary;
+        .icon-svg{
+            width: 100%;
+            height: 100%;
+            background-color: $brand-secondary;
+            background-size: auto 90%;
+            background-position: 0 -10px;
+            margin-top: -2px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    /*.top-slogan {
+        font-family: $font-family-serif;
+        font-size: .8rem;
+        padding-top: 3px;
+        overflow: hidden;
+        height: $header-height-mobile;
+        margin: 0 0 0 ($logo-width-mobile + 6px);
+    }*/
+
+    .top-title-wrapper {
+        backgrond: $white;
+        margin-left: ($logo-width-mobile + 8px);
+        margin-right: ($toggle-width + 8px);
+        margin-bottom: .5rem;
+        border-bottom: 4px solid $brand-secondary;
+        overflow: hidden;
+        height: $header-height-mobile;
+        .site-title {
+            @include font-size(21);
+            @include text-overflow();
+            margin-top: 1px;
+            margin-bottom: 0;
+            font-weight: bold;
+            line-height: 1.1;
+            a{
+                text-decoration: none;
+            }
+        }
+        
+        .site-description {
+            margin: 0;
+            @include font-size(19);
+            @include text-overflow();
+            p:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @include media-up(md) {
+
+        margin-top: $header-padding-y;
+
+        .top-logo {
+            height: $header-height;
+            width: $logo-width;
+        }
+
+        .top-title-wrapper {
+            height: $header-height;
+            margin-left: ($logo-width + 8px);
+            margin-right: 0;
+            border-bottom: 0;
+            .site-title{
+                @include font-size(28);
+                margin-bottom: 4px;
+            }
+            .site-description {
+                @include font-size(24);
+                white-space: initial;
+            }
+        }
+
+        /*.top-slogan {
+            font-size: 1rem;
+            height: $header-height;
+            margin-left: ($logo-width + 8px);
+        }*/
+
+        .top-featured {
+            height: $header-height;
+            overflow: hidden;
+            .cta-folio{
+                padding: .1rem .5rem;
+            }
+        }
+    }
+
+    @include media-up(lg) {
+        /*.top-title-wrapper {
+            margin: 0; 
+        }
+        .top-slogan {
+            font-size: 1.1rem;
+        }*/
+    }
+
+    /*@include media-up(xl) {
+        .top-slogan {
+            font-size: 1.25rem;
+        }
+    }*/
+}

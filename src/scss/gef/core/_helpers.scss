@@ -1,0 +1,151 @@
+// Hide text, only screen readers read it
+%visually-hidden,
+.visually-hidden,
+html:not(.no-fontface) .icon-alt{
+	border: 0 !important;
+	/* clip property is deprecated and clip-path is not accepted in w3c
+       until w3c accept clip-path clip property shouldn't be deleted*/
+	/* clip properties disabled because of scrolling problems with frames with collapses issues */
+	/*clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;*/
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
+	&.focusable:active,
+	&.focusable:focus {
+		clip: auto !important;
+		-webkit-clip-path: none !important;
+		/*clip-path: none !important;*/
+		height: auto !important;
+		margin: 0 !important;
+		overflow: visible !important;
+		position: static !important;
+		width: auto !important;
+		white-space: normal !important;
+	}
+}
+
+// Floats
+.float-right{
+	float: right;
+}
+.float-left{
+	float: left;
+}
+
+// Clearfix
+.clearfix{
+	@include clearfix();
+}
+
+// Text alignments
+.align-left{
+	text-align: left;
+}
+.align-right{
+	text-align: right;
+}
+.align-center{
+	text-align: center;
+}
+
+// Block alignments
+.center-block{
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+}
+
+.vertical-center{
+	@include flexbox;
+	@include flex-direction(column);
+  	@include align-items(center);
+  	@include justify-content(center);
+}
+
+
+// Text colors
+.color-primary{ color: $brand-primary;}
+.color-secondary{ color: $brand-secondary;}
+.color-secondary-light{ color: $brand-secondary-light;}
+.color-alumni{ color: $brand-alumni;}
+.color-alumni-light{ color: $brand-alumni-light;}
+.color-x{ color: $brand-x;}
+.color-x-light{ color: $brand-x-light;}
+.color-media{ color: $brand-media;}
+.color-media-light{ color: $brand-media-light;}
+.color-ri{ color: $brand-ri;}
+.color-ri-light{ color: $brand-ri-light;}
+.color-corporate{ color: $brand-corporate;}
+.color-corporate-light{ color: $brand-corporate-light;}
+.color-error{ color: $error;}
+.color-error-light{ color: $error-light;}
+
+.color-grey-dark{ color: $grey-dark;}
+.color-grey-medium{ color: $grey-medium;}
+.color-grey{ color: $grey;}
+.color-grey-light{ color: $grey-light;}
+.color-grey-lighter{ color: $grey-lighter;}
+.color-white{ color: $white;}
+.color-blue{ color: $blue;}
+.color-green{ color: $green;}
+.color-red{ color: $red;}
+.color-orange{ color: $orange;}
+
+
+// Background colors
+.bg-none { background: none;}
+.bg-primary{ background-color: $brand-primary;}
+.bg-secondary{ background-color: $brand-secondary;}
+.bg-secondary-light{ background-color: $brand-secondary-light;}
+.bg-alumni{ background-color: $brand-alumni;}
+.bg-alumni-light{ background-color: $brand-alumni-light;}
+.bg-x{ background-color: $brand-x;}
+.bg-x-light{ background-color: $brand-x-light;}
+.bg-media{ background-color: $brand-media;}
+.bg-media-light{ background-color: $brand-media-light;}
+.bg-ri{ background-color: $brand-ri;}
+.bg-ri-light{ background-color: $brand-ri-light;}
+.bg-corporate{ background-color: $brand-corporate;}
+.bg-corporate-light{ background-color: $brand-corporate-light;}
+
+.bg-error{ background-color: $error;}
+.bg-error-light{ background-color: $error-light;}
+
+.bg-grey-dark{ background-color: $grey-dark;}
+.bg-grey-medium{ background-color: $grey-medium;}
+.bg-grey{ background-color: $grey;}
+.bg-grey-light{ background-color: $grey-light;}
+.bg-grey-lighter{ background-color: $grey-lighter;}
+.bg-white{ background-color: $white;}
+.bg-blue{ background-color: $blue;}
+.bg-green{ background-color: $green;}
+.bg-red{ background-color: $red ;}
+.bg-orange{ background-color: $orange;}
+
+// Modules
+.inverse{
+	color: $body-color-inverse;
+	a{
+		color: inherit;
+			&:hover{
+				color: $grey;
+			}
+	}
+}
+
+// Invisible helper
+.invisible {
+	visibility: hidden;
+	pointer-events: none;
+	@include opacity(0);
+}
+
+.hidden{
+	display: none;
+}

@@ -1,0 +1,33 @@
+// Grid breakpoints
+//
+// Define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 544px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1200px
+) !default;
+
+$grid-max-width: 75.25rem !default;  // 1204px
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:               	12 !default;
+$grid-gutter-width:          	0.5rem !default; // 30px
+
+//Main container paddings
+$grid-container-padding-xs: ($grid-gutter-width) * 1.5; 
+$grid-container-padding-sm: ($grid-gutter-width) * 4.0; 
+$grid-container-padding-md: ($grid-gutter-width) * 6.5; 
+$grid-container-padding-lg: ($grid-gutter-width) * 9.0; 
+$grid-container-padding-xl: ($grid-gutter-width) * 12.5; 

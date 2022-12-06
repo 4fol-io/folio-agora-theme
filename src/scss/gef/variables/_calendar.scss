@@ -1,0 +1,24 @@
+// Calendar
+$calendar-padding:				0;
+$calendar-width:				100%;
+$calendar-height:				($height-1y)-($spacer-y*2);
+
+// Calendar days
+$calendar-cell-padding: 			2px $spacer-x;
+$calendar-cell-line-heigth: 			1.75;
+$calendar-month-line-heigth: 			1.5;
+$calendar-month-font-size:			$font-size-h4*.9;
+$calendar-week-color:				$grey-dark;
+$calenadar-week-padding:			$spacer-y/2 $spacer-x/2;
+$calendar-day-color:				$brand-primary;
+$calendar-day-color-hover:			$grey-dark;
+$calendar-day-font-size:			$font-size-s;
+$calendar-day-inactive-color:			$grey;
+$calendar-day-active-bg:			$brand-secondary;
+$calendar-day-active-color:			$calendar-day-color;
+
+// Calendar buttons
+$calendar-controls-color: 			$brand-primary;
+$calendar-controls-font-size:			$font-size-s;
+$calendar-buttons-top:				-5px;
+$calendar-button-font-size:			$font-size-s*.9;

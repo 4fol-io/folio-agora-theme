@@ -1,0 +1,16 @@
+// Alert color mixin
+@mixin alert-variant($border, $background, $body-color) {
+	@if $border != default {
+		border-color: $border;
+	}
+	@if $background != default {
+		background-color: $background;
+	}	
+	@if $body-color != default {
+		color: $body-color;
+
+		> * {
+			color: $body-color;
+		}
+	} 
+}

@@ -1,0 +1,51 @@
+.badge{
+	display: inline-block;
+	min-width: 10px;
+	margin: 0 3px;
+	padding: $badge-padding;
+	font-weight: 700;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	color: $badge-color;
+	background-color: $badge-bg;
+	border-radius: $badge-border-radius;
+	@include smallcaps;
+	font-size: #{$font-size-xs}px;
+	&:empty{
+		display: none;
+	}
+	
+	&--info{
+		background-color: $badge-info;
+	}
+	&--success{
+		background-color: $badge-success;
+	}
+	&--warning{
+		background-color: $badge-warning;
+	}
+	&--error{
+		background-color: $badge-error;
+	}
+	&--inverse{
+		background-color: $badge-inverse;
+		color: $body-color;
+	}
+}
+
+//Double badge
+
+.double-badge{
+	.badge:first-child{
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		margin-right: 1px;
+	}
+	.badge:last-child{
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		margin-left: 1px;
+	}
+}

@@ -1,0 +1,238 @@
+// The dropdown wrapper (`<div>`)
+.dropup,
+.dropright,
+.dropdown,
+.dropleft {
+  position: relative;
+}
+
+/*.dropdown-toggle {
+  white-space: nowrap;
+}*/
+
+// The dropdown menu
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: $zindex-dropdown;
+  display: none; // none by default, but block on "open" of the menu
+  float: left;
+  min-width: $dropdown-min-width;
+  padding: $dropdown-padding-y $dropdown-padding-x;
+  margin: 0 0; // override default ul
+  @include font-size($dropdown-font-size);
+  color: $dropdown-color;
+  text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+  list-style: none;
+  background-color: $dropdown-bg;
+  background-clip: padding-box;
+  border-top: 4px solid $dropdown-border-color;
+  border-bottom: 4px solid $dropdown-border-color;
+  box-shadow: $dropdown-box-shadow;
+
+  li{
+    padding: 0;
+    margin: 0;
+    &:before{
+      content: '';
+    }
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .dropdown-menu#{$infix}-left {
+      right: auto;
+      left: 0;
+    }
+
+    .dropdown-menu#{$infix}-right {
+      right: 0;
+      left: auto;
+    }
+  }
+}
+
+// Allow for dropdowns to go bottom up (aka, dropup-menu)
+// Just add .dropup after the standard .dropdown class and you're set.
+.dropup {
+  .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: $dropdown-spacer;
+  }
+}
+
+.dropright {
+  .dropdown-menu {
+    top: 0;
+    right: auto;
+    left: 100%;
+    margin-top: 0;
+    margin-left: $dropdown-spacer;
+  }
+
+  .dropdown-toggle {
+    &::after {
+      vertical-align: 0;
+    }
+  }
+}
+
+.dropleft {
+  .dropdown-menu {
+    top: 0;
+    right: 100%;
+    left: auto;
+    margin-top: 0;
+    margin-right: $dropdown-spacer;
+  }
+
+  .dropdown-toggle {
+    &::before {
+      vertical-align: 0;
+    }
+  }
+}
+
+// When enabled Popper.js, reset basic dropdown position
+// stylelint-disable-next-line no-duplicate-selectors
+.dropdown-menu {
+  &[x-placement^="top"],
+  &[x-placement^="right"],
+  &[x-placement^="bottom"],
+  &[x-placement^="left"] {
+    right: auto;
+    bottom: auto;
+  }
+}
+
+// Dividers (basically an `<hr>`) within the dropdown
+.dropdown-divider {
+
+}
+
+// Links, buttons, and more within the dropdown menu
+//
+// `<button>`-specific styles are denoted with `// For <button>s`
+.dropdown-item {
+  display: block;
+  width: 100%; // For `<button>`s
+  padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+  clear: both;
+  font-weight: normal;
+  color: $dropdown-link-color;
+  text-align: inherit; // For `<button>`s
+  text-decoration: none;
+  // white-space: nowrap; // prevent links from randomly breaking onto new lines
+  background-color: transparent; // For `<button>`s
+  border: 0; // For `<button>`s
+
+  &:hover, &:focus {
+    color: $dropdown-link-hover-color;
+    text-decoration: none;
+  }
+
+  &.active,
+  &:active {
+    color: $dropdown-link-active-color;
+    text-decoration: none;
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $dropdown-link-disabled-color;
+    pointer-events: none;
+    background-color: transparent;
+  }
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+// Dropdown section headers
+.dropdown-header {
+  display: block;
+  padding: $dropdown-header-padding;
+  margin-bottom: 0; // for use with heading elements
+  color: $dropdown-header-color;
+  //white-space: nowrap; // as with > li > a
+}
+
+// Dropdown text
+.dropdown-item-text {
+  display: block;
+  padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+  color: $dropdown-link-color;
+}
+
+
+// Triangle
+
+.dropdown-triangle {
+  position: absolute;
+  left: 50%;
+  right: auto;
+}
+
+.dropdown-menu {
+  .dropdown-triangle {
+    @extend %triangle-arrow-up;
+  }
+
+  &[data-placement^="bottom"] {
+    .dropdown-triangle{
+      @extend %triangle-arrow-up;
+    }
+  }
+
+  &[data-placement="bottom-end"],
+  &[data-placement="top-end"] {
+    .dropdown-triangle{
+      left: auto;
+      right: 50px;
+    }
+  }
+
+  &[data-placement^="top"] {
+    .dropdown-triangle{
+      @extend %triangle-arrow-down;
+    }
+  }
+
+  &[data-placement^="right"] {
+    .dropdown-triangle{
+      left: auto;
+      right: 42px;
+    }
+  }
+
+  &[data-placement^="left"] {
+    .dropdown-triangle{
+      left: 42px;
+      right: auto;
+    }
+  }
+}
+
+
+
+/* Dropdown Sort */
+
+.dropdown-sort{
+  .dropdown-menu{
+    min-width: 13rem;
+  }
+  .dropdown-toggle{
+    .icon{
+      vertical-align: middle;
+      position: relative;
+      top: 2px;
+    }
+  }
+}

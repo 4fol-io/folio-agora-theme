@@ -1,0 +1,825 @@
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: AGORA FOLIO 1.0.0\n"
+"POT-Creation-Date: 2022-09-14 20:05+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Antoni Bertran <antoni@tresipunt.com>\n"
+"Language-Team: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_n_noop:1,2;_x:1,2c;_nx:4c,1,2;"
+"_nx_noop:4c,1,2;_ex:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;"
+"esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+"X-Poedit-SearchPathExcluded-1: .git\n"
+"X-Poedit-SearchPathExcluded-2: src\n"
+"X-Poedit-SearchPathExcluded-3: dist\n"
+
+#: 404.php:29
+msgid "Oops!"
+msgstr "Ui!"
+
+#: 404.php:30 404.php:99
+msgid "Page not found"
+msgstr "No es troba la pàgina."
+
+#: 404.php:31
+msgid "What can you do?"
+msgstr "Què pots fer?"
+
+#: 404.php:32
+msgid "Visit the Folio Learning Space"
+msgstr "Visita l'Espai d'Aprenentatge Folio"
+
+#: 404.php:55
+msgid "Content available to the UOC community"
+msgstr "Contingut disponible per a la comunitat UOC"
+
+#: 404.php:56
+#, php-format
+msgid ""
+"This page has publications that are only visible to members of the UOC "
+"community. To view the content, log in with your %1$sCampus user%2$s."
+msgstr ""
+"Aquesta pàgina té publicacions que només són visibles per als membres de la "
+"comunitat UOC. Per veure el contingut, entra amb el teu %1$susuari de Campus"
+"%2$s."
+
+#: 404.php:60
+msgid "Content available for classmates"
+msgstr "Contingut disponible per als companys i companyes de l’aula"
+
+#: 404.php:63
+#, php-format
+msgid ""
+"This page has publications that are only visible to classmates in this "
+"subject. If you are part of it and want to see the content, log in with "
+"%1$syour Campus user%2$s."
+msgstr ""
+"Aquesta pàgina té publicacions que només són visibles per als companys i "
+"companyes de l’aula d’aquesta assignatura. Si en formes part i vols veure el "
+"contingut, entra amb el %1$steu usuari de Campus%2$s."
+
+#: 404.php:67
+msgid ""
+"This page has publications that are only visible to classmates in this "
+"subject."
+msgstr ""
+"Aquesta pàgina té publicacions que només són visibles per als companys i "
+"companyes de l’aula d’aquesta assignatura."
+
+#: 404.php:71
+msgid "Content available for teachers of the subject"
+msgstr "Contingut disponible per al professorat de l’assignatura"
+
+#: 404.php:73
+#, php-format
+msgid ""
+"This page has publications that are only visible to the teachers of the "
+"subject. If you are a teacher and want to see the content, log in with your "
+"%1$sCampus user%2$s."
+msgstr ""
+"Aquesta pàgina té publicacions que només són visibles per al professorat de "
+"l’assignatura. Si ets docent i vols veure el contingut, entra amb el teu "
+"%1$susuari de Campus%2$s."
+
+#: 404.php:77
+msgid ""
+"This page has publications that are only visible to the teachers of the "
+"subject."
+msgstr ""
+"Aquesta pàgina té publicacions que només són visibles per al professorat de "
+"l’assignatura."
+
+#: 404.php:81
+msgid "Content available from the author of the publication"
+msgstr "Contingut disponible per l’autor o autora de la publicació"
+
+#: 404.php:84
+#, php-format
+msgid ""
+"This page has posts that are only visible to the person who created the "
+"content. If you are the author, log in with your %1$sFolio user%2$s."
+msgstr ""
+"Aquesta pàgina té publicacions que només són visibles per a la persona que "
+"ha creat el contingut. Si n’ets l’autor o autora, entra amb %1$sel teu "
+"usuari de Folio%2$s."
+
+#: 404.php:87
+msgid ""
+"This page has posts that are only visible to the person who created the "
+"content."
+msgstr ""
+"Aquesta pàgina té publicacions que només són visibles per a la persona que "
+"ha creat el contingut."
+
+#: 404.php:91
+#, php-format
+msgid "Do you want to go to the %1$shomepage%2$s?"
+msgstr "Vols anar a la %1$spàgina d’inici%2$s?"
+
+#: 404.php:101
+#, php-format
+msgid ""
+"The page you are looking for does not exist. Do you want to go to the "
+"%1$shomepage%2$s?"
+msgstr ""
+"Sembla que la pàgina que busques no existeix. Vols anar a la %1$spàgina "
+"d’inici%2$s?"
+
+#: 404.php:106
+#, php-format
+msgid "If you have Folio, we recommend that you log in %1$swith your user%2$s."
+msgstr "Si tens Folio, et recomanem entrar amb %1$sel teu usuari%2$s."
+
+#: comments-list.php:63 comments.php:37 inc/templates.php:71
+#: inc/templates.php:104 template-parts/content-tree.php:109
+msgid "Debate"
+msgstr "Debat"
+
+#: comments-list.php:67 comments.php:41 inc/templates.php:75
+#: inc/templates.php:104 template-parts/content-tree.php:113
+#, php-format
+msgid "on %1$s"
+msgstr "el %1$s"
+
+#: comments-list.php:80 comments-list.php:118 comments.php:49 comments.php:76
+#: inc/templates.php:80 template-parts/content-tree.php:122
+#: template-parts/content-tree.php:132
+msgid "contribution"
+msgstr "contribució"
+
+#: comments-list.php:82 comments.php:51 inc/templates.php:78
+#: inc/templates.php:82 template-parts/content-tree.php:124
+msgid "contributions"
+msgstr "contribucions"
+
+#: comments-list.php:138 inc/setup.php:271 inc/templates.php:865
+#: template-parts/content-tree.php:140
+msgid "Leave a comment"
+msgstr "Deixa un comentari"
+
+#: footer.php:27 template-parts/content-navbar.php:303
+msgid "Go to top"
+msgstr "Anar a dalt"
+
+#: footer.php:38
+msgid "Information"
+msgstr "Informació"
+
+#: footer.php:41
+msgid "Are you part of the community? Access to see more publications."
+msgstr "Formeu part de la comunitat? Accés per veure més publicacions."
+
+#: footer.php:42
+msgid ""
+"This is a personal workspace for a student of the Universitat Oberta de "
+"Catalunya. Any content published in this space is the responsibility of its "
+"author."
+msgstr ""
+"Aquest és un espai de treball personal d'un/a estudiant de la Universitat "
+"Oberta de Catalunya. Qualsevol contingut publicat en aquest espai és "
+"responsabilitat del seu autor/a."
+
+#: footer.php:47
+msgid "Access"
+msgstr "Accés"
+
+#: footer.php:52 template-parts/content-navbar.php:318
+msgid "Close"
+msgstr "Tanca"
+
+#: footer.php:62
+#, php-format
+msgid "Universitat Oberta de Catalunya &copy; %s"
+msgstr "Universitat Oberta de Catalunya &copy; %s"
+
+#: header.php:46
+msgid "Skip to content"
+msgstr "Saltar al contingut"
+
+#: header.php:101
+msgid "My folio"
+msgstr "El meu folio"
+
+#: header.php:101 inc/setup.php:269 inc/templates.php:187 inc/templates.php:351
+#: inc/templates.php:371 inc/templates.php:538
+msgid "(opens in new window)"
+msgstr "(s'obre en una finestra nova)"
+
+#: header.php:116
+msgid "Main Menu"
+msgstr "Menú principal"
+
+#: inc/customizer.php:42
+msgid "Featured header image"
+msgstr "Imatge de capçalera destacada"
+
+#: inc/data.php:86
+#, php-format
+msgid "Semester %s"
+msgstr "Semestre %s"
+
+#: inc/data.php:109
+#, php-format
+msgid "Classroom %s"
+msgstr "Aula %s"
+
+#: inc/demo.php:1343 inc/demo.php:1399
+msgid "Title:"
+msgstr "Titol:"
+
+#: inc/demo.php:1481
+msgid "Mi Folio"
+msgstr "El meu folio"
+
+#: inc/demo.php:1512
+msgid "Why are there \"not visible\" posts?"
+msgstr "Per què hi ha publicacions \"no visibles\"?"
+
+#: inc/demo.php:1513
+msgid "Publication"
+msgid_plural "Publications"
+msgstr[0] "Publicació"
+msgstr[1] "Publicacions"
+
+#: inc/demo.php:1516
+#, php-format
+msgid "%s visible"
+msgid_plural "%s visible"
+msgstr[0] "%s visible"
+msgstr[1] "%s visibles"
+
+#: inc/demo.php:1519
+#, php-format
+msgid "%s not visible"
+msgid_plural "%s not visible"
+msgstr[0] "%s no visible"
+msgstr[1] "%s no visibles"
+
+#: inc/images.php:30
+msgid "Featured Large"
+msgstr "Destadada gran"
+
+#: inc/images.php:31
+msgid "Featured Medium"
+msgstr "Destacaad mitjà"
+
+#: inc/images.php:32
+msgid "Featured Small"
+msgstr "Destacada petit"
+
+#: inc/nav.php:367
+msgid "Add a menu"
+msgstr "Afegiu un menú"
+
+#: inc/pagination.php:21
+msgid "Page"
+msgstr "Pàgina"
+
+#: inc/pagination.php:49 inc/pagination.php:111 inc/pagination.php:144
+#: inc/templates.php:50
+msgid "Previous"
+msgstr "Anterior"
+
+#: inc/pagination.php:81 inc/pagination.php:112 inc/pagination.php:145
+#: inc/templates.php:52
+msgid "Next"
+msgstr "Següent"
+
+#: inc/pagination.php:113
+msgid "Navigation"
+msgstr "Navegació"
+
+#: inc/pagination.php:146
+msgid "Debate navigation"
+msgstr "Navegació de debat"
+
+#: inc/pagination.php:171 inc/setup.php:281
+msgid "Load more"
+msgstr "Carregar més"
+
+#: inc/setup.php:57
+msgid "Primary menu"
+msgstr "Menú principal"
+
+#: inc/setup.php:170
+msgid "Primary"
+msgstr "Primari"
+
+#: inc/setup.php:175
+msgid "Secondary"
+msgstr "Secundari"
+
+#: inc/setup.php:180
+msgid "Gray"
+msgstr "Gris"
+
+#: inc/setup.php:185
+msgid "White"
+msgstr "Blanc"
+
+#: inc/setup.php:205
+msgid "Footer"
+msgstr "Peu de pàgina"
+
+#: inc/setup.php:206
+msgid "Add widgets here to appear in your footer site."
+msgstr "Afegiu widgets aquí per aparèixer al peu de página de l'lloc."
+
+#: inc/setup.php:270
+msgid "Close menu"
+msgstr "Tanca menu"
+
+#: inc/setup.php:272
+msgid "Loading"
+msgstr "Carregant ..."
+
+#: inc/setup.php:273
+msgid "Saving"
+msgstr "Guardant ..."
+
+#: inc/setup.php:274
+msgid "Sent"
+msgstr "Enviado"
+
+#: inc/setup.php:275 inc/templates.php:233 inc/templates.php:287
+msgid "Evaluated"
+msgstr "Avaluat"
+
+#: inc/setup.php:276
+msgid "Success stored grade and feedback"
+msgstr "Nota i feedback guardats correctament"
+
+#: inc/setup.php:277
+msgid "Error saving grade"
+msgstr "Error a l'desar la nota"
+
+#: inc/setup.php:278
+msgid "Error loading feedback"
+msgstr "Error a l'carregar el comentari"
+
+#: inc/setup.php:279
+msgid "Error loading grade"
+msgstr "Error a l'carregar la nota"
+
+#: inc/setup.php:280 template-parts/content-tree.php:74
+#: template-parts/content.php:116
+msgid "expand / collapse"
+msgstr "expandir / contraure"
+
+#: inc/templates.php:27
+msgid "Pages:"
+msgstr "Pàgines:"
+
+#: inc/templates.php:38
+msgid "Previous Post"
+msgstr "Entrada anterior"
+
+#: inc/templates.php:40
+msgid "Next Post"
+msgstr "Entrada següent"
+
+#: inc/templates.php:135 inc/templates.php:137
+msgid "Send message to author"
+msgstr "Envia missatge a l'autor/a"
+
+#: inc/templates.php:145
+msgid ""
+"You have to reauthenticate, will open in a new window, after that you can "
+"refresh current window"
+msgstr ""
+"Has de tornar a autenticar a Folio, anem a obrir una nova finestra, després "
+"potw refrescar la finestra actual"
+
+#: inc/templates.php:182
+#, php-format
+msgid "Visit %s's Folio"
+msgstr "Visita el folio de %s"
+
+#: inc/templates.php:187
+msgid "Visit Folio"
+msgstr "Visita el folio"
+
+#: inc/templates.php:231 template-parts/content-navbar.php:42
+msgid "Evaluable"
+msgstr "Avaluable"
+
+#: inc/templates.php:247 inc/templates.php:248
+msgid "Pending evaluation"
+msgstr "Avaluació pendent"
+
+#: inc/templates.php:249
+msgid "Evaluation"
+msgstr "Avaluació"
+
+#: inc/templates.php:251
+msgid "Pending"
+msgstr "Pendent"
+
+#: inc/templates.php:256 inc/templates.php:359 inc/templates.php:530
+msgid "Grade"
+msgstr "Nota"
+
+#: inc/templates.php:283
+msgid "Evaluation Pending"
+msgstr "Avaluació pendent"
+
+#: inc/templates.php:284
+msgid ""
+"Evaluate inside the Agora to leave comments and notes. If you want to attach "
+"PDFs, videos or high quality files, please open the Evaluate option in the "
+"RAC"
+msgstr ""
+"Avalua dins de l'Àgora per deixar comentaris i notes. Si vols adjuntar PDFs, "
+"vídeos o altes arxius, si us plau obre l'opció d'Avaluar al RAC"
+
+#: inc/templates.php:341
+msgid "The user is not evaluated"
+msgstr "L’estudiant no ha estat avaluat"
+
+#: inc/templates.php:345
+msgid "Evaluate here"
+msgstr "Avaluar aquí"
+
+#: inc/templates.php:349
+msgid "Evaluate in RAC"
+msgstr "Avaluar al RAC"
+
+#: inc/templates.php:365
+msgid "Modify evaluation here"
+msgstr "Modifica l'avaluació aquí"
+
+#: inc/templates.php:369
+msgid "Modify evaluation in RAC"
+msgstr "Modificar l'avaluació al RAC"
+
+#: inc/templates.php:387
+msgid "Loading information"
+msgstr "Carregant la informació"
+
+#: inc/templates.php:394
+msgid "Choose a grade"
+msgstr "Marca una nota:"
+
+#: inc/templates.php:419
+msgid "Delete grade"
+msgstr "Esborrar nota"
+
+#: inc/templates.php:428
+msgid "Write a comment: "
+msgstr "Escriu un comentari: "
+
+#: inc/templates.php:455
+msgid "Publish options:"
+msgstr "Opcions de publicació:"
+
+#: inc/templates.php:464
+msgid "Scheduled"
+msgstr "Programat"
+
+#: inc/templates.php:472
+msgid "Now"
+msgstr "Ara"
+
+#: inc/templates.php:480
+msgid "Publish"
+msgstr "Publica"
+
+#: inc/templates.php:486
+msgid ""
+"The student won't see the grade nor the comment until the date of publishing "
+"grades."
+msgstr ""
+"L'estudiant no veurà ni la nota ni el comentari fins a la data de publicació "
+"de notes."
+
+#: inc/templates.php:487
+msgid "Meanwhile you will be able to edit both the grade and the comment."
+msgstr "Mentrestant, podràs editar tant la nota com el comentari."
+
+#: inc/templates.php:493
+msgid "The student will see the grade and the comment as soon you save it."
+msgstr "L'estudiant veurà la nota i el comentari en el moment de guardar-la."
+
+#: inc/templates.php:526
+msgid "Evaluation in process."
+msgstr "Avaluació en procés."
+
+#: inc/templates.php:536
+msgid "View assessed delivery"
+msgstr "Veure l’entrega avaluada"
+
+#: inc/templates.php:568 inc/templates.php:576 inc/templates.php:584
+#: inc/templates.php:592 inc/templates.php:600 inc/templates.php:608
+#: inc/templates.php:626 inc/templates.php:629 inc/templates.php:632
+#: inc/templates.php:635 inc/templates.php:638 inc/templates.php:641
+msgid "Visibility:"
+msgstr "Visibilitat:"
+
+#: inc/templates.php:568 inc/templates.php:626
+msgid "Campus"
+msgstr "Campus"
+
+#: inc/templates.php:576 inc/templates.php:629
+msgid "Classroom"
+msgstr "Aula"
+
+#: inc/templates.php:584 inc/templates.php:632
+msgid "Instructors"
+msgstr "Professorat"
+
+#: inc/templates.php:592 inc/templates.php:635
+msgid "Private"
+msgstr "Privada"
+
+#: inc/templates.php:600 inc/templates.php:638
+msgid "with Password"
+msgstr "amb Contrasenya"
+
+#: inc/templates.php:608 inc/templates.php:641
+msgid "Public"
+msgstr "Públic"
+
+#: inc/templates.php:655
+#, php-format
+msgid "Edit %s"
+msgstr "Edita %s"
+
+#: inc/templates.php:688
+msgid "Publication date"
+msgstr "Data de publicació"
+
+#: inc/templates.php:704 inc/templates.php:739
+#, php-format
+msgid "Entries by %s published in the Agora"
+msgstr "Entrades de %s publicades a l’Àgora"
+
+#: inc/templates.php:707 inc/templates.php:745
+#, php-format
+msgctxt "post author"
+msgid "%s"
+msgstr "%s"
+
+#: inc/templates.php:711 inc/templates.php:749
+msgid "Posted by"
+msgstr "Publicat per"
+
+#: inc/templates.php:764
+msgid "Tags"
+msgstr "Etiquetes"
+
+#: inc/templates.php:780
+msgid "Categories"
+msgstr "Categories"
+
+#: inc/templates.php:864
+msgid "Send comment"
+msgstr "Enviar comentari"
+
+#: inc/templates.php:866
+msgid "Cancel Reply"
+msgstr "Cancel·la la resposta"
+
+#: inc/templates.php:877
+#, php-format
+msgid "Logged in as %s. Edit your profile."
+msgstr "Connectat com %s. Edita perfil."
+
+#: inc/templates.php:880
+msgid "Log out?"
+msgstr "Tancar sessió?"
+
+#: inc/templates.php:917 inc/templates.php:993
+#, php-format
+msgid ""
+"<cite class=\"fn\">%s</cite> <span class=\"visually-hidden\">says:</span>"
+msgstr ""
+"<cite class=\"fn\">%s</cite> <span class=\"visually-hidden\">diu:</span>"
+
+#: inc/templates.php:925 inc/templates.php:1001
+#, php-format
+msgid "%1$s %2$s"
+msgstr "%1$s %2$s"
+
+#: inc/templates.php:930 inc/templates.php:1006
+msgid "(Edit)"
+msgstr "(Edita)"
+
+#: inc/templates.php:934 inc/templates.php:1010
+msgid "Your contribution is awaiting moderation."
+msgstr "La teva intervenció està esperant ser moderada."
+
+#: inc/templates.php:949 inc/templates.php:1028
+msgid "Reply"
+msgstr "Respondre"
+
+#: inc/templates.php:1045
+msgid "My activities"
+msgstr "Les meves activitats"
+
+#: inc/templates.php:1047
+msgid "Filter by ActiFolio"
+msgstr "Filtre d'ActiFolio"
+
+#: inc/templates.php:1049
+msgid "All"
+msgstr "Tots"
+
+#: inc/utils.php:172 inc/utils.php:174 inc/utils.php:176 inc/utils.php:178
+#: inc/utils.php:180
+#, php-format
+msgid "<li class=\"breadcrumb-item\">%s</li>"
+msgstr "<li class=\"breadcrumb-item\">%s</li>"
+
+#: inc/utils.php:174
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: inc/utils.php:176
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: inc/utils.php:183
+#, php-format
+msgid "<li class=\"breadcrumb-item\">Search: %s</li>"
+msgstr "<li class=\"breadcrumb-item\">Cerca: %s</li>"
+
+#: inc/utils.php:224
+msgctxt "Added to posts and pages that are missing titles"
+msgid "Untitled"
+msgstr "Sense títol"
+
+#: inc/utils.php:317 template-parts/content-navbar.php:389
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#: inc/utils.php:412
+msgid "Please enter the name"
+msgstr "Si us plau, introdueix el nom"
+
+#: inc/utils.php:413
+msgid "Please enter a valid email"
+msgstr "Si us plau, introdueix una adreça electrònica vàlida"
+
+#: inc/utils.php:416 inc/utils.php:417 template-parts/content-navbar.php:36
+#: template-parts/content-navbar.php:122 template-parts/content-navbar.php:342
+msgid "Name"
+msgstr "Nom"
+
+#: inc/utils.php:421 inc/utils.php:422
+msgid "Your email"
+msgstr "El teu email"
+
+#: inc/utils.php:426 inc/utils.php:427
+msgid "Website"
+msgstr "Lloc web"
+
+#: inc/utils.php:436
+msgid ""
+"Save my name, email, and website in this browser for the next time I comment."
+msgstr ""
+"Desa el meu nom, correu electrònic i lloc web en aquest navegador per a la "
+"pròxima vegada que comenti."
+
+#: search.php:26
+#, php-format
+msgid "%1$s results were found for: %2$s"
+msgstr "S'han trobat %1$s resultats per a: %2$s"
+
+#: template-parts/content-navbar.php:30 template-parts/content-navbar.php:110
+#: template-parts/content-navbar.php:330
+msgid "Date"
+msgstr "Data"
+
+#: template-parts/content-navbar.php:33 template-parts/content-navbar.php:116
+#: template-parts/content-navbar.php:336
+msgid "Title"
+msgstr "Titol"
+
+#: template-parts/content-navbar.php:39 template-parts/content-navbar.php:128
+#: template-parts/content-navbar.php:348
+msgid "Surname"
+msgstr "Cognoms"
+
+#: template-parts/content-navbar.php:45
+msgid "Activity"
+msgstr "Activitat"
+
+#: template-parts/content-navbar.php:65
+msgid "You are here"
+msgstr "Ets aquí"
+
+#: template-parts/content-navbar.php:75 template-parts/content-navbar.php:76
+#: template-parts/content-navbar.php:233 template-parts/content-navbar.php:234
+#: template-parts/searchform.php:3 template-parts/searchform.php:4
+msgid "Search"
+msgstr "Cerca"
+
+#: template-parts/content-navbar.php:84 template-parts/content-navbar.php:252
+msgid "Order and visualization options"
+msgstr "Opcions d'ordenació i visualització"
+
+#: template-parts/content-navbar.php:97 template-parts/content-navbar.php:262
+msgid "Order menu"
+msgstr "Menú ordre"
+
+#: template-parts/content-navbar.php:98 template-parts/content-navbar.php:317
+msgid "Order"
+msgstr "Ordre"
+
+#: template-parts/content-navbar.php:158 template-parts/content-navbar.php:376
+msgid "Ascending"
+msgstr "Ascendent"
+
+#: template-parts/content-navbar.php:164 template-parts/content-navbar.php:382
+msgid "Descending"
+msgstr "Descendent"
+
+#: template-parts/content-navbar.php:169 template-parts/content-navbar.php:390
+msgid "Apply"
+msgstr "Aplica"
+
+#: template-parts/content-navbar.php:180 template-parts/content-navbar.php:181
+msgid "Grid view"
+msgstr "Vista de quadrícula"
+
+#: template-parts/content-navbar.php:192 template-parts/content-navbar.php:193
+#: template-parts/content-navbar.php:272
+msgid "List view"
+msgstr "Vista de llista"
+
+#: template-parts/content-navbar.php:204 template-parts/content-navbar.php:205
+#: template-parts/content-navbar.php:283
+msgid "Expanded view"
+msgstr "Vista expandida"
+
+#: template-parts/content-navbar.php:217 template-parts/content-navbar.php:218
+#: template-parts/content-navbar.php:294
+msgid "Tree view"
+msgstr "Vista en arbre"
+
+#: template-parts/content-none.php:15
+msgid "Nothing Found"
+msgstr "No s’ha trobat res"
+
+#: template-parts/content-none.php:25
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Preparat per a publicar la primera entrada? <a href=\"%1$s\">Comença aquí</"
+"a>."
+
+#: template-parts/content-none.php:38
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Malauradament, no hi ha res que coincideixi amb els termes de cerca. Si us "
+"plau, torna-ho a provar amb algunes paraules clau diferents."
+
+#: template-parts/content-none.php:53
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Sembla que no trobem el que busques. Potser la funció de cerca pot ajudar."
+
+#: template-parts/searchform.php:3
+msgid "Search for:"
+msgstr "Cerca per:"
+
+#~ msgid "posts"
+#~ msgstr "entrades"
+
+#~ msgid "The evaluation is not yet available."
+#~ msgstr "L'avaluació no està disponible encara."
+
+#~ msgid "See results"
+#~ msgstr "Veure resultats"
+
+#~ msgid "Please enter the message"
+#~ msgstr "Si us plau, introdueix el contingut"
+
+#~ msgid "Your message"
+#~ msgstr "El teu missatge"
+
+#~ msgid "Recent"
+#~ msgstr "Recent"
+
+#~ msgid "Contributions are closed."
+#~ msgstr "Les intervencions estan tancades."
+
+#~ msgid "Send"
+#~ msgstr "Envia"

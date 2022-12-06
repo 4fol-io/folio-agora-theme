@@ -1,0 +1,190 @@
+/* Based on:
+ * responsive-carousel
+ * https://github.com/filamentgroup/responsive-carousel
+ *
+ * Copyright (c) 2012 Filament Group, Inc.
+ * Licensed under the MIT, GPL licenses.
+ */
+
+//Hide until js is ready
+.carousel-secondary-slide{
+	display: none;
+}
+
+// Main carousel
+.carousel {
+	width: 100%;
+	position: relative;
+	background-color: $carousel-bg;
+}
+
+.carousel-main-slide,
+.carousel-secondary-slide{
+	
+	background-color: inherit;
+	
+	>	a{
+			text-decoration: none;
+			color: $carousel-link;
+			display: block;
+		}
+	
+	img{
+		display: block;
+		width: 100%; //image is contained in wider screens/situations
+	}
+}
+
+.carousel .carousel-item {
+	display: none;
+}
+.carousel .carousel-active {
+	display: block;
+}
+
+
+// Captions
+.caption {
+	position: relative;
+	display: block;
+	background-color: $carousel-bg;
+	padding: $carousel-padding-sm;
+	
+	@include media-up(md){
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		overflow: hidden;
+		background-color: $carousel-transparent-bg;
+		padding: $carousel-padding-md;
+	}
+}
+
+// Carousel slides
+.carousel-slide {
+	position: relative;
+	overflow: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	-o-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+.carousel-slide .carousel-item {
+	position: absolute;
+	left: 100%;
+	top: 0;
+	width: 100%; /* necessary for non-active slides */
+	display: block; /* overrides basic carousel styles */
+	z-index: -1;
+	-webkit-transition: $carousel-transition;
+	-moz-transition: $carousel-transition;
+	-ms-transition: $carousel-transition;
+	-o-transition: $carousel-transition;
+	transition: $carousel-transition;
+	background-color: inherit;
+}
+.carousel-no-transition .carousel-item {
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+	transition: none;
+}
+.carousel-slide .carousel-active {
+	left: 0;
+	position: relative;
+	z-index: $level2;
+}
+.carousel-slide .carousel-in {
+	left: 0;
+}
+.carousel-slide-reverse .carousel-out {
+	left: 100%;
+}
+.carousel-slide .carousel-out,
+.carousel-slide-reverse .carousel-in {
+	left: -100%;
+}
+.carousel-slide-reverse .carousel-item {
+	-webkit-transition: $carousel-alt-transition;
+	-moz-transition: $carousel-alt-transition;
+	-ms-transition: $carousel-alt-transition;
+	-o-transition: $carousel-alt-transition;
+	transition: $carousel-alt-transition;
+}
+.carousel-slide-reverse .carousel-active {
+	left: 0;
+}
+
+// Carousel pagination
+
+.carousel-nav {
+  bottom: 0;
+  z-index: $level2;
+  width: 100%;
+	background-color: $carousel-bg;
+}
+.carousel-nav a {
+  text-decoration: none;
+  color: $carousel-controls-color;
+  position: absolute;
+  bottom: 0;
+}
+.carousel-nav a.prev {
+  left: .5em;
+}
+.carousel-nav a.next {
+  right: .5em;
+}
+
+.carousel-nav a.stop {
+  right: 2.5em;
+}
+
+.carousel-nav a.prev,
+.carousel-nav a.next,
+.carousel-nav a.stop{
+	bottom: .6em;
+	&:hover{
+		color: $brand-secondary;
+	}
+}
+
+.carousel-nav-paginated .carousel-active-page a {
+	background-color: $carousel-controls-hover;
+}
+
+.carousel-nav-paginated ol {
+	margin: 0 2em;
+	text-align: center;
+}
+.carousel-nav-paginated li,
+.carousel-nav-paginated li a {
+	display: inline-block;
+	position: relative;
+}
+
+.carousel-nav-paginated .carousel-active-page a {
+	text-decoration: none;
+}
+
+
+.carousel-pagination{
+	padding: .5em 0;
+	a:hover{
+		background-color: $carousel-controls-hover;
+	}
+}
+
+.carousel-pagination li{
+	margin-right: .5em;
+}
+
+.carousel-pagination li a {
+	width: .8em;
+	height: .8em;
+	border-radius: 50%;
+	background-color: $carousel-controls-color;
+}

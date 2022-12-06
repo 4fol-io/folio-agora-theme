@@ -1,0 +1,14 @@
+//Implementation only for campus
+p.asterisc{
+  padding-left: calc(#{$icon-normal-font-size} + .5rem);
+  position: relative;
+
+  &:before{
+    @extend .icon;
+    @extend .icon--asterisk:before;
+
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+}

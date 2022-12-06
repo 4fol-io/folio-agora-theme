@@ -1,0 +1,95 @@
+.progress {
+  display: block;
+  width: 100%;
+  height: $progress-height; 
+  margin-bottom: $spacer-y;
+}
+.progress[value] {
+  color: #0074d9;
+  @include prefix((appearance: none), webkit moz);
+  border: none;
+}
+.progress[value]::-webkit-progress-bar {
+  background-color: $progress-background;
+  border-radius: $progress-radius;
+}
+//Incompatible rule with W3C validation
+//.progress[value]::-webkit-progress-value::before {
+//  content: attr(value);
+//}
+.progress[value]::-webkit-progress-value {
+  background-color: $progress-color;
+	@include gradient-striped();
+	background-size: $progress-gradient-size;
+  border-top-left-radius: $progress-radius;
+  border-bottom-left-radius: $progress-radius;
+}
+.progress[value="100"]::-webkit-progress-value {
+  border-top-right-radius: $progress-radius;
+  border-bottom-right-radius: $progress-radius;
+}
+
+// Firefox styles must be entirely separate.
+
+.progress[value]::-moz-progress-bar {
+  background-color: $progress-color;
+      @include gradient-striped();
+      background-size: $progress-gradient-size;
+  border-top-left-radius: $progress-radius;
+  border-bottom-left-radius: $progress-radius;
+}
+.progress[value="0"]::-moz-progress-bar {
+  color: $progress-background;
+  min-width: 2rem;
+  background-color: transparent;
+  background-image: none;
+}
+.progress[value="100"]::-moz-progress-bar {
+  border-top-right-radius: $progress-radius;
+  border-bottom-right-radius: $progress-radius;
+}
+
+// IE9 hacks to accompany custom markup.
+
+@media screen{
+  .progress {
+    background-color: $progress-background;
+    border-radius: $progress-radius;
+  }
+  .progress-bar {
+    display: inline-block;
+    height: $progress-height;
+    text-indent: -999rem; // Simulate hiding of value as in native `<progress>`
+    background-color: $progress-color;
+		@include gradient-striped();
+		background-size: $progress-gradient-size;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+  .progress[width^="0"] {
+    min-width: 2rem;
+    color: $progress-background;
+    background-color: transparent;
+    background-image: none;
+  }
+  .progress[width="100%"] {
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+}
+
+
+// Variants
+
+.progress--success {
+  @include progress-variant($progress-bar-success-bg);
+}
+.progress--info {
+  @include progress-variant($progress-bar-info-bg);
+}
+.progress--warning {
+  @include progress-variant($progress-bar-warning-bg);
+}
+.progress--danger {
+  @include progress-variant($progress-bar-danger-bg);
+}

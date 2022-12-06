@@ -1,0 +1,113 @@
+// Body
+body{
+	@include font-size($font-size-base);
+	font-family: $font-family-base;
+	color: $body-color;
+	line-height: $line-height;
+}
+
+.body-copy{
+	@include font-size($font-size-base);
+	font-family: $font-family-base;
+	line-height: $line-height;
+}
+
+// Headings
+h1,
+.h1{
+	@include font-size($font-size-h1);
+	line-height: $line-height-h1;
+	font-weight: $font-weight-h1;
+	font-family: $font-family-h1;
+	color: $color-h1;
+	margin-bottom: $margin-bottom-h1;
+}
+h2,
+.h2{
+	@include font-size($font-size-h2);
+	line-height: $line-height-h2;
+	font-weight: $font-weight-h2;
+	font-family: $font-family-h2;
+	color: $color-h2;
+	margin-bottom: $margin-bottom-h2;
+}
+h3,
+.h3{
+	@include font-size($font-size-h3);
+	line-height: $line-height-h3;
+	font-weight: $font-weight-h3;
+	font-family: $font-family-h3;
+	color: $color-h3;
+	margin-bottom: $margin-bottom-h3;
+}
+h4,
+.h4{
+	@include font-size($font-size-h4);
+	line-height: $line-height-h4;
+	font-weight: $font-weight-h4;
+	font-family: $font-family-h4;
+	color: $color-h4;
+	margin-bottom: $margin-bottom-h4;
+}
+h5,
+.h5{
+	@include font-size($font-size-h5);
+	line-height: $line-height-h5;
+	font-weight: $font-weight-h5;
+	font-family: $font-family-h5;
+	color: $color-h5;
+	margin-bottom: $margin-bottom-h5;
+}
+h6,
+.h6{
+	@include font-size($font-size-h6);
+	line-height: $line-height-h6;
+	font-weight: $font-weight-h6;
+	font-family: $font-family-h6;
+	color: $color-h6;
+	margin-bottom: $margin-bottom-h6;
+}
+
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+	//white-space: normal;
+	//word-wrap: break-word;
+	//overflow: hidden;
+}
+
+// Text variants
+.text-big{
+	@include font-size($font-size-lg);
+}
+.text-small{
+	@include font-size($font-size-s);
+}
+.text-extra-small{
+	@include font-size($font-size-xs);
+}
+.text-muted,
+a.text-muted{
+	color: $text-muted;
+}
+
+// Fonts variants
+.font-alternate{
+	font-family: $font-family-alternate;
+	font-weight: $font-weight-base;
+}
+.font-default{
+	font-family: $font-family-sans;
+	font-weight: $font-weight-base;
+}
+
+// Other typographic elements
+hr,
+.divider{
+	border: $hr-border-width $hr-border-style $hr-border-color;
+	margin: $hr-margin;
+}
+
+//Links
+
+p a,p a:hover{
+	text-decoration: underline;
+}

@@ -1,0 +1,18 @@
+// Sass utility file for GEF
+//Uncomment Campus vars for Campus code
+
+//Variables
+@import "variables/grid";
+//@import "variables/campus/grid";
+@import "variables/colors";
+//@import "variables/campus/colors";
+@import "variables/z-index";
+@import "variables/spacing";
+@import "variables/typography";
+//@import "variables/campus/typography";
+
+//Layout mixins
+@import "mixins/grid-framework";
+@import "mixins/grid";
+@import "mixins/breakpoints";
+@import "mixins/clearfix";

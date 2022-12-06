@@ -1,0 +1,29 @@
+// Flex Box Grid System
+.flexbox-layout {
+	overflow: hidden;
+}
+
+@include media-up(md) {
+	.flexbox-layout {
+		@include flexbox(!important);
+		@include flex;
+	    @include flex-wrap;
+		@include flex-direction;
+		overflow: visible;
+		.flexbox--item{
+			min-height:100%;
+		}
+	}
+
+	.flexbox-layout--nowrap {
+		@include flex-wrap(nowrap);
+	}
+}
+
+.flexbox-layout__row{
+	@include flex-direction(row, !important); 
+}
+
+.flexbox-layout__column{
+	@include flex-direction(column, !important);
+}

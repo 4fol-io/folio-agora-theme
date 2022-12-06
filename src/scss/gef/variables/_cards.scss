@@ -1,0 +1,88 @@
+// Card
+$card-border-width:				$ruler-width;
+$card-border-color:				$grey;
+$card-padding-x:				$spacer-x;
+$card-padding-y:				$spacer-y;
+$card-spacer:					$spacer;
+$card-margin-bottom:			$spacer-y;
+$card-font-weight-normal:		400;
+$card-link-z-index:					2;
+
+// Card link
+$card-absolute-link-footer-z-index:	10;
+$card-absolute-link-z-index:		11;
+
+// Card height
+$card-height:					$height-1y;
+
+// Card title
+$card-title-font-size:			#{$font-size-h4}px;
+
+// Card content
+$card-content-padding:			$card-padding-y $card-padding-x;
+
+// Card video
+$card-video-padding:			$card-padding-y $card-padding-x $card-padding-y*3;
+$card-video-time-z-index:			8;
+
+// Card header
+$card-header-padding:			$card-padding-y*1.5;
+$card-header-text-padding:		$spacer-y/2 0 0;
+$card-header-text-right:		44px;
+$card-header-text-bottom:		14px;
+$card-header-text-top:			6px;
+$card-header-icon-right:		-2px;
+$card-header-icon-top:			2px;
+$card-header-bg:				$white;
+$card-header-icon-font-size:	2.2rem;
+$card-header-link-font-size:	1.0625rem;
+
+// Card footer
+$card-footer:                   $spacer-y*4;
+$card-footer-left:				$spacer-x;
+$card-footer-bottom:			$spacer-y;
+$card-footer-z-index:				9;
+// Card diary
+$card-agenda-date-right:		-19px;
+$card-agenda-date-bottom:		16px;
+$card-month-font-size:			#{$font-size-h3}px;
+$card-date-smaller-font-size:	125px;
+$card-date-font-size:			240px;
+$card-month-line-height:		0.95;
+$card-date-line-height:			0.7;
+
+// Card icon
+$card-icon-play-right:			-11px;
+$card-icon-play-bottom:			0;
+$card-icon-play-center-bottom:	50%;
+$card-icon-play-center-right:	50%;
+
+
+// Card image
+$card-image-width:				$width-1x + $spacer-x; 
+$card-image-width-2x:			($width-1x*2) + $spacer-x;
+$card-image-width-3x:			($width-1x*3) + $spacer-x;
+$card-image-small-max-width:	80px;
+$card-image-small-max-height:	80px;
+
+// Card colors
+$card-primary:					$brand-primary;
+$card-secondary:				$brand-secondary;
+$card-secondary-light:			$brand-secondary-light;
+$card-white:					$white;
+$card-alumni:					$brand-alumni;
+$card-alumni-light:				$brand-alumni-light;
+$card-x:						$brand-x;
+$card-x-light:					$brand-x-light;
+$card-media:					$brand-media;
+$card-media-light:				$brand-media-light;
+$card-ri:						$brand-ri;
+$card-ri-light:					$brand-ri-light;
+$card-corporate:				$brand-corporate;
+$card-corporate-light:			$brand-corporate-light;
+$card-default-bg:				$grey-light;
+$card-primary-bg:				$card-primary;
+
+// Card hover
+$card-hover-color:				rgba(0,0,120,.25);
+$card-hover-z-index:			1;

@@ -1,0 +1,24 @@
+$select-custom-border:						$input-border;
+$select-custom-focus-border:				$input-focus-border;
+$select-custom-border-radius:				$input-border-radius;
+
+$select-custom-padding-x: 					$input-padding-x;
+$select-custom-padding-y:					$input-padding-y;
+
+$select-custom-icon:						".icon--elevator";
+$select-custom-icon-color:					$brand-secondary;
+$select-custom-bg: 							$grey-light;
+
+
+//Custom Select
+$custom-select-icon-size:					0.875rem;
+$custom-select-icon-spacing:				0.875rem;
+$custom-select-icon-color:					$grey;
+$custom-select-option-border-color:			$grey;
+$custom-select-option-border-edge-color:	$brand-primary;
+$custom-select-option-border-width:			$ruler-width;
+$custom-select-option-border-width-thin:	$ruler-width-thin;
+$custom-select-option-padding-x:			$spacer;
+$custom-select-list-max-height:				16.1rem;
+$custom-select-item-selected-bg:			$brand-primary;
+$custom-select-item-selected-color:			$white;

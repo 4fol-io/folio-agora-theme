@@ -1,0 +1,347 @@
+// Form groups
+.form-group {
+	margin-bottom: $form-group-margin-bottom;
+	@include font-size($form-font-size);
+
+	label {
+		@include media-down(sm) {
+			font-size: $form-sm-font-size;
+		}
+	}
+			.fileinputs{
+				position: relative;
+				.inputfile{
+					position: relative;
+					text-align: right;
+					-moz-opacity: 0;
+					opacity: 0;
+					z-index: 2;
+					margin-top: .3em;
+					line-height: $file-input-line-height;
+					width: 100%;
+					&:focus + .fakefile{
+						.adjunts{
+							-webkit-box-shadow: inset  0 0 0 1px $brand-secondary;
+							-moz-box-shadow:    inset  0 0 0 1px $brand-secondary;
+							box-shadow:         inset  0 0 0 1px $brand-secondary;
+						}
+					}
+					&:not(:empty) + .fakefile + .borrar-adjunt{
+						display: inline-block;
+					}
+				}
+				.fakefile{
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 1;
+					margin-top: .3em;
+					width: 100%;
+					.inputfake{
+						width: 75%;
+						outline: medium none!important;
+						background-color: $white;
+						background-image: none;
+						border: 0 none;
+						border-radius: 0;
+						color: $brand-primary;
+						line-height: 1;
+						min-height: 2.25rem;
+						padding-left: 8px;
+
+						.form--inverse &{
+							background-color: $grey-light;
+						}
+					}
+					.form-inverse{
+						background: $grey-light;
+					}
+					.adjunts{
+							float: left;
+							@include font-size(17);
+							line-height: $file-input-line-height;
+							padding-left: 15px;
+							padding-right: 15px;
+							background-color: $brand-primary;
+							width: 25%;
+							color: $white;
+					}
+						}
+				button.borrar-adjunt{
+					background-color: transparent;
+					border: none;
+					font-size: initial;
+					height: auto;
+					padding: 0;
+					width: auto;
+				}
+				.borrar-adjunt {
+
+					color: $brand-primary;
+					cursor: pointer;
+					display: none;
+					height: 17px;
+					line-height: 16px;
+					position: absolute;
+					text-align: center;
+					top: 14px;
+					width: 11px;
+					z-index: 3;
+					@include font-size(24);
+					right: 10px;
+				}
+				&.is-input-filled{
+					.borrar-adjunt{
+						display: inline-block;
+					}
+				}
+				&:hover span.adjunts {
+					background-color: $brand-primary;
+					text-decoration: underline;
+				}
+			}
+		.custom-bottom{
+			padding-bottom: 16px;
+		}
+
+	legend{
+		margin-bottom: 12px;
+	}
+}
+
+// Form items
+.form-item {
+	display: block;
+	width: 100%;
+	color: $input-color;
+	padding: $input-padding-y $input-padding-x $input-padding-bottom;
+	border: $input-border;
+	border-radius: $input-border-radius;
+	background-color: $input-background;
+	background-image: none;
+	line-height: $input-line-height;
+	min-height: $input-height;
+
+	@include media-down(sm){
+		font-size: $form-sm-font-size;
+	}
+
+	&.disabled,
+	&[disabled]{
+		cursor: not-allowed;
+		background-color: $form-item-disabled;
+	}
+
+	&.readonly,
+	&[readonly]{
+		background-color: $form-item-disabled;
+	}
+
+	&:focus{
+		border-color: $input-focus-border;
+	}
+}
+
+// Inline form
+.form-group--inline{
+	display: inline-block;
+	width: auto;
+	margin-right: $form-group-margin-right;
+	vertical-align: middle;
+
+	label{
+		min-height: $input-height;
+		padding: $input-padding-y $input-padding-x 0 0;
+	}
+
+	.btn {
+		padding: $button-padding-y $button-padding-x;
+    	max-height: $button-max-height;
+	}
+}
+
+.form-item--inline{
+	display: inline;
+	width: auto;
+}
+
+// Compact form
+.form-group--compact{
+	@include flexbox;
+}
+
+.form-item--compact{
+	display: inline-block;
+	width: auto;
+	@include flex;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+// Inversed color form items
+.form--inverse .form-item {
+	background: $input-background-inverse;
+}
+
+// Placeholders
+input,
+textarea {
+    @include input-placeholder {
+		color: $input-color-placeholder;
+    	@include opacity($input-opacity-placeholder);
+    }
+
+    &:-webkit-autofill {
+	    -webkit-box-shadow: 0 0 0 1000px transparent inset;
+	}
+}
+
+// File item
+.form-item-file{
+	display: block;
+	line-height: $form-item-file-line-height;
+
+	&:focus{
+		border-color: $input-focus-border;
+	}
+}
+
+@mixin labelBehaviour(){
+	margin-right: $radio-check-margin-right;
+	padding-left: $radio-check-padding-left;
+	position: relative;
+	input{
+		@include opacity(0);
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		margin: auto;
+	}
+	input[type="radio"]{
+		&:checked + .icon{
+			@extend .icon--radio-button-on;
+		}
+		&:focus + .icon{
+			outline: auto $form-item-outline-width -webkit-focus-ring-color;
+		}
+	}
+	input[type="checkbox"]{
+		&:checked + .icon{
+			@extend .icon--checkbox-on;
+		}
+		&:focus + .icon{
+			outline: auto $form-item-outline-width -webkit-focus-ring-color;
+		}
+	}
+	.icon{
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: auto;
+		margin: auto;
+
+		&:before{
+			//font-size: $radio-check-icon-size;
+			position: absolute;
+			left: 0;
+			//top: $form-check-icon-top;
+		}
+	}
+}
+
+// Radios and checkboxes
+.form-radio, .form-inline-radio,
+.form-check, .form-inline-check{
+
+	label{
+		@include labelBehaviour;
+	}
+
+	&--extended{
+		.form-input{
+			@include labelBehaviour;
+
+			margin-right: 0;
+			padding-left: 0;
+			.icon{
+				z-index: 1;
+			}
+			input{
+				top: 2px;
+				left: 4px;
+				z-index: 2;
+			}
+		}
+		.form-label{
+			padding-left: $radio-check-padding-left;
+			margin-right: $radio-check-margin-right;
+		}
+	}
+}
+
+.form-radio, .form-check {
+	margin-bottom: $radio-margin-bottom;
+}
+
+.form-radio, .form-inline-radio {
+	> .icon:before {
+		@extend .icon--radio-button-off;
+	}
+}
+
+.form-check, .form-inline-check {
+	> .icon:before {
+		@extend .icon--checkbox-off;
+	}
+}
+
+.form--filters{
+	color: $brand-primary;
+	margin: 12px;
+
+	@at-root  .form__wrapper{
+		position: absolute;
+		top: 0;
+		width: 50%;
+		height: 40%;
+		background-color: white;
+
+		@include media-down(sm){
+			position: absolute;
+			height: 100vh;
+			width: 100vw;
+			background-color: ghostwhite;
+		}
+	}
+
+	.form__button{
+		width: calc(50% - 4px);
+		border: 0;
+		&:first-of-type{
+			margin-right: 4px;
+		}
+		&:last-of-type{
+			margin-left: 4px;
+		}
+	}
+
+	.form__check{
+		margin-bottom: 0;
+		padding: #{$modal-filter-gutter};
+		border-bottom: 1px solid $grey-light;
+		//border-bottom: 1px solid $grey-medium;
+		//&:nth-child(even){
+		//	background-color: $grey-lighter;
+		//}
+
+		&.is-active{
+			background-color: $grey-lighter;
+		}
+
+		.icon{
+			margin-top: 2px;
+		}
+	}
+}

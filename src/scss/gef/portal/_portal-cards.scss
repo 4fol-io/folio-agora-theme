@@ -1,0 +1,30 @@
+.xx-portal-card-block{
+	padding: 1rem;
+	&.xx-portal-card-block-border{
+		margin-bottom: 1rem;
+		border-style: solid;
+		border-color: $grey;
+		border-width: 1px;
+	}
+	h2{
+		font-size: 2rem;
+		font-weight: 500;
+		margin-bottom: .5rem;
+		line-height: 1.1;
+	}
+	p{
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+	span{
+		font-size: .8rem;
+		line-height: 1.5;
+	}		
+	h4{
+		font-size:1.25rem;
+		margin-bottom: .5rem;
+	}
+}
+.xx-portal-background-white{
+	background: $white;
+}

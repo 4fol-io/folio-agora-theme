@@ -1,0 +1,392 @@
+/**
+ * NOTA: viene a reemplazar a gef/components/_icons.scss por conflicto del original con dart sass (not-gef/_icons.scss):
+ * @extend only simple selectors
+ * (https://sass-lang.com/documentation/at-rules/extend#disallowed-selectors)
+ */
+
+.icon{
+	text-decoration: none;
+	font-size: $icon-normal-font-size;
+}
+
+
+h1, h2, h3, h4, h5, h6{
+	& .icon{
+		font-size: 100%;
+	}
+}
+
+
+.icon--before{
+	margin-right: .5rem;
+}
+.icon--after{
+	margin-left: .5rem;
+}
+
+[class^="icon--social"], [class*=" icon--social"] {
+	font-size: $icon-social-font-size;
+	&:not(:last-child){
+		margin-right: $icon-social-margin;
+	}
+}
+
+.icon--social{
+	font-size: $icon-social-font-size;
+	&:not(:last-child){
+		margin-right: $icon-social-margin;
+	}
+}
+
+// Default size icons
+.icon--big{
+	font-size: $icon-big-size;
+}
+.icon--small{
+	font-size: $icon-small-size;
+}
+
+.icon--small.icon--external-link{
+	font-size: 1.3125rem;
+}
+
+.icon--xsmall{
+	font-size: $icon-xsmall-size;
+}
+// Size default icons
+.icon--big-default{
+	font-size: $icon-big-default-size;
+}
+.icon--normal-default{
+	font-size: $icon-normal-default-size;
+}
+.icon--small-default{
+	font-size: $icon-small-default-size;
+}
+// Size/Weight arrow icons
+.icon--normal-arrows{
+	font-size: $icon-normal-arrows-size;
+	font-weight: $icon-normal-arrows-weight;
+}
+.icon--big-arrows{
+	font-size: $icon-big-arrows-size;
+	font-weight: $icon-big-arrows-weight;
+}
+.icon--small-arrows{
+	font-size: $icon-small-arrows-size;
+	font-weight: $icon-small-arrows-weight;
+}
+
+.icon--play{
+	&-big, &-center{
+			font-size: $icon-play-big-size;
+			width: 100%;
+			height: 100%;
+	}
+}
+.icon--search{
+	&-small{
+		font-size: $icon-search-small-size;
+	}
+	&-big{
+		font-size: $icon-search-big-size !important;
+	}
+	&-normal{
+		font-size: $icon-search-normal-size;
+	}
+}
+.icon--campus {
+	&-small{
+		font-size: $icon-campus-small-size;
+	}
+	&-big{
+		font-size: $icon-campus-big-size;
+	}
+	&-normal{
+		font-size: $icon-campus-normal-size;
+	}
+}
+.icon--header--bottom{
+	position: relative;
+	font-size: $icon-header-font-size;
+}
+.icon--header--top{
+	position: relative;
+	font-size: $icon-header-font-size;
+}
+.icon--header--left{
+	position: relative;
+	font-size: $icon-header-font-size;
+}
+.icon--header--right{
+	position: relative;
+	font-size: $icon-header-font-size;
+}
+.icon--info{
+	&--small{
+		font-size: $icon-info-small-size;
+ 	}
+ 	&--big{
+ 		font-size: $icon-info-big-size;
+ 	}
+ 	&--normal{
+ 		font-size: $icon-info-big-size;
+ 	}
+}
+.icon--alert{
+	&--small{
+		font-size: $icon-alert-small-size;
+ 	}
+ 	&--big{
+ 		font-size: $icon-alert-big-size;
+ 	}
+ 	&--normal{
+ 		font-size: $icon-alert-big-size;
+ 	}
+}
+.icon--book--open-registration{
+	&--small{
+		font-size: $icon-book-small-size;
+		line-height: 46px;
+		text-indent: -5px;
+	}
+	&--big{
+		font-size: $icon-book-big-size;
+		line-height: 71px;
+		text-indent: -5px;
+	}
+	&--normal{
+		font-size: $icon-book-big-size;
+		line-height: 71px;
+		text-indent: -5px;
+	}
+}
+// Icons positions
+.icon--pleft {
+    position: relative;
+    float: left;
+    left: -10px;
+    margin: auto;
+}
+.icon--pcenter {
+    position: relative;
+    left: 0;
+    margin: auto;
+}
+.icon--pright {
+    position: relative;
+    float: right;
+    right: -10px;
+    margin: auto;
+}
+.icon-card-right-top{
+	position: absolute;
+	top: -10px;
+	right: -7px;
+}
+
+
+// Custom
+.icon--normal {
+    font-size: $icon-normal-size;
+}
+
+
+.icon--columns{
+	@extend .icon--zhamburguer;
+	position: relative;
+	font-size: 1.35rem;
+	&.is-on:after{
+		content: '';
+		position: absolute;
+		display: inline-block;
+		right: 0;
+		top: 0;
+		width: 7px;
+		height: 7px;
+		border-radius: 50%;
+		background-color: $brand-secondary;
+	}
+    .lines{
+        &:before,
+        &:after{
+            content: '';
+            width:2px;
+            height: 90%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            background-color: $white;
+        }
+        &:before{
+            left: 8px;
+        }
+        &:after{
+            left: 13px;
+        }
+    }
+}
+
+
+
+// Svg icons
+
+.icon-svg {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;   
+	width: 20px;
+    height: 20px;
+	&:before{
+		display: none;
+	}
+	position:relative;
+	top: 2px;
+}
+
+.icon-svg--agora{   
+	background-image: $icon-svg-agora-primary;
+}
+
+.icon-svg--folio{   
+	background-image: $icon-svg-folio-primary;
+}
+
+.icon-svg--debate{  
+	width: 18px;
+	height: 18px; 
+	background-image: $icon-svg-debate-primary;
+}
+
+.btn--primary {
+	.icon-svg--debate{  
+		background-image: $icon-svg-debate-white;
+	}
+}
+
+
+.icon-svg--evaluable{ 
+	background-image: $icon-svg-evaluable-primary;
+	&.icon--before{
+		margin-left: .25rem;
+	}
+	&.icon--after{
+		margin-right: .25rem;
+	}
+}
+
+.btn--primary{
+	.icon-svg--evaluable{ 
+		background-image: $icon-svg-evaluable-white;
+	}
+}
+
+
+.icon-svg--scroll{   
+	background-image: $icon-svg-scroll-on;
+	width: 26px;
+	height: 26px;
+}
+
+.icon-svg--order{   
+	background-image: $icon-svg-order-primary;
+	width: 24px;
+	height: 24px;
+}
+
+.icon-svg--logout{  
+	height: 24px;
+    width: 30px;
+
+	background-image: $icon-svg-logout-primary;
+}
+
+@include media-up(md){
+	.icon-svg--logout{  
+		width: 24px;
+		height: 18px; 
+	}
+}
+
+
+.off{
+	.icon-svg--scroll{
+		background-image: $icon-svg-scroll-off;
+	}
+}
+
+a:hover, a:focus{
+	.icon-svg--folio{
+		background-image: $icon-svg-folio-grey;
+	}
+	.icon-svg--logout{   
+		background-image: $icon-svg-logout-grey;
+	}
+}
+
+.icon-svg--grid{   
+	background-image: $icon-svg-grid-off;
+	width: 19px;
+	height: 19px;
+}
+
+.icon-svg--list{   
+	background-image: $icon-svg-list-off;
+}
+
+.icon-svg--full{   
+	background-image: $icon-svg-full-off;
+	width: 21px;
+	height: 20px;
+}
+
+.icon-svg--tree{   
+	background-image: $icon-svg-tree-off;
+}
+
+a.active,
+button.active{
+	.icon-svg--grid{   
+		background-image: $icon-svg-grid-on;
+	}
+	
+	.icon-svg--list{   
+		background-image: $icon-svg-list-on;
+	}
+	
+	.icon-svg--full{   
+		background-image: $icon-svg-full-on;
+	}
+	.icon-svg--tree{   
+		background-image: $icon-svg-tree-on;
+	}
+}
+
+
+.nav-actions-mobile{
+	.icon-svg--list{
+		width: 23px;
+    	height: 22px; 
+	}
+	.icon-svg--full{
+		width: 26px;
+    	height: 24px; 
+	}
+	.icon-svg--tree{
+		width: 23px;
+    	height: 22px; 
+	}
+	a.active,
+	button.active{
+		.icon-svg--list{   
+			background-image: $icon-svg-list-off;
+		}
+		.icon-svg--full{   
+			background-image: $icon-svg-full-off;
+		}
+		.icon-svg--tree{   
+			background-image: $icon-svg-tree-off;
+		}
+	}
+}

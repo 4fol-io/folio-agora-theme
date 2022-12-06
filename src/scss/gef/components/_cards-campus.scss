@@ -1,0 +1,82 @@
+//Customizable colors background variations
+
+@mixin card-variant($color) {
+  background-color: $color;
+	border-color: $color;
+	> .card__header{
+		border-bottom-color: $color;
+	}
+	hr{
+		border-color: $color;
+	}
+}
+
+.card--custom1{
+	@include card-variant($custom1);
+}
+.card--custom2{
+	@include card-variant($custom2);
+}
+.card--custom3{
+@include card-variant($custom3);
+}
+.card--custom4{
+@include card-variant($custom4);
+}
+.card--custom5{
+@include card-variant($custom5);
+}
+.card--custom6{
+@include card-variant($custom6);
+}
+.card--custom7{
+@include card-variant($custom7);
+}
+.card--custom8{
+@include card-variant($custom8);
+}
+.card--custom9{
+@include card-variant($custom9);
+}
+.card--custom10{
+	@include card-variant($custom10);
+}
+.card--custom11{
+	@include card-variant($custom11);
+}
+.card--custom12{
+	@include card-variant($custom12);
+}
+.card--custom13{
+	@include card-variant($custom13);
+}
+.card--custom14{
+	@include card-variant($custom14);
+}
+.card--custom15{
+	@include card-variant($custom15);
+}
+.card--custom16{
+	@include card-variant($custom16);
+}
+.card--custom17{
+	@include card-variant($custom17);
+}
+.card--custom18{
+	@include card-variant($custom18);
+}
+.card--custom19{
+	@include card-variant($custom19);
+}
+.card--custom20{
+	@include card-variant($custom20);
+}
+.card--custom21{
+	@include card-variant($custom21);
+}
+.card--custom22{
+	@include card-variant($custom22);
+}
+.card--custom23{
+	@include card-variant($custom23);
+}

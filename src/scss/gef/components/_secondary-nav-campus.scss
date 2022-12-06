@@ -1,0 +1,84 @@
+.secondary-nav{
+	@extend .list-group;
+	font-size: $secondary-nav-font-size;
+	a{
+		cursor: pointer;
+		position: relative;
+		padding: $secondary-nav-padding-y $secondary-nav-padding-x;
+		display: block;
+		text-decoration: none;
+		color: $secondary-nav-linkcolor;
+		border-bottom: 1px solid transparent;
+		&:hover{
+			color: $secondary-nav-linkcolor-hover;
+			background: $secondary-nav-hover;
+			border-bottom: 1px solid rgba(white, .3);
+		}
+	
+	}
+	
+	.is-active > a{
+		color: $secondary-nav-linkcolor-hover;
+		background: $secondary-nav-hover;
+		border-bottom: 1px solid rgba(white, .3);
+	}
+}
+
+.secondary-nav__level2{
+	list-style: none;
+	padding-left: 0;
+	li{
+		border-bottom: 0;
+		//border-top: 1px $secondary-nav-level2-border-style $secondary-nav-border;
+	}
+	a{
+		padding-left: $secondary-nav-padding-x*2;
+		&:after{
+			//height: 0;
+		}
+	}
+	.icon{
+		font-size: 6px;
+	}
+}
+
+
+// Secondary nav trigger for small devices
+
+.secondary-nav-trigger{
+	background-color: $secondary-nav-trigger-bg;
+	border-bottom: $secondary-nav-trigger-border;
+	margin-top: -$main-header-margin-bottom;
+	margin-bottom: $main-header-margin-bottom;
+	padding-top: $spacer-y/2;
+	padding-bottom: $spacer-y/2;
+		
+	@include media-up(lg){
+		display: none;
+	}
+}
+
+.secondary-nav-alt-container{
+	@include media-up(lg){
+		display: none;
+	}
+	.secondary-nav{
+		margin-top: $spacer-y/2;
+	}
+}
+
+.fw-is-js{
+	.secondary-nav-main-container{
+		display: none;
+		@include media-up(lg){
+			display: block;
+		}
+	}
+	
+}
+.secondary-nav-trigger__link{
+	color: $brand-primary;
+	text-decoration: none;
+	font-weight: bold;
+	display: block;
+}

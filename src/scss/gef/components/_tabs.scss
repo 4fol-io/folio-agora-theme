@@ -1,0 +1,108 @@
+// Tab
+.nav-tabs{
+	padding: $tab-padding-y $tab-padding-x $tab-padding-y*2;
+	margin-bottom: 0;
+	list-style: none;
+	overflow-x: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+	white-space: nowrap;
+	position: relative;
+	z-index: $level1;
+	> li{
+		display: inline-block;
+		margin-bottom: 0;
+		outline: none;
+		text-decoration: none;
+		vertical-align: top;
+		white-space: normal;
+		word-break: break-all;
+
+		&[class^='col-']{
+			@include media-down(lg){
+				margin-left: -0.125rem;
+				margin-right: -0.125rem;
+			}
+		}
+
+		&:before {
+			display: none;
+		}
+	}
+	.tab{
+		display: block;
+		position: relative;
+		text-decoration: none;
+	}
+}
+
+%tab{
+	padding-top: $tab-alternative-padding-y;
+	color: $tab-alternative-element-color;
+	border-top: $tab-alternative-element-border-width solid $tab-alternative-element-color;
+	&.is-active{
+		color: $tab-alternative-element-color-active;
+		border-color: $tab-alternative-element-color-active;
+		border-width: $tab-alternative-element-border-width-active;
+	}
+}
+
+// Basic tab variant
+.nav-tabs--basic{
+	> li{
+		padding-right: $tab-padding-x;
+	}
+	.tab{
+		@extend %tab;
+	}
+}
+
+// Alternative tab variant
+.nav-tabs--alternative{
+	> li{
+		display: block;
+		float: left !important;
+		padding-right: 4px;
+		margin-bottom: 16px;
+	}
+	.tab{
+		@extend %tab;
+	}
+}
+
+// Mobile tabs
+@include media-up(sm){
+	.nav-tabs--mobile-only{
+		display: none;
+	}
+}
+
+.tab-content{
+	margin-top: -1px;
+	padding: $tab-padding-y $tab-padding-x;
+	overflow: auto;
+}
+
+.tab-content:not(.tab-content--mobile-only){
+	display: none;
+}
+
+@include media-down(xs){
+	.tab-content--mobile-only{
+		display: none;
+	}
+}
+
+@include media-down(md){
+	.nav-tabs:not(.nav-tabs--alternative) > li{
+		float: none !important;
+	}
+}
+
+body:not(.fw-is-js) .tab-content:target{
+	display: block;
+}
+
+.tab-content.is-active, .tab-content--mobile-only.is-active{
+	display: block;
+}

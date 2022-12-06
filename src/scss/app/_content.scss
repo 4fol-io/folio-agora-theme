@@ -1,0 +1,178 @@
+/* Content */
+
+.hfeed {
+    .hentry {}
+    .page-header + .hentry {}
+    .post {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    @include media-up(md){
+        .post {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.byline {}
+
+.posted-on {
+    a {
+        text-decoration: none;
+    }
+    .entry-date{
+        text-transform: capitalize;
+        font-weight: $font-weight-bold;
+    }
+}
+
+.entry-article,
+.search .page .entry-article{
+    background-color: $grey-lighter;
+    width: 100%;
+}
+
+.tree-item{
+    .entry-article{
+        background-color: transparent;
+    }
+}
+
+.entry-header{
+    position: relative;
+    width: 100%;
+}
+
+.entry-title {
+    margin-bottom: .2em;
+    @include font-size(22);
+}
+
+.entry-tags, 
+.entry-cats {
+    margin:  0 0 $paragraph-margin-bottom;
+}
+
+.entry-excerpt {
+    p{
+        margin: 0;
+    }
+    a {
+        text-decoration: underline;
+    }
+}
+
+.entry-summary{
+    flex: 1;
+    overflow: hidden;
+    @include font-size(17);
+    padding: 1rem 1rem .5rem 1rem;
+}
+
+.entry-body{
+    padding: 1.5rem 1rem 1rem 1rem;
+}
+
+.entry-footer{
+    padding: 0 1rem 1rem 1rem;
+}
+
+.entry-footer:empty {
+    padding-bottom: 0!important;
+}
+
+.entry-comments{
+    padding: 0 1rem 1.5rem 1rem;
+}
+
+
+@include media-up(sm){
+    .entry-summary,
+    .entry-body,
+    .entry-footer,
+    .entry-comments{
+        padding-left: 1.25rem;
+    }
+
+    .entry-body,
+    .entry-footer,
+    .entry-comments{
+        padding-right: 1.25rem;
+    }
+
+    .single{
+        .entry-summary{
+            padding-right: 1.25rem;
+        }
+    }
+}
+
+.single,
+.page{
+    .entry-article{
+        background: $white;
+        .entry-summary,
+        .entry-body,
+        .entry-footer,
+        .entry-comments{
+            padding-left: 0;
+            padding-right: 0;
+        }
+        @include media-up(sm){
+            .entry-media + .entry-summary{
+                padding-left: 1.25rem;
+            }
+        }
+    }
+    .post-edit-link{
+        background: $grey-lighter;
+    }
+}
+
+.agora-view-tree{
+    .post-edit-link{
+        background: $grey-lighter;
+    }
+}
+
+.search{
+    .entry-article{
+        .entry-summary{
+            padding: 1rem 1rem .5rem 1rem;
+        }
+        .entry-body{
+            padding: 1.5rem 1rem 1rem 1rem;
+        }
+    }
+}
+
+
+// Actiuocs
+
+.actiuocs-box{
+    margin-bottom: 1rem;
+    margin-left: -.25rem;
+    margin-right: -.25rem;
+    br{
+        display:none;
+    }
+    a{
+        @extend .btn;
+        @extend .btn--secondary;
+        margin-bottom: .5rem;
+        margin-right: .25rem;
+        margin-left: .25rem;
+    }
+}
+
+
+.uoc_portafolis_tools{
+    font-size: 1.1rem;
+}
+
+.agora-view[data-view='list'],
+.agora-view[data-view='full']{
+    .uoc_portafolis_tools{
+        background: $white;
+    }
+}

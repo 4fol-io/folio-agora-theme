@@ -1,0 +1,35 @@
+
+
+[data-type="core/gallery"] {
+
+    &[data-align="left"],
+    &[data-align="center"],
+	&[data-align="right"] {
+
+		.block-editor-block-list__block-edit {
+			width: 100%;
+            max-width: 100%;
+
+            @include media-up(md) {
+                width: $editor-alignment-width;
+                max-width: $editor-alignment-width;
+            }
+
+        }
+        
+        .wp-block-gallery,
+        .blocks-gallery-grid{
+            width: 100%;
+            max-width: 100%;
+        }
+
+    }
+    
+    &[data-align="center"] {
+        .block-editor-block-list__block-edit{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+}

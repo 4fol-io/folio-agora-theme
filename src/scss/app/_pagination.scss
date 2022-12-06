@@ -1,0 +1,141 @@
+.pagination-nav {
+    margin-top: 1.5em;
+}
+
+// Pagination list
+.pagination {
+    list-style: none;
+    padding: $pagination-padding;
+    position: relative;
+    margin: 0;
+    width: 100%;
+
+    @include clearfix;
+    &:before{
+        content: " ";
+        display: block;
+        border-top: 4px solid $pagination-border-color;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        margin: 4px 0;
+        z-index: -1;
+    }
+}
+
+// Pagination item
+.pagination__item {
+    display: block;
+    float: left;
+    text-align: left;
+    padding: $pagination-item-padding;
+    padding-left: 0;
+    padding-right: $pagination-item-padding * 2;
+    background: $white;
+
+    &:last-child {
+        margin-right: 0;
+        position: absolute;
+        right: 0;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    &:before {
+        content: "";
+        margin: 0;
+    }
+}
+
+@include media-down(md) {
+    .pagination__item:not(:last-child):not(:first-child) {
+        //width: $pagination-item-width;
+        width: 14.28571%;
+    }
+
+    .pagination__item:last-child {
+        position: relative;
+        border-left: 0 transparent;
+        margin-top: 0;
+        clear: left;
+    }
+
+    .pagination__item:first-child {
+        position: absolute;
+        border-left: 0 transparent;
+        margin-top: 60px;
+    }
+
+    .pagination__item:nth-last-child(2){
+        padding-right: 0;
+    }
+
+}
+
+
+// Pagination link
+.pagination__link {
+    font-family: $font-family-sans;
+    font-size: 1.9rem;
+
+    //@include font-size($font-size-h2);
+
+    font-weight: bold;
+    color: $pagination-link-color;
+    display: block;
+    text-decoration: none;
+    border-color: $pagination-border-color;
+    border-width: $pagination-border-width;
+    border-style: solid;
+
+    //line-height: $pagination-link-lineheight;
+    line-height: 1;
+    width: 100%;
+
+    &:hover:not(span) {
+        color: $pagination-link-color;
+        text-decoration: none;
+    }
+
+    .is-active > & {
+        border-color: $pagination-border-color-active;
+        color: $pagination-border-color-active;
+        background-color: $pagination-link-hover-bg;
+    }
+}
+
+// Pagination buttons
+.pagination__item--prev {
+    float: left;
+    padding-left: 0;
+
+    span {
+        line-height: 1.55;
+    }
+}
+
+.pagination__item--next {
+    float: right;
+    padding-right: 0;
+
+    span {
+        line-height: 1.55;
+    }
+}
+
+
+body.single{
+    .pagination-nav{
+        margin-left: 1rem;
+        margin-right: 1rem;
+        .pagination__item{
+            background: transparent;
+        }
+    }
+    .is-active > .pagination__link{
+        background: transparent;
+    }
+}

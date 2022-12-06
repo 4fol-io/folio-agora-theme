@@ -1,0 +1,30 @@
+
+// Columns block.
+
+.wp-block-columns{
+	&.alignfull{
+		margin-left: $grid-gutter-width;
+		margin-right: $grid-gutter-width;
+	}
+}
+
+.align-wrap {
+	/*.wp-block-columns{
+		margin-left: $grid-gutter-width;
+		margin-right: $grid-gutter-width;
+	}*/
+	.wp-block-columns.alignfull{
+		width: auto;
+	}
+}
+
+@include media-down(sm) {
+	.wp-block-columns {
+		display: block;
+		.wp-block-column {
+			width: 100%;
+			margin-left: 0;
+		}
+	}
+}
+

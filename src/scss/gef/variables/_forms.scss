@@ -1,0 +1,56 @@
+// Form
+$form-column-padding:				$spacer-x/2;
+$form-font-size:					$font-size-s;
+$form-sm-font-size:					1rem;
+
+// Inline form
+$form-inline-firefox-top:			5px;
+
+// Form group
+$form-group-margin-bottom: 			1em;
+$form-group-margin-right: 			$spacer-x/2;
+
+// Form item and button
+$input-padding-x: 					0.3125rem;
+$input-padding-y: 					0.3125rem;
+$input-padding-bottom: 				0.875rem;
+$input-padding-moz: 				0 0.125rem 0.5rem;
+$button-padding-x:					1rem;
+$button-padding-y:					0.75rem;
+$button-max-height:					2.688rem;
+$input-color: 						$brand-primary;
+$input-color-placeholder: 			$grey-dark;
+$input-size: 						$font-size-s;
+$input-line-height: 				1;
+$input-border: 						0;
+$input-height:						2.25rem;
+$input-focus-border: 				$brand-secondary;
+$input-border-radius: 				$border-radius;
+$input-opacity-placeholder:			1;
+$input-opacity-disable:				.5;
+$input-error-icon-size:				1.625rem;
+$input-background:					$white;
+$input-background-inverse:			$grey-light;
+$form-item-disabled: 				rgba(black, .05);
+$form-item-outline-width:			5px;
+$form-item-file-line-height:		1;
+
+// Radio buttons and checkboxes
+$radio-check-margin-right:			$spacer*2;
+$radio-check-padding-left:			$spacer*3.125;
+$radio-check-label-margin-left:		$spacer/2;
+$radio-check-icon-size:				1.3rem;
+$radio-margin-bottom: 				$spacer-y;
+$form-check-icon-top:				0;
+
+// Validation
+$form-error-color: 					$error;
+$form-error-bg-color:				$error-light;
+$form-warning-color: 				$orange;
+$form-success-color: 				$green;
+
+// File input
+$file-input-line-height: 	        2.12em;
+$file-input-outline-size:           1px;
+
+$modal-filter-gutter:               12px;

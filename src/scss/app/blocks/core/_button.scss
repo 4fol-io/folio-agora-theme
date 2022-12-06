@@ -1,0 +1,144 @@
+
+// Button block.
+
+.is-style-outline {
+	color: inherit;
+}
+
+.wp-block-button {
+
+	margin-bottom: $paragraph-margin-bottom;
+
+	&__link {
+		display: inline-block;
+		font-weight: $btn-font-weight;
+  		text-align: center;
+  		white-space: $btn-white-space;
+		vertical-align: middle;
+  		cursor: if($enable-pointer-cursor-for-buttons, pointer, null);
+  		user-select: none;
+		border: $btn-border-width solid;
+		padding: $btn-padding-y-lg $btn-padding-x-lg;
+  		@include font-size($btn-font-size-lg);
+  		line-height: $btn-line-height-lg;
+  		@include transition($btn-transition);
+		@include hover() {
+			text-decoration: none;
+		}
+		&:focus {
+			outline: 0;
+			box-shadow: $btn-focus-box-shadow;
+		}
+		min-width: 8em;
+		@include media-breakpoint-up(sm) {
+			min-width: 12em;
+		}
+	}
+}
+
+.is-style-fill {
+	.wp-block-button__link{
+
+		$hover-background: darken($dark, 7.5%);
+		&:not(.has-text-color) {
+			@include hover() {
+				color: color-yiq($hover-background);
+				border-color: $hover-background;
+			}	
+		}
+
+		&:not(.has-background) {
+			@include gradient-bg($dark);
+			border-color: $dark;
+			@include hover() {
+				@include gradient-bg($hover-background);
+			}
+		}
+
+		&:focus {
+			@include gradient-bg($hover-background);
+			border-color: $hover-background;
+			box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($dark), $dark, 15%), .5);
+		}
+		
+	}
+
+	@each $color, $value in $style-colors {
+		.wp-block-button__link.has-#{$color}-background-color {
+			$hover-background: darken($value, 7.5%);
+			border-color: $value;
+			@include hover() {
+				@include gradient-bg($hover-background);
+				border-color: $hover-background;
+			}
+			&:focus {
+				@include gradient-bg($hover-background);
+				border-color: $hover-background;
+				box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($value), $value, 15%), .5);
+			}
+		}
+		.wp-block-button__link{
+			&.has-primary-to-primary-gradient-background {
+				border-color: rgb(19,53,120,.5);
+			}
+			&.has-secondary-to-secondary-gradient-background {
+				border-color: rgba(19,104,122,.5);
+			}
+			&.has-primary-to-secondary-gradient-background {
+				border-color: rgb(19,53,120,.5);
+			}
+		}
+	}
+}
+  
+.is-style-outline {
+
+	.wp-block-button__link{
+		border: $btn-border-width solid;
+		&:focus {
+			box-shadow: 0 0 0 $btn-focus-width rgba($dark, .5);
+		}
+
+		&:not(.has-text-color){
+			color: $dark;
+			border-color: $dark;
+		}
+
+		&:not(.has-background){
+			@include hover() {
+				color:  color-yiq($dark);
+				background-color: $dark;
+				border-color: $dark;
+			}
+		}
+	}
+	@each $color, $value in $style-colors {
+		.wp-block-button__link.has-#{$color}-color:not(.has-background) {
+			color: $value;
+			border-color: $value;
+			@include hover() {
+				color:  color-yiq($value);
+				background-color: $value;
+				border-color: $value;
+			}
+			&:focus {
+			  box-shadow: 0 0 0 $btn-focus-width rgba($value, .5);
+			}
+		}
+
+		.wp-block-button__link.has-#{$color}-background-color {
+			$hover-background: darken($value, 7.5%);
+			@include hover() {
+				@include gradient-bg($hover-background);
+				border-color: $hover-background;
+			}
+			&:focus {
+				border-color: $hover-background;
+				@include gradient-bg($hover-background);
+				box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($value), $value, 15%), .5);
+			}
+		}
+	}
+}
+  
+

@@ -1,0 +1,105 @@
+p {
+    margin-bottom: 1.2em;
+}
+
+dfn, cite, em, i {
+    font-style: italic;
+}
+
+/*
+q:not(.quote):before, blockquote:not(.quote):before, .quote:before {
+    content: "“";
+}
+
+q:not(.quote):after, blockquote:not(.quote):after, .quote:after {
+    content: "”";
+}*/
+
+blockquote {
+    /*border: 0;
+    font-size: 1.1em;
+    margin: 0 1rem;*/
+    position: relative;
+
+    &:before,
+    &:after {
+        content: "" !important;
+    }
+
+    p:before {
+        content: "“";
+    }
+
+    p:after {
+        content: "”";
+    }
+
+    p:first-child:before,
+    p:last-child:after {
+        position: relative;
+        font-size: 2.25rem;
+        line-height: .2rem;
+        display: inline-block;
+        line-height: .5rem;
+        top: .75rem;
+    }
+
+    p:first-child {
+        &:before {
+            content: "“";
+            margin-left: -.75rem;
+            left: -.25rem;
+        }
+    }
+
+    p:last-child {
+        margin: 0;
+
+        &:after {
+            content: "”";
+            margin-right: -.75rem;
+            right: -.25rem;
+        }
+    }
+}
+
+address {
+    margin: 0 0 1.2em;
+}
+
+pre {
+    font-size: 1rem;
+    margin-bottom: 1.2em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1rem;
+}
+
+code, kbd, tt, var {
+    font-size: 1rem;
+}
+
+abbr, acronym {
+    cursor: help;
+    text-decoration: none;
+}
+
+mark, ins {
+    text-decoration: none;
+}
+
+big {
+    font-size: 125%;
+}
+
+.text-small {
+    font-size: 1rem;
+}
+
+.h1--large {
+    font-size: 3rem;
+}
+
+.h5--large {
+    font-size: 1.35rem;
+}

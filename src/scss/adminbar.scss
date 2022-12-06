@@ -1,0 +1,327 @@
+
+/* WP AdminBar */
+
+@import "~bootstrap/scss/functions";
+@import "gef/variables";
+@import "app/variables";
+@import "gef/mixins";
+@import "app/mixins";
+
+body:not(.wp-admin){
+    #wpadminbar {
+        #wp-toolbar {
+            @include clearfix();
+            box-sizing: border-box;
+            max-width: $grid-max-width;
+            margin-right: auto;
+            margin-left: auto;
+            padding-left:  $grid-container-padding-xs;
+            padding-right: $grid-container-padding-xs;  
+        }
+        ul#wp-admin-bar-root-default > li {
+            margin-right: .5rem;
+        }
+        ul#wp-admin-bar-top-secondary > li {
+            margin-left: .5rem;
+        }
+    }
+}
+
+#wp-toolbar{
+
+    .folio-ab-item {
+        strong{
+            font-weight: 500;
+        }
+    }
+
+    .folio-ab-subitem {
+        .ab-icon{
+            float: none !important;
+        }
+    }
+
+    .folio-ab-icon {
+        display: inline-block;
+        float: left;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;   
+        width: 17px;
+        height: 32px;
+        margin-right: 7px;
+        background-image: $icon-svg-folio-adminbar;
+    }
+
+    .folio-ab-item:hover, .folio-ab-item:focus{
+        .folio-ab-icon{
+           background-image: $icon-svg-folio-adminbar-hover;
+        }
+    }
+
+    .folio-ab-badge{
+        background-color: $adminbar-color-hover;
+        color: $grey-lighter;
+        border-radius: 3px;
+        padding: 1px 4px 2px;
+        margin-right: 3px;
+    }
+
+    ul.ab-top-menu > li.hover ul.ab-submenu {
+        li > .ab-item .ab-icon:before{
+            color: $grey-lighter;
+        }
+        li.menupop.hover > .ab-item .ab-icon:before,
+        li > .ab-item:hover .ab-icon:before,
+        li > .ab-item:focus .ab-icon:before{
+            color: $adminbar-color-hover;
+        }
+    }
+
+    ul.ab-top-menu li > .ab-item:hover,
+    ul.ab-top-menu li.hover > .ab-item{
+        color: $adminbar-color-hover;
+    }
+
+    ul.ab-top-menu .folio-ab-subitem ul.ab-submenu li .ab-item{
+        height: auto !important;
+    }
+
+    ul.ab-top-menu .folio-ab-item li.folio-ab-info .ab-item{
+        height: auto !important;
+        white-space: normal !important;
+    }
+
+    ul.ab-top-menu li .folio-ab-subitem{
+        .ab-sub-wrapper div.ab-item{
+            color: rgba(240,245,250,.7);
+        }
+        .folio-ab-wrapper{
+            display: block;
+            position: relative;
+            padding-left: 30px;
+            line-height: 2;
+            .ab-icon{
+                position: absolute !important;
+                left: 0;
+                top: -1px;
+             }
+        }
+        &.folio-ab-info{
+            .folio-ab-wrapper{
+                border-top: 1px solid $extra-dark;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-top: 10px;
+                min-width: 175px;
+                .ab-icon{
+                    top: 6px;
+                }
+                line-height: 1.4;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 782px){
+
+    body:not(.wp-admin) {
+        #wp-toolbar {
+
+            #wp-admin-bar-root-default{
+                margin-left: -.75rem;
+            }
+    
+            #wp-admin-bar-top-secondary{
+                margin-right: -.75rem;
+            }
+
+            ul#wp-admin-bar-root-default > li {
+                margin-right: 0;
+            }
+            ul#wp-admin-bar-top-secondary > li {
+                margin-left: 0;
+            }
+
+            .ab-submenu .wp-admin-bar-arrow{
+                display: none;
+            }
+    
+            .ab-submenu .ab-sub-wrapper{
+                position: relative!important;
+                display: block!important;
+                margin: -10px 0 0!important;
+                box-shadow: none;
+            }
+
+            .ab-top-menu > .menupop{
+                position: static;
+            }
+    
+            .ab-top-menu > .menupop .ab-sub-wrapper{
+                width: 100%;
+                left: 0;
+                > ul.ab-submenu:last-child{
+                    padding-bottom: 10px !important;
+                }
+            }
+        }
+    }
+
+    #wp-toolbar {
+
+        .ab-top-menu > .menupop > .ab-sub-wrapper .ab-item .folio-ab-wrapper {
+            font-size: 16px;
+        }
+
+        #wp-admin-bar-my-account #wp-admin-bar-user-actions > li:first-child{
+            margin-top: 6px !important;
+        }
+
+        .folio-ab-item {
+
+            position: static;
+
+            .ab-submenu .wp-admin-bar-arrow{
+                display: none;
+            }
+
+            .ab-submenu .ab-sub-wrapper{
+                position: relative!important;
+                display: block!important;
+                margin: -10px 0 0!important;
+                box-shadow: none;
+            }
+
+            .ab-sub-wrapper{
+                width: 100%;
+                left: 0;
+                > ul.ab-submenu:last-child{
+                    padding-bottom: 10px !important;
+                }
+            }
+            
+        }
+
+        > ul > li{
+            &.folio-ab-item{
+                display: block;
+            }
+        }
+        .folio-ab-icon {
+            width: 26px;
+            height: 46px;
+            margin: 0 15px;
+        }
+
+        .folio-ab-label{
+            @include sr-only();
+        }
+
+        .folio-ab-badge{
+            border-radius: 3px;
+            padding: 2px 6px 4px;
+            margin: 0 10px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        ul.ab-top-menu li .folio-ab-subitem{
+            .ab-sub-wrapper{
+                .ab-item{
+                    padding-left: 50px!important;
+                }
+            }
+            .folio-ab-wrapper{
+                padding-left: 35px;
+                font-weight: bold;
+                .ab-icon{
+                    font-size: 24px !important; 
+                    height: auto;
+                    width: auto;
+                    top: 4px;
+                }
+            }
+            &.folio-ab-info{
+                .folio-ab-wrapper{
+                    .ab-icon{
+                        top: 10px;
+                    }
+                }
+            }
+        }
+
+        #wp-admin-bar-search {
+            display: block;
+            min-width: 54px;
+        }
+
+        #wp-admin-bar-search #adminbarsearch{
+            height: 46px !important;
+            padding: 0 12px !important;
+            position: absolute;
+            right:4px;
+            &:before{
+                font-size: 30px !important;
+                top: 8px;
+                left: 14px;
+            }
+            input.adminbar-input{
+                padding-left: 34px !important;
+                height: 32px !important;
+                top: 7px !important;
+                &:focus{
+                    background-color: #f5f5f5 !important;
+                }
+            }
+
+            &.adminbar-focused{
+                position: absolute;
+                right: 0;
+            }
+        }
+
+    }
+}
+
+
+@media screen and (min-width: 783px){
+    #wp-admin-bar-my-account{
+        > .ab-item{
+            max-width: 180px;
+            @include text-overflow();
+            padding-right: 33px !important;
+            .avatar{
+                position: absolute;
+                top: 11px;
+                right: 8px;
+            }
+        }
+    }
+
+}
+
+
+body:not(.logged-in):not(.wp-admin) {
+    #wpadminbar {
+        color: $white;
+        background: $brand-primary;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body:not(.wp-admin) {
+        #wpadminbar {
+            position: fixed;
+        }
+    }
+
+    #wp-toolbar{
+        .folio-ab-badge{
+            margin: 0 5px;
+        }
+    }
+}
+

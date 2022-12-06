@@ -1,0 +1,141 @@
+label {
+    font-weight: bold;
+    margin-bottom: .3rem;
+}
+
+.form-radio, .form-check {
+    label {
+        font-weight: normal;
+        margin: 0;
+        &.active{
+            font-weight: bold;
+        }
+    }
+}
+
+.form-radio, .form-inline-radio,
+.form-check, .form-inline-check{
+  input:focus + .icon:before{
+    outline: auto $form-item-outline-width -webkit-focus-ring-color;
+  }
+}
+
+.form-group,
+.comment-form-comment {
+    position: relative;
+    margin-bottom: $form-group-margin-bottom;
+	@include font-size($form-font-size);
+}
+
+
+.comment-form-comment > label {
+    @extend .sr-only;
+}
+
+.comment-form-comment > textarea {
+    background: $input-background-inverse;
+    font-size: 1.1rem;
+    display: block;
+	width: 100%;
+	color: $input-color;
+	padding: $input-padding-y $input-padding-x $input-padding-bottom;
+	border: $input-border;
+	border-radius: $input-border-radius;
+	//background-color: $input-background;
+	background-image: none;
+	line-height: $input-line-height;
+	min-height: $input-height;
+    resize: vertical;
+}
+
+.comment-form .wp-editor-wrap {
+    margin: 2rem 0 1rem;
+}
+
+
+.comment-form{
+    .wp-core-ui .button, 
+    .wp-core-ui .button-secondary {
+        color: $brand-primary;
+        background-color: $editor-panel-bg-color;
+        text-decoration: none;
+        font-weight: normal;
+        border: 0;
+        vertical-align: top;
+        border-radius: 0;
+        &:hover, &:focus{
+            background-color: $white;
+            color: $brand-primary;
+            border: 0;
+        }
+    }
+    
+}
+
+@include media-up(xl) {
+    .wp-media-buttons {
+        position: absolute;
+        right: 7px;
+        top: 9px;
+    }
+}
+
+.form-item {
+    padding: 0.6rem 1rem;
+    min-height: 1.4rem;
+}
+
+textarea.form-item {
+    line-height: 1.1;
+    font-size: 1.1rem;
+}
+
+/* Form sort */
+
+.form-sort {
+    .form-radio label {
+        padding-left: 0;
+        padding-right: 25px;
+        position: relative;
+        display: block;
+        input,
+        .icon{
+            left: auto;
+            right: 0;
+        }
+        .icon{
+            right: 22px;
+        }
+    }
+}
+
+
+.comment-form {
+    position: relative;
+    .log-out {
+        position: absolute;
+        right: 0;
+        top: -36px;
+    }
+}
+
+
+// Validation
+
+.invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 1rem;
+    //color: $red;
+}
+
+.form-item.is-invalid ~ .invalid-feedback,
+.was-validated .form-item:invalid ~ .invalid-feedback {
+    display: block;
+}
+
+.form-item.is-invalid,
+.was-validated .form-item:invalid {
+    background-color: $validation-bg !important;
+}

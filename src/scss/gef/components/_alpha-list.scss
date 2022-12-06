@@ -1,0 +1,44 @@
+// Alpha list
+.alpha-list{
+	ol{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		float: left;
+	}	
+	background: $alpha-list-bg;
+	font-weight: $alpha-list-weight;
+	padding: 0;
+	.is-active a,span{
+		background-color: $alpha-list-active-bg-color;
+	}
+	@include clearfix();
+
+	li:before{
+		content: "";
+	}
+}
+
+// Alpha item
+.alpha-list__item{
+	text-align: center;
+	float: left;
+	border-bottom: $alpha-list-border-width solid $alpha-list-border-color;
+	width: $alpha-list-item-width;
+	min-width: $alpha-list-item-min-width;
+	padding: $alpha-list-item-padding-y $alpha-list-item-padding-x;
+	margin-bottom: 0;
+	a,span{
+		display: inline;
+		padding: 0 $alpha-list-item-padding-x;
+		text-decoration: none;
+		a:hover{
+			//background-color: $alpha-list-active-bg-color;
+			color: $alpha-list-link-color-hover;
+		}
+	}	
+	&.inactive{
+		color: $alpha-list-inactive-color;
+	}
+}

@@ -1,0 +1,100 @@
+
+
+// Pullquote block.
+
+.wp-block-pullquote {
+	padding:    3em 0;
+	text-align: center;
+	position: relative;
+	margin: $block-margin-y 0;
+    padding: 4rem 3.5rem 1rem;
+
+	border-top: 4px solid $brand-primary;
+	border-bottom: 1px solid $brand-primary;
+
+	&__citation {
+		position: relative;
+		color: $text-muted;
+        font-style: normal;
+        text-transform: none;
+	}
+
+	blockquote{
+		padding: 0;
+		max-width: 80%;
+		margin: 1.5rem auto;
+		position: relative;
+		&::before {
+			padding: 1rem;
+			content: "\201C";
+			color: $primary;
+			line-height: 0.9;
+			font-size: 7.5rem;
+			line-height: .8;
+			position: absolute;
+			top: -4.5rem;
+			left: 50%;
+			opacity: 0.4;
+			margin-left: -36px;
+		}
+
+		p{
+			margin-bottom: $paragraph-margin-bottom;
+		}
+
+		@each $color, $value in $style-colors {
+			&.has-#{$color}-color {
+				&::before {
+					color: $value;
+				}
+				.wp-block-pullquote__citation {
+					color: $value;
+					opacity: .75;
+				}
+			}	
+		}
+	}
+
+
+	&.is-style-solid-color{
+        border: none;
+		blockquote {
+			margin-left: auto;
+			margin-right: auto;
+			text-align: inherit;
+            max-width: 80%;
+			p{
+				margin-bottom: $paragraph-margin-bottom;
+			}
+		}
+
+	}
+
+	
+
+}
+
+[data-type="core/pullquote"] {
+
+    &[data-align="left"],
+    &[data-align="right"] {
+
+        .wp-block-pullquote{
+            margin-top: -28px;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            blockquote{
+                max-width: 92%;
+            }
+        }
+
+        .block-editor-block-list__block-edit {
+            max-width: 33.333%;
+
+            @include media-down(md) {
+                max-width: 50%;
+            }
+        }
+    }
+
+}

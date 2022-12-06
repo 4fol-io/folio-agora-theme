@@ -1,0 +1,17 @@
+$calendar-padding:						$spacer-y/2 $spacer-x/2;
+$calendar-bg:									$grey-light;
+
+$calendar-cell-padding: 			3px $spacer-x/2;
+
+$calendar-month-bg:						$white;
+$calenadar-month-padding:			$spacer-y/3 $spacer-x/2;
+
+$calendar-week-color:					$brand-primary;
+$calenadar-week-padding:			$spacer-y/3 $spacer-x/2;
+
+$calendar-day-color:					$body-color;
+$calendar-day-color-hover:		$brand-primary;
+
+$calendar-day-inactive-color:		$grey;
+$calendar-day-active-bg:				$brand-primary;
+$calendar-day-active-color:			$white;

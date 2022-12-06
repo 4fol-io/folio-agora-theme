@@ -1,0 +1,131 @@
+/*.alert {
+    font-size: 1.15rem;
+    padding: .8rem 1.2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+
+    p {
+        margin-bottom: .5rem;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.alert--info {
+    background-color: $brand-secondary-light;
+}
+
+.alert--warning {
+    background-color: #fbe5a5;
+}
+
+// Alert colors
+
+.color-success{
+    color: $color-success;
+}
+
+.color-warning{
+    color: $color-warning;
+}
+
+.color-error{
+    color: $color-error;
+}*/
+
+
+
+
+.alert-dismissible{
+	.close{
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 2;
+		padding: .5rem 1rem;
+		color: inherit;
+		opacity: .7;
+		float: right;
+		font-size: 2.25rem;
+		line-height: 1;
+		text-decoration: none;
+		&:not(:disabled):not(.disabled):focus, 
+		&:not(:disabled):not(.disabled):hover{
+			opacity: 1;
+		}
+	}
+}
+
+.alert--primary-overlay{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	margin: 0;
+	background-color: rgba($brand-primary, 0.85);
+	z-index: $zindex-fixed;
+	color: $white;
+	> * {
+		color: $white;
+	}
+	.alert-title{
+		@include font-size(21);
+		margin-bottom: .5rem;
+	}
+}
+
+@include media-down(sm){
+    .alert--primary-overlay{
+        .alert-icon{
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+        }
+        .alert-content,
+        .alert-actions{
+            max-width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+}
+
+// 404;
+
+.not-found-alert {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    background-color: $brand-secondary;
+
+    .not-found-title {
+        font-size: 22em;
+        text-align: right;
+        line-height: .84em;
+        margin: 0;
+        overflow: hidden;
+        white-space: nowrap;
+
+        .icon {
+            font-size: 0.75em;
+            margin-left: -.075em;
+            margin-top: -.21em;
+            margin-right: -.12em;
+            vertical-align: middle;
+        }
+    }
+}
+
+@include media-down(sm) {
+    .not-found-alert {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        background-color: $brand-secondary;
+
+        .not-found-title {
+            font-size: 10em;
+            padding: .5rem 0;
+        }
+    }
+}

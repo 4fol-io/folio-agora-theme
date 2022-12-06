@@ -1,0 +1,154 @@
+/* Evaluation box */
+
+
+.evaluation-box{
+
+  .alert--icon-before{
+    position: relative;
+    padding-left: 2rem;
+    .icon--before{
+      position: absolute;
+      left: 6px;
+      top: 6px;
+    }
+  }
+
+  .alert--icon-after{
+    position: relative;
+    padding-right: 2rem;
+    .icon--after{
+      position: absolute;
+      right: 6px;
+      top: 6px;
+    }
+  }
+
+  .alert:not(.alert--success-alternative):not(.alert--error-alternative):not(.alert--success):not(.alert--error):not(.alert--warning){
+    background: inherit;
+  }
+
+  &.sent{
+    background-color: $color-evaluation-sent;
+  }
+  &.pending{
+    background-color: $color-evaluation-pending;
+  }
+
+  .teacher-evaluation-box,
+  .student-evaluation-box{
+    position:relative;
+  }
+
+  .grades-box{
+    background-color: $grey-lighter;
+    padding: .25rem .1rem;
+
+    .btn-delete-grade{
+      padding: 0 0.5rem;
+      min-height: 1.6rem;
+      line-height: 1.6;
+      margin: .25rem;
+      float: right;
+    }
+
+    .icon--delete-note {
+      font-size: 1.55rem;
+      line-height: 1;
+    }
+    
+    label {
+      padding: 0;
+      margin: .25rem .5rem;
+      cursor: pointer;
+      .lbl{
+        display: block;
+        padding: 0.25rem 0.5rem;
+        min-width: 36px;
+        text-align: center;
+      }
+    }
+    
+    label:hover,
+    label.selected-grade {
+      background-color: $color-highlight;
+    }
+
+    .radio-grade-select {
+        cursor: pointer;
+        width: 100%;
+        &:focus + .lbl{
+            outline: 2px solid $white;
+        }
+    }
+
+  }
+
+  .note{
+    position: relative;
+    padding-left: 1.75rem;
+    margin: 1.5rem 0 .5rem;
+    .icon{
+      position: absolute;
+      top: 1px;
+      left: 0;
+    }
+  }
+
+  .comment-grade{
+    font-size: 1rem;
+    font-weight: normal;
+  }
+
+  legend{
+    font-size: 1.2rem;
+    font-weight: $font-weight-bold;
+  }
+
+  .read-evaluation{
+    .note,
+    .grade{
+      margin: .425rem 0;
+    }
+  }
+
+  .edit-evaluation{
+    margin: .425rem 0;
+  }
+
+}
+
+.evaluation-area{
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 1.5rem;
+
+  .evaluation-title{
+    text-transform: uppercase;
+  }
+
+  + .entry-comments{
+    margin-top: 3rem;
+  }
+  
+}
+
+.single,
+.page{
+    .evaluation-area{
+      padding-left: 0;
+      padding-right: 0;
+    }
+}
+
+
+@include media-up(lg){
+  .evaluation-area{
+    .student-profile{
+      max-width: 360px;
+      overflow:hidden;
+      .fn{
+        @include text-overflow();
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+// Thumbnails
+.img-thumbnail{
+	border: $thumbnail-border-width solid $thumbnail-border-color;
+	border-radius: $thumbnail-border-radius;
+	box-shadow: $thumbnail-shadow;
+	transition: $thumbnail-transition;
+	
+	a:hover > &{
+		border-color: $thumbnail-hover-border-color;
+		opacity: $thumbnail-hover-opacity;
+	}
+}
+
+// Figure/Figcaption
+.img-figure{
+	margin: 0;
+	padding-top: $figure-padding;
+	padding-left: $figure-padding;
+	padding-right: $figure-padding;
+	margin-bottom: $spacer-y;
+	> img{
+		text-align: center;
+	}
+}
+
+.img-figcaption{
+	padding-top: $figcaption-padding;
+	padding-bottom: $figcaption-padding;
+	@extend .text-small;
+	@include clearfix();
+
+	.icon:hover {
+		text-decoration: none;
+	}
+}
+
+// Image header
+.img-header{
+	position: relative;
+}
+.img-header__title{
+	background: $img-header-bg;
+	color: $img-header-color;
+	padding: $img-header-padding;
+	width: 100%;
+	position: absolute;
+}
+
+// Image resized and centered by ratio
+.img-wpr{	
+	position:relative;
+	height:100%;
+	min-height:inherit;
+	overflow:hidden;
+	
+	&__cover{
+		width:100%;
+		max-width:none;
+		height:100%;
+		max-height:none;
+		position: absolute;
+		object-fit:cover;
+		left: 0;
+		top: 0;
+	}
+	&__contents{
+		position: relative;
+		padding: $img-background-padding;
+		z-index: $img-contents-z-index;
+	}
+}
+
+@include media-down(md) {
+    .img-wpr__contents {
+        position: relative;
+        min-height: inherit;
+    }
+
+    .img-wpr__cover {
+    	top: 0;
+    }
+}
+
+// Image heights
+@include image-height-responsive($img-height);
+
+// Image background pattern
+.img--tint {
+	&:after {
+		content: "";
+	    background: $img-tint;
+	    z-index: $img-tint-z-index;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	}
+}
+
+// Old browser compatibility
+.no-objectfit .img-wpr{	
+	&__cover{
+		left: $no-objectfit-left;
+		top: $no-objectfit-top;
+		@include transform(translate(-$no-objectfit-left, -$no-objectfit-top));
+		width: auto;
+		min-width: 100%;
+		height: 100%;
+		min-height: inherit;
+	}
+	// Horizontal adjust
+	&.img-wpr--horizontal .img-wpr__cover{
+		width: 100%;
+		height: auto;
+		min-height: inherit;
+		max-height: none;
+	}
+	// Vertical adjust
+	&.img-wpr--vertical .img-wpr__cover{
+		width: auto;
+		height: 100%;
+		min-height: inherit;
+		max-height: none;
+	}
+}

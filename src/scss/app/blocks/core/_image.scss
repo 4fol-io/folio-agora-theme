@@ -1,0 +1,30 @@
+
+// Image block.
+
+.wp-block-image {
+
+	figure{
+		margin-bottom: 0;
+	}
+
+	.alignleft {
+		margin-right: $spacer / 2;
+	}
+
+	.alignright {
+		margin-left: $spacer / 2;
+	}
+
+	@include media-up(sm) {
+
+		.alignleft {
+			margin-right: $spacer * 1.5;
+		}
+
+		.alignright {
+			margin-left: $spacer * 1.5;
+		}
+
+	}
+
+}

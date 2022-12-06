@@ -1,0 +1,115 @@
+// Color variants
+
+.tab-system--light {
+ @include tab-variant($tab-light-inactive-color, $tab-light-inactive-bg, $tab-light-color, $tab-light-bg, $tab-light-border-color, $tab-light-border-color-hover);
+}
+
+.tab-system--inverse, .tab-system--custom1,
+.tab-system--custom2, .tab-system--custom3,
+.tab-system--custom4, .tab-system--custom5,
+.tab-system--custom6, .tab-system--custom7,
+.tab-system--custom8, .tab-system--custom9,
+.tab-system--custom10, .tab-system--custom11,
+.tab-system--custom12, .tab-system--custom13,
+.tab-system--custom14, .tab-system--custom15,
+.tab-system--custom16, .tab-system--custom17,
+.tab-system--custom18, .tab-system--custom19,
+.tab-system--custom20, .tab-system--custom21,
+.tab-system--custom22, .tab-system--custom23{
+	@include tab-variant($tab-inverse-inactive-color, $tab-inverse-inactive-bg, $tab-inverse-color, $tab-inverse-bg, $tab-inverse-border-color, $tab-inverse-border-color-hover);
+}
+
+.tab-system--custom1{
+	@include tab-variant--color($custom1);
+}
+
+.tab-system--custom2{
+	@include tab-variant--color($custom2);
+}
+
+.tab-system--custom3{
+	@include tab-variant--color($custom3);
+}
+
+.tab-system--custom4{
+	@include tab-variant--color($custom4);
+}
+
+.tab-system--custom5{
+	@include tab-variant--color($custom5);
+}
+
+.tab-system--custom6{
+	@include tab-variant--color($custom6);
+}
+
+.tab-system--custom7{
+	@include tab-variant--color($custom7);
+}
+
+.tab-system--custom8{
+	@include tab-variant--color($custom8);
+}
+
+.tab-system--custom9{
+	@include tab-variant--color($custom9);
+}
+
+.tab-system--custom10{
+	@include tab-variant--color($custom10);
+}
+
+.tab-system--custom11{
+	@include tab-variant--color($custom11);
+}
+
+.tab-system--custom12{
+	@include tab-variant--color($custom12);
+}
+
+.tab-system--custom13{
+	@include tab-variant--color($custom13);
+}
+
+.tab-system--custom14{
+	@include tab-variant--color($custom14);
+}
+
+.tab-system--custom15{
+	@include tab-variant--color($custom15);
+}
+
+.tab-system--custom16{
+	@include tab-variant--color($custom16);
+}
+
+.tab-system--custom17{
+	@include tab-variant--color($custom17);
+}
+
+.tab-system--custom18{
+	@include tab-variant--color($custom18);
+}
+
+.tab-system--custom19{
+	@include tab-variant--color($custom19);
+}
+
+.tab-system--custom20{
+	@include tab-variant--color($custom20);
+}
+
+.tab-system--custom21{
+	@include tab-variant--color($custom21);
+}
+
+.tab-system--custom22{
+	@include tab-variant--color($custom22);
+}
+
+.tab-system--custom23{
+	@include tab-variant--color($custom23);
+}
+
+
+

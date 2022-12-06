@@ -1,0 +1,57 @@
+// Fullwidth
+$fullwidth-wrapper-width: 					$grid-max-width;
+$fullwidth-padding-top-small: 				$spacer-y * 2 - 4;
+$fullwidth-height:							$height-1y;
+$fullwidth-hover-color:						$brand-primary;
+
+// Fullwidth image
+$fullwidth-z-index-image: 					2;
+$fullwidth-z-index-content-text: 			3;
+$fullwidth-z-index-content-center-icon: 	4;
+
+// Fullwidth icon
+$fullwidth-play-size:						5rem;
+$fullwidth-bottom-icon-bottom: 				20px;
+$fullwidth-bottom-icon-margin-mobile:	 	20px 0;
+
+// Fullwidth button
+$fullwidth-button-padding-right: 			64px;
+$fullwidth-button-padding-left: 			4px;
+
+// Banner generic vars
+$page-width: 								1404px;
+$page-inner-width: 							1204px;
+$page-padding: 								($page-width - $page-inner-width)/2;
+$page-unit:									4px;
+$page-module:								17*$page-unit;
+$page-module-merged:						$page-module - $page-unit;
+$page-col:									93px;
+$page-header-mobile:						$page-module*1.5; /** header height for mobile devices **/
+
+// Banner full
+$banner-max-height-mobile:					544px;
+$banner-max-height-desktop:					676px;
+$banner-inner-margin:						20px;
+$banner-outer-margin:						100px;
+$banner-outer-width:						$banner-outer-margin*2;
+
+// Banner content
+$banner-content-z-index:					2;
+$banner-title-line-height:					0.95;
+$banner-title-font-size-mobile:				2.25rem;
+$banner-title-font-size-desktop:			3.4375rem;
+$banner-title-font-weight:					600;
+$banner-description-font-size-mobile:		1.3125rem;
+$banner-description-font-size-desktop:		1.875rem;
+$banner-description-font-weight:			400;
+
+// Banner image
+$banner-img-z-index:						2;
+
+// Banner icon
+$banner-icon-arrow-z-index:					2;
+$banner-icon-arrow-font-size:				2.625rem;
+
+// Banner tint
+$banner-full-tint-z-index:					2;
+$banner-full-tint-opacity:					.25;

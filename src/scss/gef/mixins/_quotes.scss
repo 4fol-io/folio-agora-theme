@@ -1,0 +1,18 @@
+@mixin not-empty(){
+  &:not(:empty){
+    @content;
+  }
+}
+
+@mixin blockquote($orientation){
+  @include media-up(md){
+    clear: both;
+    float: #{$orientation};
+    margin-top: 3px;
+    @if($orientation == right){
+      margin-left: 20px;
+    } @else if($orientation == left){
+      margin-right: 20px;
+    }
+  }
+}

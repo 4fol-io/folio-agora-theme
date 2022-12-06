@@ -1,0 +1,108 @@
+// Table block
+
+.wp-block-table {
+
+	table{
+		th, td{
+			border-left: 0;
+			border-right: 0;
+			padding: 0;
+		}
+
+		td{
+			border-bottom: 0;
+		}
+
+		@extend .table;
+	}
+
+	&.is-style-stripes{
+		border: 0;
+		margin: 0;
+		table{
+			@extend .table-striped;
+		}
+	}
+
+	td.is-selected, th.is-selected {
+		border-color: $dark;
+		box-shadow: inset 0 0 0 1px $dark;
+	}
+}
+
+
+.wp-block-calendar{
+	table{
+		@extend .table;
+		font-family: inherit;
+		caption{
+			caption-side: top;
+			text-transform: capitalize;
+		}
+		th{
+			font-weight: $font-weight-bold;
+			background: transparent;
+		}
+
+		th, td{
+			border-color: $table-border-color;
+			border-left: 0;
+			border-right: 0;
+		}
+
+		td{
+			border-bottom: 0;
+		}
+
+		a{
+			color: $link-color;
+			text-decoration: none;
+			&:hover, &:focus{
+				text-decoration: underline;
+				color: $link-hover-color;
+			}
+		}
+	}
+
+	tfoot {
+		td:first-child{
+			text-align: left;
+		}
+		td:last-child{
+			text-align: right;
+		}
+	}
+	
+}
+
+
+[data-type="core/table"] {
+
+	&[data-align="left"],
+	&[data-align="center"],
+    &[data-align="right"] {
+
+        .block-editor-block-list__block-edit {
+            width: 100%;
+			max-width: 100%;
+			table{
+				width: 100%;
+			}
+        }
+        @include media-up(sm) {
+            .block-editor-block-list__block-edit {
+                width: $editor-alignment-width;
+                max-width: $editor-alignment-width;
+            }
+        }
+
+	}
+
+	&[data-align="center"]{
+		.block-editor-block-list__block-edit {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+}

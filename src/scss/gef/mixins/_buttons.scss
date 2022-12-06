@@ -1,0 +1,58 @@
+@mixin button-size($padding-y, $padding-x, $font-size, $line-height) {
+  padding: $padding-y $padding-x;
+  font-size: #{$font-size}px;
+  line-height: $line-height;
+}
+
+@mixin button-variant($color, $background, $active-background, $active-color) {
+  color: $color;
+  background-color: $background;
+  text-decoration: none;
+  font-weight: normal;
+
+  
+  @if not $active-background{
+    $active-background: lighten($background, 10%);
+    
+    @if (lightness($background) > 95) {
+      $active-background: darken($background, 5%);
+    }
+  }
+
+  @if not $active-color{
+    $active-color: $color;
+  }
+
+  &:focus,
+  &:active{
+    color: $active-color;
+    background-color: $active-background;
+    outline-color: $btn-outline-color;
+    outline-width: $btn-outline-width;
+    outline-offset: $btn-outline-offset;
+  }
+  &:hover {
+    color: $active-color;
+    background-color: $active-background;
+    text-decoration: none;
+  }
+  
+  &.disabled,
+  &:disabled,
+  fieldset[disabled] & {
+    &:focus,
+    &.focus,
+    &:hover{
+      color: inherit;
+      background-color: $background;
+    }
+  }
+  &.disabled.btn--primary,
+  &:disabled.btn--primary {
+    &:focus,
+    &.focus,
+    &:hover{
+      color: $btn-primary-color;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+// Default tab mixin
+@mixin tab-variant($color-inactive, $background-inactive, $color, $background, $border-color, $border-color-hover) {
+	.tab{
+		border-color: $border-color;
+		color: $color-inactive;
+		background-color: $background-inactive;
+	}
+	
+	.tab:hover{
+		border-color: $border-color-hover;
+		border-bottom-color: $border-color;
+	}
+	.tab.is-active{
+		background-color: $background;
+		color: $color;
+		border-bottom-color: transparent;
+	}
+	.tab.is-active:hover{
+		border-color: $border-color;
+		border-bottom-color: transparent;
+	}
+	
+	.tab-content{
+		border-color: $border-color;
+		background-color: $background;
+		color: $color;
+	}	
+}
+
+// Tab color mixin
+@mixin tab-variant--color($tabcolor){
+	.tab:hover{
+		border-top-color: $tabcolor;
+		border-right-color: $tabcolor;
+		border-left-color: $tabcolor;
+	}
+	.tab.is-active{
+		background-color: $tabcolor;
+	}
+	.tab-content{
+		background-color: $tabcolor;
+	}
+}

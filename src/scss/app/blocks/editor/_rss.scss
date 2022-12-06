@@ -1,0 +1,21 @@
+
+// RSS block.
+
+.wp-block-rss {
+	list-style: none;
+	padding: 0;
+	margin-bottom: 1.5rem;
+	&__item-title{
+
+	}
+	&__item-author,
+	&__item-publish-date {
+		display: block;
+	}
+	&__item-author{
+	}
+	&__item-excerpt{
+		line-height: inherit;
+		margin-top: .5rem;
+	}
+}

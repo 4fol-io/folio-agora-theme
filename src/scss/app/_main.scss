@@ -1,0 +1,7 @@
+/* GEF general adjustments styleshet */
+
+body {
+    background-color: #fff;
+    @include font-size($agora-font-size-base);
+    line-height: $agora-line-height-base;
+}

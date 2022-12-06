@@ -1,0 +1,29 @@
+$main-header-border-bottom: 	5px solid $brand-primary;
+$main-header-padding-y:				$spacer-y;
+$main-header-margin-bottom:		$spacer-y*2;
+
+$small-nav-border-bottom:			1px solid $grey;
+$small-nav-padding-y:					$spacer-y*0.5;
+$small-nav-padding-x:					$spacer-x;
+$small-nav-link-color:				$brand-primary;
+
+$small-nav-link-hover-weight:							bold;
+$small-nav-link-hover-border-left:				5px solid transparent;
+$small-nav-link-hover-border-left-active:	5px solid $brand-secondary;
+
+$main-nav-bg:									$grey-light;
+$main-nav-height:							$spacer*3;
+$main-nav-color:							$brand-primary;
+$main-nav-font-size:					$font-size-lg;
+$main-nav-weight:							bold;
+$main-nav-border-bottom:			1px solid $grey;
+$main-nav-border-width:				5px;
+$main-nav-hover-border-color:	$brand-secondary;
+$main-nav-transition: 				border-top-color .5s;
+
+$nav-profiles-font-size:			$font-size-xs;
+$nav-profiles-color:					$text-muted;
+
+
+// light header
+$light-header-title-font-size: 28;
