@@ -31,8 +31,8 @@ use AgoraFolio\Templates;
 
 				</div><!-- .entry-summary-wrap -->
 
-				<div class="entry-meta d-flex align-items-end justify-content-end">
-					<?php Templates\visibility(); ?>
+				<div class="entry-meta mb-2">
+					<?php Templates\visibility_inline(); ?> - <?php Templates\posted_on('human'); ?>
 				</div>
 
 			</div><!-- .entry-summary -->

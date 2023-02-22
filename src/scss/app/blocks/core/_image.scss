@@ -8,11 +8,11 @@
 	}
 
 	.alignleft {
-		margin-right: $spacer / 2;
+		margin-right: $spacer * 0.5;
 	}
 
 	.alignright {
-		margin-left: $spacer / 2;
+		margin-left: $spacer * 0.5;
 	}
 
 	@include media-up(sm) {

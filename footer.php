@@ -9,6 +9,8 @@
  * @package AgoraFolio
  */
 
+use AgoraFolio\Utils;
+
 ?>
 
       </div><!-- #content -->
@@ -42,7 +44,7 @@
             <p class="mb-0 hidden-xs hidden-sm"><?php esc_html_e('This is a personal workspace for a student of the Universitat Oberta de Catalunya. Any content published in this space is the responsibility of its author.', 'agora-folio') ?></p>
           </div>
           <div class="alert-actions ml-md-4">
-              <a class="btn btn--white btn--lower px-4 my-3" href="<?php echo esc_url( wp_login_url( home_url() ) ) ?>">
+              <a class="btn btn--white btn--lower px-4 my-3" href="<?php echo esc_url( wp_login_url( Utils\get_current_page_link() ) ) ?>">
                 <span class="icon icon--before icon--user" aria-hidden="true"></span>
                 <?php esc_html_e( 'Access', 'agora-folio' ) ?>
               </a>

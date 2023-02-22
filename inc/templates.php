@@ -13,7 +13,7 @@ namespace AgoraFolio\Templates;
 use AgoraFolio\Assets\AssetResolver;
 use AgoraFolio\Data;
 use AgoraFolio\Images;
-
+use Edu\Uoc\Te\Uocapi\Model\Vo\Classroom;
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
@@ -92,16 +92,18 @@ function comments_link() {
  * Comments link button
  */
 function comments_link_inline() {
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+	if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 
 		$num     = number_format_i18n( get_comments_number() );
 		$cls     = $num > 0 ? "has-comments" : "no-comments";
 		
+		echo '<span class="sep"> - </span>';
+		//echo '<div class="comments-link">';
 		comments_popup_link(
 			sprintf(
 				wp_kses(
 					/* translators: %s: post title */
-					__( 'Debate', 'agora-folio' ) . '<span class="sr-only"> ' . __( 'on %1$s', 'agora-folio' ) .'</span>',
+					__( 'comment', 'agora-folio' ) . '<span class="sr-only"> ' . __( 'on %1$s', 'agora-folio' ) .'</span>',
 					array(
 						'span' => array(
 							'class' => array(),
@@ -111,6 +113,7 @@ function comments_link_inline() {
 				wp_kses_post( get_the_title() )
 			)
 		);
+		//echo '</div>';
 
 	}
 }
@@ -148,15 +151,15 @@ function get_folio_contact_extra_js_alert($session) {
 }
 
 function get_folio_campus_session() {
+	global $UOCApiManager;
+	
 	$session = '';
-	global $openIDUOC;
-	if ( $openIDUOC ) {
-		$uocApi = $openIDUOC->getUocAPI();
-		$session = $uocApi->getCampusSession( get_current_user_id() );
-		if (!$session) {
-			$session = '';
-		}
+	$session = $UOCApiManager->getCampusSession( get_current_user_id() );
+	
+	if (!$session) {
+		$session = '';
 	}
+
 	if (empty($session)) {
 		$openid_connect_generic_last_user_claim = get_user_meta( get_current_user_id(),
 			'openid-connect-generic-last-user-claim', true );
@@ -226,6 +229,8 @@ function evaluation_link( $role, $status_act ) {
 			$grade = $status_act['activity']->grade;
 		}
 
+		$class = $status === 'pending' ? 'alert--warning-alternative' : 'btn--secondary-alt';
+
 		if ( $role === 'teacher' ) :
 			if ( $status === 'pending' ) {
 				$lbl = __( 'Evaluable', 'agora-folio' );
@@ -234,7 +239,7 @@ function evaluation_link( $role, $status_act ) {
 			}
 			?>
             <a href="<?php echo $eval_link_toggle; ?>"
-               class="btn btn--lower btn--secondary-alt btn--evaluable <?php echo $status ?>" id="btn-evaluable-<?php the_ID(); ?>">
+               class="btn btn--lower <?php echo $class ?> btn--evaluable <?php echo $status ?>" id="btn-evaluable-<?php the_ID(); ?>">
                 <span class="lbl sr-only-sm"><?php echo $lbl; ?></span>
                 <span class="icon icon--before icon--after icon-svg icon-svg--evaluable" aria-hidden="true"></span>
                 <span class="grade"><?php echo $grade; ?></span>
@@ -243,7 +248,7 @@ function evaluation_link( $role, $status_act ) {
 			if ( $status === 'pending' ) {
 				?>
                 <a href="<?php echo $eval_link_toggle; ?>"
-                   class="btn btn--lower alert--warning-alternative btn--evaluable <?php echo $status ?>"
+                   class="btn btn--lower <?php echo $class ?> btn--evaluable <?php echo $status ?>"
                    title="<?php esc_attr_e( 'Pending evaluation', 'agora-folio' ) ?>"
                    aria-label="<?php esc_attr_e( 'Pending evaluation', 'agora-folio' ) ?>">
                     <span class="lbl sr-only-sm"><?php echo __( 'Evaluation', 'agora-folio' ) ?></span>
@@ -252,7 +257,7 @@ function evaluation_link( $role, $status_act ) {
                 </a>
 			<?php } else { ?>
                 <a href="<?php echo $eval_link_toggle; ?>"
-                   class="btn btn--lower btn--secondary-alt btn--evaluable <?php echo $status ?>">
+                   class="btn btn--lower <?php echo $class ?> btn--evaluable <?php echo $status ?>">
                     <span class="grade"><span class="lbl sr-only-sm"><?php echo __( 'Grade','agora-folio' ) ?>: </span><?php echo $grade; ?></span>
                 </a>
 			<?php }
@@ -281,7 +286,7 @@ function evaluation_area( $role, $status_act ) {
 		$public_url = '#';
 		$grade      = '-';
 		$lbl        = __( 'Evaluation Pending', 'agora-folio' );
-		$tip		= __( 'Evaluate inside the Agora to leave comments and notes. If you want to attach PDFs, videos or high quality files, please open the Evaluate option in the RAC', 'agora-folio');
+		$tip		= __( 'Evaluate inside the Agora to leave comments and notes. If you want to attach PDFs, videos or high quality files, please open the Evaluate option in the RAC or in CANVAS', 'agora-folio');
 
 		if ( $status == 'sent' ) {
 			$lbl        = __( 'Evaluated', 'agora-folio' );
@@ -299,9 +304,11 @@ function evaluation_area( $role, $status_act ) {
 		$acc_class = 'accordion';
 		$read_class ='collapse show';
 
-		$eval_link_rac = Data\get_rac_evaluation_url();
+		$classroom = ucs_get_classroom_cur_blog();
+
+		$eval_link_lms = Data\get_lms_evaluation_url();
 		$eval_link_agora =  get_permalink() . '#evaluation';
-		$eval_link_rac_attrs = 'target="_blank"';
+		$eval_link_lms_attrs = 'target="_blank"';
 		$eval_link_agora_attrs = 'role="button" data-toggle="collapse" data-target="#' . $edit_area_id . '" aria-controls="' . $edit_area_id . '" aria-expanded="false"';
 		?>
 		<div class="evaluation-area" tabindex="-1">
@@ -345,8 +352,14 @@ function evaluation_area( $role, $status_act ) {
 											<?php _e( 'Evaluate here', "agora-folio" ); ?>
 											<span class="icon icon--after icon-svg icon-svg--evaluable" aria-hidden="true"></span>
 										</a>
-										<a href="<?php echo $eval_link_rac; ?>" class="btn btn--lower btn--primary btn--evaluate btn--evaluate-rac mr-2" <?php echo $eval_link_rac_attrs; ?>>
-											<?php _e( 'Evaluate in RAC', "agora-folio" ); ?>
+										<a href="<?php echo $eval_link_lms; ?>" class="btn btn--lower btn--primary btn--evaluate btn--evaluate-rac mr-2" <?php echo $eval_link_lms_attrs; ?>>
+											<?php 
+											if ($classroom->getInstitution() == Classroom::INSTITUTION_CANVAS) {
+												_e( 'Evaluate in CANVAS', "agora-folio" );
+											} else {
+												_e( 'Evaluate in RAC', "agora-folio" );
+											}
+											?>
 											<span class="icon icon--after icon--external-link" aria-hidden="true"></span>
 											<span class="icon-alt"><?php _e( '(opens in new window)', 'agora-folio' ) ?></span>
 										</a>
@@ -365,8 +378,14 @@ function evaluation_area( $role, $status_act ) {
 												<?php _e( 'Modify evaluation here', "agora-folio" ); ?>
 												<span class="icon icon--after icon-svg icon-svg--evaluable" aria-hidden="true"></span>
 											</a>
-											<a href="<?php echo $eval_link_rac; ?>" class="btn btn--lower btn--primary btn--evaluate btn--evaluate-rac mr-2" <?php echo $eval_link_rac_attrs; ?>>
-												<?php _e( 'Modify evaluation in RAC', "agora-folio" ); ?>
+											<a href="<?php echo $eval_link_lms; ?>" class="btn btn--lower btn--primary btn--evaluate btn--evaluate-rac mr-2" <?php echo $eval_link_lms_attrs; ?>>
+												<?php 
+												if ($classroom->getInstitution() == Classroom::INSTITUTION_CANVAS) {
+													_e( 'Modify evaluation in CANVAS', "agora-folio" );
+												} else {
+													_e( 'Modify evaluation in RAC', "agora-folio" );
+												}
+												?>
 												<span class="icon icon--after icon--external-link" aria-hidden="true"></span>
 												<span class="icon-alt"><?php _e( '(opens in new window)', 'agora-folio' ) ?></span>
 											</a>
@@ -450,29 +469,31 @@ function evaluation_area( $role, $status_act ) {
 
 										</fieldset>
 
-										<fieldset class="form-group form-inline-radio">
+										<?php if ($classroom->getInstitution() == Classroom::INSTITUTION_UOC_API) { ?>
+											<fieldset class="form-group form-inline-radio">
 
-											<legend><?php echo __( 'Publish options:', 'agora-folio' ) ?></legend>
+												<legend><?php echo __( 'Publish options:', 'agora-folio' ) ?></legend>
 
-											<label class="publish-options"
-												for="publish-grade-radio-<?php the_ID() ?>-scheduled">
-												<input type="radio" id="publish-grade-radio-<?php the_ID() ?>-scheduled"
-													class="publish-grade-radio publish-grade-radio-<?php the_ID() ?>"
-													name="publish-grade-radio-<?php the_ID() ?>" data-id="<?php the_ID() ?>"
-													value="scheduled" checked>
-												<span aria-hidden="true" class="icon icon--radio-button-off icon--small"></span>
-																	<?php echo __( 'Scheduled', 'agora-folio' ) ?>
-											</label>
-											<label class="publish-options" for="publish-grade-radio-<?php the_ID() ?>-now">
-												<input type="radio" id="publish-grade-radio-<?php the_ID() ?>-now"
-													class="publish-grade-radio publish-grade-radio-<?php the_ID() ?>"
-													name="publish-grade-radio-<?php the_ID() ?>" data-id="<?php the_ID() ?>"
-													value="now">
-												<span aria-hidden="true" class="icon icon--radio-button-off icon--small"></span>
-																	<?php echo __( 'Now', 'agora-folio' ) ?>
-											</label>
+												<label class="publish-options"
+													for="publish-grade-radio-<?php the_ID() ?>-scheduled">
+													<input type="radio" id="publish-grade-radio-<?php the_ID() ?>-scheduled"
+														class="publish-grade-radio publish-grade-radio-<?php the_ID() ?>"
+														name="publish-grade-radio-<?php the_ID() ?>" data-id="<?php the_ID() ?>"
+														value="scheduled" checked>
+													<span aria-hidden="true" class="icon icon--radio-button-off icon--small"></span>
+																		<?php echo __( 'Scheduled', 'agora-folio' ) ?>
+												</label>
+												<label class="publish-options" for="publish-grade-radio-<?php the_ID() ?>-now">
+													<input type="radio" id="publish-grade-radio-<?php the_ID() ?>-now"
+														class="publish-grade-radio publish-grade-radio-<?php the_ID() ?>"
+														name="publish-grade-radio-<?php the_ID() ?>" data-id="<?php the_ID() ?>"
+														value="now">
+													<span aria-hidden="true" class="icon icon--radio-button-off icon--small"></span>
+																		<?php echo __( 'Now', 'agora-folio' ) ?>
+												</label>
 
-										</fieldset>
+											</fieldset>
+										<?php } ?>
 
 										<button class="publish-grade btn btn--primary publish-grade-submit px-5"
 											id="publish-grade-submit-<?php the_ID() ?>" data-id="<?php the_ID() ?>"
@@ -632,13 +653,13 @@ function visibility_inline() {
 			?><span class="visibility post-visibility" title="<?php echo $help?>"><span class="sr-only"><?php _e('Visibility:', 'portafolis-uoc-access') ?> </span><?php echo trim(__( 'Instructors', 'portafolis-uoc-access' )) ?></span><?php
 			break;
 		case PORTAFOLIS_UOC_ACCESS_PRIVATE:
-			?><span class="visibility post-visibility" title="<?php echo $help?>"><span class="sr-only"><?php _e('Visibility:', 'portafolis-uoc-access') ?> </span><?php echo trim(__( 'Private', 'portafolis-uoc-access' )) ?></strong><?php
+			?><span class="visibility post-visibility" title="<?php echo $help?>"><span class="sr-only"><?php _e('Visibility:', 'portafolis-uoc-access') ?> </span><?php echo trim(__( 'Private', 'portafolis-uoc-access' )) ?></span><?php
 			break;
 		case PORTAFOLIS_UOC_ACCESS_PASSWORD:
-			?><span class="visibility post-visibility" title="<?php echo $help?>"><span class="sr-only"><?php _e('Visibility:', 'portafolis-uoc-access') ?> </span><?php echo trim(__( 'with Password', 'portafolis-uoc-access' )) ?></strong><?php
+			?><span class="visibility post-visibility" title="<?php echo $help?>"><span class="sr-only"><?php _e('Visibility:', 'portafolis-uoc-access') ?> </span><?php echo trim(__( 'with Password', 'portafolis-uoc-access' )) ?></span><?php
 			break;
 		default:
-			?><span class="visibility post-visibility" title="<?php echo $help?>"><span class="sr-only"><?php _e('Visibility:', 'portafolis-uoc-access') ?> </span><?php echo trim(__( 'Public', 'portafolis-uoc-access' )) ?></strong><?php
+			?><span class="visibility post-visibility" title="<?php echo $help?>"><span class="sr-only"><?php _e('Visibility:', 'portafolis-uoc-access') ?> </span><?php echo trim(__( 'Public', 'portafolis-uoc-access' )) ?></span><?php
 	}
 	echo apply_filters( 'agora_folio_visibility', '');
 }
@@ -672,17 +693,33 @@ function edit_link() {
  */
 function posted_on($fmt = 'default') {
 	//$time_string = '<span class="icon icon--calendar icon--xsmall icon--before" aria-hidden="true"></span>';
-	$format = $fmt === 'grid' ? 'j F' : 'j F, Y';
+
+	$format = 'j M Y';
+	$display_date =  get_the_date( $format );
+
+	if ($fmt === 'human') {
+		$display_date =  (get_the_date('U') >= strtotime('-1 month')) ?
+		sprintf(
+			_x('%s ago', '%s = human-readable time difference', 'agora-folio'),
+			human_time_diff(
+				get_the_date('U'),
+				current_time('timestamp')
+			)
+		) :
+		get_the_date( $format );
+	}
+
+
 	$time_string = '';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string .= '<span class="visually-hidden">%5$s </span><time class="entry-date entry-date-'.$fmt.' published" datetime="%1$s">%2$s</time> <time class="updated visually-hidden" datetime="%3$s">%4$s</time>';
 	} else {
-		$time_string .= '<span class="visually-hidden">%3$s </span><time class="entry-date entry-date-'.$fmt.' published updated" datetime="%1$s">%2$s</time>';
+		$time_string .= '<span class="visually-hidden">%5$s </span><time class="entry-date entry-date-'.$fmt.' published updated" datetime="%1$s">%2$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( DATE_W3C ) ),
-		esc_html( get_the_date( $format ) ),
+		esc_html( $display_date ),
 		esc_attr( get_the_modified_date( DATE_W3C ) ),
 		esc_html( get_the_modified_date() . ' ' . get_the_modified_time() ),
 		__( 'Publication date', 'agora-folio' )
@@ -748,9 +785,9 @@ function posted_by_avatar() {
 
 	$byline = '<span class="visually-hidden">' . __( 'Posted by', 'agora-folio' ) . ' </span>' . $byline;
 
-	if ( get_the_author() != '' ) {
+	//if ( get_the_author() != '' ) {
 		echo '<span class="bybox">' . $byline . '</span>'; // WPCS: XSS OK.
-	}
+	//}
 }
 
 /**
@@ -919,13 +956,16 @@ function comment_item( $comment, $args, $depth ) {
 				?>
             </div>
             <div class="comment-metadata">
+				<?php echo apply_filters('render_folio_comment_access', '', $comment); ?>
                 <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><?php
 					/* translators: 1: date, 2: time */
-					printf(
+					/*printf(
 						__( '%1$s %2$s' ),
 						get_comment_date(),
 						get_comment_time()
-					); ?>
+					);*/
+					echo format_comment_date_time_ago();
+					?>
                 </a><?php
 				edit_comment_link( __( '(Edit)' ), '  ', '' ); ?>
             </div>
@@ -995,13 +1035,16 @@ function comment_tree_item( $comment, $args, $depth ) {
 					?>
 				</div>
 				<div class="comment-metadata">
+					<?php echo apply_filters('render_folio_comment_access', '', $comment); ?>
 					<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><?php
 						/* translators: 1: date, 2: time */
-						printf(
+						/*printf(
 							__( '%1$s %2$s' ),
 							get_comment_date(),
 							get_comment_time()
-						); ?>
+						);*/
+						echo format_comment_date_time_ago();
+						?>
 					</a><?php
 					edit_comment_link( __( '(Edit)' ), '  ', '' ); ?>
 				</div>
@@ -1036,6 +1079,32 @@ function comment_tree_item( $comment, $args, $depth ) {
     </article>
 	<?php
 }
+
+/**
+ * Human readable date format 
+ * 
+ * @since    1.0.10
+ */
+function format_comment_date_time_ago() {
+	$human_time =  (get_comment_time('U') >= strtotime('-1 month')) ?
+		sprintf(
+			_x('%s ago', '%s = human-readable time difference', 'agora-folio'),
+			human_time_diff(
+				get_comment_time('U'),
+				current_time('timestamp')
+			)
+		) :
+		get_comment_date();
+
+	$time_string = sprintf(
+		'<time class="comm-time" datetime="%1$s">%2$s</time>',
+		esc_attr(get_comment_date(DATE_W3C)),
+		esc_html($human_time)
+	);
+
+	return $time_string;
+}
+
 
 /**
  * Render actifolio tree view menu

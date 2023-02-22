@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for displaying posts with comments tree
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -9,7 +9,6 @@
 
 
 use AgoraFolio\Data;
-use AgoraFolio\Utils;
 use AgoraFolio\Templates;
 
 $role = Data\uoc_get_current_role();
@@ -24,6 +23,9 @@ if ( $role != '' ) {
 
 if(!empty($status)){
   $ruler = 'ruler--secondary';
+  if( $status === 'pending' ) {
+    $ruler = 'ruler--pending';
+  }
 }
 
 $anchor_name = 'comments_' . get_the_ID();
@@ -43,29 +45,31 @@ $anchor_name = 'comments_' . get_the_ID();
 
             <div class="entry-summary-head">
 
-              <?php
-              if ( is_singular() ) :
-                the_title( '<h1 class="entry-title">', '</h1>' );
-              else :
-                the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" class="btnlink" rel="bookmark">', '</a></h2>' );
-              endif;
+              <?php Templates\posted_by_avatar(); ?>
 
-              if ( 'post' === get_post_type() ) :
-              ?>
-              <div class="mb-2 entry-meta">
-              <?php
-              Templates\posted_by();
-              ?>
+              <div class="entry-summary-head-content flex-fill">
+
+                <?php
+                if ( is_singular() ) :
+                  the_title( '<h1 class="entry-title">', '</h1>' );
+                else :
+                  the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" class="btnlink" rel="bookmark">', '</a></h2>' );
+                endif;
+                ?>
+
+                <div class="mb-2 entry-meta-list">
+                    <div class="entry-author mb-1"><?php Templates\posted_by(); ?></div>
+                    <div class="entry-meta">
+                      <?php Templates\visibility_inline(); ?> - <?php Templates\posted_on('human'); ?>
+                      <?php if ('post' === get_post_type()) : Templates\comments_link_inline(); endif; ?>
+                    </div>
+                </div>
+
               </div>
-              <?php endif; ?>
 
             </div><!-- .entry-summary-head -->
 
             <div class="mb-2 entry-actions d-flex align-items-start mb-md-3">
-              <?php if ( comments_open() && is_user_logged_in() ) :
-                Templates\comments_link(); 
-              endif; ?>
-              <?php Templates\author_links(); ?>
               <?php Templates\evaluation_link($role, $status_act); ?>
             </div>
 
@@ -75,11 +79,6 @@ $anchor_name = 'comments_' . get_the_ID();
             </a>
 
           </div><!-- .entry-summary-wrap -->
-
-          <div class="entry-meta d-flex align-items-end justify-content-between">
-            <?php Templates\posted_on(); ?>
-            <?php Templates\visibility(); ?>
-          </div>
 
         
         </div><!-- .entry-summary -->
@@ -152,7 +151,7 @@ $anchor_name = 'comments_' . get_the_ID();
   </article><!-- #post-<?php the_ID(); ?> -->
 
   <?php 
-  if ( AGORA_FOLIO_LIST_COMMENTS && ( comments_open() || get_comments_number() ) ) :
+  if ( AGORA_FOLIO_LIST_COMMENTS /*&& ( comments_open() || get_comments_number() )*/ ) :
         comments_template('/comments-tree.php');
   endif; 
   ?>

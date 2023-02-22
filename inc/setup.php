@@ -7,8 +7,6 @@
 namespace AgoraFolio\Setup;
 
 use AgoraFolio\Assets\AssetResolver;
-use AgoraFolio\Styles;
-use AgoraFolio\Data;
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.

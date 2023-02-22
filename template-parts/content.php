@@ -25,6 +25,9 @@ if ($role != '') {
 
 if (!empty($status)) {
   $ruler = 'ruler--secondary';
+  if( $status === 'pending' ) {
+    $ruler = 'ruler--pending';
+  }
 }
 
 ob_start();
@@ -36,7 +39,7 @@ ob_end_clean();
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(['view-col', $status]); ?>>
 
-  <div class="entry-article">
+  <div class="entry-article <?php if (!AGORA_FOLIO_LIST_AJAX) echo 'expanded'; ?>">
 
     <header class="entry-header d-sm-flex ruler <?php echo $ruler ?>">
 
@@ -56,17 +59,16 @@ ob_end_clean();
           ?>
 
           <div class="entry-meta-grid mb-2">
-            <?php
-            $comm_on = !post_password_required() && (comments_open() || get_comments_number());
-            $comm = $comm_on ? '<span class="sep">, </span>' : '';
-            Templates\visibility_inline(); ?> - <?php Templates\posted_on('grid'); ?> <?php echo $comm; ?> <?php Templates\comments_link_inline();
-            ?>
+            <div class="entry-author mb-1"><?php Templates\posted_by(); ?></div>
+            <div class="entry-meta">
+              <?php Templates\visibility_inline(); ?> - <?php Templates\posted_on('human'); ?>
+              <?php if ('post' === get_post_type()) : Templates\comments_link_inline(); endif; ?>
+            </div>
           </div>
 
         </div>
 
       </div><!-- .entry-summary-head-grid -->
-
 
       <?php echo $thumbnail; ?>
 
@@ -76,6 +78,8 @@ ob_end_clean();
 
           <div class="entry-summary-head">
 
+            <?php Templates\posted_by_avatar(); ?>
+
             <div class="entry-summary-head-content">
 
               <?php
@@ -84,20 +88,18 @@ ob_end_clean();
               else :
                 the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" class="btnlink" rel="bookmark">', '</a></h2>');
               endif;
-
               ?>
 
-            </div>
-
-            <?php
-
-            if ('post' === get_post_type()) :
-            ?>
-              <div class="mb-2 entry-meta">
-                <?php Templates\posted_by(); ?>
+              <div class="entry-meta-list mb-2">
+                  <div class="entry-author mb-1"><?php Templates\posted_by(); ?></div>
+                  <div class="entry-meta">
+                    <?php Templates\visibility_inline(); ?> - <?php Templates\posted_on('human'); ?>
+                    <?php if ('post' === get_post_type()) : Templates\comments_link_inline(); endif; ?>
+                  </div>
               </div>
-            <?php endif; ?>
 
+            </div>
+          
           </div><!-- .entry-summary-head -->
 
 
@@ -106,27 +108,25 @@ ob_end_clean();
           </div>
 
           <div class="mb-2 entry-actions d-flex align-items-start mb-md-3">
-            <?php Templates\comments_link(); ?>
-            <?php Templates\author_links(); ?>
             <?php Templates\evaluation_link($role, $status_act); ?>
           </div>
 
-          <a class="btnlink btn--collapse collapsed" role="button" href="#post-body-<?php the_ID(); ?>" data-toggle="collapse" aria-expanded="false" aria-controls="post-body-<?php the_ID(); ?>">
+          <a class="btnlink btn--collapse <?php if (!AGORA_FOLIO_LIST_AJAX) echo 'collapsed'; ?>" role="button" href="#post-body-<?php the_ID(); ?>" data-toggle="collapse" aria-expanded="<?php echo AGORA_FOLIO_LIST_AJAX ? 'false' : 'true'; ?>" aria-controls="post-body-<?php the_ID(); ?>">
             <span class="icon icon--small icon--collapse" aria-hidden="true"></span>
             <span class="icon-alt"><?php echo __("expand / collapse", "agora-folio"); ?></span>
           </a>
 
         </div><!-- .entry-summary-wrap -->
 
-        <div class="entry-excerpt excerpt-long flex-fill">
+        <div class="entry-excerpt excerpt-long mt-auto">
           <div class="mb-3 hidden-sm hidden-md"><?php echo Utils\get_excerpt(48); ?></div>
           <div class="mb-1 visible-sm visible-md"><?php echo Utils\get_excerpt(19); ?></div>
         </div>
 
-        <div class="entry-meta d-flex align-items-end justify-content-between">
+        <?php /*<div class="entry-meta d-flex align-items-end justify-content-between">
           <?php Templates\posted_on(); ?>
           <?php Templates\visibility(); ?>
-        </div>
+        </div>*/ ?>
 
         <div class="entry-meta-grid mb-2">
           <?php Templates\evaluation_link($role, $status_act); ?>
@@ -140,7 +140,7 @@ ob_end_clean();
     </header><!-- .entry-header -->
 
 
-    <div id="post-body-<?php the_ID(); ?>" class="entry-collapse clearfix collapse" data-post-id="<?php the_ID(); ?>">
+    <div id="post-body-<?php the_ID(); ?>" class="entry-collapse clearfix collapse <?php if (!AGORA_FOLIO_LIST_AJAX) echo 'show'; ?>" data-post-id="<?php the_ID(); ?>">
       <div class="clearfix entry-body ruler ruler--half">
         <?php if (!AGORA_FOLIO_LIST_AJAX) the_content(); ?>
       </div>
@@ -148,7 +148,7 @@ ob_end_clean();
 
       <?php Templates\evaluation_area($role, $status_act); ?>
 
-      <?php if (AGORA_FOLIO_LIST_COMMENTS && (comments_open() || get_comments_number())) :
+      <?php if (AGORA_FOLIO_LIST_COMMENTS /*&& (comments_open() || get_comments_number())*/) :
         comments_template('/comments-list.php');
       endif; ?>
     </div>

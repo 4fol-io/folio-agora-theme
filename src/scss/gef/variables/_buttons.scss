@@ -1,5 +1,7 @@
 // Default button
-$btn-padding-y: 				$spacer-y/2;
+@use "sass:math";
+
+$btn-padding-y: 				$spacer-y*0.5;
 $btn-padding-x: 				1em;
 $btn-border-radius: 			$border-radius;
 $btn-border: 					none;
@@ -61,7 +63,7 @@ $btn-large-font-size: 			$font-size-base;
 $btn-large-line-height: 		1;
 
 // Button Small
-$btn-small-padding-y: 			$spacer-y/3;
-$btn-small-padding-x: 			$spacer-x/2;
+$btn-small-padding-y: 			math.div($spacer-y, 3);
+$btn-small-padding-x: 			$spacer-x*0.5;
 $btn-small-font-size: 			$font-size-xs;
 $btn-small-line-height: 		1;

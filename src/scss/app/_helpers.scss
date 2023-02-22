@@ -65,6 +65,10 @@ mark {
     }
 }
 
+.ruler--pending{
+    border-color: $message-warning;
+}
+
 
 /* Screen Readers */
 

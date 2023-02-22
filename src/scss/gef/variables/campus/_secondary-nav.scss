@@ -1,4 +1,6 @@
-$secondary-nav-padding-y: 			$spacer-y/3; 
+@use "sass:math";
+
+$secondary-nav-padding-y: 			math.div($spacer-y, 3); 
 $secondary-nav-padding-x: 			$spacer-x; 
 
 $secondary-nav-font-size: 			$font-size-base;

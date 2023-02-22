@@ -4,7 +4,7 @@ $dropdown-border: 1px solid $grey;
 $dropdown-border-radius: $border-radius;
 $dropdown-margin-x: $spacer-x;
 $dropdown-margin-y: 3px;
-$dropdown-padding-x-half: $spacer-x / 2;
+$dropdown-padding-x-half: $spacer-x * 0.5;
 $dropdown-padding-y-half: 3px;
 $dropdown-padding-x: $spacer-x;
 $dropdown-padding-y: $spacer-y;

@@ -146,6 +146,8 @@ function filter_comments_open( $open, $post_id ){
  */
 function the_breadcrumb() {
 
+   $is_superagora = get_option( 'folio_superagora_settings' );
+
 
     echo '<ol class="breadcrumb">';
 
@@ -158,7 +160,12 @@ function the_breadcrumb() {
 
 	      // Start the breadcrumb with a link to your homepage
         //echo '<li class="breadcrumb-item"><a href="' . get_option('home') . '">'. __( 'Home', 'agora-folio' ) .'</a></li>';
-        echo '<li class="breadcrumb-item"><a href="' . get_option('home') . '">' . Data\get_semester() . ' - ' . Data\get_classroom() .'</a></li>';
+
+        if ( $is_superagora ) { // Is SuperAgora
+          echo '<li class="breadcrumb-item"><a href="' . get_option('home') . '">' . get_bloginfo('name') .'</a></li>';
+        } else { // No SuperAgora
+          echo '<li class="breadcrumb-item"><a href="' . get_option('home') . '">' . Data\get_semester() . ' - ' . Data\get_classroom() .'</a></li>';
+        }
 
 	      // Check if the current page is a category, an archive or a single page. If so show the category or archive name.
         if (is_category() /*|| is_single()*/ ){
@@ -210,7 +217,11 @@ function the_breadcrumb() {
     } else {
 
       //echo '<li class="breadcrumb-item">'. __( 'Home', 'agora-folio' ) .'</li>';
-      echo '<li class="breadcrumb-item">' . Data\get_semester() . ' - ' . Data\get_classroom() .'</li>';
+      if ( $is_superagora ) { // Is SuperAgora
+        echo '<li class="breadcrumb-item">' . get_bloginfo('name') .'</li>';
+      } else { // No SuperAgora
+        echo '<li class="breadcrumb-item">' . Data\get_semester() . ' - ' . Data\get_classroom() .'</li>';
+      }
 
     }
 
@@ -241,8 +252,17 @@ add_filter( 'paginate_links',  __NAMESPACE__ . '\\filter_paginate_links' );
 function get_top_level_comments_number( $post_id = 0, $onlyapproved = true ) {
   global $wpdb, $post;
   $post_id = $post_id ? $post_id : $post->ID;
-  $sql = "SELECT COUNT(*) FROM $wpdb->comments WHERE comment_parent = 0 AND comment_post_ID = $post_id";
-  if( $onlyapproved ) $sql .= " AND comment_approved='1'";
+  
+  $sql = 'SELECT COUNT(*) FROM ' . $wpdb->comments;
+  $sql .= ' WHERE comment_parent = 0 AND comment_post_ID = ' . $post_id;
+  if( $onlyapproved ) $sql .= ' AND comment_approved="1"';
+
+  /**
+   * Filter added for folio-comments-access custom query
+	 * @since 1.0.10
+   */
+  $sql = apply_filters('agora_folio_get_top_level_commments_number_query', $sql, $post_id, $onlyapproved);
+
   return (int) $wpdb->get_var( $sql );
 }
 
@@ -448,6 +468,10 @@ function comment_form_default_fields($fields) {
 add_filter('comment_form_fields',  __NAMESPACE__ . '\\comment_form_default_fields');
 
 
+function get_current_page_link(){
+  global $wp;
+  return home_url( $wp->request );
+}
 
 /**
  * Aux method to forma date
@@ -464,16 +488,6 @@ function format_date($date){
 function format_date_timestamp($date){
 	if($date) return date('u', strtotime($date));
 	return $date;
-}
-
-
-/**
- * Helper function to compare URL against relative URL
- */
-function url_compare($url, $rel) {
-  $url = trailingslashit($url);
-  $rel = trailingslashit($rel);
-  return ((strcasecmp($url, $rel) === 0) || root_relative_url($url) == $rel);
 }
 
 

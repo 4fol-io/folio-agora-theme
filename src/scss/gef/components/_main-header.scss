@@ -135,7 +135,7 @@
 
 //To do: pasar a vars generales
 .nav-profiles__title{
-	padding: $small-nav-padding-y/2 $small-nav-padding-x;
+	padding: $small-nav-padding-y*0.5 $small-nav-padding-x;
 	font-size: #{$nav-profiles-font-size}px;
 	background-color: $grey;
 	border-left: $small-nav-link-hover-border-left;

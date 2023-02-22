@@ -3,6 +3,8 @@
 // Control the default styling of most elements by modifying these
 // variables. Mostly focused on spacing.
 
+@use "sass:math";
+
 $spacer:                	8px !default;
 $spacer-double:             $spacer * 2 !default;
 $spacer-x:              	$spacer !default;
@@ -13,9 +15,9 @@ $border-radius:				0 !default;
 
 // Block heights
 $height-default: 			228px;
-$height-y4:					$height-default/4;
-$height-y3:					$height-default/3;
-$height-y2: 				$height-default/2;
+$height-y4:					$height-default*0.25;
+$height-y3:					math.div($height-default, 3);
+$height-y2: 				$height-default*0.5;
 $height-1y: 				$height-default;
 $height-2y: 				($height-default*2)+$spacer-y;
 $height-3y: 				($height-default*3)+($spacer-y*2);

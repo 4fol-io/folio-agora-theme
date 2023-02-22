@@ -81,9 +81,9 @@ $anchor_name = is_single() || is_page() ? 'comments' : 'comments_' . get_the_ID(
 	endif; // Check for have_comments().
 
 	// If comments are closed and there are comments, let's leave a little note, shall we?
-	/*if ( ! comments_open() ) : ?>
-		<p class="no-comments"><?php esc_html_e( 'Debates are closed.', 'agora-folio' ); ?></p>
-	<?php endif;*/
+	if ( ! comments_open() ) : ?>
+		<p class="ml-3 mt-3 no-comments"><?php esc_html_e( 'Debates are closed.', 'agora-folio' ); ?></p>
+	<?php endif;
 
 	if( is_single() ){
 		//comment_form();

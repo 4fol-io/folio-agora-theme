@@ -81,10 +81,26 @@
   margin-right: 1.5rem;
 }
 
-.comment-metadata{
-  font-size: 1rem;
-  a{
-    text-decoration: none;
+.comment{
+  .comment-metadata{
+    @include font-size($font-size-xs); 
+    a{
+      text-decoration: none;
+    }
+    .comment-visibility{
+      position: static;
+      margin: 0;
+      @include font-size($font-size-xs); 
+      strong{
+        font-weight: normal;
+      }
+      img{
+        display: none !important;
+      }
+      &:after{
+        content: ' - ';
+      }
+    }
   }
 }
 
@@ -248,7 +264,7 @@ ol.comment-list {
       &.depth-1, &.depth-3, &.depth-5, &.depth-7, &.depth-9{
         background: $white;
         > .comment-respond .form--inverse .form-item,
-        > .comment-respond .form--inverse textarea:not(.wp-editor-area), {
+        > .comment-respond .form--inverse textarea:not(.wp-editor-area) {
           background: $grey-light;
         }
       }
@@ -268,7 +284,23 @@ ol.comment-list {
     }
 }
 
-.agora-view-tree {
+.agora-view[data-view="comm"]{
+  ol.comment-list {
+    margin-top: 0;
+    > li.comment:not(:first-child){
+      margin-top: 0;
+    }
+  }
+  .load-more,
+  .entry-comment-list,
+  .no-comments,
+  .must-log-in{
+    margin-left: .5rem;
+  }
+}
+
+.agora-view-tree,
+.agora-view[data-view="comm"]{
   .comment-respond .form--inverse .form-item,
   .comment-respond .form--inverse textarea:not(.wp-editor-area){
     background: $grey-light;
@@ -302,6 +334,16 @@ ol.comment-list {
       padding: .75rem;
     }
   }
+
+  .agora-view[data-view="comm"]{
+    ol.comment-list {
+      margin-top: -.5rem;
+      > li.comment:not(:first-child){
+        margin-top: 0;
+      }
+    }
+  }
+
   .single{
     .comment-respond{
       margin-left: .75rem;
@@ -317,6 +359,17 @@ ol.comment-list {
       padding: .75rem;
     }
   }
+
+  .agora-view[data-view="comm"]{
+    .load-more,
+    .entry-comment-list,
+    .no-comments,
+    .must-log-in{
+      margin-left: .75rem;
+    }
+  }
+ 
+
 }
 
 
@@ -330,6 +383,22 @@ ol.comment-list {
       margin: 0;
     }
   }
+
+  .agora-view[data-view="comm"]{
+    ol.comment-list {
+      margin-top: -1rem;
+      > li.comment:not(:first-child){
+        margin-top: 0;
+      }
+    }
+    .load-more,
+    .entry-comment-list,
+    .no-comments,
+    .must-log-in{
+      margin-left: 1rem;
+    }
+  }
+
   .single{
     .comment-respond{
       margin-left: 1rem;

@@ -10,29 +10,43 @@ namespace AgoraFolio\Data;
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+use Edu\Uoc\Te\Uocapi\Model\Vo\Classroom;
 
 /**
- * Get RAC evaluation url
+ * Get RAC/Canvas evaluation url
  */
-function get_rac_evaluation_url() {
-	global $openIDUOC;
-
+function get_lms_evaluation_url() {
 	$proxyUrl = '';
+	$classroom = ucs_get_classroom_cur_blog();
 
-	if ( $openIDUOC ) {
+	if ($classroom != null) {
+		switch ($classroom->getInstitution()) {
+			case Classroom::INSTITUTION_UOC_API:
+				global $openIDUOC;
 
-		$rac_url     = 'https://[HOST]/UOC/rac/consultor.html?domainId=[DOMAINID]';
+				if ( $openIDUOC ) {
+					$rac_url     = 'https://[HOST]/UOC/rac/consultor.html?domainId=[DOMAINID]';
+			
+					$patterns = array( '/\[DOMAINID\]/' );
+					$replaces = array( $classroom != null ? $classroom->getId() : '' );
+			
+					$url      = preg_replace( $patterns, $replaces, $rac_url );
+					$proxyUrl = $openIDUOC->get_uoc_url_session_refresh( $url );
+				}
+			break;
+			case Classroom::INSTITUTION_CANVAS:
+				$gradebook_url = 'https://uoc.test.instructure.com/courses/{classroom_id}/gradebook';
+				
+				if ( str_starts_with(CVAPI_BASE_URL, 'https://platin.uoc.edu') ) {
+					$gradebook_url = 'https://uoc.instructure.com/courses/{classroom_id}/gradebook';
+				}
 
-		$classroomId = '';
-		if ( function_exists( 'uoc_create_site_is_classroom_blog' ) ) {
-			$classroomId = uoc_create_site_is_classroom_blog();
+				$proxyUrl = str_replace('{classroom_id}', $classroom->getId(), $gradebook_url);
+			break;
+			default:
+				throw new \BadMethodCallException('Not implemented');
+			break;
 		}
-
-		$patterns = array( '/\[DOMAINID\]/' );
-		$replaces = array( $classroomId );
-
-		$url      = preg_replace( $patterns, $replaces, $rac_url );
-		$proxyUrl = $openIDUOC->get_uoc_url_session_refresh( $url );
 	}
 
 	return $proxyUrl;
@@ -73,10 +87,10 @@ function get_folio_url() {
  */
 function get_semester() {
 	$semester = get_option( 'folio_classroom_semester', '' );
-	if ( empty( $semester ) && function_exists( 'uoc_create_site_is_classroom_blog' ) ) {
-		$classroomId = uoc_create_site_is_classroom_blog();
-		if ( $classroomId ) {
-			$semester = uoc_get_semester_from_classroom( $classroomId );
+	if ( empty( $semester ) && function_exists( 'ucs_get_classroom_cur_blog' ) ) {
+		$classroom = ucs_get_classroom_cur_blog();
+		if ( $classroom != null ) {
+			$semester = uoc_get_semester_from_classroom( $classroom );
 			if ( $semester ) {
 				add_option( 'folio_classroom_semester', $semester );
 			}
@@ -91,38 +105,42 @@ function get_semester() {
  * Get classroom title
  */
 function get_classroom() {
-	$classroom = get_option( 'folio_classroom_number', '' );
-	if ( empty( $classroom ) && function_exists( 'uoc_create_site_is_classroom_blog' ) ) {
-		$classroomId = uoc_create_site_is_classroom_blog();
-		if ( $classroomId ) {
-			$classroom = uoc_create_site_get_classroom_by_id( $classroomId );
-			if ( $classroom ) {
-				$code      = $classroom->code;
-				$classroom = intval( preg_replace( "/.*\_(\d+)(\.[\w\d]+)?$/", "$1", $code ) );
-				if ( is_int( $classroom ) ) {
-					add_option( 'folio_classroom_number', $classroom );
+	$classroom_number = get_option( 'folio_classroom_number', '' );
+	if ( empty( $classroom_number ) && function_exists( 'ucs_get_classroom_cur_blog' ) ) {
+		$classroom = ucs_get_classroom_cur_blog();
+		if ( $classroom != null ) {
+			$classroom_row = uoc_create_site_get_classroom_by_id( $classroom );
+			if ( $classroom_row ) {
+				$code      = $classroom_row->code;
+				$classroom_number = intval( preg_replace( "/.*\_(\d+)(\.[\w\d]+)?$/", "$1", $code ) );
+				if ( is_int( $classroom_number ) ) {
+					add_option( 'folio_classroom_number', $classroom_number );
 				}
 			}
 		}
 	}
 
-	return sprintf( __( 'Classroom %s', 'agora-folio' ), $classroom );
+	return sprintf( __( 'Classroom %s', 'agora-folio' ), $classroom_number );
 }
 
 
 /**
  * Get agora display view from cookie if set
+ * Updated (16/01/2023): unified list and full views
  */
 function get_agora_view() {
-	$views = [ 'grid', 'list', 'full', 'tree' ];
+	// $views = [ 'grid', 'list', 'full', 'tree' ];
+	$views = [ 'grid', 'list', 'comm'];
+
 	$view  = get_query_var( 'view' );
 
 	if ( $view && in_array( $view, $views ) ) {
 		return $view;
 	}
 
-	if ( isset( $_COOKIE['agora-view'] ) ) {
-		return $_COOKIE['agora-view'];
+	$view = isset( $_COOKIE['agora-view'] ) ? $_COOKIE['agora-view'] : '';
+	if ( $view && in_array( $view, $views ) ) {
+		return $view;
 	}
 
 	return 'grid';
@@ -304,6 +322,8 @@ function uoc_get_rac_status_activity( $role = '' ) {
 	if ( count( $activities ) > 0 ) {
 		$status = 'pending';
 		foreach ( $activities as $activity ) {
+			// TODO: Comentar con @antoni: Duda
+			// Por que hace esto? es un poco raro...
 			$submissonId = $submissonId == null || $submissonId < $activity->id ? $activity->id : $submissonId;
 			if ( $activity->grade != null && ! empty( $activity->grade ) ) {
 				$status = 'sent';
@@ -313,7 +333,6 @@ function uoc_get_rac_status_activity( $role = '' ) {
 				$activity_ret = $activity;
 
 				if ( $role == 'student' ) {
-
 					$rac_delivery = $portafolis_uoc_rac->get_rac_delivery( $submissonId );
 
 					$activityId = $rac_delivery->activityId;
@@ -347,7 +366,7 @@ function uoc_can_access_to_assessment() {
 		return rand( 0, 1 );
 	}
 
-	if ( ! function_exists( 'uoc_create_site_is_classroom_blog' ) ) {
+	if ( ! function_exists( 'ucs_is_classroom_blog' ) ) {
 		return 0;
 	}
 
@@ -357,7 +376,7 @@ function uoc_can_access_to_assessment() {
 	global $portafolis_uoc_rac;
 
 	return $enable_grade && isset( $portafolis_uoc_rac ) && $portafolis_uoc_rac != null &&
-	       ( uoc_create_site_is_classroom_blog() || uoc_create_site_is_current_student_blog() );
+	       ( ucs_is_classroom_blog() || uoc_create_site_is_current_student_blog() );
 
 }
 

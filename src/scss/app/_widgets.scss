@@ -82,6 +82,9 @@ ol.wp-tag-cloud {
 
 /* Megamenu widgets */
 
+.mega-menu .mega-block-title{
+    margin-bottom: .5rem !important;
+}
 
 a.mega-menu-link[target=_blank] {
     position: relative;
@@ -135,6 +138,9 @@ ul.list--participants{
     }
     .media{
         padding: .5rem 0;
+        .media__body{
+            min-height: 40px;
+        }
     }
 }
 
@@ -169,6 +175,9 @@ ul.mega-sub-menu{
             @include font-size($font-size-s);
             font-weight: normal;
             margin: 0;
+            &.super-agora-widget-summary{
+                margin-top: -3px;
+            }
         }
 
         
@@ -193,7 +202,7 @@ ul.mega-sub-menu{
 }
 
 
-@include media-down(md){
+@include media-down(sm){
     .block--participants{
         .block--participants-sort{
             margin-right: .25rem;
@@ -273,11 +282,12 @@ ul.mega-sub-menu{
     }
 
     .block--participants{
-        .block-filters{
+        /*.block-filters{
             background-color: $grey-filters;
-        }
+        }*/
         .block-content{
-            max-height: 260px;
+            //max-height: 260px;
+            max-height: calc(50vh - 64px);
             overflow: auto;
         }
     }
@@ -312,5 +322,28 @@ ul.mega-sub-menu{
 }
 
 
+/* SuperAgora */
+
+.super-agora-widget-info{
+    position: relative;
+    top: 2px;
+}
+
+.super-agora-widget-blocks {
+    .block{
+        order: 2;
+        margin-bottom: .75rem;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    .block-featured{
+        order: 1;
+        background-color: rgba(255,255,255,.5);
+        .h6 .icon{
+            font-size: 80%;
+        }
+    }
+}
 
 

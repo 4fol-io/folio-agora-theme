@@ -1,6 +1,8 @@
 // Container widths
 // Set the container width, and override it for fixed navbars in media queries.
 
+@use "sass:math";
+
 .container {
 	@include clearfix();
 	max-width: $grid-max-width;
@@ -16,14 +18,14 @@
 
 .row {
 	@include clearfix();
-  	margin-left:  ($grid-gutter-width / -2);
-  	margin-right: ($grid-gutter-width / -2);
+  	margin-left:  math.div($grid-gutter-width, -2);
+  	margin-right: math.div($grid-gutter-width, -2);
 
 	/* TODO this line corrects problem for grids in tablt devices*/
 	//@include media-down(md){
   	@include media-down(md){
-	  	margin-left:  ($grid-gutter-width / -4);
-	  	margin-right: ($grid-gutter-width / -4);
+	  	margin-left:  math.div($grid-gutter-width, -4);
+	  	margin-right: math.div($grid-gutter-width, -4);
 	}
 }
 

@@ -127,16 +127,16 @@ body.admin-bar{
 .view-row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -$grid-gutter-width / 2;
-    margin-left: -$grid-gutter-width / 2;
+    margin-right: -$grid-gutter-width * 0.5;
+    margin-left: -$grid-gutter-width * 0.5;
 }
 
 
 .view-col {
     position: relative;
     width: 100%;
-    padding-right: $grid-gutter-width / 2;
-    padding-left: $grid-gutter-width / 2;
+    padding-right: $grid-gutter-width * 0.5;
+    padding-left: $grid-gutter-width * 0.5;
     /*flex-basis: 0;
     flex-grow: 1;
     max-width: 100%;*/

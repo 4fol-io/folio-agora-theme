@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: AGORA FOLIO 1.0.0\n"
-"POT-Creation-Date: 2022-09-14 20:06+0200\n"
+"POT-Creation-Date: 2023-02-14 15:34+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Antoni Bertran <antoni@tresipunt.com>\n"
 "Language-Team: \n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_n_noop:1,2;_x:1,2c;_nx:4c,1,2;"
 "_nx_noop:4c,1,2;_ex:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;"
@@ -23,27 +23,27 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: src\n"
 "X-Poedit-SearchPathExcluded-3: dist\n"
 
-#: 404.php:29
+#: 404.php:31
 msgid "Oops!"
 msgstr "¡Uy!"
 
-#: 404.php:30 404.php:99
+#: 404.php:32 404.php:104
 msgid "Page not found"
 msgstr "Página no encontrada"
 
-#: 404.php:31
+#: 404.php:33
 msgid "What can you do?"
 msgstr "¿Qué puedes hacer?"
 
-#: 404.php:32
+#: 404.php:34
 msgid "Visit the Folio Learning Space"
 msgstr "Visita el Espacio de Aprendizaje Folio"
 
-#: 404.php:55
+#: 404.php:60
 msgid "Content available to the UOC community"
 msgstr "Contingut disponible per a la comunitat UOC"
 
-#: 404.php:56
+#: 404.php:61
 #, php-format
 msgid ""
 "This page has publications that are only visible to members of the UOC "
@@ -53,11 +53,11 @@ msgstr ""
 "la comunidad UOC. Para ver el contenido, entra con tu %1$susuario de Campus"
 "%2$s."
 
-#: 404.php:60
+#: 404.php:65
 msgid "Content available for classmates"
 msgstr "Contenido disponible para los compañeros y compañeras del aula"
 
-#: 404.php:63
+#: 404.php:68
 #, php-format
 msgid ""
 "This page has publications that are only visible to classmates in this "
@@ -68,7 +68,7 @@ msgstr ""
 "compañeras del aula de esta asignatura. Si formas parte y quieres ver el "
 "contenido, entra con el %1$stu usuario de Campus%2$s."
 
-#: 404.php:67
+#: 404.php:72
 msgid ""
 "This page has publications that are only visible to classmates in this "
 "subject."
@@ -76,11 +76,11 @@ msgstr ""
 "Esta página tiene publicaciones que sólo son visibles para los compañeros y "
 "compañeras del aula de esta asignatura."
 
-#: 404.php:71
+#: 404.php:76
 msgid "Content available for teachers of the subject"
 msgstr "Contenido disponible para el profesorado de la asignatura"
 
-#: 404.php:73
+#: 404.php:78
 #, php-format
 msgid ""
 "This page has publications that are only visible to the teachers of the "
@@ -91,7 +91,7 @@ msgstr ""
 "la asignatura. Si eres docente y quieres ver el contenido, entra con tu "
 "%1$susuario de Campus%2$s."
 
-#: 404.php:77
+#: 404.php:82
 msgid ""
 "This page has publications that are only visible to the teachers of the "
 "subject."
@@ -99,11 +99,11 @@ msgstr ""
 "Esta página tiene publicaciones que sólo son visibles para el profesorado de "
 "la asignatura."
 
-#: 404.php:81
+#: 404.php:86
 msgid "Content available from the author of the publication"
 msgstr "Contenido disponible por el autor o autora de la publicación"
 
-#: 404.php:84
+#: 404.php:89
 #, php-format
 msgid ""
 "This page has posts that are only visible to the person who created the "
@@ -113,7 +113,7 @@ msgstr ""
 "creado el contenido. Si eres el autor o autora, entra con %1$stu usuario de "
 "Folio%2$s."
 
-#: 404.php:87
+#: 404.php:92
 msgid ""
 "This page has posts that are only visible to the person who created the "
 "content."
@@ -121,12 +121,12 @@ msgstr ""
 "Esta página tiene publicaciones que sólo son visibles para la persona que ha "
 "creado el contenido."
 
-#: 404.php:91
+#: 404.php:96
 #, php-format
 msgid "Do you want to go to the %1$shomepage%2$s?"
 msgstr "¿Quieres ir a la %1$spágina de inicio%2$s?"
 
-#: 404.php:101
+#: 404.php:106
 #, php-format
 msgid ""
 "The page you are looking for does not exist. Do you want to go to the "
@@ -135,7 +135,7 @@ msgstr ""
 "Parece que la página que buscas no existe. ¿Quieres ir a la %1$spágina de "
 "inicio%2$s?"
 
-#: 404.php:106
+#: 404.php:111
 #, php-format
 msgid "If you have Folio, we recommend that you log in %1$swith your user%2$s."
 msgstr "Si tienes Folio, te recomendamos entrar con %1$stu usuario%2$s."
@@ -162,24 +162,24 @@ msgstr "contribución"
 msgid "contributions"
 msgstr "contribuciones"
 
-#: comments-list.php:138 inc/setup.php:271 inc/templates.php:865
+#: comments-list.php:138 inc/setup.php:271 inc/templates.php:881
 #: template-parts/content-tree.php:140
 msgid "Leave a comment"
 msgstr "Deja un comentario"
 
-#: footer.php:27 template-parts/content-navbar.php:303
+#: footer.php:29 template-parts/content-navbar.php:303
 msgid "Go to top"
 msgstr "Ir arriba"
 
-#: footer.php:38
+#: footer.php:40
 msgid "Information"
 msgstr "Información"
 
-#: footer.php:41
+#: footer.php:43
 msgid "Are you part of the community? Access to see more publications."
 msgstr "¿Eres parte de la comunidad? Accede para ver más publicaciones."
 
-#: footer.php:42
+#: footer.php:44
 msgid ""
 "This is a personal workspace for a student of the Universitat Oberta de "
 "Catalunya. Any content published in this space is the responsibility of its "
@@ -189,15 +189,15 @@ msgstr ""
 "Oberta de Catalunya. Cualquier contenido publicado en este espacio es "
 "responsabilidad de su autor/a."
 
-#: footer.php:47
+#: footer.php:49
 msgid "Access"
 msgstr "Acceder"
 
-#: footer.php:52 template-parts/content-navbar.php:318
+#: footer.php:54 template-parts/content-navbar.php:318
 msgid "Close"
 msgstr "Cerrar"
 
-#: footer.php:62
+#: footer.php:64
 #, php-format
 msgid "Universitat Oberta de Catalunya &copy; %s"
 msgstr "Universitat Oberta de Catalunya &copy; %s"
@@ -206,16 +206,16 @@ msgstr "Universitat Oberta de Catalunya &copy; %s"
 msgid "Skip to content"
 msgstr "Saltar al contenido"
 
-#: header.php:101
+#: header.php:91 header.php:132
 msgid "My folio"
 msgstr "Mi folio"
 
-#: header.php:101 inc/setup.php:269 inc/templates.php:187 inc/templates.php:351
-#: inc/templates.php:371 inc/templates.php:538
+#: header.php:91 header.php:132 inc/setup.php:269 inc/templates.php:187
+#: inc/templates.php:359 inc/templates.php:385 inc/templates.php:554
 msgid "(opens in new window)"
 msgstr "(se abre en nueva ventana)"
 
-#: header.php:116
+#: header.php:106
 msgid "Main Menu"
 msgstr "Menú principal"
 
@@ -223,12 +223,12 @@ msgstr "Menú principal"
 msgid "Featured header image"
 msgstr "Imagen destacada de cabecera"
 
-#: inc/data.php:86
+#: inc/data.php:100
 #, php-format
 msgid "Semester %s"
 msgstr "Semestre %s"
 
-#: inc/data.php:109
+#: inc/data.php:123
 #, php-format
 msgid "Classroom %s"
 msgstr "Aula %s"
@@ -425,7 +425,7 @@ msgstr "Evaluación"
 msgid "Pending"
 msgstr "Pendiente"
 
-#: inc/templates.php:256 inc/templates.php:359 inc/templates.php:530
+#: inc/templates.php:256 inc/templates.php:367 inc/templates.php:546
 msgid "Grade"
 msgstr "Nota"
 
@@ -437,65 +437,73 @@ msgstr "Evaluación pendiente"
 msgid ""
 "Evaluate inside the Agora to leave comments and notes. If you want to attach "
 "PDFs, videos or high quality files, please open the Evaluate option in the "
-"RAC"
+"RAC or in CANVAS"
 msgstr ""
 "Evalúa dentro del Ágora para dejar comentarios y notas. Si quieres adjuntar "
 "archivos PDF, videos o archivos de alta calidad, por favor abre la opción "
-"Evaluar en el REC"
+"Evaluar en el REC o en CANVAS"
 
-#: inc/templates.php:341
+#: inc/templates.php:343
 msgid "The user is not evaluated"
 msgstr "El estudiante todavía no ha sido evaluado"
 
-#: inc/templates.php:345
+#: inc/templates.php:347
 msgid "Evaluate here"
 msgstr "Evaluar aquí"
 
-#: inc/templates.php:349
+#: inc/templates.php:353
+msgid "Evaluate in CANVAS"
+msgstr "Evaluar en CANVAS"
+
+#: inc/templates.php:355
 msgid "Evaluate in RAC"
 msgstr "Evaluar en el REC"
 
-#: inc/templates.php:365
+#: inc/templates.php:373
 msgid "Modify evaluation here"
 msgstr "Modificar evaluación aquí"
 
-#: inc/templates.php:369
+#: inc/templates.php:379
+msgid "Modify evaluation in CANVAS"
+msgstr "Modificar evaluación en CANVAS"
+
+#: inc/templates.php:381
 msgid "Modify evaluation in RAC"
 msgstr "Modificar evaluación en el REC"
 
-#: inc/templates.php:387
+#: inc/templates.php:401
 msgid "Loading information"
 msgstr "Cargando información"
 
-#: inc/templates.php:394
+#: inc/templates.php:408
 msgid "Choose a grade"
 msgstr "Marca una nota: "
 
-#: inc/templates.php:419
+#: inc/templates.php:433
 msgid "Delete grade"
 msgstr "Borrar nota"
 
-#: inc/templates.php:428
+#: inc/templates.php:442
 msgid "Write a comment: "
 msgstr "Escribe un comentario: "
 
-#: inc/templates.php:455
+#: inc/templates.php:470
 msgid "Publish options:"
 msgstr "Opciones de publicación: "
 
-#: inc/templates.php:464
+#: inc/templates.php:479
 msgid "Scheduled"
 msgstr "Programado"
 
-#: inc/templates.php:472
+#: inc/templates.php:487
 msgid "Now"
 msgstr "Ahora"
 
-#: inc/templates.php:480
+#: inc/templates.php:496
 msgid "Publish"
 msgstr "Publica"
 
-#: inc/templates.php:486
+#: inc/templates.php:502
 msgid ""
 "The student won't see the grade nor the comment until the date of publishing "
 "grades."
@@ -503,135 +511,135 @@ msgstr ""
 "El estudiante no verá la nota ni el comentario hasta la fecha de publicación "
 "de notas."
 
-#: inc/templates.php:487
+#: inc/templates.php:503
 msgid "Meanwhile you will be able to edit both the grade and the comment."
 msgstr "Mientras tanto, podrás editar tanto la nota como el comentario."
 
-#: inc/templates.php:493
+#: inc/templates.php:509
 msgid "The student will see the grade and the comment as soon you save it."
 msgstr "El estudiante verá la nota y el comentario en el momento de guardarla."
 
-#: inc/templates.php:526
+#: inc/templates.php:542
 msgid "Evaluation in process."
 msgstr "Evaluación en proceso."
 
-#: inc/templates.php:536
+#: inc/templates.php:552
 msgid "View assessed delivery"
 msgstr "Ver la entrega evaluada"
 
-#: inc/templates.php:568 inc/templates.php:576 inc/templates.php:584
-#: inc/templates.php:592 inc/templates.php:600 inc/templates.php:608
-#: inc/templates.php:626 inc/templates.php:629 inc/templates.php:632
-#: inc/templates.php:635 inc/templates.php:638 inc/templates.php:641
+#: inc/templates.php:584 inc/templates.php:592 inc/templates.php:600
+#: inc/templates.php:608 inc/templates.php:616 inc/templates.php:624
+#: inc/templates.php:642 inc/templates.php:645 inc/templates.php:648
+#: inc/templates.php:651 inc/templates.php:654 inc/templates.php:657
 msgid "Visibility:"
 msgstr "Visibilidad:"
 
-#: inc/templates.php:568 inc/templates.php:626
+#: inc/templates.php:584 inc/templates.php:642
 msgid "Campus"
 msgstr "Campus"
 
-#: inc/templates.php:576 inc/templates.php:629
+#: inc/templates.php:592 inc/templates.php:645
 msgid "Classroom"
 msgstr "Aula"
 
-#: inc/templates.php:584 inc/templates.php:632
+#: inc/templates.php:600 inc/templates.php:648
 msgid "Instructors"
 msgstr "Profesorado"
 
-#: inc/templates.php:592 inc/templates.php:635
+#: inc/templates.php:608 inc/templates.php:651
 msgid "Private"
 msgstr "Privada"
 
-#: inc/templates.php:600 inc/templates.php:638
+#: inc/templates.php:616 inc/templates.php:654
 msgid "with Password"
 msgstr "con Contraseña"
 
-#: inc/templates.php:608 inc/templates.php:641
+#: inc/templates.php:624 inc/templates.php:657
 msgid "Public"
 msgstr "Pública"
 
-#: inc/templates.php:655
+#: inc/templates.php:671
 #, php-format
 msgid "Edit %s"
 msgstr "Editar %s"
 
-#: inc/templates.php:688
+#: inc/templates.php:704
 msgid "Publication date"
 msgstr "Fecha de publicación"
 
-#: inc/templates.php:704 inc/templates.php:739
+#: inc/templates.php:720 inc/templates.php:755
 #, php-format
 msgid "Entries by %s published in the Agora"
 msgstr "Entradas de %s publicadas en el Ágora"
 
-#: inc/templates.php:707 inc/templates.php:745
+#: inc/templates.php:723 inc/templates.php:761
 #, php-format
 msgctxt "post author"
 msgid "%s"
 msgstr "%s"
 
-#: inc/templates.php:711 inc/templates.php:749
+#: inc/templates.php:727 inc/templates.php:765
 msgid "Posted by"
 msgstr "Publicado por"
 
-#: inc/templates.php:764
+#: inc/templates.php:780
 msgid "Tags"
 msgstr "Etiquetas"
 
-#: inc/templates.php:780
+#: inc/templates.php:796
 msgid "Categories"
 msgstr "Categorías"
 
-#: inc/templates.php:864
+#: inc/templates.php:880
 msgid "Send comment"
 msgstr "Enviar comentario"
 
-#: inc/templates.php:866
+#: inc/templates.php:882
 msgid "Cancel Reply"
 msgstr "Cancelar respuesta"
 
-#: inc/templates.php:877
+#: inc/templates.php:893
 #, php-format
 msgid "Logged in as %s. Edit your profile."
 msgstr "Conectado como %s. Edita tu perfil."
 
-#: inc/templates.php:880
+#: inc/templates.php:896
 msgid "Log out?"
 msgstr "¿Cerrar sesión?"
 
-#: inc/templates.php:917 inc/templates.php:993
+#: inc/templates.php:933 inc/templates.php:1009
 #, php-format
 msgid ""
 "<cite class=\"fn\">%s</cite> <span class=\"visually-hidden\">says:</span>"
 msgstr ""
 "<cite class=\"fn\">%s</cite> <span class=\"visually-hidden\">dice:</span>"
 
-#: inc/templates.php:925 inc/templates.php:1001
+#: inc/templates.php:941 inc/templates.php:1017
 #, php-format
 msgid "%1$s %2$s"
 msgstr "%1$s %2$s"
 
-#: inc/templates.php:930 inc/templates.php:1006
+#: inc/templates.php:946 inc/templates.php:1022
 msgid "(Edit)"
 msgstr "(Editar)"
 
-#: inc/templates.php:934 inc/templates.php:1010
+#: inc/templates.php:950 inc/templates.php:1026
 msgid "Your contribution is awaiting moderation."
 msgstr "Tu intervención está esperando ser moderada."
 
-#: inc/templates.php:949 inc/templates.php:1028
+#: inc/templates.php:965 inc/templates.php:1044
 msgid "Reply"
 msgstr "Responder"
 
-#: inc/templates.php:1045
+#: inc/templates.php:1061
 msgid "My activities"
 msgstr "Mis actividades"
 
-#: inc/templates.php:1047
+#: inc/templates.php:1063
 msgid "Filter by ActiFolio"
 msgstr "Filtro por ActiFolio"
 
-#: inc/templates.php:1049
+#: inc/templates.php:1065
 msgid "All"
 msgstr "Todo"
 
@@ -817,7 +825,6 @@ msgstr "Buscar por:"
 #~ msgid "Recent"
 #~ msgstr "Reciente"
 
-#, php-format
 #~ msgid "Visit %s"
 #~ msgstr "Visitar %s"
 

@@ -1,7 +1,9 @@
+@use "sass:math";
+
 $topbar-bg: 				$grey-dark;
 $topbar-color:			$white;
 
-$topbar-padding-y:	$spacer-y/1.7;
-$topbar-padding-x:	$spacer-x/2;
+$topbar-padding-y:	math.div($spacer-y, 1.7);
+$topbar-padding-x:	$spacer-x*0.5;
 
 $topar-hover-bg:		rgba(white, .1);

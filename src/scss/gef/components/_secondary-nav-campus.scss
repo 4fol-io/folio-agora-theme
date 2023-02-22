@@ -50,8 +50,8 @@
 	border-bottom: $secondary-nav-trigger-border;
 	margin-top: -$main-header-margin-bottom;
 	margin-bottom: $main-header-margin-bottom;
-	padding-top: $spacer-y/2;
-	padding-bottom: $spacer-y/2;
+	padding-top: $spacer-y*0.5;
+	padding-bottom: $spacer-y*0.5;
 		
 	@include media-up(lg){
 		display: none;
@@ -63,7 +63,7 @@
 		display: none;
 	}
 	.secondary-nav{
-		margin-top: $spacer-y/2;
+		margin-top: $spacer-y*0.5;
 	}
 }
 

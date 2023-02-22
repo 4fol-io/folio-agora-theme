@@ -205,7 +205,7 @@
     }
     @include media-down(lg) {
         width: calc(100% + #{$banner-inner-margin});
-        left: -($banner-outer-margin/2);
-        right: -($banner-outer-margin/2);
+        left: -($banner-outer-margin*0.5);
+        right: -($banner-outer-margin*0.5);
     }
 }

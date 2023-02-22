@@ -1,5 +1,5 @@
 // Form
-$form-column-padding:				$spacer-x/2;
+$form-column-padding:				$spacer-x*0.5;
 $form-font-size:					$font-size-s;
 $form-sm-font-size:					1rem;
 
@@ -8,7 +8,7 @@ $form-inline-firefox-top:			5px;
 
 // Form group
 $form-group-margin-bottom: 			1em;
-$form-group-margin-right: 			$spacer-x/2;
+$form-group-margin-right: 			$spacer-x*0.5;
 
 // Form item and button
 $input-padding-x: 					0.3125rem;
@@ -38,7 +38,7 @@ $form-item-file-line-height:		1;
 // Radio buttons and checkboxes
 $radio-check-margin-right:			$spacer*2;
 $radio-check-padding-left:			$spacer*3.125;
-$radio-check-label-margin-left:		$spacer/2;
+$radio-check-label-margin-left:		$spacer*0.5;
 $radio-check-icon-size:				1.3rem;
 $radio-margin-bottom: 				$spacer-y;
 $form-check-icon-top:				0;

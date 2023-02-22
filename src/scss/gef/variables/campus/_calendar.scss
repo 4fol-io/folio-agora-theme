@@ -1,13 +1,15 @@
-$calendar-padding:						$spacer-y/2 $spacer-x/2;
+@use "sass:math";
+
+$calendar-padding:						$spacer-y*0.5 $spacer-x*0.5;
 $calendar-bg:									$grey-light;
 
-$calendar-cell-padding: 			3px $spacer-x/2;
+$calendar-cell-padding: 			3px $spacer-x*0.5;
 
 $calendar-month-bg:						$white;
-$calenadar-month-padding:			$spacer-y/3 $spacer-x/2;
+$calenadar-month-padding:			math.div($spacer-y, 3) $spacer-x*0.5;
 
 $calendar-week-color:					$brand-primary;
-$calenadar-week-padding:			$spacer-y/3 $spacer-x/2;
+$calenadar-week-padding:			math.div($spacer-y, 3) $spacer-x*0.5;
 
 $calendar-day-color:					$body-color;
 $calendar-day-color-hover:		$brand-primary;

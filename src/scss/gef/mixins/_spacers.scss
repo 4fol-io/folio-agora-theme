@@ -1,4 +1,6 @@
 // Spacings mixin
+@use "sass:math";
+
 @mixin spacings($baseSpace) {	
 	@for $i from 0 through 10 {
 		$index: $i;
@@ -82,37 +84,37 @@
 
 		@if $i > 1 {
 			// Axis margin/padding divider
-			.m-x#{$index} { 		margin-right: 	rem-calc($baseSpace/$i); margin-left: rem-calc($baseSpace/$i); }
-			.p-x#{$index} { 		padding-right: 	rem-calc($baseSpace/$i); padding-left: rem-calc($baseSpace/$i); }
-			.m-y#{$index} { 		margin-top: 	rem-calc($baseSpace/$i); margin-bottom: rem-calc($baseSpace/$i); }
-			.p-y#{$index} { 		padding-top: 	rem-calc($baseSpace/$i); padding-bottom: rem-calc($baseSpace/$i); }
+			.m-x#{$index} { 		margin-right: 	rem-calc(math.div($baseSpace, $i)); margin-left: rem-calc(math.div($baseSpace, $i)); }
+			.p-x#{$index} { 		padding-right: 	rem-calc(math.div($baseSpace, $i)); padding-left: rem-calc(math.div($baseSpace, $i)); }
+			.m-y#{$index} { 		margin-top: 	rem-calc(math.div($baseSpace, $i)); margin-bottom: rem-calc(math.div($baseSpace, $i)); }
+			.p-y#{$index} { 		padding-top: 	rem-calc(math.div($baseSpace, $i)); padding-bottom: rem-calc(math.div($baseSpace, $i)); }
 
 			// Coordinate margin/padding divider
-			.m-top-y#{$index} { 	margin-top: rem-calc($baseSpace/$i); }
-			.m-bottom-y#{$index} { 	margin-bottom: rem-calc($baseSpace/$i); }
-			.m-left-x#{$index} { 	margin-left: rem-calc($baseSpace/$i); }
-			.m-right-x#{$index} { 	margin-right: rem-calc($baseSpace/$i); }
-			.p-top-y#{$index} { 	padding-top: rem-calc($baseSpace/$i); }
-			.p-bottom-y#{$index} { 	padding-bottom: rem-calc($baseSpace/$i); }
-			.p-left-x#{$index} { 	padding-left: rem-calc($baseSpace/$i); }
-			.p-right-x#{$index} { 	padding-right: rem-calc($baseSpace/$i); }
+			.m-top-y#{$index} { 	margin-top: rem-calc(math.div($baseSpace, $i)); }
+			.m-bottom-y#{$index} { 	margin-bottom: rem-calc(math.div($baseSpace, $i)); }
+			.m-left-x#{$index} { 	margin-left: rem-calc(math.div($baseSpace, $i)); }
+			.m-right-x#{$index} { 	margin-right: rem-calc(math.div($baseSpace, $i)); }
+			.p-top-y#{$index} { 	padding-top: rem-calc(math.div($baseSpace, $i)); }
+			.p-bottom-y#{$index} { 	padding-bottom: rem-calc(math.div($baseSpace, $i)); }
+			.p-left-x#{$index} { 	padding-left: rem-calc(math.div($baseSpace, $i)); }
+			.p-right-x#{$index} { 	padding-right: rem-calc(math.div($baseSpace, $i)); }
 
 			// Mobile margin/padding divider
 			@include media-down(sm) {
 				// Mobile axis margin/padding divider
-				.m-x#{$index}-mobile { 		margin-right: 	rem-calc($baseSpace/$i); margin-left: rem-calc($baseSpace/$i); }
-				.p-x#{$index}-mobile { 		padding-right: 	rem-calc($baseSpace/$i); padding-left: rem-calc($baseSpace/$i); }
-				.m-y#{$index}-mobile { 		margin-top: 	rem-calc($baseSpace/$i); margin-bottom: rem-calc($baseSpace/$i); }
-				.p-y#{$index}-mobile { 		padding-top: 	rem-calc($baseSpace/$i); padding-bottom: rem-calc($baseSpace/$i); }
+				.m-x#{$index}-mobile { 		margin-right: 	rem-calc(math.div($baseSpace, $i)); margin-left: rem-calc(math.div($baseSpace, $i)); }
+				.p-x#{$index}-mobile { 		padding-right: 	rem-calc(math.div($baseSpace, $i)); padding-left: rem-calc(math.div($baseSpace, $i)); }
+				.m-y#{$index}-mobile { 		margin-top: 	rem-calc(math.div($baseSpace, $i)); margin-bottom: rem-calc(math.div($baseSpace, $i)); }
+				.p-y#{$index}-mobile { 		padding-top: 	rem-calc(math.div($baseSpace, $i)); padding-bottom: rem-calc(math.div($baseSpace, $i)); }
 			}
 
 			// Tablet margin/padding divider
 			@include media-only(md) {
 				// Tablet axis margin/padding divider
-				.m-x#{$index}-tablet { 		margin-right: 	rem-calc($baseSpace/$i); margin-left: rem-calc($baseSpace/$i); }
-				.p-x#{$index}-tablet { 		padding-right: 	rem-calc($baseSpace/$i); padding-left: rem-calc($baseSpace/$i); }
-				.m-y#{$index}-tablet { 		margin-top: 	rem-calc($baseSpace/$i); margin-bottom: rem-calc($baseSpace/$i); }
-				.p-y#{$index}-tablet { 		padding-top: 	rem-calc($baseSpace/$i); padding-bottom: rem-calc($baseSpace/$i); }
+				.m-x#{$index}-tablet { 		margin-right: 	rem-calc(math.div($baseSpace, $i)); margin-left: rem-calc(math.div($baseSpace, $i)); }
+				.p-x#{$index}-tablet { 		padding-right: 	rem-calc(math.div($baseSpace, $i)); padding-left: rem-calc(math.div($baseSpace, $i)); }
+				.m-y#{$index}-tablet { 		margin-top: 	rem-calc(math.div($baseSpace, $i)); margin-bottom: rem-calc(math.div($baseSpace, $i)); }
+				.p-y#{$index}-tablet { 		padding-top: 	rem-calc(math.div($baseSpace, $i)); padding-bottom: rem-calc(math.div($baseSpace, $i)); }
 			}
 		}
 	}

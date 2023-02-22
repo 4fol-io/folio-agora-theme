@@ -165,7 +165,7 @@ function ajax_comments_pagination (  $args = array(), $view = 'tree' ) {
     <div class="tree-node">
       <div class="tree-content pt-3 pb-4">
   <?php else: ?>
-  <div class="load-more pt-3 pb-4">
+  <div class="load-more pb-4">
   <?php endif; ?>
         <a href="#" class="btnlink btnlink--regular btnlink--underline btn-load-more load-more-comments-js" <?php echo $attr ?>>
           <span class="icon icon--plus icon--xsmall icon--before" aria-hidden="true"></span><span class="label"><?php _e('Load more', 'agora-folio') ?></span>

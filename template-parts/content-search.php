@@ -23,8 +23,17 @@ if (get_post_type() === 'post'){
 	}
 	if(!empty($status)){
 		$ruler = 'ruler--secondary';
+		if( $status === 'pending' ) {
+			$ruler = 'ruler--pending';
+		}
 	}
 }
+
+ob_start();
+Templates\post_thumbnail('large');
+$thumbnail = ob_get_contents();
+ob_end_clean();
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(['view-col', $status]); ?>>
@@ -33,46 +42,39 @@ if (get_post_type() === 'post'){
 	
 		<header class="entry-header d-sm-flex ruler  <?php echo $ruler ?>">
 
-			<?php Templates\post_thumbnail('large'); ?>
+			<?php echo $thumbnail; ?>
 
-			<div class="entry-summary d-flex flex-column">
+			<div class="entry-summary d-flex flex-column <?php echo $thumbnail ? 'with-thumb' : 'no-thumb' ?>">
 
 				<div class="entry-summary-wrap d-flex">
 
 					<div class="entry-summary-head">
 
-						<?php
-						the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" class="btnlink" rel="bookmark">', '</a></h2>' );
+					<?php Templates\posted_by_avatar(); ?>
 
-						if ( 'post' === get_post_type() ) :
-						?>
-						<div class="mb-2 entry-meta">
-						<?php
-						Templates\posted_by();
-						?>
+					<div class="entry-summary-head-content">
+
+					<?php
+						the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" class="btnlink" rel="bookmark">', '</a></h2>');
+					?>
+
+					<div class="entry-meta-list mb-2">
+						<div class="entry-author mb-1"><?php Templates\posted_by(); ?></div>
+						<div class="entry-meta">
+							<?php Templates\visibility_inline(); ?> - <?php Templates\posted_on('human'); ?>
+							<?php if ('post' === get_post_type()) : Templates\comments_link_inline(); endif; ?>
 						</div>
-						<?php endif; ?>
+					</div>
+
+					</div>
 
 					</div><!-- .entry-summary-head -->
-
-					<?php  if ( 'post' === get_post_type() ) : ?>
-					<div class="mb-2 entry-actions d-flex align-items-start mb-md-3">
-						<?php Templates\comments_link(); ?>
-						<?php Templates\author_links(); ?>
-						<?php Templates\evaluation_link($role, $status_act); ?>
-					</div>
-					<?php endif; ?>
 
 				</div><!-- .entry-summary-wrap -->
 				
 
 				<div class="entry-excerpt excerpt-long flex-fill">
 					<div class="mb-3"><?php echo Utils\get_excerpt(48); ?></div>
-				</div>
-
-				<div class="entry-meta d-flex align-items-end <?php echo 'post' === get_post_type() ? 'justify-content-between' : 'justify-content-end' ?>">
-					<?php if ( 'post' === get_post_type() ) : Templates\posted_on(); endif; ?>
-					<?php Templates\visibility(); ?>
 				</div>
 
 			</div><!-- .entry-summary -->

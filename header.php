@@ -73,17 +73,7 @@ if ( function_exists( 'wp_body_open' ) ) {
                   <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
                 <?php
                 endif;
-                /*$site_description = get_bloginfo( 'description', 'display' );
-                if (function_exists('uoc_create_site_is_classroom_blog') ) {
-                  $classroomId = uoc_create_site_is_classroom_blog();
-                  if ($classroomId) {
-                    $site_description = Data\get_semester();
-                  }
-                }
-                if ( $site_description || is_customize_preview() ) :
-				        ?>
-				          <p class="site-description"><?php echo $site_description; ?></p>
-			          <?php endif;*/ ?>
+                ?>
               </div>
 
               <button class="btn btn-menu-toggle collapsed" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Menu">

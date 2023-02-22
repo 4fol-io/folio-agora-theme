@@ -1,4 +1,6 @@
 // Responsive card heights
+@use "sass:math";
+
 @mixin card-height-responsive($baseHeight) {   
     @for $i from 0 through 8 {
         $index: $i;
@@ -8,13 +10,13 @@
 
         @if $i > 1 {
             @include media-down(sm) {
-                .card--y#{$index}-mobile { min-height: $baseHeight/$i; }
+                .card--y#{$index}-mobile { min-height: math.div($baseHeight, $i); }
             }
             @include media-only(md) {
-                .card--y#{$index}-tablet { min-height: $baseHeight/$i; }
+                .card--y#{$index}-tablet { min-height: math.div($baseHeight, $i); }
             }
             @include media-up(lg) {
-                .card--y#{$index} { min-height: $baseHeight/$i; }
+                .card--y#{$index} { min-height: math.div($baseHeight, $i); }
             }
         }
         @include media-down(sm) {

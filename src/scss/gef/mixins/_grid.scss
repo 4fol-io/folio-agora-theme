@@ -2,6 +2,8 @@
 //
 // Generate semantic grid columns with these mixins.
 
+@use "sass:math";
+
 @mixin make-col($gutter: $grid-gutter-width) {
   position: relative;
  	float: left;
@@ -11,19 +13,19 @@
 }
 
 @mixin make-col-span($size, $columns: $grid-columns) {
-  width: percentage($size / $columns);
+  width: percentage(math.div($size, $columns));
 }
 
 @mixin make-col-offset($size, $columns: $grid-columns) {
-  margin-left: percentage($size / $columns);
+  margin-left: percentage(math.div($size, $columns));
 }
 
 @mixin make-col-push($size, $columns: $grid-columns) {
-  left: if($size > 0, percentage($size / $columns), auto);
+  left: if($size > 0, percentage(math.div($size, $columns)), auto);
 }
 
 @mixin make-col-pull($size, $columns: $grid-columns) {
-  right: if($size > 0, percentage($size / $columns), auto);
+  right: if($size > 0, percentage(math.div($size, $columns)), auto);
 }
 
 @mixin make-col-modifier($type, $size, $columns) {

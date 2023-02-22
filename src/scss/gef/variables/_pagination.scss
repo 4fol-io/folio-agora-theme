@@ -4,10 +4,10 @@ $pagination-bg: 					$white;
 $pagination-margin:					$spacer;
 $pagination-border-color:			$grey;
 $pagination-border-color-active:	$brand-primary;
-$pagination-border-width: 			$spacer/2 0 0 0;
+$pagination-border-width: 			$spacer*0.5 0 0 0;
 
 // Pagination item
-$pagination-item-padding: 			$spacer/2;
+$pagination-item-padding: 			$spacer*0.5;
 $pagination-item-margin-top:		$spacer*2;
 $pagination-item-width:				20%;
 

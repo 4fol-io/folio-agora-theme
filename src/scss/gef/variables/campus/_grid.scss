@@ -27,8 +27,8 @@ $grid-gutter-width:          1.875rem !default; // 30px
 
 
 //Main container paddings
-$grid-container-padding-xs: ($grid-gutter-width / 2); 
-$grid-container-padding-sm: ($grid-gutter-width / 2); 
+$grid-container-padding-xs: ($grid-gutter-width * 0.5); 
+$grid-container-padding-sm: ($grid-gutter-width * 0.5); 
 $grid-container-padding-md: $grid-gutter-width; 
 $grid-container-padding-lg: $grid-gutter-width; 
 $grid-container-padding-xl: $grid-gutter-width; 

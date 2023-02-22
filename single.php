@@ -28,7 +28,7 @@ get_header();
 
 			<div id="agora-view" class="agora-view" data-view="single">
 
-				<?php get_template_part( 'template-parts/content-single', get_post_type() ); ?>
+				<?php get_template_part( 'template-parts/content', 'single' ); ?>
 
 			</div><!-- .agora-view -->
 

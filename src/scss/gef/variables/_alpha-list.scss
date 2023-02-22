@@ -1,14 +1,16 @@
 // Alpha list
+@use "sass:math";
+
 $alpha-list-bg: 				inherit;
 $alpha-list-weight: 				bold;
 $alpha-list-border-color: 			$grey;
 $alpha-list-border-width:			1px;
-$alpha-list-padding-y: 				$spacer-y/2;
+$alpha-list-padding-y: 				$spacer-y*0.5;
 
 // Alpha item
 $alpha-list-item-padding-y: 		$spacer-y;
 $alpha-list-item-padding-x: 		$spacer-x;
-$alpha-list-item-width: 		percentage(1/14);
+$alpha-list-item-width: 		percentage(math.div(1, 14));
 $alpha-list-item-min-width:		38px;
 $alpha-list-inactive-color:		$grey;
 $alpha-list-active-bg-color:		$brand-secondary;

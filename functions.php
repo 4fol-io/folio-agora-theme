@@ -5,10 +5,10 @@
  * @package AgoraFolio
  */
 
-define('AGORA_FOLIO_THEME_VERSION',  '1.0.9');
+define('AGORA_FOLIO_THEME_VERSION',  '1.0.10');
 define('AGORA_FOLIO_DEMO_MODE',      false);  // For DEMO purposes, DISABLE in PRODUCTION
 define('AGORA_FOLIO_LIST_COMMENTS',  true);   // Enable comments on lists pages (index, category, archive)
-define('AGORA_FOLIO_LIST_AJAX',      true);   // Enable ajax load posts content on lists (index, category, archive)
+define('AGORA_FOLIO_LIST_AJAX',      false);   // Enable ajax load posts content on lists (index, category, archive)
 
 $agora_includes = array(
   '/clean.php',                           // Clean head, inline styles,...
@@ -19,7 +19,7 @@ $agora_includes = array(
   '/data.php',                            // Data access utilities
   '/utils.php',                           // Some general utils, filters, action hooks,...
   '/nav.php',                             // Custom Bootstrap Nav Walker
-  '/tree-walker.php',                          // Custom Comment Tree Walker
+  '/tree-walker.php',                     // Custom Comment Tree Walker
   '/pagination.php',                      // Custom pagination
   '/templates.php',                       // Custom templates for this theme
   '/customizer.php',                      // Customizer preview

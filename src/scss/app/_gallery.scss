@@ -1,5 +1,7 @@
 // Gallery 
 
+@use "sass:math";
+
 .gallery {
 	$columns: 2; // Default layout on small devices.
 	$gutter: 2;  // %
@@ -28,14 +30,14 @@
 		flex: 1 1 auto;
 		float: left;
 		position: relative;
-		width: percentage( ( 100 / $columns - $gutter ) / 100 );
+		width: percentage( ( math.div(100, $columns) - $gutter ) * 0.01 );
 		padding: 0;
-		margin: percentage( $gutter / 2 / 100 );
+		margin: percentage( $gutter * 0.5 * 0.01 );
 		overflow: hidden;
 
 		@include media-up(lg) {
 			$columns: 3; // Default layout on medium devices.
-			width: percentage( ( 100 / $columns - $gutter ) / 100 );
+			width: percentage( ( math.div(100, $columns) - $gutter ) * 0.01 );
 		}
 
 	}
@@ -64,7 +66,7 @@
 		.gallery-item {
 			@include media-up(lg) {
 				$columns: 2;
-				width: percentage( ( 100 / $columns - $gutter ) / 100 );
+				width: percentage( ( math.div(100, $columns) - $gutter ) * 0.01 );
 			}
 		}
 	}
@@ -74,7 +76,7 @@
 			.gallery-item {
 				@include media-up(xl) {
 					$columns: $i; // On large devices do not force any default gallery layout, use actual gallery columns setup.
-					width: percentage( ( 100 / $columns - $gutter ) / 100 );
+					width: percentage( ( math.div(100, $columns) - $gutter ) * 0.01 );
 				}
 			}
 		}

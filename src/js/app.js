@@ -28,14 +28,13 @@ import 'bootstrap/js/dist/tooltip';
 import Cookies from 'js-cookie';                    // manage cookies
 import objectFitImages from 'object-fit-images';    // object-fit polyfill
 import shave from 'shave';
-//import Masonry from 'masonry-layout';
 
 /**
  * App modules
  */
 import { debounce, isMobile, goTo, replaceUrlParam } from './modules/utils.js';
 import { setupWidgets } from './modules/widgets.js';
-import { setupTree } from './modules/tree.js';
+//import { setupTree } from './modules/tree.js';
 
 
 
@@ -60,26 +59,14 @@ import { setupTree } from './modules/tree.js';
   const LIST_VIEW = 'list';
   const FULL_VIEW = 'full';
   const TREE_VIEW = 'tree';
+  const COMM_VIEW = 'comm';
 
   const DIR_NEW = 'newest';
   const DIR_OLD = 'oldest';
 
-
-  /* Nota: la profundidad y visibilidad de las lineas se determina por estilos vía Media Queries, no cambiar estos parámetros */
-  const deepXS = 4;			// max threading deep for small displays
-  const deepSM = 7;			// max threading deep for medium displays
-  const deepLG = 10;		// max threading deep for large displays
-
   // Aux variables
   let ww = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
   let currentView = '';
-
-  let treeCount = 0;
-  let treePaths = [];
-  let treeData = [];
-
-  let msnry = null;
-
 
   /**
    * On resize event handler (debounced)
@@ -261,10 +248,24 @@ import { setupTree } from './modules/tree.js';
       $modal.find('.form-sort').trigger('submit');
     });
 
+    $doc.on('click', '.dropdown-sort .btn--order', function (e) {
+      const $this = $(this);
+      const $form = $this.parent().find('.form-sort-agoras');
+      const _order = $form.data('order') === 'DESC' ? 'ASC' : 'DESC';
+      $form.find('input[name="order"]').val(_order);
+      $form.trigger('submit');
+    });
+
     $doc.on('submit', '.form-sort-agoras', function (e) {
       const $this = $(this);
-      if ($this.data('orderby') === $this.find('input[name="orderby"]:checked').val() && $this.data('order') === $this.find('input[name="order"]:checked').val()) {
-        e.preventDefault();
+      if($this.find('input.agoras_order').length){
+        if ($this.data('orderby') === $this.find('input[name="orderby"]:checked').val() && $this.data('order') === $this.find('input[name="order"]').val()) {
+          e.preventDefault();
+        }
+      }else{
+        if ($this.data('orderby') === $this.find('input[name="orderby"]:checked').val() && $this.data('order') === $this.find('input[name="order"]:checked').val()) {
+          e.preventDefault();
+        }
       }
     });
 
@@ -331,7 +332,7 @@ import { setupTree } from './modules/tree.js';
 
     $doc.on('click', '.js-change-agora-view', function (e) {
       const view = $(this).data('view') || GRID_VIEW;
-      if (currentView !== TREE_VIEW && view !== TREE_VIEW) {
+      if (currentView !== TREE_VIEW && view !== TREE_VIEW && currentView !== COMM_VIEW && view !== COMM_VIEW ) {
         e.preventDefault();
         setView(view);
         replaceUrlParam(window.location.href, 'view', view);
@@ -353,19 +354,17 @@ import { setupTree } from './modules/tree.js';
    */
   const setView = function (view) {
 
+    view = view === FULL_VIEW ? LIST_VIEW : view;
+
     currentView = view;
 
     $('.js-change-agora-view.active').removeClass('active').removeAttr('aria-current');
     $(`.js-change-agora-view[data-view=${view}]`).addClass('active').attr('aria-current', true);
     $('.agora-view.view-row').attr('data-view', view);
 
-    if (view === GRID_VIEW) {
-      $('.nav-actions-mobile .js-change-agora-view[data-view="list"]').addClass('active').attr('aria-current', true);
-    }
-
     const $collapsible = $('.entry-collapse');
 
-    if (view === FULL_VIEW) {
+    if (view === LIST_VIEW) {
       $collapsible.collapse('show');
     } else {
       $collapsible.collapse('hide');
@@ -376,19 +375,6 @@ import { setupTree } from './modules/tree.js';
     } else {
       Cookies.set('agora-view', view);
     }
-
-    /*
-    if (view === GRID_VIEW) {
-      setTimeout(function(){
-        msnry = new Masonry( document.querySelector('.agora-view'), {
-          itemSelector: '.view-col',
-          "percentPosition": true 
-        });
-      },300);
-    }else if(msnry){
-      msnry.destroy();
-      msnry = null;
-    }*/
 
   }
 
@@ -447,7 +433,7 @@ import { setupTree } from './modules/tree.js';
 
     // Evaluation anchor link
     $doc.on('click', '.btn--evaluable', function (e) {
-      if (currentView !== GRID_VIEW) {
+      if (currentView !== GRID_VIEW && currentView !== COMM_VIEW) {
         e.preventDefault();
         const $anchor = $(this).closest('.entry-article').find('.evaluation-area > .anchor');
         scrollToArea(e, $anchor, 100);
@@ -930,7 +916,7 @@ import { setupTree } from './modules/tree.js';
     setupView();
     setupSort();
     setupEvents();
-    setupTree();
+    //setupTree();
     setupWidgets();
     setupEvaluation();
     onResize();

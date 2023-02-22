@@ -25,7 +25,7 @@ $logo-width-mobile: 54px;
 
 $dropdown-triangle-size: 12px;
 
-$media-width-grid: 234px;
+$media-width-grid: 100%;
 $media-height-grid: 232px;
 $media-width-list: 183px;
 $media-height-list: 181px;
@@ -281,7 +281,7 @@ $dropdown-border-radius:            0;
 $dropdown-border-width:             4px;
 $dropdown-inner-border-radius:      0;
 $dropdown-divider-bg:               $grey-light;
-$dropdown-divider-margin-y:         $spacer / 2;
+$dropdown-divider-margin-y:         $spacer * 0.5;
 $dropdown-box-shadow:               0 5px 16px rgba(0,0,0,.1);
 //$dropdown-box-shadow:               none;
 
@@ -427,6 +427,16 @@ $icon-svg-tree-off: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3
 
 $icon-svg-tree-on: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18' xml:space='preserve'><g fill='#{$brand-secondary}'><path d='M11.692 14.063h8.683v3.517h-8.683zM5.859 14.063h3.483v3.517H5.859zM11.692 7.032h8.683v3.517h-8.683zM5.859 7.032h3.483v3.517H5.859zM5.859 0h14.516v3.517H5.859zM0 0h3.516v3.517H0z'/></g></svg>"));
 
+$icon-svg-comm-off: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' width='18' height='18'><path fill='#{$brand-primary}' d='M18 0H6.333v3.001H0v1.666h8.332v7.832H5v1.334l-1.833-1.334H0v1.668h2.501l4.332 3.168v-3.168h3.166v-2.834h1.168v3.002l4.334-3.002H18V9.501h-3.001L13 11V9.501H9.999v-6.5H8.167V1.834H18z'/></svg>"));
+
+$icon-svg-comm-on: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' width='18' height='18'><path fill='#{$brand-secondary}' d='M18 0H6.333v3.001H0v1.666h8.332v7.832H5v1.334l-1.833-1.334H0v1.668h2.501l4.332 3.168v-3.168h3.166v-2.834h1.168v3.002l4.334-3.002H18V9.501h-3.001L13 11V9.501H9.999v-6.5H8.167V1.834H18z'/></svg>"));
+
+$icon-svg-bubble-off: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' width='18' height='18'><path fill='none' stroke='#{$brand-primary}' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.8' d='M12.598 14.1h-2.484V17l-3.315-2.9h-5.8V6.645h11.599z'/><path fill='#{$brand-primary}' stroke='#{$brand-primary}' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.8' d='M5.403 1H17v7.455h-5.798l-3.313 2.9v-2.9H5.403z'/></svg>"));
+
+$icon-svg-bubble-on: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' width='18' height='18'><path fill='none' stroke='#{$brand-secondary}' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.8' d='M12.598 14.1h-2.484V17l-3.315-2.9h-5.8V6.645h11.599z'/><path fill='#{$brand-secondary}' stroke='#{$brand-secondary}' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.8' d='M5.403 1H17v7.455h-5.798l-3.313 2.9v-2.9H5.403z'/></svg>"));
+
+
+
 $icon-svg-scroll-on: escape-svg(url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><g transform='translate(0.000000, 0.000000)' fill='none' fill-rule='evenodd'><rect width='24' height='24'/><g fill='#{$brand-primary}' fill-rule='nonzero'><path d='M1.5,12 C1.5,17.7989899 6.20101013,22.5 12,22.5 C17.7989899,22.5 22.5,17.7989899 22.5,12 C22.5,6.20101013 17.7989899,1.5 12,1.5 C6.20101013,1.5 1.5,6.20101013 1.5,12 Z M24,12 C24,18.627417 18.627417,24 12,24 C5.372583,24 0,18.627417 0,12 C0,5.372583 5.372583,0 12,0 C18.627417,0 24,5.372583 24,12 Z'/><polygon points='11.75 5 6 10.75 7.34166667 12.0916667 10.7916667 8.64166667 10.7916667 19.1868301 12.7083333 19.1868301 12.7083333 8.64166667 16.1583333 12.0916667 17.5 10.75'/></g></g></svg>"));
 
 $icon-svg-scroll-off: escape-svg(url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><g transform='translate(0.000000, 0.000000)' fill='none' fill-rule='evenodd'><rect width='24' height='24'/><g fill='#{$text-muted}' fill-rule='nonzero'><path d='M1.5,12 C1.5,17.7989899 6.20101013,22.5 12,22.5 C17.7989899,22.5 22.5,17.7989899 22.5,12 C22.5,6.20101013 17.7989899,1.5 12,1.5 C6.20101013,1.5 1.5,6.20101013 1.5,12 Z M24,12 C24,18.627417 18.627417,24 12,24 C5.372583,24 0,18.627417 0,12 C0,5.372583 5.372583,0 12,0 C18.627417,0 24,5.372583 24,12 Z'/><polygon points='11.75 5 6 10.75 7.34166667 12.0916667 10.7916667 8.64166667 10.7916667 19.1868301 12.7083333 19.1868301 12.7083333 8.64166667 16.1583333 12.0916667 17.5 10.75'/></g></g></svg>"));
@@ -437,6 +447,8 @@ $icon-svg-order-asc: escape-svg(url("data:image/svg+xml,<svg width='25' height='
 
 $icon-svg-order-desc: escape-svg(url("data:image/svg+xml,<svg width='25' height='23' viewBox='0 0 25 23' xmlns='http://www.w3.org/2000/svg'><g transform='translate(-45.000000, -1004.000000) translate(45.000000, 1004.000000)' fill-rule='nonzero'><polygon points='23.575 15.9083333 20.125 19.3583333 20.125 0 18.2083333 0 18.2083333 19.3583333 14.7583333 15.9083333 13.4166667 17.25 19.1666667 23 24.9166667 17.25' fill='#{$grey-dark}'/><polygon points='5.75 0 0 5.75 1.34166667 7.09166667 4.79166667 3.64166667 4.79166667 23 6.70833333 23 6.70833333 3.64166667 10.1583333 7.09166667 11.5 5.75' fill='#{$brand-primary}'/></g></svg>"));
 
+$icon-svg-sort-on: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='13' height='23' viewBox='0 0 13 23' xml:space='preserve'><path fill='#{$brand-primary}' d='M6.5 0 .75 5.75l1.342 1.342 3.45-3.45V23h1.916V3.642l3.45 3.45L12.25 5.75z'/></svg>"));
+$icon-svg-sort-off: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='13' height='23' viewBox='0 0 13 23' xml:space='preserve'><path fill='#{$text-muted}' d='M6.5 0 .75 5.75l1.342 1.342 3.45-3.45V23h1.916V3.642l3.45 3.45L12.25 5.75z'/></svg>"));
 
 $icon-svg-logout-primary: escape-svg(url("data:image/svg+xml,<svg width='18' height='18' viewBox='0 0 18 18' xmlns='http://www.w3.org/2000/svg'><path d='M7,16 L2,16 C0.8954305,16 0,15.1045695 0,14 L0,2 C0,0.8954305 0.8954305,0 2,0 L7,0 M16,8 L12,4 M16,8 L12,12 M16,8 L6,8' transform='translate(-1159.000000, -898.000000) translate(37.000000, 45.000000) translate(20.000000, 826.000000) translate(16.000000, 17.000000) translate(970.000000, 8.000000) translate(99.000000, 0.000000) translate(18.000000, 3.000000)' stroke='#{$brand-primary}' stroke-width='2' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'/></svg>"));
 

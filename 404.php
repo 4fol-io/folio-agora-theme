@@ -8,8 +8,10 @@
  */
 
 use AgoraFolio\Data;
+use AgoraFolio\Utils;
 
 require_once dirname(__FILE__) .'/inc/data.php';
+require_once dirname(__FILE__) .'/inc/utils.php';
 
 get_header();
 ?>
@@ -49,19 +51,22 @@ get_header();
 						4) Contenido sólo visible para profesorado. / Si eres parte del profesorado de esta actividad, accede aquí  (login)
 						5) Contenido privado, sólo visible para los autores de este post. / Si eres el/la autor/a accede aquí.
 					**/
+				 $current_page_link = Utils\get_current_page_link();
 				 if ( 'private' === $pots_status && $meta_accesss ) {
+
+
 					 switch ( $meta_accesss ) {
 						 case PORTAFOLIS_UOC_ACCESS_UOC:
 							 $sentence1 = __( 'Content available to the UOC community', 'agora-folio' );
 							 $sentence2 = sprintf( __( 'This page has publications that are only visible to members of the UOC community. To view the content, log in with your %1$sCampus user%2$s.',
-								 'agora-folio' ), '<a href="' . wp_login_url( get_permalink() ) . '">', '</a>' );
+								 'agora-folio' ), '<a href="' . wp_login_url( $current_page_link ) . '">', '</a>' );
 							 break;
 						 case PORTAFOLIS_UOC_ACCESS_SUBJECT:
 							 $sentence1 = __( 'Content available for classmates',
 								 'agora-folio' );
 							 if (!is_user_logged_in()) {
 								 $sentence2 = sprintf( __( 'This page has publications that are only visible to classmates in this subject. If you are part of it and want to see the content, log in with %1$syour Campus user%2$s.',
-									 'agora-folio' ), '<a href="' . wp_login_url( get_permalink() ) . '">',
+									 'agora-folio' ), '<a href="' . wp_login_url( $current_page_link ) . '">',
 									 '</a>' );
 							 } else {
 								 $sentence2  = __('This page has publications that are only visible to classmates in this subject.', 'agora-folio');
@@ -71,7 +76,7 @@ get_header();
 							 $sentence1 = __( 'Content available for teachers of the subject', 'agora-folio' );
 							 if (!is_user_logged_in()) {
 								 $sentence2 = sprintf( __( 'This page has publications that are only visible to the teachers of the subject. If you are a teacher and want to see the content, log in with your %1$sCampus user%2$s.',
-									 'agora-folio' ), '<a href="' . wp_login_url( get_permalink() ) . '">',
+									 'agora-folio' ), '<a href="' . wp_login_url( $current_page_link ) . '">',
 									 '</a>' );
 							 } else {
 								 $sentence2  = __('This page has publications that are only visible to the teachers of the subject.', 'agora-folio');
@@ -82,7 +87,7 @@ get_header();
 								 'agora-folio' );
 							 if (!is_user_logged_in()) {
 								 $sentence2 = sprintf( __( 'This page has posts that are only visible to the person who created the content. If you are the author, log in with your %1$sFolio user%2$s.',
-									 'agora-folio' ), '<a href="' . wp_login_url( get_permalink() ) . '">', '</a>' );
+									 'agora-folio' ), '<a href="' . wp_login_url( $current_page_link ) . '">', '</a>' );
 							 } else {
 								 $sentence2  = __('This page has posts that are only visible to the person who created the content.', 'agora-folio');
 							 }
@@ -104,7 +109,7 @@ get_header();
                      <h3 class="h5 h5--large"><?php echo $str ?></h3>
 					 <?php if (! is_user_logged_in() ) {
 						 $str = sprintf( __( 'If you have Folio, we recommend that you log in %1$swith your user%2$s.',
-							 'agora-folio' ), '<a href="' . wp_login_url(  ) . '">', '</a>' )
+							 'agora-folio' ), '<a href="' . wp_login_url( $current_page_link ) . '">', '</a>' )
 						 ?>
                          <h4 class="h5 h5--large"><?php echo $str; ?></h4>
 					 <?php }

@@ -21,7 +21,7 @@ $fullwidth-button-padding-left: 			4px;
 // Banner generic vars
 $page-width: 								1404px;
 $page-inner-width: 							1204px;
-$page-padding: 								($page-width - $page-inner-width)/2;
+$page-padding: 								($page-width - $page-inner-width)*0.5;
 $page-unit:									4px;
 $page-module:								17*$page-unit;
 $page-module-merged:						$page-module - $page-unit;

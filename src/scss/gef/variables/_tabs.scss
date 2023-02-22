@@ -7,8 +7,8 @@ $tab-color:									$brand-primary;
 $tab-element-margin:						0 $spacer-x*2.5 0 0;
 
 // Tab item variant
-$tab-alternative-element-border-width:		$spacer/4;
-$tab-alternative-element-border-width-active:		$spacer/2;
+$tab-alternative-element-border-width:		$spacer*0.25;
+$tab-alternative-element-border-width-active:		$spacer*0.5;
 $tab-alternative-element-color-active:		$brand-primary;
 $tab-alternative-element-color:				$grey-medium;
-$tab-alternative-padding-y:					$spacer-y/2;
+$tab-alternative-padding-y:					$spacer-y*0.5;

@@ -13,25 +13,29 @@ export const sortParticipants = function ($block) {
   const order = $block.attr('data-order');
   const $container = $block.find('.list--participants');
 
-  $container.children('li').sort(function (a, b) {
-    const orderA = $(a).attr('data-' + orderBy);
-    const orderB = $(b).attr('data-' + orderBy);
-    if (orderA === orderB) {
-      const orderC = $(a).attr('data-' + orderByAlt);
-      const orderD = $(b).attr('data-' + orderByAlt);
-      if (order === 'ASC') {
-        return (orderC < orderD) ? -1 : (orderC > orderD) ? 1 : 0;
+  $container.each(function () {
+    var $this = $(this);
+    $this.children('li').sort(function (a, b) {
+      const orderA = $(a).attr('data-' + orderBy).toLowerCase();
+      const orderB = $(b).attr('data-' + orderBy).toLowerCase();
+      if (orderA === orderB) {
+        const orderC = $(a).attr('data-' + orderByAlt);
+        const orderD = $(b).attr('data-' + orderByAlt);
+        if (order === 'ASC') {
+          return (orderC < orderD) ? -1 : (orderC > orderD) ? 1 : 0;
+        } else {
+          return (orderD < orderC) ? -1 : (orderD > orderC) ? 1 : 0;
+        }
       } else {
-        return (orderD < orderC) ? -1 : (orderD > orderC) ? 1 : 0;
+        if (order === 'ASC') {
+          return (orderA < orderB) ? -1 : (orderA > orderB) ? 1 : 0;
+        } else {
+          return (orderB < orderA) ? -1 : (orderB > orderA) ? 1 : 0;
+        }
       }
-    } else {
-      if (order === 'ASC') {
-        return (orderA < orderB) ? -1 : (orderA > orderB) ? 1 : 0;
-      } else {
-        return (orderB < orderA) ? -1 : (orderB > orderA) ? 1 : 0;
-      }
-    }
-  }).appendTo($container);
+    }).appendTo($this);
+  });
+  
 
 }
 
@@ -40,6 +44,9 @@ export const sortParticipants = function ($block) {
  * Initialice widgets
  */
 export const setupWidgets = function () {
+
+  // Append megamenu superagora modals to body to prevent overlay
+  $('.mega-menu .modal').appendTo('body');
 
   $('.block--participants').each(function () {
 

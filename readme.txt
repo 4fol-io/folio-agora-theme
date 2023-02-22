@@ -62,6 +62,14 @@ Theme based on GEF UOC Framework for Agora Folio blog types
 * Remove tree view  menu counters
 * Post and comment author classroom avatar
 
+= v1.0.10 =
+* Added .npmrc config file for pnpm build
+* Archive, grid, list, single and comments views refactoring
+* Fix site.webmanifest
+* Fix GEF: dart sass division migration
+* Comment access visibility ajax fix
+* Updated filters/order view
+
 
 == Credits ==
 

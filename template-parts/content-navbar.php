@@ -23,29 +23,30 @@ if ($controls) {
     $view = Data\get_agora_view();
     
     $sort_icon = $order === 'DESC' ? 'icon--arrow-drop-down' : 'icon--arrow-drop-up';
-    $sort_lbl = '';
+    $order_by_lbl = '';
+    $order_lbl = $order === 'DESC' ? __( "Descending", "agora-folio" ) : __( "Ascending", "agora-folio" );
 
     switch($orderby){
         case 'date':
-            $sort_lbl = __( "Date", "agora-folio" );
+            $order_by_lbl = __( "Date", "agora-folio" );
             break;
         case 'title':
-            $sort_lbl = __( "Title", "agora-folio" );
+            $order_by_lbl = __( "Title", "agora-folio" );
             break;
         case 'firstname':
-            $sort_lbl = __( "Name", "agora-folio" );
+            $order_by_lbl = __( "Name", "agora-folio" );
             break;
         case 'lastname':
-            $sort_lbl = __( "Surname", "agora-folio" );
+            $order_by_lbl = __( "Surname", "agora-folio" );
             break;
         case 'evaluable':
-            $sort_lbl = __( "Evaluable", "agora-folio" );
+            $order_by_lbl = __( "Evaluable", "agora-folio" );
             break;
         case 'activity':
-            $sort_lbl = __( "Activity", "agora-folio" );
+            $order_by_lbl = __( "Activity", "agora-folio" );
             break;
         /*case 'new':
-            $sort_lbl = __( "Recent", "agora-folio" );
+            $order_by_lbl = __( "Recent", "agora-folio" );
             break;*/
     }
     
@@ -89,14 +90,14 @@ if (function_exists('portafolis_uoc_rac_instantiate')) {
                         role="button"
                         data-toggle="dropdown" 
                         data-placement="bottom"
-                        data-offset="-30,20"
+                        data-offset="-40,20"
                         aria-haspopup="true" 
                         aria-expanded="false" 
                         class="btnlink btnlink--regular dropdown-toggle" 
                         id="dropdown-sort-agoras-toggle"
                         aria-label="<?php esc_html_e('Order menu', 'agora-folio'); ?>">
-                        <?php _e('Order', 'agora-folio' ); ?>: <strong class="current-order"><?php echo $sort_lbl ?></strong>
-                        <span class="icon icon--xsmall <?php echo $sort_icon ?> icon--after" aria-hidden="true"></span>
+                        <?php _e('Order', 'agora-folio' ); ?>: <strong class="current-order-by"><?php echo $order_by_lbl ?></strong>
+                        <?php /*<span class="icon icon--xsmall <?php echo $sort_icon ?> icon--after" aria-hidden="true"></span> */ ?>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdown-sort-agoras-toggle">
                         <div class="dropdown-triangle"></div>
@@ -151,25 +152,17 @@ if (function_exists('portafolis_uoc_rac_instantiate')) {
                                 </div>
                                 */ ?>
                             </fieldset>
-                            <fieldset>
-                                <div class="form-radio ruler ruler--half m-0 px-1 py-2 ruler--primary">
-                                    <label for="agoras_order_asc" <?php if ($order === 'ASC'): ?>class="active"<?php endif; ?>>
-                                        <input id="agoras_order_asc" name="order" type="radio" value="ASC" <?php if ($order === 'ASC'): ?>checked<?php endif; ?>>
-                                        <span aria-hidden="true" class="icon icon--radio-button-off icon--small"></span> <?php _e( "Ascending", "agora-folio" ); ?>
-                                    </label>
-                                </div>
-                                <div class="form-radio ruler ruler--thin m-0 px-1 pt-2">
-                                    <label for="agoras_order_desc" <?php if ($order === 'DESC'): ?>class="active"<?php endif; ?>>
-                                        <input id="agoras_order_desc" name="order" type="radio" value="DESC" <?php if ($order === 'DESC'): ?>checked<?php endif; ?>>
-                                        <span aria-hidden="true" class="icon icon--radio-button-off icon--small"></span> <?php _e( "Descending", "agora-folio" ); ?>
-                                    </label>
-                                </div>
-                            </fieldset>
                             <div class="visually-hidden">
+                                <input type="hidden" name="order" class="agoras_order" value="<?php echo $order ?>">
                                 <button type="submit"><?php _e( "Apply", "agora-folio" ); ?></button>
                             </div>
                         </form>
                     </div>
+                    <button class="btn btn--order" type="button" data-order="<?php echo esc_attr($order) ?>">
+                        <span class="btn--order__message visually-hidden"><?php esc_html_e('Order', 'agora-folio'); ?>: <span class="current-order"><?php echo $order_lbl ?></span></span>
+                        <span class="btn--order_content"><span aria-hidden="true" class="icon icon--smal icon--arrow-drop-up"></span></span>
+                        <span class="btn--order_content"><span aria-hidden="true" class="icon icon--smal icon--arrow-drop-down"></span></span>
+                    </button>
                 </li>
                 <li class="ml-3">
                     <a 
@@ -195,7 +188,7 @@ if (function_exists('portafolis_uoc_rac_instantiate')) {
                         <span class="icon icon-svg icon-svg--list" aria-hidden="true"></span>
                     </a>
                 </li>
-                <li>
+                <?php /*<li>
                     <a 
                         href="<?php echo esc_url( add_query_arg( 'view', 'full', $action ) ); ?>" 
                         role="button"
@@ -206,22 +199,20 @@ if (function_exists('portafolis_uoc_rac_instantiate')) {
                         <?php if ($view === 'full'): ?>aria-current="true"<?php endif ?>>
                         <span class="icon icon-svg icon-svg--full" aria-hidden="true"></span>
                     </a>
-                </li>
-                <?php if (is_user_logged_in()) { ?>
+                </li>*/ ?>
                 <li>
                     <a 
-                        href="<?php echo esc_url( add_query_arg( 'view', 'tree', $action ) ) ?>" 
+                        href="<?php echo esc_url( add_query_arg( 'view', 'comm', $action ) ) ?>" 
                         role="button"
-                        data-view="tree"
-                        class="btnlink btnlink--regular js-change-agora-view <?php if ($view === 'tree'): ?>active<?php endif ?>" 
-                        title="<?php esc_html_e('Tree view', 'agora-folio'); ?>"
-                        aria-label="<?php esc_html_e('Tree view', 'agora-folio'); ?>"
-                        <?php if ($view === 'tree'): ?>aria-current="true"<?php endif ?>>
-                        <span class="icon icon-svg icon-svg--tree" aria-hidden="true"></span>
+                        data-view="comm"
+                        class="btnlink btnlink--regular js-change-agora-view <?php if ($view === 'comm'): ?>active<?php endif ?>" 
+                        title="<?php esc_html_e('Comments view', 'agora-folio'); ?>"
+                        aria-label="<?php esc_html_e('Comments view', 'agora-folio'); ?>"
+                        <?php if ($view === 'comm'): ?>aria-current="true"<?php endif ?>>
+                        <span class="icon icon-svg icon-svg--comm" aria-hidden="true"></span>
                     </a>
                 </li>
-                <?php } ?>
-                <li>
+                <li class="ml-3">
                     <a 
                         href="#" 
                         role="button"
@@ -255,14 +246,17 @@ if (function_exists('portafolis_uoc_rac_instantiate')) {
                     <a 
                         href="#" 
                         role="button"
+                        data-order="<?php echo esc_attr($order) ?>"
                         data-toggle="modal" 
                         data-target="#modal-sort-agoras"
-                        class="btnlink modal-toggle d-inline-block px-3 py-2" 
+                        class="btnlink modal-toggle d-inline-block px-1 py-2" 
                         id="modal-sort-agoras-toggle"
                         aria-label="<?php esc_html_e('Order menu', 'agora-folio'); ?>">
-                        <span class="icon icon-svg icon-svg--order" aria-hidden="true"></span>
+                        <span class="icon icon-svg icon-svg--order-asc" aria-hidden="true"></span>
+                        <span class="icon icon-svg icon-svg--order-desc" aria-hidden="true"></span>
                     </a>
                 </li>
+                <?php /*
                 <li class="align-center">
                     <a 
                         href="<?php echo esc_url( add_query_arg( 'view', 'list', $action ) ) ?>" 
@@ -285,15 +279,38 @@ if (function_exists('portafolis_uoc_rac_instantiate')) {
                         <span class="icon icon-svg icon-svg--full" aria-hidden="true"></span>
                     </a>
                 </li>
+                */ ?>
                 <li class="align-center">
                     <a 
-                        href="<?php echo esc_url( add_query_arg( 'view', 'tree', $action ) ) ?>" 
+                        href="<?php echo esc_url( add_query_arg( 'view', 'grid', $action ) ) ?>" 
                         role="button"
-                        data-view="tree"
-                        class="btnlink btnlink--regular js-change-agora-view d-inline-block px-3 py-2 <?php if ($view === 'tree'): ?>active<?php endif ?>" 
-                        aria-label="<?php esc_html_e('Tree view', 'agora-folio'); ?>"
-                        <?php if ($view === 'tree'): ?>aria-current="true"<?php endif ?>>
-                        <span class="icon icon-svg icon-svg--tree" aria-hidden="true"></span>
+                        data-view="grid"
+                        class="btnlink js-change-agora-view d-inline-block px-3 py-2 <?php if ($view === 'grid'): ?>active<?php endif ?>" 
+                        aria-label="<?php esc_html_e('Grid view', 'agora-folio'); ?>"
+                        <?php if ($view === 'grid'): ?>aria-current="true"<?php endif ?>>
+                        <span class="icon icon-svg icon-svg--grid" aria-hidden="true"></span>
+                    </a>
+                </li>
+                <li class="align-center">
+                    <a 
+                        href="<?php echo esc_url( add_query_arg( 'view', 'list', $action ) ) ?>" 
+                        role="button"
+                        data-view="list"
+                        class="btnlink btnlink--regular js-change-agora-view d-inline-block px-3 py-2 <?php if ($view === 'list'): ?>active<?php endif ?>" 
+                        aria-label="<?php esc_html_e('List view', 'agora-folio'); ?>"
+                        <?php if ($view === 'list'): ?>aria-current="true"<?php endif ?>>
+                        <span class="icon icon-svg icon-svg--list" aria-hidden="true"></span>
+                    </a>
+                </li>
+                <li class="align-center">
+                    <a 
+                        href="<?php echo esc_url( add_query_arg( 'view', 'comm', $action ) ) ?>" 
+                        role="button"
+                        data-view="comm"
+                        class="btnlink btnlink--regular js-change-agora-view d-inline-block px-3 py-2 <?php if ($view === 'comm'): ?>active<?php endif ?>" 
+                        aria-label="<?php esc_html_e('Comments view', 'agora-folio'); ?>"
+                        <?php if ($view === 'comm'): ?>aria-current="true"<?php endif ?>>
+                        <span class="icon icon-svg icon-svg--comm" aria-hidden="true"></span>
                     </a>
                 </li>
                 <li class="align-center">

@@ -1,10 +1,12 @@
 /* Rem Units */
+@use "sass:math";
+
 $baseline-px: 16px;
 @mixin rem($property, $px-values) {
-	$baseline-rem: $baseline-px / 1rem;
+	$baseline-rem: math.div($baseline-px, 1rem);
 	#{$property}: $px-values;
 	@if type-of($px-values) == "number" {
-		#{$property}: $px-values / $baseline-rem; 
+		#{$property}: math.div($px-values, $baseline-rem); 
 	}
 	@else {
 		$rem-values: unquote("");
@@ -12,7 +14,7 @@ $baseline-px: 16px;
 			@if $value == 0 or type-of($value) == "string" or type-of($value) == "color" {
 				$rem-values: append($rem-values, $value); }
 			@else {
-				$rem-values: append($rem-values, $value / $baseline-rem); 
+				$rem-values: append($rem-values, math.div($value, $baseline-rem)); 
 			} 
 		}
 		#{$property}: $rem-values; 

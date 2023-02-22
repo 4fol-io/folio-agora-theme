@@ -25,7 +25,7 @@ if ( post_password_required() ) {
 
 $comments_count = get_comments_number();
 
-if ( AGORA_FOLIO_LIST_COMMENTS && !( comments_open() || $comments_count ) ) {
+if ( !AGORA_FOLIO_LIST_COMMENTS /*|| !( comments_open() || $comments_count )*/ ) {
 	return;
 }
 
@@ -50,6 +50,7 @@ if ( $paginated && $comments_count ){
 	if ( $direction === 'newest' ) {
 		$cpage = $tpages;
 	}
+	
 }
 ?>
 
@@ -97,7 +98,7 @@ if ( $paginated && $comments_count ){
 			?>
 		</ol><!-- .comment-list -->
 
-    <?php
+   		<?php
 		//the_comments_navigation();
 		//Pagination\comments_pagination();
 
@@ -119,13 +120,15 @@ if ( $paginated && $comments_count ){
 	?>
 	</h2><!-- .comments-title -->
 
+	<p class="no-comments mt-3"><?php esc_html_e( 'There are no comments.', 'agora-folio' ); ?></p>
+
 	<?php
 	endif; // Check for have_comments().
 
-	// If comments are closed and there are comments, let's leave a little note, shall we?
-	/*if ( ! comments_open() ) : ?>
-		<p class="no-comments"><?php esc_html_e( 'Debates are closed.', 'agora-folio' ); ?></p>
-	<?php endif;*/
+	// No comments
+	if ( ! comments_open() ) : ?>
+		<p class="no-comments mt-3"><?php esc_html_e( 'Debates are closed.', 'agora-folio' ); ?></p>
+	<?php endif;
 
 	if( is_single() ){
 		//comment_form();
@@ -139,6 +142,16 @@ if ( $paginated && $comments_count ){
 			</button>
 		</div>
 	<?php
+	} else if ( ! is_user_logged_in() ){
+		printf(
+			'<p class="must-log-in">%s</p>',
+			sprintf(
+				/* translators: %s: Login URL. */
+				__( 'You must be <a href="%s">logged in</a> to post a comment.' ),
+				/** This filter is documented in wp-includes/link-template.php */
+				wp_login_url( apply_filters( 'the_permalink', get_permalink( get_the_ID() ), get_the_ID() ) )
+			)
+		);
 	}
 
 	?>

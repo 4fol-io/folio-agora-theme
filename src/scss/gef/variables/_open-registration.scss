@@ -1,12 +1,12 @@
 // Open registration banner
-$open-registration-padding-y: 			$spacer-y/2;
-$open-registration-padding-x: 			$spacer-x/2;
+$open-registration-padding-y: 			$spacer-y*0.5;
+$open-registration-padding-x: 			$spacer-x*0.5;
 $open-registration-bg-color:			$white;
 $open-registration-min-height:			69px;
 $open-registration-line-height:			19px;
 $open-registration-position:			-2px;
 
 // Open registration banner mini
-$open-registration-mini-padding-y: 		$spacer-y / 2;
+$open-registration-mini-padding-y: 		$spacer-y * 0.5;
 $open-registration-mini-padding-x: 		$spacer-x;
 $open-registration-mini-line-height:	17px;

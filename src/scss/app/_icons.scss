@@ -295,6 +295,22 @@ h1, h2, h3, h4, h5, h6{
 	height: 24px;
 }
 
+.icon-svg--order-asc,
+.icon-svg--order-desc{   
+	background-image: $icon-svg-sort-off;
+	width: 13px;
+	height: 23px;
+}
+
+.icon-svg--order-desc{
+	transform: rotate(180deg);
+}
+
+[data-order="DESC"] .icon-svg--order-desc,
+[data-order="ASC"] .icon-svg--order-asc{
+	background-image: $icon-svg-sort-on;
+}
+
 .icon-svg--logout{  
 	height: 24px;
     width: 30px;
@@ -345,6 +361,10 @@ a:hover, a:focus{
 	background-image: $icon-svg-tree-off;
 }
 
+.icon-svg--comm{   
+	background-image: $icon-svg-bubble-off;
+}
+
 a.active,
 button.active{
 	.icon-svg--grid{   
@@ -358,8 +378,13 @@ button.active{
 	.icon-svg--full{   
 		background-image: $icon-svg-full-on;
 	}
+
 	.icon-svg--tree{   
 		background-image: $icon-svg-tree-on;
+	}
+
+	.icon-svg--comm{   
+		background-image: $icon-svg-bubble-on;
 	}
 }
 
@@ -377,8 +402,15 @@ button.active{
 		width: 23px;
     	height: 22px; 
 	}
+	.icon-svg--comm{
+		width: 23px;
+    	height: 23px; 
+	}
 	a.active,
 	button.active{
+		.icon-svg--grid{   
+			background-image: $icon-svg-grid-off;
+		}	
 		.icon-svg--list{   
 			background-image: $icon-svg-list-off;
 		}
@@ -387,6 +419,9 @@ button.active{
 		}
 		.icon-svg--tree{   
 			background-image: $icon-svg-tree-off;
+		}
+		.icon-svg--comm{   
+			background-image: $icon-svg-bubble-off;
 		}
 	}
 }

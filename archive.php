@@ -75,12 +75,11 @@ $term_id = get_queried_object_id();
 						 */
 						get_template_part( 'template-parts/content', 'tree' );
 					}else{
-						/*
-						* Include the Post-Type-specific template for the content.
-						* If you want to override this in a child theme, then include a file
-						* called content-___.php (where ___ is the Post Type name) and that will be used instead.
-						*/
-						get_template_part( 'template-parts/content', get_post_type() );
+						if( $view == 'comm'){
+							get_template_part( 'template-parts/content', 'comm' );
+						}else{
+							get_template_part( 'template-parts/content', null );
+						}
 					}
 
 				endwhile;

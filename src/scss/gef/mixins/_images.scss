@@ -1,4 +1,6 @@
 // Responsive image heights mixin
+@use "sass:math";
+
 @mixin image-height-responsive($baseHeight) { 
     @for $i from 0 through 8 {
         $index: $i;
@@ -8,13 +10,13 @@
 
         @if $i > 1 {
             @include media-down(sm) {
-                .img--y#{$index}-mobile { min-height: $baseHeight/$i; }
+                .img--y#{$index}-mobile { min-height: math.div($baseHeight, $i); }
             }
             @include media-only(md) {
-                .img--y#{$index}-tablet { min-height: $baseHeight/$i; }
+                .img--y#{$index}-tablet { min-height: math.div($baseHeight, $i); }
             }
             @include media-up(lg) {
-                .img--y#{$index} { min-height: $baseHeight/$i; }
+                .img--y#{$index} { min-height: math.div($baseHeight, $i); }
             }
         }
         @include media-down(sm) {
