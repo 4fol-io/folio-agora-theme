@@ -91,3 +91,9 @@ $ npm run production
 - Fix GEF: dart sass division migration
 - Comment access visibility ajax fix
 - Updated filters/order view
+
+
+#### v1.0.11
+- Students folio access from thumbnail
+- Set default post_per_page = 12 on theme activation
+- Update translations

@@ -5,7 +5,7 @@
  * @package AgoraFolio
  */
 
-define('AGORA_FOLIO_THEME_VERSION',  '1.0.10');
+define('AGORA_FOLIO_THEME_VERSION',  '1.0.11');
 define('AGORA_FOLIO_DEMO_MODE',      false);  // For DEMO purposes, DISABLE in PRODUCTION
 define('AGORA_FOLIO_LIST_COMMENTS',  true);   // Enable comments on lists pages (index, category, archive)
 define('AGORA_FOLIO_LIST_AJAX',      false);   // Enable ajax load posts content on lists (index, category, archive)

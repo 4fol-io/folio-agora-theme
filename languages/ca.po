@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: AGORA FOLIO 1.0.0\n"
-"POT-Creation-Date: 2023-02-14 15:34+0100\n"
+"POT-Creation-Date: 2023-09-19 19:33+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Antoni Bertran <antoni@tresipunt.com>\n"
 "Language-Team: \n"
@@ -140,34 +140,47 @@ msgstr ""
 msgid "If you have Folio, we recommend that you log in %1$swith your user%2$s."
 msgstr "Si tens Folio, et recomanem entrar amb %1$sel teu usuari%2$s."
 
-#: comments-list.php:63 comments.php:37 inc/templates.php:71
-#: inc/templates.php:104 template-parts/content-tree.php:109
+#: comments-list.php:64 comments.php:37 inc/templates.php:71
+#: template-parts/content-tree.php:108
 msgid "Debate"
 msgstr "Debat"
 
-#: comments-list.php:67 comments.php:41 inc/templates.php:75
-#: inc/templates.php:104 template-parts/content-tree.php:113
+#: comments-list.php:68 comments.php:41 inc/templates.php:75
+#: inc/templates.php:106 template-parts/content-tree.php:112
 #, php-format
 msgid "on %1$s"
 msgstr "el %1$s"
 
-#: comments-list.php:80 comments-list.php:118 comments.php:49 comments.php:76
-#: inc/templates.php:80 template-parts/content-tree.php:122
-#: template-parts/content-tree.php:132
+#: comments-list.php:81 comments-list.php:119 comments.php:49 comments.php:76
+#: inc/templates.php:80 template-parts/content-tree.php:121
+#: template-parts/content-tree.php:131
 msgid "contribution"
 msgstr "contribució"
 
-#: comments-list.php:82 comments.php:51 inc/templates.php:78
-#: inc/templates.php:82 template-parts/content-tree.php:124
+#: comments-list.php:83 comments.php:51 inc/templates.php:78
+#: inc/templates.php:82 template-parts/content-tree.php:123
 msgid "contributions"
 msgstr "contribucions"
 
-#: comments-list.php:138 inc/setup.php:271 inc/templates.php:881
-#: template-parts/content-tree.php:140
+#: comments-list.php:123
+msgid "There are no comments."
+msgstr "No hi ha comentaris."
+
+#: comments-list.php:130 comments.php:85
+msgid "Debates are closed."
+msgstr "Les intervencions estan tancades."
+
+#: comments-list.php:141 inc/setup.php:260 inc/templates.php:894
+#: template-parts/content-tree.php:139
 msgid "Leave a comment"
 msgstr "Deixa un comentari"
 
-#: footer.php:29 template-parts/content-navbar.php:303
+#: comments-list.php:150
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Heu d’<a href=“%s”>accedir</a> per publicar un comentari."
+
+#: footer.php:29 template-parts/content-navbar.php:320
 msgid "Go to top"
 msgstr "Anar a dalt"
 
@@ -193,7 +206,7 @@ msgstr ""
 msgid "Access"
 msgstr "Accés"
 
-#: footer.php:54 template-parts/content-navbar.php:318
+#: footer.php:54 template-parts/content-navbar.php:335
 msgid "Close"
 msgstr "Tanca"
 
@@ -210,8 +223,8 @@ msgstr "Saltar al contingut"
 msgid "My folio"
 msgstr "El meu folio"
 
-#: header.php:91 header.php:132 inc/setup.php:269 inc/templates.php:187
-#: inc/templates.php:359 inc/templates.php:385 inc/templates.php:554
+#: header.php:91 header.php:132 inc/setup.php:258 inc/templates.php:190
+#: inc/templates.php:356 inc/templates.php:376 inc/templates.php:543
 msgid "(opens in new window)"
 msgstr "(s'obre en una finestra nova)"
 
@@ -223,12 +236,12 @@ msgstr "Menú principal"
 msgid "Featured header image"
 msgstr "Imatge de capçalera destacada"
 
-#: inc/data.php:100
+#: inc/data.php:116
 #, php-format
 msgid "Semester %s"
 msgstr "Semestre %s"
 
-#: inc/data.php:123
+#: inc/data.php:139
 #, php-format
 msgid "Classroom %s"
 msgstr "Aula %s"
@@ -303,75 +316,75 @@ msgstr "Navegació"
 msgid "Debate navigation"
 msgstr "Navegació de debat"
 
-#: inc/pagination.php:171 inc/setup.php:281
+#: inc/pagination.php:171 inc/setup.php:270
 msgid "Load more"
 msgstr "Carregar més"
 
-#: inc/setup.php:57
+#: inc/setup.php:55
 msgid "Primary menu"
 msgstr "Menú principal"
 
-#: inc/setup.php:170
+#: inc/setup.php:159
 msgid "Primary"
 msgstr "Primari"
 
-#: inc/setup.php:175
+#: inc/setup.php:164
 msgid "Secondary"
 msgstr "Secundari"
 
-#: inc/setup.php:180
+#: inc/setup.php:169
 msgid "Gray"
 msgstr "Gris"
 
-#: inc/setup.php:185
+#: inc/setup.php:174
 msgid "White"
 msgstr "Blanc"
 
-#: inc/setup.php:205
+#: inc/setup.php:194
 msgid "Footer"
 msgstr "Peu de pàgina"
 
-#: inc/setup.php:206
+#: inc/setup.php:195
 msgid "Add widgets here to appear in your footer site."
 msgstr "Afegiu widgets aquí per aparèixer al peu de página de l'lloc."
 
-#: inc/setup.php:270
+#: inc/setup.php:259
 msgid "Close menu"
 msgstr "Tanca menu"
 
-#: inc/setup.php:272
+#: inc/setup.php:261
 msgid "Loading"
 msgstr "Carregant ..."
 
-#: inc/setup.php:273
+#: inc/setup.php:262
 msgid "Saving"
 msgstr "Guardant ..."
 
-#: inc/setup.php:274
+#: inc/setup.php:263
 msgid "Sent"
 msgstr "Enviado"
 
-#: inc/setup.php:275 inc/templates.php:233 inc/templates.php:287
+#: inc/setup.php:264 inc/templates.php:238 inc/templates.php:292
 msgid "Evaluated"
 msgstr "Avaluat"
 
-#: inc/setup.php:276
+#: inc/setup.php:265
 msgid "Success stored grade and feedback"
 msgstr "Nota i feedback guardats correctament"
 
-#: inc/setup.php:277
+#: inc/setup.php:266
 msgid "Error saving grade"
 msgstr "Error a l'desar la nota"
 
-#: inc/setup.php:278
+#: inc/setup.php:267
 msgid "Error loading feedback"
 msgstr "Error a l'carregar el comentari"
 
-#: inc/setup.php:279
+#: inc/setup.php:268
 msgid "Error loading grade"
 msgstr "Error a l'carregar la nota"
 
-#: inc/setup.php:280 template-parts/content-tree.php:74
+#: inc/setup.php:269 template-parts/content-tree.php:78
 #: template-parts/content.php:116
 msgid "expand / collapse"
 msgstr "expandir / contraure"
@@ -388,11 +401,15 @@ msgstr "Entrada anterior"
 msgid "Next Post"
 msgstr "Entrada següent"
 
-#: inc/templates.php:135 inc/templates.php:137
+#: inc/templates.php:106
+msgid "comment"
+msgstr "comentari"
+
+#: inc/templates.php:138 inc/templates.php:140
 msgid "Send message to author"
 msgstr "Envia missatge a l'autor/a"
 
-#: inc/templates.php:145
+#: inc/templates.php:148
 msgid ""
 "You have to reauthenticate, will open in a new window, after that you can "
 "refresh current window"
@@ -400,109 +417,101 @@ msgstr ""
 "Has de tornar a autenticar a Folio, anem a obrir una nova finestra, després "
 "potw refrescar la finestra actual"
 
-#: inc/templates.php:182
+#: inc/templates.php:185 inc/templates.php:764
 #, php-format
 msgid "Visit %s's Folio"
 msgstr "Visita el folio de %s"
 
-#: inc/templates.php:187
+#: inc/templates.php:190
 msgid "Visit Folio"
 msgstr "Visita el folio"
 
-#: inc/templates.php:231 template-parts/content-navbar.php:42
+#: inc/templates.php:236 template-parts/content-navbar.php:43
 msgid "Evaluable"
 msgstr "Avaluable"
 
-#: inc/templates.php:247 inc/templates.php:248
+#: inc/templates.php:252 inc/templates.php:253
 msgid "Pending evaluation"
 msgstr "Avaluació pendent"
 
-#: inc/templates.php:249
+#: inc/templates.php:254
 msgid "Evaluation"
 msgstr "Avaluació"
 
-#: inc/templates.php:251
+#: inc/templates.php:256
 msgid "Pending"
 msgstr "Pendent"
 
-#: inc/templates.php:256 inc/templates.php:367 inc/templates.php:546
+#: inc/templates.php:261 inc/templates.php:364 inc/templates.php:535
 msgid "Grade"
 msgstr "Nota"
 
-#: inc/templates.php:283
+#: inc/templates.php:288
 msgid "Evaluation Pending"
 msgstr "Avaluació pendent"
 
-#: inc/templates.php:284
+#: inc/templates.php:289
 msgid ""
 "Evaluate inside the Agora to leave comments and notes. If you want to attach "
 "PDFs, videos or high quality files, please open the Evaluate option in the "
-"RAC or in CANVAS"
+"Campus"
 msgstr ""
 "Avalua dins de l'Àgora per deixar comentaris i notes. Si vols adjuntar PDFs, "
-"vídeos o altes arxius, si us plau obre l'opció d'Avaluar al RAC o CANVAS"
+"vídeos o altes arxius, si us plau obre l'opció d'Avaluar al Campus"
 
-#: inc/templates.php:343
+#: inc/templates.php:346
 msgid "The user is not evaluated"
 msgstr "L’estudiant no ha estat avaluat"
 
-#: inc/templates.php:347
+#: inc/templates.php:350
 msgid "Evaluate here"
 msgstr "Avaluar aquí"
 
-#: inc/templates.php:353
-msgid "Evaluate in CANVAS"
-msgstr "Avaluar al CANVAS"
+#: inc/templates.php:354
+msgid "Evaluate from Campus"
+msgstr "Avaluar al Campus"
 
-#: inc/templates.php:355
-msgid "Evaluate in RAC"
-msgstr "Avaluar al RAC"
-
-#: inc/templates.php:373
+#: inc/templates.php:370
 msgid "Modify evaluation here"
 msgstr "Modifica l'avaluació aquí"
 
-#: inc/templates.php:379
-msgid "Modify evaluation in CANVAS"
-msgstr "Modificar l'avaluació al CANVAS"
+#: inc/templates.php:374
+msgid "Change evaluation"
+msgstr "Canviar l’avaluació al LMS"
 
-#: inc/templates.php:381
-msgid "Modify evaluation in RAC"
-msgstr "Modificar l'avaluació al RAC"
-
-#: inc/templates.php:401
+#: inc/templates.php:392
 msgid "Loading information"
 msgstr "Carregant la informació"
 
-#: inc/templates.php:408
+#: inc/templates.php:399
 msgid "Choose a grade"
 msgstr "Marca una nota:"
 
-#: inc/templates.php:433
+#: inc/templates.php:424
 msgid "Delete grade"
 msgstr "Esborrar nota"
 
-#: inc/templates.php:442
+#: inc/templates.php:433
 msgid "Write a comment: "
 msgstr "Escriu un comentari: "
 
-#: inc/templates.php:470
+#: inc/templates.php:460
 msgid "Publish options:"
 msgstr "Opcions de publicació:"
 
-#: inc/templates.php:479
+#: inc/templates.php:469
 msgid "Scheduled"
 msgstr "Programat"
 
-#: inc/templates.php:487
+#: inc/templates.php:477
 msgid "Now"
 msgstr "Ara"
 
-#: inc/templates.php:496
+#: inc/templates.php:485
 msgid "Publish"
 msgstr "Publica"
 
-#: inc/templates.php:502
+#: inc/templates.php:491
 msgid ""
 "The student won't see the grade nor the comment until the date of publishing "
 "grades."
@@ -510,190 +519,191 @@ msgstr ""
 "L'estudiant no veurà ni la nota ni el comentari fins a la data de publicació "
 "de notes."
 
-#: inc/templates.php:503
+#: inc/templates.php:492
 msgid "Meanwhile you will be able to edit both the grade and the comment."
 msgstr "Mentrestant, podràs editar tant la nota com el comentari."
 
-#: inc/templates.php:509
+#: inc/templates.php:498
 msgid "The student will see the grade and the comment as soon you save it."
 msgstr "L'estudiant veurà la nota i el comentari en el moment de guardar-la."
 
-#: inc/templates.php:542
+#: inc/templates.php:531
 msgid "Evaluation in process."
 msgstr "Avaluació en procés."
 
-#: inc/templates.php:552
+#: inc/templates.php:541
 msgid "View assessed delivery"
 msgstr "Veure l’entrega avaluada"
 
-#: inc/templates.php:584 inc/templates.php:592 inc/templates.php:600
-#: inc/templates.php:608 inc/templates.php:616 inc/templates.php:624
-#: inc/templates.php:642 inc/templates.php:645 inc/templates.php:648
-#: inc/templates.php:651 inc/templates.php:654 inc/templates.php:657
+#: inc/templates.php:573 inc/templates.php:581 inc/templates.php:589
+#: inc/templates.php:597 inc/templates.php:605 inc/templates.php:613
+#: inc/templates.php:631 inc/templates.php:634 inc/templates.php:637
+#: inc/templates.php:640 inc/templates.php:643 inc/templates.php:646
 msgid "Visibility:"
 msgstr "Visibilitat:"
 
-#: inc/templates.php:584 inc/templates.php:642
+#: inc/templates.php:573 inc/templates.php:631
 msgid "Campus"
 msgstr "Campus"
 
-#: inc/templates.php:592 inc/templates.php:645
+#: inc/templates.php:581 inc/templates.php:634
 msgid "Classroom"
 msgstr "Aula"
 
-#: inc/templates.php:600 inc/templates.php:648
+#: inc/templates.php:589 inc/templates.php:637
 msgid "Instructors"
 msgstr "Professorat"
 
-#: inc/templates.php:608 inc/templates.php:651
+#: inc/templates.php:597 inc/templates.php:640
 msgid "Private"
 msgstr "Privada"
 
-#: inc/templates.php:616 inc/templates.php:654
+#: inc/templates.php:605 inc/templates.php:643
 msgid "with Password"
 msgstr "amb Contrasenya"
 
-#: inc/templates.php:624 inc/templates.php:657
+#: inc/templates.php:613 inc/templates.php:646
 msgid "Public"
 msgstr "Públic"
 
-#: inc/templates.php:671
+#: inc/templates.php:660
 #, php-format
 msgid "Edit %s"
 msgstr "Edita %s"
 
-#: inc/templates.php:704
+#: inc/templates.php:687 inc/templates.php:1083
+#, php-format
+msgctxt "%s = human-readable time difference"
+msgid "%s ago"
+msgstr "Fa %s"
+
+#: inc/templates.php:709
 msgid "Publication date"
 msgstr "Data de publicació"
 
-#: inc/templates.php:720 inc/templates.php:755
+#: inc/templates.php:725 inc/templates.php:760
 #, php-format
 msgid "Entries by %s published in the Agora"
 msgstr "Entrades de %s publicades a l’Àgora"
 
-#: inc/templates.php:723 inc/templates.php:761
+#: inc/templates.php:728 inc/templates.php:774
 #, php-format
 msgctxt "post author"
 msgid "%s"
 msgstr "%s"
 
-#: inc/templates.php:727 inc/templates.php:765
+#: inc/templates.php:732 inc/templates.php:778
 msgid "Posted by"
 msgstr "Publicat per"
 
-#: inc/templates.php:780
+#: inc/templates.php:793
 msgid "Tags"
 msgstr "Etiquetes"
 
-#: inc/templates.php:796
+#: inc/templates.php:809
 msgid "Categories"
 msgstr "Categories"
 
-#: inc/templates.php:880
+#: inc/templates.php:893
 msgid "Send comment"
 msgstr "Enviar comentari"
 
-#: inc/templates.php:882
+#: inc/templates.php:895
 msgid "Cancel Reply"
 msgstr "Cancel·la la resposta"
 
-#: inc/templates.php:893
+#: inc/templates.php:906
 #, php-format
 msgid "Logged in as %s. Edit your profile."
 msgstr "Connectat com %s. Edita perfil."
 
-#: inc/templates.php:896
+#: inc/templates.php:909
 msgid "Log out?"
 msgstr "Tancar sessió?"
 
-#: inc/templates.php:933 inc/templates.php:1009
+#: inc/templates.php:946 inc/templates.php:1025
 #, php-format
 msgid ""
 "<cite class=\"fn\">%s</cite> <span class=\"visually-hidden\">says:</span>"
 msgstr ""
 "<cite class=\"fn\">%s</cite> <span class=\"visually-hidden\">diu:</span>"
 
-#: inc/templates.php:941 inc/templates.php:1017
-#, php-format
-msgid "%1$s %2$s"
-msgstr "%1$s %2$s"
-
-#: inc/templates.php:946 inc/templates.php:1022
+#: inc/templates.php:962 inc/templates.php:1041
 msgid "(Edit)"
 msgstr "(Edita)"
 
-#: inc/templates.php:950 inc/templates.php:1026
+#: inc/templates.php:966 inc/templates.php:1045
 msgid "Your contribution is awaiting moderation."
 msgstr "La teva intervenció està esperant ser moderada."
 
-#: inc/templates.php:965 inc/templates.php:1044
+#: inc/templates.php:981 inc/templates.php:1063
 msgid "Reply"
 msgstr "Respondre"
 
-#: inc/templates.php:1061
+#: inc/templates.php:1106
 msgid "My activities"
 msgstr "Les meves activitats"
 
-#: inc/templates.php:1063
+#: inc/templates.php:1108
 msgid "Filter by ActiFolio"
 msgstr "Filtre d'ActiFolio"
 
-#: inc/templates.php:1065
+#: inc/templates.php:1110
 msgid "All"
 msgstr "Tots"
 
-#: inc/utils.php:172 inc/utils.php:174 inc/utils.php:176 inc/utils.php:178
-#: inc/utils.php:180
+#: inc/utils.php:179 inc/utils.php:181 inc/utils.php:183 inc/utils.php:185
+#: inc/utils.php:187
 #, php-format
 msgid "<li class=\"breadcrumb-item\">%s</li>"
 msgstr "<li class=\"breadcrumb-item\">%s</li>"
 
-#: inc/utils.php:174
+#: inc/utils.php:181
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "F Y"
 
-#: inc/utils.php:176
+#: inc/utils.php:183
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr "Y"
 
-#: inc/utils.php:183
+#: inc/utils.php:190
 #, php-format
 msgid "<li class=\"breadcrumb-item\">Search: %s</li>"
 msgstr "<li class=\"breadcrumb-item\">Cerca: %s</li>"
 
-#: inc/utils.php:224
+#: inc/utils.php:235
 msgctxt "Added to posts and pages that are missing titles"
 msgid "Untitled"
 msgstr "Sense títol"
 
-#: inc/utils.php:317 template-parts/content-navbar.php:389
+#: inc/utils.php:337 template-parts/content-navbar.php:406
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: inc/utils.php:412
+#: inc/utils.php:432
 msgid "Please enter the name"
 msgstr "Si us plau, introdueix el nom"
 
-#: inc/utils.php:413
+#: inc/utils.php:433
 msgid "Please enter a valid email"
 msgstr "Si us plau, introdueix una adreça electrònica vàlida"
 
-#: inc/utils.php:416 inc/utils.php:417 template-parts/content-navbar.php:36
-#: template-parts/content-navbar.php:122 template-parts/content-navbar.php:342
+#: inc/utils.php:436 inc/utils.php:437 template-parts/content-navbar.php:37
+#: template-parts/content-navbar.php:123 template-parts/content-navbar.php:359
 msgid "Name"
 msgstr "Nom"
 
-#: inc/utils.php:421 inc/utils.php:422
+#: inc/utils.php:441 inc/utils.php:442
 msgid "Your email"
 msgstr "El teu email"
 
-#: inc/utils.php:426 inc/utils.php:427
+#: inc/utils.php:446 inc/utils.php:447
 msgid "Website"
 msgstr "Lloc web"
 
-#: inc/utils.php:436
+#: inc/utils.php:456
 msgid ""
 "Save my name, email, and website in this browser for the next time I comment."
 msgstr ""
@@ -705,77 +715,74 @@ msgstr ""
 msgid "%1$s results were found for: %2$s"
 msgstr "S'han trobat %1$s resultats per a: %2$s"
 
-#: template-parts/content-navbar.php:30 template-parts/content-navbar.php:110
-#: template-parts/content-navbar.php:330
+#: template-parts/content-navbar.php:27 template-parts/content-navbar.php:399
+msgid "Descending"
+msgstr "Descendent"
+
+#: template-parts/content-navbar.php:27 template-parts/content-navbar.php:393
+msgid "Ascending"
+msgstr "Ascendent"
+
+#: template-parts/content-navbar.php:31 template-parts/content-navbar.php:111
+#: template-parts/content-navbar.php:347
 msgid "Date"
 msgstr "Data"
 
-#: template-parts/content-navbar.php:33 template-parts/content-navbar.php:116
-#: template-parts/content-navbar.php:336
+#: template-parts/content-navbar.php:34 template-parts/content-navbar.php:117
+#: template-parts/content-navbar.php:353
 msgid "Title"
 msgstr "Titol"
 
-#: template-parts/content-navbar.php:39 template-parts/content-navbar.php:128
-#: template-parts/content-navbar.php:348
+#: template-parts/content-navbar.php:40 template-parts/content-navbar.php:129
+#: template-parts/content-navbar.php:365
 msgid "Surname"
 msgstr "Cognoms"
 
-#: template-parts/content-navbar.php:45
+#: template-parts/content-navbar.php:46
 msgid "Activity"
 msgstr "Activitat"
 
-#: template-parts/content-navbar.php:65
+#: template-parts/content-navbar.php:66
 msgid "You are here"
 msgstr "Ets aquí"
 
-#: template-parts/content-navbar.php:75 template-parts/content-navbar.php:76
-#: template-parts/content-navbar.php:233 template-parts/content-navbar.php:234
+#: template-parts/content-navbar.php:76 template-parts/content-navbar.php:77
+#: template-parts/content-navbar.php:224 template-parts/content-navbar.php:225
 #: template-parts/searchform.php:3 template-parts/searchform.php:4
 msgid "Search"
 msgstr "Cerca"
 
-#: template-parts/content-navbar.php:84 template-parts/content-navbar.php:252
+#: template-parts/content-navbar.php:85 template-parts/content-navbar.php:243
 msgid "Order and visualization options"
 msgstr "Opcions d'ordenació i visualització"
 
-#: template-parts/content-navbar.php:97 template-parts/content-navbar.php:262
+#: template-parts/content-navbar.php:98 template-parts/content-navbar.php:254
 msgid "Order menu"
 msgstr "Menú ordre"
 
-#: template-parts/content-navbar.php:98 template-parts/content-navbar.php:317
+#: template-parts/content-navbar.php:99 template-parts/content-navbar.php:162
+#: template-parts/content-navbar.php:334
 msgid "Order"
 msgstr "Ordre"
 
-#: template-parts/content-navbar.php:158 template-parts/content-navbar.php:376
-msgid "Ascending"
-msgstr "Ascendent"
-
-#: template-parts/content-navbar.php:164 template-parts/content-navbar.php:382
-msgid "Descending"
-msgstr "Descendent"
-
-#: template-parts/content-navbar.php:169 template-parts/content-navbar.php:390
+#: template-parts/content-navbar.php:157 template-parts/content-navbar.php:407
 msgid "Apply"
 msgstr "Aplica"
 
-#: template-parts/content-navbar.php:180 template-parts/content-navbar.php:181
+#: template-parts/content-navbar.php:173 template-parts/content-navbar.php:174
+#: template-parts/content-navbar.php:289
 msgid "Grid view"
 msgstr "Vista de quadrícula"
 
-#: template-parts/content-navbar.php:192 template-parts/content-navbar.php:193
-#: template-parts/content-navbar.php:272
+#: template-parts/content-navbar.php:185 template-parts/content-navbar.php:186
+#: template-parts/content-navbar.php:300
 msgid "List view"
 msgstr "Vista de llista"
 
-#: template-parts/content-navbar.php:204 template-parts/content-navbar.php:205
-#: template-parts/content-navbar.php:283
-msgid "Expanded view"
-msgstr "Vista expandida"
-
-#: template-parts/content-navbar.php:217 template-parts/content-navbar.php:218
-#: template-parts/content-navbar.php:294
-msgid "Tree view"
-msgstr "Vista en arbre"
+#: template-parts/content-navbar.php:209 template-parts/content-navbar.php:210
+#: template-parts/content-navbar.php:311
+msgid "Comments view"
+msgstr "Vista de comentaris"
 
 #: template-parts/content-none.php:15
 msgid "Nothing Found"
@@ -808,6 +815,18 @@ msgstr ""
 msgid "Search for:"
 msgstr "Cerca per:"
 
+#~ msgid "Modify evaluation in RAC"
+#~ msgstr "Modificar l'avaluació al RAC"
+
+#~ msgid "%1$s %2$s"
+#~ msgstr "%1$s %2$s"
+
+#~ msgid "Expanded view"
+#~ msgstr "Vista expandida"
+
+#~ msgid "Tree view"
+#~ msgstr "Vista en arbre"
+
 #~ msgid "posts"
 #~ msgstr "entrades"
 
@@ -825,9 +844,6 @@ msgstr "Cerca per:"
 
 #~ msgid "Recent"
 #~ msgstr "Recent"
-
-#~ msgid "Contributions are closed."
-#~ msgstr "Les intervencions estan tancades."
 
 #~ msgid "Send"
 #~ msgstr "Envia"

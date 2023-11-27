@@ -38,10 +38,26 @@ function get_lms_evaluation_url() {
 				$gradebook_url = 'https://uoc.test.instructure.com/courses/{classroom_id}/gradebook';
 				
 				if ( str_starts_with(CVAPI_BASE_URL, 'https://platin.uoc.edu') ) {
-					$gradebook_url = 'https://uoc.instructure.com/courses/{classroom_id}/gradebook';
+					$gradebook_url = 'https://aula.uoc.edu/courses/{classroom_id}/gradebook';
 				}
-
 				$proxyUrl = str_replace('{classroom_id}', $classroom->getId(), $gradebook_url);
+				
+				$canvas_user_id = get_user_meta( get_current_user_id(), 'canvas_user_id', true );
+				$post = get_post();
+				$assignment_id = '';
+				if ( $post->ID ) {
+					global $portafolis_uoc_rac;
+					if( $portafolis_uoc_rac ){
+						$relatedActivities = $portafolis_uoc_rac->get_if_is_submitted( $post->ID );
+						if (count($relatedActivities) > 0) {
+							$assignment_id = $relatedActivities[0]->activityId;
+						}
+					}
+				}
+				
+				if (!empty($canvas_user_id) && !empty($assignment_id)) {
+					$proxyUrl .= '/speed_grader?assignment_id=' . $assignment_id . '&student_id=' . $canvas_user_id;
+				}
 			break;
 			default:
 				throw new \BadMethodCallException('Not implemented');
