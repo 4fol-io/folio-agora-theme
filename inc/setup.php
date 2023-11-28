@@ -112,23 +112,14 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\\setup' );
 
 
 /**
- * Set default widgets on theme activation
+ * Set defaults options on theme activation
  */
-/*function theme_activation ($old_theme, $WP_theme = null) {
-  $widgets = array (
-    'sidebar-primary' => array (
-      'search-1',
-      'categories-1',
-      'tag_cloud-1'
-    )
-  );
-  update_option('widget_search', array( 1 => array('title' => '') ));
-  update_option('widget_categories', array( 1 => array('title' => '') ));
-  update_option('widget_tag_cloud', array( 1 => array('title' => '') ));
-  update_option('sidebars_widgets', $widgets);
+function theme_activation ($old_theme, $WP_theme = null) {
+  // Update posts per page
+  update_option('posts_per_page', 12 );
 }
 
-add_action('after_switch_theme', __NAMESPACE__ . '\\theme_activation', 10, 2);*/
+add_action('after_switch_theme', __NAMESPACE__ . '\\theme_activation', 10, 2);
 
 
 /**
